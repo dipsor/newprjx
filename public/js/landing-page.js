@@ -77,9 +77,11 @@ module.exports = __webpack_require__(91);
 /***/ (function(module, exports) {
 
 (function ($) {
-    $(function () {
-        console.log('prdel');
 
+    console.log('#login-modal init');
+    $('#login-modal').modal();
+
+    $(function () {
         $('.button-collapse').sideNav();
         $('.parallax').parallax();
     }); // end of document ready

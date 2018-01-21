@@ -37,6 +37,16 @@
         </div>
     </nav>
 
+    <!-- Modal Structure -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+    </div>
     <div id="index-banner">
         <div>
             {{--<div class="gradient-45deg-purple-amber">--}}
@@ -49,7 +59,8 @@
                     <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
                 </div>
                 <div class="row center">
-                    <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light purple darken-3 white-text lighten-1">Get Started</a>
+                    <a data-target="login-modal" class="waves-effect waves-light btn modal-trigger btn-large purple darken-3" href="#login-modal">Get Started</a>
+
                 </div>
                 <br><br>
 
@@ -167,6 +178,7 @@
 <!--  Scripts-->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/landing-page.js') }}"></script>
 
 
 </body>
