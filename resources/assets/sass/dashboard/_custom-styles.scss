@@ -1,0 +1,132 @@
+$base-bg-color: #263238;
+$avatar-area-bg-color: #b0bec5;
+$btn-bg-color: #ff3d00;
+$border-color: #fff;
+
+footer.page-footer.base-nav-bg-color {
+  z-index: 1;
+}
+
+.base-nav-bg-color {
+  background-color: $base-bg-color;
+}
+
+.user-details {
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+}
+
+.avatar-area {
+  background-color: $base-bg-color;
+}
+
+.btn {
+  background-color: $btn-bg-color !important;
+}
+
+.side-nav li > a {
+  color: white;
+}
+@import url(https://fonts.googleapis.com/css?family=Merriweather+Sans);
+div.social-wrap a {
+  padding-right: 45px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  background: none;
+  border: none;
+  display: block;
+  background-size: 35px 35px;
+  background-position: right center;
+  background-repeat: no-repeat;
+  color: white;
+  font-family:"Merriweather Sans", sans-serif;
+  font-size: 14px;
+  width: 100%;
+}
+a#facebook {
+  border-color: #2d5073;
+  background-color: #3b5998;
+  background-image: url(http://icons.iconarchive.com/icons/danleech/simple/512/facebook-icon.png);
+}
+a#twitter {
+  border-color: #007aa6;
+  background-color: #008cbf;
+  background-image: url(https://g.twimg.com/Twitter_logo_white.png);
+}
+a#googleplus {
+  border-color: #111;
+  background-color: #222;
+  text-shadow: #333 -1px -1px 0;
+  background-image:url(http://www.iconsdb.com/icons/preview/white/google-plus-xxl.png);
+}
+div.social-wrap a:active {
+  background-color: #222;
+}
+
+.login-row, .facebook-row, .google-row {
+  margin-bottom: 0px;
+}
+
+p.user-roal {
+  display: table-cell;
+}
+
+.progress {
+  margin-top: -24px;
+  background-color: white;
+}
+
+.custom-loader {
+  margin: 0px auto;
+}
+
+.custom-loader-wrapper {
+  position: absolute;
+  z-index: 100;
+  background-color: rgba(0,0,0, 0.5);
+  width: 100%;
+  height:100%;
+  top: 0px;
+  left:0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.custom-card-panel {
+  position: relative;
+}
+
+.breadcrumbs-wrapper nav {
+  background-color: transparent;
+  box-shadow: none;
+
+  span.breadcrumb {
+    color: black;
+  }
+
+  a {
+    color: black;
+  }
+
+  a.breadcrumb {
+    text-decoration: underline;
+  }
+
+  .breadcrumb:before {
+    content: '>';
+    color: black;
+  }
+
+  .sidebar-link {
+    color: white;
+  }
+}
+
+
+.brand-logo {
+  padding: 0px;
+  padding-left: 20px;
+  line-height: 20px !important;
+}
