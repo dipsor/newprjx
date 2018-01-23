@@ -1,41 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>My app - Boilerplate Landing page</title>
-
-    <!-- CSS  -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="{{ asset('css/frontend.css') }}" rel="stylesheet">
-
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-
-</head>
-<body>
-<div id="app">
-    <nav class="white" role="navigation">
-        <div class="nav-wrapper container">
-            <a id="logo-container" href="#" class="brand-logo black-text">Logo</a>
-            <ul class="right hide-on-med-and-down">
-                @if(Auth::user())
-                    <li><a class="black-text" href="{{route('users.show', ['id' => Auth::user()->id])}}">Profile</a></li>
-                    <li><a class="black-text" href="{{route('users.logout')}}">Logout</a></li>
-
-                @else
-                <li><a class="black-text" href="{{route('login')}}">Sign In</a></li>
-                <li><a class="black-text" href="{{route('login')}}">Sign Up</a></li>
-                @endif
-            </ul>
-
-            <ul id="nav-mobile" class="side-nav">
-                <li><a class="black-text" href="#">Sign In</a></li>
-                <li><a class="black-text" href="#">Sign Up</a></li>
-            </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-        </div>
-    </nav>
+@extends('landing.layout')
+@section('content')
+    @if(!Auth::check())
+    <!-- Modal Structure -->
+    <div id="login-modal" class="modal">
+                <form class="login-form" method="POST" action="{{ route('login') }}">
+                    {{ csrf_field() }}
+                    <div class="row custom-login-row">
+                        <div class="input-field col s12 center">
+                            {{--<img src="images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">--}}
+                            <p class="center login-form-text">Skeleton Dashboard</p>
+                        </div>
+                    </div>
+                    <div class="row custom-login-row">
+                        <div class="input-field col s12">
+                            <i class="mdi-social-person-outline prefix"><i class="material-icons">person</i></i>
+                            <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus>
+                            <label for="email" class="center-align">Email</label>
+                            @if ($errors->has('email'))
+                                <span class="help-block">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="row custom-login-row">
+                        <div class="input-field col s12">
+                            <i class="mdi-action-lock-outline prefix"><i class="material-icons">lock</i></i>
+                            <input id="password" type="password" name="password" required>
+                            <label for="password">Password</label>
+                            @if ($errors->has('password'))
+                                <span class="help-block">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="row custom-login-row">
+                        <div class="input-field col s12 m12 l12  login-text">
+                            <input name="remember" type="checkbox" id="remember-me" {{ old('remember') ? 'checked' : '' }} />
+                            <label for="remember-me">Remember me</label>
+                        </div>
+                    </div>
+                    <div class="row login-row">
+                        <div class="input-field col s12">
+                            <button class="btn waves-effect purple darken-3 waves-light col s12">Login</button>
+                        </div>
+                    </div>
+                    <div class="row login-row">
+                        <div class="input-field col s6">
+                            <div class="social-wrap a">
+                                <a href="{{route('facebook.login')}}" id="facebook">Sign in with Facebook</a>
+                            </div>
+                        </div>
+                        <div class="input-field col s6">
+                            <div class="social-wrap a">
+                                <a href="{{route('google.login')}}" id="googleplus">Sign in with Google</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6 m6 l6">
+                            <p class="margin medium-small"><a class=" purple-text text-darken-2" href="{{ route('register') }}">Register Now!</a></p>
+                        </div>
+                        <div class="input-field col s6 m6 l6">
+                            <p class="margin right-align medium-small"><a class=" purple-text text-darken-2" href="{{ route('password.request') }}">Forgot password ?</a></p>
+                        </div>
+                    </div>
+                </form>
+    </div>
+    @endif
 
     <div id="index-banner">
         <div>
@@ -49,7 +82,12 @@
                     <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
                 </div>
                 <div class="row center">
-                    <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light purple darken-3 white-text lighten-1">Get Started</a>
+
+                    @if(Auth::check())
+                    <a class="waves-effect waves-light btn btn-large purple darken-3" href="{{route('thesis.index')}}">Vytvorit</a>
+                    @else
+                    <a data-target="login-modal" id="login-modal-button" class="waves-effect waves-light btn modal-trigger btn-large purple darken-3" href="#login-modal">Get Started</a>
+                    @endif
                 </div>
                 <br><br>
 
@@ -129,45 +167,5 @@
         </div>
         <div class="parallax"><img src="{{asset('img')}}/background3.jpg" alt="Unsplashed background img 3"></div>
     </div>
-    <footer class="page-footer brown darken-2">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Company Bio</h5>
-                    <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+@endsection
 
-
-                </div>
-                <div class="col l3 s12">
-                    <h5 class="white-text">Settings</h5>
-                    <ul>
-                        <li><a class="white-text" href="#!">Link 1</a></li>
-                        <li><a class="white-text" href="#!">Link 2</a></li>
-                        <li><a class="white-text" href="#!">Link 3</a></li>
-                        <li><a class="white-text" href="#!">Link 4</a></li>
-                    </ul>
-                </div>
-                <div class="col l3 s12">
-                    <h5 class="white-text">Connect</h5>
-                    <ul>
-                        <li><a class="white-text" href="#!">Link 1</a></li>
-                        <li><a class="white-text" href="#!">Link 2</a></li>
-                        <li><a class="white-text" href="#!">Link 3</a></li>
-                        <li><a class="white-text" href="#!">Link 4</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-copyright">
-                Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-            </div>
-        </div>
-    </footer>
- </div>
-
-<!--  Scripts-->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="{{ asset('js/app.js') }}"></script>
-
-
-</body>
-</html>
