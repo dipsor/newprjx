@@ -1,52 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>My app - Boilerplate Landing page</title>
-
-    <!-- CSS  -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="<?php echo e(asset('css/frontend.css')); ?>" rel="stylesheet">
-
-    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
-
-
-</head>
-<body>
-<div id="app">
-    <nav class="white" role="navigation">
-        <div class="nav-wrapper container">
-            <a id="logo-container" href="#" class="brand-logo black-text">Logo</a>
-            <ul class="right hide-on-med-and-down">
-                <?php if(Auth::user()): ?>
-                    <li><a class="black-text" href="<?php echo e(route('users.show', ['id' => Auth::user()->id])); ?>">Profile</a></li>
-                    <li><a class="black-text" href="<?php echo e(route('users.logout')); ?>">Logout</a></li>
-
-                <?php else: ?>
-                <li><a class="black-text" href="<?php echo e(route('login')); ?>">Sign In</a></li>
-                <li><a class="black-text" href="<?php echo e(route('login')); ?>">Sign Up</a></li>
-                <?php endif; ?>
-            </ul>
-
-            <ul id="nav-mobile" class="side-nav">
-                <li><a class="black-text" href="#">Sign In</a></li>
-                <li><a class="black-text" href="#">Sign Up</a></li>
-            </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-        </div>
-    </nav>
-
+<?php $__env->startSection('content'); ?>
+    <?php if(!Auth::check()): ?>
     <!-- Modal Structure -->
     <div id="login-modal" class="modal">
-        <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-        </div>
+                <form class="login-form" method="POST" action="<?php echo e(route('login')); ?>">
+                    <?php echo e(csrf_field()); ?>
+
+                    <div class="row custom-login-row">
+                        <div class="input-field col s12 center">
+                            
+                            <p class="center login-form-text">Skeleton Dashboard</p>
+                        </div>
+                    </div>
+                    <div class="row custom-login-row">
+                        <div class="input-field col s12">
+                            <i class="mdi-social-person-outline prefix"><i class="material-icons">person</i></i>
+                            <input id="email" type="email" name="email" value="<?php echo e(old('email')); ?>" required autofocus>
+                            <label for="email" class="center-align">Email</label>
+                            <?php if($errors->has('email')): ?>
+                                <span class="help-block">
+                            <strong><?php echo e($errors->first('email')); ?></strong>
+                        </span>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="row custom-login-row">
+                        <div class="input-field col s12">
+                            <i class="mdi-action-lock-outline prefix"><i class="material-icons">lock</i></i>
+                            <input id="password" type="password" name="password" required>
+                            <label for="password">Password</label>
+                            <?php if($errors->has('password')): ?>
+                                <span class="help-block">
+                            <strong><?php echo e($errors->first('password')); ?></strong>
+                        </span>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="row custom-login-row">
+                        <div class="input-field col s12 m12 l12  login-text">
+                            <input name="remember" type="checkbox" id="remember-me" <?php echo e(old('remember') ? 'checked' : ''); ?> />
+                            <label for="remember-me">Remember me</label>
+                        </div>
+                    </div>
+                    <div class="row login-row">
+                        <div class="input-field col s12">
+                            <button class="btn waves-effect purple darken-3 waves-light col s12">Login</button>
+                        </div>
+                    </div>
+                    <div class="row login-row">
+                        <div class="input-field col s6">
+                            <div class="social-wrap a">
+                                <a href="<?php echo e(route('facebook.login')); ?>" id="facebook">Sign in with Facebook</a>
+                            </div>
+                        </div>
+                        <div class="input-field col s6">
+                            <div class="social-wrap a">
+                                <a href="<?php echo e(route('google.login')); ?>" id="googleplus">Sign in with Google</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6 m6 l6">
+                            <p class="margin medium-small"><a class=" purple-text text-darken-2" href="<?php echo e(route('register')); ?>">Register Now!</a></p>
+                        </div>
+                        <div class="input-field col s6 m6 l6">
+                            <p class="margin right-align medium-small"><a class=" purple-text text-darken-2" href="<?php echo e(route('password.request')); ?>">Forgot password ?</a></p>
+                        </div>
+                    </div>
+                </form>
     </div>
+    <?php endif; ?>
+
     <div id="index-banner">
         <div>
             
@@ -59,8 +82,12 @@
                     <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
                 </div>
                 <div class="row center">
-                    <a data-target="login-modal" class="waves-effect waves-light btn modal-trigger btn-large purple darken-3" href="#login-modal">Get Started</a>
 
+                    <?php if(Auth::check()): ?>
+                    <a class="waves-effect waves-light btn btn-large purple darken-3" href="<?php echo e(route('thesis.index')); ?>">Vytvorit</a>
+                    <?php else: ?>
+                    <a data-target="login-modal" id="login-modal-button" class="waves-effect waves-light btn modal-trigger btn-large purple darken-3" href="#login-modal">Get Started</a>
+                    <?php endif; ?>
                 </div>
                 <br><br>
 
@@ -140,46 +167,7 @@
         </div>
         <div class="parallax"><img src="<?php echo e(asset('img')); ?>/background3.jpg" alt="Unsplashed background img 3"></div>
     </div>
-    <footer class="page-footer brown darken-2">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Company Bio</h5>
-                    <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+<?php $__env->stopSection(); ?>
 
 
-                </div>
-                <div class="col l3 s12">
-                    <h5 class="white-text">Settings</h5>
-                    <ul>
-                        <li><a class="white-text" href="#!">Link 1</a></li>
-                        <li><a class="white-text" href="#!">Link 2</a></li>
-                        <li><a class="white-text" href="#!">Link 3</a></li>
-                        <li><a class="white-text" href="#!">Link 4</a></li>
-                    </ul>
-                </div>
-                <div class="col l3 s12">
-                    <h5 class="white-text">Connect</h5>
-                    <ul>
-                        <li><a class="white-text" href="#!">Link 1</a></li>
-                        <li><a class="white-text" href="#!">Link 2</a></li>
-                        <li><a class="white-text" href="#!">Link 3</a></li>
-                        <li><a class="white-text" href="#!">Link 4</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-copyright">
-                Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-            </div>
-        </div>
-    </footer>
- </div>
-
-<!--  Scripts-->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="<?php echo e(asset('js/app.js')); ?>"></script>
-<script src="<?php echo e(asset('js/landing-page.js')); ?>"></script>
-
-
-</body>
-</html>
+<?php echo $__env->make('landing.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
