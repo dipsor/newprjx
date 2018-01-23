@@ -28,6 +28,9 @@ Route::group(['prefix' => 'uzivatele', 'namespace' => 'Users', 'middleware' => [
     Route::get('/{id}', 'UsersController@show')->name('users.show');
 });
 
+Route::group(['prefix' => 'thesis', 'namespace' => 'Thesis', 'middleware' => ['role:customer', 'auth']], function () {
+    Route::get('/', 'ThesisController@index')->name('thesis.index');
+});
 
 
 Route::get('login/facebook', 'Auth\FacebookAuthController@redirectToProvider')->name('facebook.login');
