@@ -6,8 +6,10 @@
  */
 
 require('./bootstrap');
-
 window.Vue = require('vue');
+
+import Vuetify from 'vuetify'
+Vue.use(Vuetify)
 
 Vue.prototype.$laroute = require('./laroute.js');
 
@@ -32,6 +34,8 @@ Vue.component('passport-clients', require('./components/passport/Clients.vue'));
 Vue.component('passport-authorized-clients', require('./components/passport/AuthorizedClients.vue'));
 Vue.component('passport-personal-access-tokens', require('./components/passport/PersonalAccessTokens.vue'));
 
+
+Vue.component('dashboard-index', require('./components/DashboardIndexComponent.vue'));
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('users-list', require('./components/UsersListComponent.vue'));
 Vue.component('users-form', require('./components/UsersFormComponent.vue'));
@@ -42,8 +46,6 @@ Vue.component('users-profile', require('./components/UsersProfileComponent.vue')
 const app = new Vue({
 
     el: '#app',
-
-
 });
 
 

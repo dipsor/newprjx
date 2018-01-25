@@ -1,173 +1,208 @@
-<?php $__env->startSection('content'); ?>
-    <?php if(!Auth::check()): ?>
-    <!-- Modal Structure -->
-    <div id="login-modal" class="modal">
-                <form class="login-form" method="POST" action="<?php echo e(route('login')); ?>">
-                    <?php echo e(csrf_field()); ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vuetify Parallax Starter</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+    <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+    <v-app light>
+        <v-toolbar class="white">
+            <v-toolbar-title v-text="title"></v-toolbar-title>
+        </v-toolbar>
+        <v-content>
+            <section>
+                <v-parallax src="<?php echo e(asset('img')); ?>/hero.jpeg" height="600">
+                    <v-layout
+                            column
+                            align-center
+                            justify-center
+                            class="white--text"
+                    >
+                        <img src="<?php echo e(asset('img')); ?>/vuetify.png" alt="Vuetify.js" height="200">
+                        <h1 class="white--text mb-2 display-1 text-xs-center">Parallax Template</h1>
+                        <div class="subheading mb-3 text-xs-center">Powered by Vuetify</div>
+                        <v-btn
+                                class="blue lighten-2 mt-5"
+                                dark
+                                large
+                                href="/pre-made-themes"
+                        >
+                            Get Started
+                        </v-btn>
+                    </v-layout>
+                </v-parallax>
+            </section>
 
-                    <div class="row custom-login-row">
-                        <div class="input-field col s12 center">
-                            
-                            <p class="center login-form-text">Skeleton Dashboard</p>
+            <section>
+                <v-layout
+                        column
+                        wrap
+                        class="my-5"
+                        align-center
+                >
+                    <v-flex xs12 sm4 class="my-3">
+                        <div class="text-xs-center">
+                            <h2 class="headline">The best way to start developing</h2>
+                            <span class="subheading">
+                Cras facilisis mi vitae nunc
+              </span>
                         </div>
-                    </div>
-                    <div class="row custom-login-row">
-                        <div class="input-field col s12">
-                            <i class="mdi-social-person-outline prefix"><i class="material-icons">person</i></i>
-                            <input id="email" type="email" name="email" value="<?php echo e(old('email')); ?>" required autofocus>
-                            <label for="email" class="center-align">Email</label>
-                            <?php if($errors->has('email')): ?>
-                                <span class="help-block">
-                            <strong><?php echo e($errors->first('email')); ?></strong>
-                        </span>
-                            <?php endif; ?>
+                    </v-flex>
+                    <v-flex xs12>
+                        <v-container grid-list-xl>
+                            <v-layout row wrap align-center>
+                                <v-flex xs12 md4>
+                                    <v-card class="elevation-0 transparent">
+                                        <v-card-text class="text-xs-center">
+                                            <v-icon x-large class="blue--text text--lighten-2">color_lens</v-icon>
+                                        </v-card-text>
+                                        <v-card-title primary-title class="layout justify-center">
+                                            <div class="headline text-xs-center">Material Design</div>
+                                        </v-card-title>
+                                        <v-card-text>
+                                            Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
+                                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                                            Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.
+                                        </v-card-text>
+                                    </v-card>
+                                </v-flex>
+                                <v-flex xs12 md4>
+                                    <v-card class="elevation-0 transparent">
+                                        <v-card-text class="text-xs-center">
+                                            <v-icon x-large class="blue--text text--lighten-2">flash_on</v-icon>
+                                        </v-card-text>
+                                        <v-card-title primary-title class="layout justify-center">
+                                            <div class="headline">Fast development</div>
+                                        </v-card-title>
+                                        <v-card-text>
+                                            Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
+                                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                                            Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.
+                                        </v-card-text>
+                                    </v-card>
+                                </v-flex>
+                                <v-flex xs12 md4>
+                                    <v-card class="elevation-0 transparent">
+                                        <v-card-text class="text-xs-center">
+                                            <v-icon x-large class="blue--text text--lighten-2">build</v-icon>
+                                        </v-card-text>
+                                        <v-card-title primary-title class="layout justify-center">
+                                            <div class="headline text-xs-center">Completely Open Sourced</div>
+                                        </v-card-title>
+                                        <v-card-text>
+                                            Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
+                                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                                            Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.
+                                        </v-card-text>
+                                    </v-card>
+                                </v-flex>
+                            </v-layout>
+                        </v-container>
+                    </v-flex>
+                </v-layout>
+            </section>
+
+            <section>
+                <v-parallax src="<?php echo e(asset('img')); ?>/section.jpg" height="380">
+                    <v-layout column align-center justify-center>
+                        <div class="headline white--text mb-3 text-xs-center">Web development has never been easier</div>
+                        <em>Kick-start your application today</em>
+                        <v-btn
+                                class="blue lighten-2 mt-5"
+                                dark
+                                large
+                                href="/pre-made-themes"
+                        >
+                            Get Started
+                        </v-btn>
+                    </v-layout>
+                </v-parallax>
+            </section>
+
+            <section>
+                <v-container grid-list-xl>
+                    <v-layout row wrap justify-center class="my-5">
+                        <v-flex xs12 sm4>
+                            <v-card class="elevation-0 transparent">
+                                <v-card-title primary-title class="layout justify-center">
+                                    <div class="headline">Company info</div>
+                                </v-card-title>
+                                <v-card-text>
+                                    Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
+                                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                                    Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.
+                                </v-card-text>
+                            </v-card>
+                        </v-flex>
+                        <v-flex xs12 sm4 offset-sm1>
+                            <v-card class="elevation-0 transparent">
+                                <v-card-title primary-title class="layout justify-center">
+                                    <div class="headline">Contact us</div>
+                                </v-card-title>
+                                <v-card-text>
+                                    Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
+                                </v-card-text>
+                                <v-list class="transparent">
+                                    <v-list-tile>
+                                        <v-list-tile-action>
+                                            <v-icon class="blue--text text--lighten-2">phone</v-icon>
+                                        </v-list-tile-action>
+                                        <v-list-tile-content>
+                                            <v-list-tile-title>777-867-5309</v-list-tile-title>
+                                        </v-list-tile-content>
+                                    </v-list-tile>
+                                    <v-list-tile>
+                                        <v-list-tile-action>
+                                            <v-icon class="blue--text text--lighten-2">place</v-icon>
+                                        </v-list-tile-action>
+                                        <v-list-tile-content>
+                                            <v-list-tile-title>Chicago, US</v-list-tile-title>
+                                        </v-list-tile-content>
+                                    </v-list-tile>
+                                    <v-list-tile>
+                                        <v-list-tile-action>
+                                            <v-icon class="blue--text text--lighten-2">email</v-icon>
+                                        </v-list-tile-action>
+                                        <v-list-tile-content>
+                                            <v-list-tile-title>john@vuetifyjs.com</v-list-tile-title>
+                                        </v-list-tile-content>
+                                    </v-list-tile>
+                                </v-list>
+                            </v-card>
+                        </v-flex>
+                    </v-layout>
+                </v-container>
+            </section>
+
+            <v-footer class="blue darken-2">
+                <v-layout row wrap align-center>
+                    <v-flex xs12>
+                        <div class="white--text ml-3">
+                            Made with
+                            <v-icon class="red--text">favorite</v-icon>
+                            by <a class="white--text" href="https://vuetifyjs.com" target="_blank">Vuetify</a>
+                            and <a class="white--text" href="https://github.com/vwxyzjn">Costa Huang</a>
                         </div>
-                    </div>
-                    <div class="row custom-login-row">
-                        <div class="input-field col s12">
-                            <i class="mdi-action-lock-outline prefix"><i class="material-icons">lock</i></i>
-                            <input id="password" type="password" name="password" required>
-                            <label for="password">Password</label>
-                            <?php if($errors->has('password')): ?>
-                                <span class="help-block">
-                            <strong><?php echo e($errors->first('password')); ?></strong>
-                        </span>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                    <div class="row custom-login-row">
-                        <div class="input-field col s12 m12 l12  login-text">
-                            <input name="remember" type="checkbox" id="remember-me" <?php echo e(old('remember') ? 'checked' : ''); ?> />
-                            <label for="remember-me">Remember me</label>
-                        </div>
-                    </div>
-                    <div class="row login-row">
-                        <div class="input-field col s12">
-                            <button class="btn waves-effect purple darken-3 waves-light col s12">Login</button>
-                        </div>
-                    </div>
-                    <div class="row login-row">
-                        <div class="input-field col s6">
-                            <div class="social-wrap a">
-                                <a href="<?php echo e(route('facebook.login')); ?>" id="facebook">Sign in with Facebook</a>
-                            </div>
-                        </div>
-                        <div class="input-field col s6">
-                            <div class="social-wrap a">
-                                <a href="<?php echo e(route('google.login')); ?>" id="googleplus">Sign in with Google</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s6 m6 l6">
-                            <p class="margin medium-small"><a class=" purple-text text-darken-2" href="<?php echo e(route('register')); ?>">Register Now!</a></p>
-                        </div>
-                        <div class="input-field col s6 m6 l6">
-                            <p class="margin right-align medium-small"><a class=" purple-text text-darken-2" href="<?php echo e(route('password.request')); ?>">Forgot password ?</a></p>
-                        </div>
-                    </div>
-                </form>
-    </div>
-    <?php endif; ?>
-
-    <div id="index-banner">
-        <div>
-            
-                <div class="gradient-45deg-brown-brown">
-                
-
-                <br><br>
-                <h1 class="header center white-text text-lighten-2">My app boilerplate</h1>
-                <div class="row center">
-                    <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-                </div>
-                <div class="row center">
-
-                    <?php if(Auth::check()): ?>
-                    <a class="waves-effect waves-light btn btn-large purple darken-3" href="<?php echo e(route('thesis.index')); ?>">Vytvorit</a>
-                    <?php else: ?>
-                    <a data-target="login-modal" id="login-modal-button" class="waves-effect waves-light btn modal-trigger btn-large purple darken-3" href="#login-modal">Get Started</a>
-                    <?php endif; ?>
-                </div>
-                <br><br>
-
-            </div>
-        </div>
-    </div>
-
-
-    <div class="container">
-        <div class="section">
-
-            <!--   Icon Section   -->
-            <div class="row">
-                <div class="col s12 m4">
-                    <div class="icon-block">
-                        <h2 class="center purple-text text-darken-2"><i class="material-icons">flash_on</i></h2>
-                        <h5 class="center">Speeds up development</h5>
-
-                        <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-                    </div>
-                </div>
-
-                <div class="col s12 m4">
-                    <div class="icon-block">
-                        <h2 class="center purple-text text-darken-2"><i class="material-icons">group</i></h2>
-                        <h5 class="center">User Experience Focused</h5>
-
-                        <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-                    </div>
-                </div>
-
-                <div class="col s12 m4">
-                    <div class="icon-block">
-                        <h2 class="center purple-text text-darken-2"><i class="material-icons">settings</i></h2>
-                        <h5 class="center">Easy to work with</h5>
-
-                        <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <div class="parallax-container valign-wrapper">
-        <div class="section no-pad-bot">
-            <div class="container">
-                <div class="row center">
-                    <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-                </div>
-            </div>
-        </div>
-        <div class="parallax"><img src="<?php echo e(asset('img')); ?>/background2.jpg" alt="Unsplashed background img 2"></div>
-    </div>
-
-    <div class="container">
-        <div class="section">
-
-            <div class="row">
-                <div class="col s12 center">
-                    <h3><i class="mdi-content-send brown-text"></i></h3>
-                    <h4>Contact Us</h4>
-                    <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <div class="parallax-container valign-wrapper">
-        <div class="section no-pad-bot">
-            <div class="container">
-                <div class="row center">
-                    <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-                </div>
-            </div>
-        </div>
-        <div class="parallax"><img src="<?php echo e(asset('img')); ?>/background3.jpg" alt="Unsplashed background img 3"></div>
-    </div>
-<?php $__env->stopSection(); ?>
-
-
-<?php echo $__env->make('landing.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                    </v-flex>
+                </v-layout>
+            </v-footer>
+        </v-content>
+    </v-app>
+</div>
+<script src="<?php echo e(asset('js/app.js')); ?>"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data () {
+            return {
+                title: 'Landing Page Example'
+            }
+        }
+    })
+</script>
+</body>
+</html>
