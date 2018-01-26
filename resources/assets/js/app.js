@@ -35,7 +35,9 @@ Vue.component('passport-authorized-clients', require('./components/passport/Auth
 Vue.component('passport-personal-access-tokens', require('./components/passport/PersonalAccessTokens.vue'));
 
 
+Vue.component('custom-dialog', require('./components/CustomDialog.vue'));
 Vue.component('dashboard-index', require('./components/DashboardIndexComponent.vue'));
+Vue.component('landing-page', require('./components/LandingPage.vue'));
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('users-list', require('./components/UsersListComponent.vue'));
 Vue.component('users-form', require('./components/UsersFormComponent.vue'));

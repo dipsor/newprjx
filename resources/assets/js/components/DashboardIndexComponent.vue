@@ -5,6 +5,7 @@
                 clipped
                 app
                 v-model="drawer"
+                dark
         >
             <v-list dense>
                 <template v-for="(item, i) in items">
@@ -63,7 +64,7 @@
             </v-list>
         </v-navigation-drawer>
         <v-toolbar
-                color="red accent-3"
+                color="brown darken-2"
                 dark
                 app
                 clipped-left
@@ -109,11 +110,12 @@
                 </v-layout>
             </v-container>
         </v-content>
+        <custom-dialog></custom-dialog>
         <v-btn
                 fab
                 bottom
                 right
-                color="pink"
+                color="light-green accent-3"
                 dark
                 fixed
                 @click.stop="dialog = !dialog"
