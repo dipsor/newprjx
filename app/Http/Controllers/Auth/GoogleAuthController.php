@@ -28,7 +28,6 @@ class GoogleAuthController extends Controller
     public function handleProviderCallback()
     {
         $user = Socialite::driver('google')->user();
-
         $authUser = $this->findOrCreateUser($user);
 
         Auth::login($authUser, true);
@@ -39,13 +38,11 @@ class GoogleAuthController extends Controller
     private function findOrCreateUser($user)
     {
         $authUser = User::where('email', $user->email)->first();
-
         if($authUser) {
             return $authUser;
         }
 
         $authUser = User::where('google_id', $user->id)->first();
-
         if($authUser) {
             return $authUser;
         }
@@ -58,7 +55,8 @@ class GoogleAuthController extends Controller
         $user = User::create([
             'name' => $user->name,
             'email' => $user->email,
-            'password' => rand(1,10),
+//            'password' => rand(1,10),
+            'password' => '123456',
             'google_id' => $user->id,
             'google_avatar' => 'ddd',
         ]);
