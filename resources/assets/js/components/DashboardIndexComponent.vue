@@ -99,16 +99,14 @@
             </div>
         </v-toolbar>
         <v-content>
-            <v-container fluid fill-height>
-                <v-layout justify-center align-center>
-                    <v-tooltip right>
-                        <v-btn icon large :href="source" target="_blank" slot="activator">
-                            <v-icon large>code</v-icon>
-                        </v-btn>
-                        <span>Source</span>
-                    </v-tooltip>
+            <v-container grid-list-md text-xs-center>
+                <v-layout row wrap>
+                    <v-flex xs12>
+                        <breadcrumbs></breadcrumbs>
+                    </v-flex>
                 </v-layout>
             </v-container>
+            <content-card></content-card>
         </v-content>
         <custom-dialog></custom-dialog>
         <v-btn
@@ -194,36 +192,20 @@
             dialog: false,
             drawer: null,
             items: [
-                { icon: 'contacts', text: 'Contacts' },
-                { icon: 'history', text: 'Frequently contacted' },
-                { icon: 'content_copy', text: 'Duplicates' },
+                { icon: 'dashboard', text: 'Dashboard' },
                 {
                     icon: 'keyboard_arrow_up',
                     'icon-alt': 'keyboard_arrow_down',
-                    text: 'Labels',
-                    model: true,
-                    children: [
-                        { icon: 'add', text: 'Create label' }
-                    ]
-                },
-                {
-                    icon: 'keyboard_arrow_up',
-                    'icon-alt': 'keyboard_arrow_down',
-                    text: 'More',
+                    text: 'User',
                     model: false,
                     children: [
-                        { text: 'Import' },
-                        { text: 'Export' },
-                        { text: 'Print' },
-                        { text: 'Undo changes' },
-                        { text: 'Other contacts' }
+                        { text: 'Edit Details' },
+                        { text: 'Edit Billing Details' },
+                        { text: 'Change Password' },
                     ]
                 },
-                { icon: 'settings', text: 'Settings' },
-                { icon: 'chat_bubble', text: 'Send feedback' },
-                { icon: 'help', text: 'Help' },
-                { icon: 'phonelink', text: 'App downloads' },
-                { icon: 'keyboard', text: 'Go to the old version' }
+                { icon: 'contacts', text: 'Orders' },
+
             ]
         }),
         props: {

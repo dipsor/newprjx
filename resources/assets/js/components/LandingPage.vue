@@ -1,7 +1,23 @@
 <template>
     <v-app light>
         <v-toolbar class="white">
-            <v-toolbar-title v-text="title"></v-toolbar-title>
+            <v-toolbar-title v-text="title">
+            </v-toolbar-title>
+            <v-spacer></v-spacer>
+            <div v-if="isUserLoggedIn">
+                <!--<v-toolbar-side-icon class="hidden-xs-and-up"></v-toolbar-side-icon>-->
+                <v-toolbar-items class="hidden-xs-and-down">
+                    <v-btn flat>Vytvorit Bakalarku</v-btn>
+                    <v-btn @click="profile" flat>{{parsedUser.name}}</v-btn>
+                    <v-btn @click="logout" flat>Odhlasit</v-btn>
+                </v-toolbar-items>
+            </div>
+            <div v-else>
+                <!--<v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>-->
+                <v-toolbar-items class="hidden-xs-and-down">
+                    <v-btn @click.stop="login" flat>Prihlasit</v-btn>
+                </v-toolbar-items>
+            </div>
         </v-toolbar>
         <v-content>
             <section>
@@ -15,18 +31,26 @@
                         <img src="/img/vuetify.png" alt="Vuetify.js" height="200">
                         <h1 class="white--text mb-2 display-1 text-xs-center">Parallax Template</h1>
                         <div class="subheading mb-3 text-xs-center">Powered by Vuetify</div>
-                        <v-btn
-                                class="blue lighten-2 mt-5"
-                                dark
-                                large
-                                href="/pre-made-themes"
-                        >
-                            Get Started
-                        </v-btn>
+                        <div v-if="!isUserLoggedIn">
+                            <custom-dialog
+                                    :current-user="currentUser"
+                            ></custom-dialog>
+                        </div>
+                        <div v-else="">
+                            <v-btn
+                                    class="blue lighten-2 mt-5"
+                                    dark
+                                    large
+                                    @click="createThesis"
+                            >
+                                <span class="group pa-2">
+                                <v-icon>add</v-icon>
+                              </span>vytvorit Bakalarku
+                            </v-btn>
+                        </div>
                     </v-layout>
                 </v-parallax>
             </section>
-
             <section>
                 <v-layout
                         column
@@ -187,7 +211,45 @@
     export default {
         data() {
             return {
-                title: 'Landing Page Example'
+                title: 'Landing Page Example',
+                myDialog: false,
+                parsedUser: {
+                    name: null,
+                },
+                profileUrl: null,
+                createThesis: '',
+            }
+        },
+
+        props: {
+            isUserLoggedIn: null,
+            currentUser: null
+        },
+
+        mounted() {
+            this.parsedUser = this.currentUser != '' ? JSON.parse(this.currentUser) : null;
+            this.createThesis = this.$laroute.route('thesis.index');
+        },
+
+        methods: {
+            logout() {
+                axios.get(this.$laroute.route('users.logout'))
+                .then((response) =>{
+                    window.location.href = this.$laroute.route('home');
+                }, (error) => {
+                    console.log(error);
+                });
+            },
+
+            login() {
+                this.eventBus.$emit('open-login-dialog', true );
+            },
+            profile () {
+                window.location.href = this.$laroute.route('users.show');
+            },
+
+            createThesis() {
+                window.location.href = this.$laroute.route('thesis.index');
             }
         }
     }

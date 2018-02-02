@@ -1,5 +1,6 @@
 @include('layouts.partials.header')
-<div id="app">
+<v-app id="app">
+    <navigations :current-user="{{Auth::user()}}"></navigations>
     @yield('content')
-</div>
+</v-app>
 @include('layouts.partials.footer')
