@@ -60,37 +60,37 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 90);
+/******/ 	return __webpack_require__(__webpack_require__.s = 138);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 90:
+/***/ 138:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(91);
+module.exports = __webpack_require__(139);
 
 
 /***/ }),
 
-/***/ 91:
+/***/ 139:
 /***/ (function(module, exports) {
 
-(function ($) {
-
-    console.log('#login-modal init');
-    $('#login-modal').modal();
-
-    $('#login-modal-button').on('click', function () {
-        console.log('click');
-        $(this).css({ 'z-index': 1 });
-    });
-
-    $(function () {
-        $('.button-collapse').sideNav();
-        $('.parallax').parallax();
-    }); // end of document ready
-})(jQuery); // end of jQuery name space
+// (function($){
+//
+//     console.log('#login-modal init')
+//     $('#login-modal').modal();
+//
+//     $('#login-modal-button').on('click', function(){
+//         console.log('click');
+//         $(this).css({'z-index':1});
+//     })
+//
+//     $(function(){
+//         $('.button-collapse').sideNav();
+//         $('.parallax').parallax();
+//     }); // end of document ready
+// })(jQuery); // end of jQuery name space
 
 /***/ })
 
