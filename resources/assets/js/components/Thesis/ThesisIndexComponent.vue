@@ -21,7 +21,7 @@
                                 </v-stepper-header>
                                 <v-stepper-items>
                                     <v-stepper-content step="1">
-                                        <v-card color="grey darken-3" class="mb-5">
+                                        <v-card color="grey lighten-3" class="mb-5">
                                             <thesis-main-form></thesis-main-form>
                                         </v-card>
                                         <v-btn color="primary" @click.native="e1 = 2">Continue</v-btn>
