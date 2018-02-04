@@ -22,7 +22,7 @@
                 <v-flex xs8>
                     <v-select
                             v-bind:items="formItemsData.rozsahStran"
-                            v-model="e2"
+                            v-model="selectedData.pribliznyPocetListu"
                             label="Předpokládaný rozsah stran"
                             light
                             item-value="value"
@@ -351,7 +351,7 @@
                     ></v-text-field>
                 </v-flex>
                 <v-flex xs2>
-                    <v-switch v-bind:label="kapsaProCD == true ? 'Vpředu' : 'Vzadu'" v-model="selectedData.kapsaCdVpredu"></v-switch>
+                    <v-switch v-bind:label="kapsaProCD == true ? 'Vpředu' : 'Vzadu'" v-model="selectedData.kapsaPosudekVpredu"></v-switch>
                 </v-flex>
             </v-layout>
 
@@ -389,28 +389,7 @@
     export default {
         data () {
             return {
-
-
-                e1: null,
-                e2: null,
-                e3: null,
-                e4: null,
-                ex11: true,
-                ex12: true,
-                ex13: true,
-                value: 0,
-                value2: 0,
-                value3: 0,
-                value4: 0,
-                items: [
-                    { text: 'State 1' },
-                    { text: 'State 2' },
-                    { text: 'State 3' },
-                    { text: 'State 4' },
-                    { text: 'State 5' },
-                    { text: 'State 6' },
-                    { text: 'State 7' }
-                ],
+                isFormValid: false,
 
                 potiskHrbetu: false,
                 kapsaProCD: false,
@@ -442,8 +421,7 @@
                     kapsaPosudekVpredu: null,
                     dobaZhotoveni: 44,
                     poznamky: null,
-
-
+                    price: 0,
                 },
 
                 formItemsData: {
@@ -467,10 +445,12 @@
                         {text: 'Oboustranny', value: 12},
                         {text: 'Kombinovany', value: 13},
                     ],
+
                     barevnost: [
                         {text: 'Dle soubou (cernobile / barevne)', value: 14},
                         {text: 'Cernobile', value: 15},
                     ],
+
                     skoly: [
                         {text: 'ZÁPADOČESKÁ UNIVERZITA V PLZNI', value: 16},
                         {text: 'UNIVERZITA JANA AMOSE KOMENSKÉHO PRAHA', value: 17},
@@ -480,6 +460,7 @@
                         {text: 'Vyšší odborná škola zdravotnická, managementu a veřejnosprávních studií, s.r.o. Ledecká 35,  Plzeň', value: 21},
                         {text: 'jiná ...', value: 0},
                     ],
+
                     fakulty: [
                         {text: 'FAKULTA ELEKTROTECHNICKÁ', value: 23},
                         {text: 'FAKULTA EKONOMICKÁ', value: 24},
@@ -491,7 +472,6 @@
                         {text: 'FAKULTA STROJNÍ', value: 30},
                         {text: 'FAKULTA DESIGNU A UMĚNÍ LADISLAVA SUTNARA', value: 31},
                         {text: 'jiná ...', value: 0},
-
                     ],
 
                     typPrace: [
@@ -502,7 +482,6 @@
                         {text: 'HABILITAČNÍ PRÁCE', value: 37},
                         {text: 'ZÁVĚREČNÁ PRÁCE', value: 38},
                         {text: 'jiná ...', value: 0},
-
                     ],
 
                     barvaDesek: [
@@ -521,7 +500,7 @@
                         {text: 'Expres - 399 Kč ( do 24 hodin )', value: 45},
                         {text: 'Super expres - 600 Kč ( na počkání )', value: 46},
                     ]
-                }
+                },
             }
         }
     }

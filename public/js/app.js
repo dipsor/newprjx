@@ -57381,19 +57381,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-
-            e1: null,
-            e2: null,
-            e3: null,
-            e4: null,
-            ex11: true,
-            ex12: true,
-            ex13: true,
-            value: 0,
-            value2: 0,
-            value3: 0,
-            value4: 0,
-            items: [{ text: 'State 1' }, { text: 'State 2' }, { text: 'State 3' }, { text: 'State 4' }, { text: 'State 5' }, { text: 'State 6' }, { text: 'State 7' }],
+            isFormValid: false,
 
             potiskHrbetu: false,
             kapsaProCD: false,
@@ -57424,8 +57412,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 kapsaCdVpredu: null,
                 kapsaPosudekVpredu: null,
                 dobaZhotoveni: 44,
-                poznamky: null
-
+                poznamky: null,
+                price: 0
             },
 
             formItemsData: {
@@ -57433,8 +57421,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 rozsahStran: [{ text: '25 - 40 listů', value: 3 }, { text: '41 - 55 listů', value: 4 }, { text: '56 - 75 listů', value: 5 }, { text: '76 - 100 listů', value: 6 }, { text: '101 - 130 listů', value: 7 }, { text: '101 - 130 listů', value: 8 }, { text: '131 - 160 listů', value: 9 }, { text: '161 - 190 listů', value: 10 }],
 
                 typTisku: [{ text: 'Jednostranny', value: 11 }, { text: 'Oboustranny', value: 12 }, { text: 'Kombinovany', value: 13 }],
+
                 barevnost: [{ text: 'Dle soubou (cernobile / barevne)', value: 14 }, { text: 'Cernobile', value: 15 }],
+
                 skoly: [{ text: 'ZÁPADOČESKÁ UNIVERZITA V PLZNI', value: 16 }, { text: 'UNIVERZITA JANA AMOSE KOMENSKÉHO PRAHA', value: 17 }, { text: 'JIHOČESKÁ UNIVERZITA V ČESKÝCH BUDĚJOVICÍCH', value: 18 }, { text: 'UNIVERZITA KARLOVA V PRAZE', value: 19 }, { text: 'Střední zdravotnická škola a Vyšší odborná škola zdravotnická Plzeň, Karlovarská 99, 323 17 Plzeň', value: 20 }, { text: 'Vyšší odborná škola zdravotnická, managementu a veřejnosprávních studií, s.r.o. Ledecká 35,  Plzeň', value: 21 }, { text: 'jiná ...', value: 0 }],
+
                 fakulty: [{ text: 'FAKULTA ELEKTROTECHNICKÁ', value: 23 }, { text: 'FAKULTA EKONOMICKÁ', value: 24 }, { text: 'FAKULTA PEDAGOGICKÁ', value: 25 }, { text: 'FAKULTA APLIKOVANÝCH VĚD', value: 26 }, { text: 'FAKULTA FILOZOFICKÁ', value: 27 }, { text: 'FAKULTA PRÁVNICKÁ', value: 28 }, { text: 'FAKULTA ZDRAVOTNICKÝCH STUDIÍ', value: 29 }, { text: 'FAKULTA STROJNÍ', value: 30 }, { text: 'FAKULTA DESIGNU A UMĚNÍ LADISLAVA SUTNARA', value: 31 }, { text: 'jiná ...', value: 0 }],
 
                 typPrace: [{ text: 'DIPLOMOVÁ PRÁCE', value: 33 }, { text: 'BAKALÁŘSKÁ PRÁCE', value: 34 }, { text: 'ABSOLVENTSKÁ PRÁCE', value: 35 }, { text: 'DISERTAČNÍ PRÁCE', value: 36 }, { text: 'HABILITAČNÍ PRÁCE', value: 37 }, { text: 'ZÁVĚREČNÁ PRÁCE', value: 38 }, { text: 'jiná ...', value: 0 }],
@@ -57533,11 +57524,11 @@ var render = function() {
                       "item-value": "value"
                     },
                     model: {
-                      value: _vm.e2,
+                      value: _vm.selectedData.pribliznyPocetListu,
                       callback: function($$v) {
-                        _vm.e2 = $$v
+                        _vm.$set(_vm.selectedData, "pribliznyPocetListu", $$v)
                       },
-                      expression: "e2"
+                      expression: "selectedData.pribliznyPocetListu"
                     }
                   })
                 ],
@@ -58549,11 +58540,11 @@ var render = function() {
                       label: _vm.kapsaProCD == true ? "Vpředu" : "Vzadu"
                     },
                     model: {
-                      value: _vm.selectedData.kapsaCdVpredu,
+                      value: _vm.selectedData.kapsaPosudekVpredu,
                       callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "kapsaCdVpredu", $$v)
+                        _vm.$set(_vm.selectedData, "kapsaPosudekVpredu", $$v)
                       },
-                      expression: "selectedData.kapsaCdVpredu"
+                      expression: "selectedData.kapsaPosudekVpredu"
                     }
                   })
                 ],
