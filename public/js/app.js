@@ -56781,7 +56781,7 @@ var render = function() {
                                     "v-card",
                                     {
                                       staticClass: "mb-5",
-                                      attrs: { color: "grey darken-3" }
+                                      attrs: { color: "grey lighten-3" }
                                     },
                                     [_c("thesis-main-form")],
                                     1
@@ -57116,15 +57116,326 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            e1: null,
-            e2: null,
-            e3: null,
-            e4: null,
-            items: [{ text: 'State 1' }, { text: 'State 2' }, { text: 'State 3' }, { text: 'State 4' }, { text: 'State 5' }, { text: 'State 6' }, { text: 'State 7' }]
+            isFormValid: false,
+
+            potiskHrbetu: false,
+            kapsaProCD: false,
+            kapsaProPosudek: false,
+
+            selectedData: {
+                typaZadani: 1,
+                pribliznyPocetListu: 3,
+                presnyPocetStran: 0,
+                typTisku: 11,
+                barevnost: 14,
+                skoly: 16,
+                jinaSkola: null,
+                fakulty: 23,
+                jinaFakulta: null,
+                typPrace: 33,
+                jinyTypPrace: null,
+                spodniTextVlevo: null,
+                spodniTextVpravo: null,
+                potiskNahore: null,
+                potiskDole: null,
+                pocetPevnychDesek: 0,
+                pocetKrouzkovychDesek: 0,
+                barvaDesek: 40,
+                barvaPisma: 42,
+                pocetKapesProCD: 0,
+                pocetKapesProPosudek: 0,
+                kapsaCdVpredu: null,
+                kapsaPosudekVpredu: null,
+                dobaZhotoveni: 44,
+                poznamky: null,
+                price: 0
+            },
+
+            formItemsData: {
+                typZadani: [{ text: 'Vytisknout praci a vyrobit desky', value: 1 }, { text: 'Vyrobit pouze desky', value: 2 }],
+                rozsahStran: [{ text: '25 - 40 listů', value: 3 }, { text: '41 - 55 listů', value: 4 }, { text: '56 - 75 listů', value: 5 }, { text: '76 - 100 listů', value: 6 }, { text: '101 - 130 listů', value: 7 }, { text: '101 - 130 listů', value: 8 }, { text: '131 - 160 listů', value: 9 }, { text: '161 - 190 listů', value: 10 }],
+
+                typTisku: [{ text: 'Jednostranny', value: 11 }, { text: 'Oboustranny', value: 12 }, { text: 'Kombinovany', value: 13 }],
+
+                barevnost: [{ text: 'Dle soubou (cernobile / barevne)', value: 14 }, { text: 'Cernobile', value: 15 }],
+
+                skoly: [{ text: 'ZÁPADOČESKÁ UNIVERZITA V PLZNI', value: 16 }, { text: 'UNIVERZITA JANA AMOSE KOMENSKÉHO PRAHA', value: 17 }, { text: 'JIHOČESKÁ UNIVERZITA V ČESKÝCH BUDĚJOVICÍCH', value: 18 }, { text: 'UNIVERZITA KARLOVA V PRAZE', value: 19 }, { text: 'Střední zdravotnická škola a Vyšší odborná škola zdravotnická Plzeň, Karlovarská 99, 323 17 Plzeň', value: 20 }, { text: 'Vyšší odborná škola zdravotnická, managementu a veřejnosprávních studií, s.r.o. Ledecká 35,  Plzeň', value: 21 }, { text: 'jiná ...', value: 0 }],
+
+                fakulty: [{ text: 'FAKULTA ELEKTROTECHNICKÁ', value: 23 }, { text: 'FAKULTA EKONOMICKÁ', value: 24 }, { text: 'FAKULTA PEDAGOGICKÁ', value: 25 }, { text: 'FAKULTA APLIKOVANÝCH VĚD', value: 26 }, { text: 'FAKULTA FILOZOFICKÁ', value: 27 }, { text: 'FAKULTA PRÁVNICKÁ', value: 28 }, { text: 'FAKULTA ZDRAVOTNICKÝCH STUDIÍ', value: 29 }, { text: 'FAKULTA STROJNÍ', value: 30 }, { text: 'FAKULTA DESIGNU A UMĚNÍ LADISLAVA SUTNARA', value: 31 }, { text: 'jiná ...', value: 0 }],
+
+                typPrace: [{ text: 'DIPLOMOVÁ PRÁCE', value: 33 }, { text: 'BAKALÁŘSKÁ PRÁCE', value: 34 }, { text: 'ABSOLVENTSKÁ PRÁCE', value: 35 }, { text: 'DISERTAČNÍ PRÁCE', value: 36 }, { text: 'HABILITAČNÍ PRÁCE', value: 37 }, { text: 'ZÁVĚREČNÁ PRÁCE', value: 38 }, { text: 'jiná ...', value: 0 }],
+
+                barvaDesek: [{ text: 'MODRÁ', value: 40 }, { text: 'ČERNÁ', value: 41 }],
+
+                barvaPisma: [{ text: 'ZLATÉ', value: 42 }, { text: 'STŘÍBRNÉ', value: 43 }],
+
+                dobaZhotoveni: [{ text: 'Základ - 239 Kč ( do 4 pracovních dnů )', value: 44 }, { text: 'Expres - 399 Kč ( do 24 hodin )', value: 45 }, { text: 'Super expres - 600 Kč ( na počkání )', value: 46 }]
+            }
         };
     }
 });
@@ -57153,8 +57464,7 @@ var render = function() {
                 { attrs: { xs4: "" } },
                 [
                   _c("v-subheader", {
-                    staticClass: "grey--text text--lighten-1",
-                    domProps: { textContent: _vm._s("Typ") }
+                    domProps: { textContent: _vm._s("Typ zadání") }
                   })
                 ],
                 1
@@ -57166,23 +57476,40 @@ var render = function() {
                 [
                   _c("v-select", {
                     attrs: {
-                      items: _vm.items,
-                      label: "Select",
-                      dark: "",
-                      "item-value": "text"
+                      items: _vm.formItemsData.typZadani,
+                      label: "",
+                      light: "",
+                      "item-value": "value"
                     },
                     model: {
-                      value: _vm.e1,
+                      value: _vm.selectedData.typaZadani,
                       callback: function($$v) {
-                        _vm.e1 = $$v
+                        _vm.$set(_vm.selectedData, "typaZadani", $$v)
                       },
-                      expression: "e1"
+                      expression: "selectedData.typaZadani"
                     }
                   })
                 ],
                 1
-              ),
-              _vm._v(" "),
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.selectedData.typaZadani == 2,
+                  expression: "selectedData.typaZadani == 2"
+                }
+              ],
+              attrs: { row: "", wrap: "" }
+            },
+            [
               _c("v-flex", { attrs: { xs4: "" } }),
               _vm._v(" "),
               _c(
@@ -57191,78 +57518,153 @@ var render = function() {
                 [
                   _c("v-select", {
                     attrs: {
-                      items: _vm.items,
-                      label: "Pocet Listu",
-                      dark: "",
-                      "item-value": "text"
+                      items: _vm.formItemsData.rozsahStran,
+                      label: "Předpokládaný rozsah stran",
+                      light: "",
+                      "item-value": "value"
                     },
                     model: {
-                      value: _vm.e2,
+                      value: _vm.selectedData.pribliznyPocetListu,
                       callback: function($$v) {
-                        _vm.e2 = $$v
+                        _vm.$set(_vm.selectedData, "pribliznyPocetListu", $$v)
                       },
-                      expression: "e2"
+                      expression: "selectedData.pribliznyPocetListu"
                     }
                   })
                 ],
                 1
-              ),
-              _vm._v(" "),
-              _c("v-flex", { attrs: { xs4: "" } }),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [
-                  _c("v-select", {
-                    attrs: {
-                      items: _vm.items,
-                      label: "Typ tisku",
-                      dark: "",
-                      "item-value": "text"
-                    },
-                    model: {
-                      value: _vm.e3,
-                      callback: function($$v) {
-                        _vm.e3 = $$v
-                      },
-                      expression: "e3"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [
-                  _c("v-select", {
-                    attrs: {
-                      items: _vm.items,
-                      label: "Barevnost",
-                      dark: "",
-                      "item-value": "text"
-                    },
-                    model: {
-                      value: _vm.e4,
-                      callback: function($$v) {
-                        _vm.e4 = $$v
-                      },
-                      expression: "e4"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.selectedData.typaZadani == 1,
+                  expression: "selectedData.typaZadani == 1"
+                }
+              ],
+              attrs: { row: "", wrap: "" }
+            },
+            [
               _c(
                 "v-flex",
                 { attrs: { xs4: "" } },
                 [
                   _c("v-subheader", {
-                    staticClass: "grey--text text--lighten-1",
-                    domProps: { textContent: _vm._s("Skola") }
+                    domProps: { textContent: _vm._s("Přesný počet listů") }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs6: "" } },
+                [
+                  _c("v-slider", {
+                    attrs: { "thumb-label": "", max: 1000 },
+                    model: {
+                      value: _vm.selectedData.presnyPocetStran,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "presnyPocetStran", $$v)
+                      },
+                      expression: "selectedData.presnyPocetStran"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs2: "" } },
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      name: "selectedPresnyPocetstran",
+                      label: "Počet",
+                      id: "selectedPresnyPocetStran",
+                      "item-value": "selectedData.presnyPocetStran"
+                    },
+                    model: {
+                      value: _vm.selectedData.presnyPocetStran,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "presnyPocetStran", $$v)
+                      },
+                      expression: "selectedData.presnyPocetStran"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("v-flex", { attrs: { xs4: "" } }),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs4: "" } },
+                [
+                  _c("v-select", {
+                    attrs: {
+                      items: _vm.formItemsData.typTisku,
+                      label: "Typ tisku",
+                      light: "",
+                      "item-value": "value"
+                    },
+                    model: {
+                      value: _vm.selectedData.typTisku,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "typTisku", $$v)
+                      },
+                      expression: "selectedData.typTisku"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs4: "" } },
+                [
+                  _c("v-select", {
+                    attrs: {
+                      items: _vm.formItemsData.barevnost,
+                      label: "Barevnost",
+                      light: "",
+                      "item-value": "value"
+                    },
+                    model: {
+                      value: _vm.selectedData.barevnost,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "barevnost", $$v)
+                      },
+                      expression: "selectedData.barevnost"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
+            [
+              _c(
+                "v-flex",
+                { attrs: { xs4: "" } },
+                [
+                  _c("v-subheader", {
+                    domProps: { textContent: _vm._s("Škola") }
                   })
                 ],
                 1
@@ -57274,23 +57676,40 @@ var render = function() {
                 [
                   _c("v-select", {
                     attrs: {
-                      items: _vm.items,
-                      label: "Vyberte",
-                      dark: "",
-                      "item-value": "text"
+                      items: _vm.formItemsData.skoly,
+                      label: "Zde prosím vyberte školu",
+                      light: "",
+                      "item-value": "value"
                     },
                     model: {
-                      value: _vm.e1,
+                      value: _vm.selectedData.skoly,
                       callback: function($$v) {
-                        _vm.e1 = $$v
+                        _vm.$set(_vm.selectedData, "skoly", $$v)
                       },
-                      expression: "e1"
+                      expression: "selectedData.skoly"
                     }
                   })
                 ],
                 1
-              ),
-              _vm._v(" "),
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.selectedData.skoly == 0,
+                  expression: "selectedData.skoly == 0"
+                }
+              ],
+              attrs: { row: "", wrap: "" }
+            },
+            [
               _c("v-flex", { attrs: { xs4: "" } }),
               _vm._v(" "),
               _c(
@@ -57299,21 +57718,34 @@ var render = function() {
                 [
                   _c("v-text-field", {
                     attrs: {
-                      name: "input-1",
-                      label: "Zde uvedte jmeno jine skoly",
-                      id: "testing"
+                      name: "jinaSkola",
+                      label: "Jiná škola",
+                      id: "jinaSkola"
+                    },
+                    model: {
+                      value: _vm.selectedData.jinaSkola,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "jinaSkola", $$v)
+                      },
+                      expression: "selectedData.jinaSkola"
                     }
                   })
                 ],
                 1
-              ),
-              _vm._v(" "),
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
+            [
               _c(
                 "v-flex",
                 { attrs: { xs4: "" } },
                 [
                   _c("v-subheader", {
-                    staticClass: "grey--text text--lighten-1",
                     domProps: { textContent: _vm._s("Fakulta") }
                   })
                 ],
@@ -57326,48 +57758,71 @@ var render = function() {
                 [
                   _c("v-select", {
                     attrs: {
-                      items: _vm.items,
-                      label: "Select",
-                      dark: "",
-                      "item-value": "text"
+                      items: _vm.formItemsData.fakulty,
+                      label: "Zde prosím vyberte fakultu",
+                      light: "",
+                      "item-value": "value"
                     },
                     model: {
-                      value: _vm.e1,
+                      value: _vm.selectedData.fakulty,
                       callback: function($$v) {
-                        _vm.e1 = $$v
+                        _vm.$set(_vm.selectedData, "fakulty", $$v)
                       },
-                      expression: "e1"
+                      expression: "selectedData.fakulty"
                     }
                   })
                 ],
                 1
-              ),
-              _vm._v(" "),
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.selectedData.fakulty == 0,
+                  expression: "selectedData.fakulty == 0"
+                }
+              ],
+              attrs: { row: "", wrap: "" }
+            },
+            [
               _c("v-flex", { attrs: { xs4: "" } }),
               _vm._v(" "),
               _c(
                 "v-flex",
                 { attrs: { xs8: "" } },
                 [
-                  _c("v-select", {
+                  _c("v-text-field", {
                     attrs: {
-                      items: _vm.items,
-                      label: "Pocet Listu",
-                      dark: "",
-                      "item-value": "text"
+                      name: "jinaFakulta",
+                      label: "Jiná fakulta",
+                      id: "jinaFakulta"
                     },
                     model: {
-                      value: _vm.e2,
+                      value: _vm.selectedData.jinaFakulta,
                       callback: function($$v) {
-                        _vm.e2 = $$v
+                        _vm.$set(_vm.selectedData, "jinaFakulta", $$v)
                       },
-                      expression: "e2"
+                      expression: "selectedData.jinaFakulta"
                     }
                   })
                 ],
                 1
-              ),
-              _vm._v(" "),
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
+            [
               _c(
                 "v-flex",
                 { attrs: { xs4: "" } },
@@ -57382,18 +57837,25 @@ var render = function() {
                   _c("v-text-field", {
                     attrs: {
                       name: "input-1",
-                      label: "Label Text",
-                      id: "testing"
+                      label: "Název katedry",
+                      id: "katedra"
                     }
                   })
                 ],
                 1
-              ),
-              _vm._v(" "),
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
+            [
               _c(
                 "v-flex",
                 { attrs: { xs4: "" } },
-                [_c("v-subheader", [_vm._v("Nazev Prace")])],
+                [_c("v-subheader", [_vm._v("Název práce")])],
                 1
               ),
               _vm._v(" "),
@@ -57404,8 +57866,766 @@ var render = function() {
                   _c("v-text-field", {
                     attrs: {
                       name: "input-1",
-                      label: "Label Text",
-                      id: "testing"
+                      label: "Název práce",
+                      id: "nazevPrace"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
+            [
+              _c(
+                "v-flex",
+                { attrs: { xs4: "" } },
+                [
+                  _c("v-subheader", {
+                    domProps: { textContent: _vm._s("Typ práce") }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs8: "" } },
+                [
+                  _c("v-select", {
+                    attrs: {
+                      items: _vm.formItemsData.typPrace,
+                      label: "Zde prosím vyberte typ práce",
+                      light: "",
+                      "item-value": "value"
+                    },
+                    model: {
+                      value: _vm.selectedData.typPrace,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "typPrace", $$v)
+                      },
+                      expression: "selectedData.typPrace"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.selectedData.typPrace == 0,
+                  expression: "selectedData.typPrace == 0"
+                }
+              ],
+              attrs: { row: "", wrap: "" }
+            },
+            [
+              _c("v-flex", { attrs: { xs4: "" } }),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs8: "" } },
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      name: "jinyTypPrace",
+                      label: "Jiná práce",
+                      id: "jinyTypPrace"
+                    },
+                    model: {
+                      value: _vm.selectedData.jinyTypPrace,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "jinyTypPrace", $$v)
+                      },
+                      expression: "selectedData.jinyTypPrace"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
+            [
+              _c(
+                "v-flex",
+                { attrs: { xs4: "" } },
+                [
+                  _c("v-subheader", {
+                    domProps: { textContent: _vm._s("Spodní řádek") }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs4: "" } },
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      name: "input-1",
+                      label: "Text vlevo",
+                      id: "spodniTextVlevo"
+                    },
+                    model: {
+                      value: _vm.selectedData.spodniTextVlevo,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "spodniTextVlevo", $$v)
+                      },
+                      expression: "selectedData.spodniTextVlevo"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs4: "" } },
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      name: "input-1",
+                      label: "Text vpravo",
+                      id: "spodniTextVpravo"
+                    },
+                    model: {
+                      value: _vm.selectedData.spodniTextVpravo,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "spodniTextVpravo", $$v)
+                      },
+                      expression: "selectedData.spodniTextVpravo"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
+            [
+              _c(
+                "v-flex",
+                { attrs: { xs4: "" } },
+                [
+                  _c("v-subheader", {
+                    domProps: { textContent: _vm._s("Potisk hřbetu") }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs8: "" } },
+                [
+                  _c("v-switch", {
+                    attrs: { label: _vm.potiskHrbetu == false ? "Ne" : "Ano" },
+                    model: {
+                      value: _vm.potiskHrbetu,
+                      callback: function($$v) {
+                        _vm.potiskHrbetu = $$v
+                      },
+                      expression: "potiskHrbetu"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.potiskHrbetu == true,
+                  expression: "potiskHrbetu == true"
+                }
+              ],
+              attrs: { row: "", wrap: "" }
+            },
+            [
+              _c("v-flex", { attrs: { xs4: "" } }),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs4: "" } },
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      name: "potiskNahore",
+                      label: "Potisk hřbetu nahoře",
+                      id: "potiskNahore"
+                    },
+                    model: {
+                      value: _vm.selectedData.potiskNahore,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "potiskNahore", $$v)
+                      },
+                      expression: "selectedData.potiskNahore"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs4: "" } },
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      name: "potiskDole",
+                      label: "Potisk hřbetu dole",
+                      id: "potiskDole"
+                    },
+                    model: {
+                      value: _vm.selectedData.potiskDole,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "potiskDole", $$v)
+                      },
+                      expression: "selectedData.potiskDole"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
+            [
+              _c(
+                "v-flex",
+                { attrs: { xs4: "" } },
+                [
+                  _c("v-subheader", {
+                    domProps: { textContent: _vm._s("Počet pevných desek") }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs6: "" } },
+                [
+                  _c("v-slider", {
+                    attrs: { "thumb-label": "", max: 20 },
+                    model: {
+                      value: _vm.selectedData.pocetPevnychDesek,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "pocetPevnychDesek", $$v)
+                      },
+                      expression: "selectedData.pocetPevnychDesek"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs2: "" } },
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      name: "pocetPevnychDesek",
+                      label: "Počet",
+                      id: "pocetPevnychDesek",
+                      "item-value": "selectedData.pocetPevnychDesek"
+                    },
+                    model: {
+                      value: _vm.selectedData.pocetPevnychDesek,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "pocetPevnychDesek", $$v)
+                      },
+                      expression: "selectedData.pocetPevnychDesek"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
+            [
+              _c(
+                "v-flex",
+                { attrs: { xs4: "" } },
+                [
+                  _c("v-subheader", {
+                    domProps: { textContent: _vm._s("Počet kroužkových desek") }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs6: "" } },
+                [
+                  _c("v-slider", {
+                    attrs: { "thumb-label": "", max: 20 },
+                    model: {
+                      value: _vm.selectedData.pocetKrouzkovychDesek,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "pocetKrouzkovychDesek", $$v)
+                      },
+                      expression: "selectedData.pocetKrouzkovychDesek"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs2: "" } },
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      name: "pocetKrouzkovychDesek",
+                      label: "Počet",
+                      id: "pocetKrouzkovychDesek",
+                      "item-value": "selectedData.pocetKrouzkovychDesek"
+                    },
+                    model: {
+                      value: _vm.selectedData.pocetKrouzkovychDesek,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "pocetKrouzkovychDesek", $$v)
+                      },
+                      expression: "selectedData.pocetKrouzkovychDesek"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
+            [
+              _c(
+                "v-flex",
+                { attrs: { xs4: "" } },
+                [
+                  _c("v-subheader", {
+                    domProps: { textContent: _vm._s("Barva desek") }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs8: "" } },
+                [
+                  _c("v-select", {
+                    attrs: {
+                      items: _vm.formItemsData.barvaDesek,
+                      label: "Vyberte barvu desek",
+                      light: "",
+                      "item-value": "value"
+                    },
+                    model: {
+                      value: _vm.selectedData.barvaDesek,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "barvaDesek", $$v)
+                      },
+                      expression: "selectedData.barvaDesek"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
+            [
+              _c(
+                "v-flex",
+                { attrs: { xs4: "" } },
+                [
+                  _c("v-subheader", {
+                    domProps: { textContent: _vm._s("Barva písma") }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs8: "" } },
+                [
+                  _c("v-select", {
+                    attrs: {
+                      items: _vm.formItemsData.barvaPisma,
+                      label: "Vyberte barvu písma",
+                      light: "",
+                      "item-value": "value"
+                    },
+                    model: {
+                      value: _vm.selectedData.barvaPisma,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "barvaPisma", $$v)
+                      },
+                      expression: "selectedData.barvaPisma"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
+            [
+              _c(
+                "v-flex",
+                { attrs: { xs4: "" } },
+                [
+                  _c("v-subheader", {
+                    domProps: { textContent: _vm._s("Kapsa pro CD") }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs1: "" } },
+                [
+                  _c("v-switch", {
+                    attrs: { label: _vm.kapsaProCD == true ? "Ano" : "Ne" },
+                    model: {
+                      value: _vm.kapsaProCD,
+                      callback: function($$v) {
+                        _vm.kapsaProCD = $$v
+                      },
+                      expression: "kapsaProCD"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.kapsaProCD == true,
+                  expression: "kapsaProCD == true"
+                }
+              ],
+              attrs: { row: "", wrap: "" }
+            },
+            [
+              _c("v-flex", { attrs: { xs4: "" } }),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs4: "" } },
+                [
+                  _c("v-slider", {
+                    attrs: { "thumb-label": "", max: 5 },
+                    model: {
+                      value: _vm.selectedData.pocetKapesProCD,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "pocetKapesProCD", $$v)
+                      },
+                      expression: "selectedData.pocetKapesProCD"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs2: "" } },
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      name: "pocetKapesProCD",
+                      label: "Počet",
+                      id: "pocetKapesProCD",
+                      "item-value": "selectedData.pocetKapesProCD"
+                    },
+                    model: {
+                      value: _vm.selectedData.pocetKapesProCD,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "pocetKapesProCD", $$v)
+                      },
+                      expression: "selectedData.pocetKapesProCD"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs2: "" } },
+                [
+                  _c("v-switch", {
+                    attrs: {
+                      label: _vm.kapsaProCD == true ? "Vpředu" : "Vzadu"
+                    },
+                    model: {
+                      value: _vm.selectedData.kapsaCdVpredu,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "kapsaCdVpredu", $$v)
+                      },
+                      expression: "selectedData.kapsaCdVpredu"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
+            [
+              _c(
+                "v-flex",
+                { attrs: { xs4: "" } },
+                [
+                  _c("v-subheader", {
+                    domProps: { textContent: _vm._s("Kapsa pro posudek") }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs2: "" } },
+                [
+                  _c("v-switch", {
+                    attrs: {
+                      label: _vm.kapsaProPosudek == true ? "Ano" : "Ne"
+                    },
+                    model: {
+                      value: _vm.kapsaProPosudek,
+                      callback: function($$v) {
+                        _vm.kapsaProPosudek = $$v
+                      },
+                      expression: "kapsaProPosudek"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.kapsaProPosudek == true,
+                  expression: "kapsaProPosudek == true"
+                }
+              ],
+              attrs: { row: "", wrap: "" }
+            },
+            [
+              _c("v-flex", { attrs: { xs4: "" } }),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs4: "" } },
+                [
+                  _c("v-slider", {
+                    attrs: { "thumb-label": "", max: 5 },
+                    model: {
+                      value: _vm.selectedData.pocetKapesProPosudek,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "pocetKapesProPosudek", $$v)
+                      },
+                      expression: "selectedData.pocetKapesProPosudek"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs2: "" } },
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      name: "pocetKapesProPosudek",
+                      label: "Počet",
+                      id: "pocetKapesProPosudek",
+                      "item-value": "selectedData.pocetKapesProPosudek"
+                    },
+                    model: {
+                      value: _vm.selectedData.pocetKapesProPosudek,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "pocetKapesProPosudek", $$v)
+                      },
+                      expression: "selectedData.pocetKapesProPosudek"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs2: "" } },
+                [
+                  _c("v-switch", {
+                    attrs: {
+                      label: _vm.kapsaProCD == true ? "Vpředu" : "Vzadu"
+                    },
+                    model: {
+                      value: _vm.selectedData.kapsaPosudekVpredu,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "kapsaPosudekVpredu", $$v)
+                      },
+                      expression: "selectedData.kapsaPosudekVpredu"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
+            [
+              _c(
+                "v-flex",
+                { attrs: { xs4: "" } },
+                [
+                  _c("v-subheader", {
+                    domProps: { textContent: _vm._s("Doba zhotovení") }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs8: "" } },
+                [
+                  _c("v-select", {
+                    attrs: {
+                      items: _vm.formItemsData.dobaZhotoveni,
+                      label: "vyberte dobu zhotovení",
+                      light: "",
+                      "item-value": "value"
+                    },
+                    model: {
+                      value: _vm.selectedData.dobaZhotoveni,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "dobaZhotoveni", $$v)
+                      },
+                      expression: "selectedData.dobaZhotoveni"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
+            [
+              _c(
+                "v-flex",
+                { attrs: { xs4: "" } },
+                [
+                  _c("v-subheader", {
+                    domProps: { textContent: _vm._s("Poznamky k objednavce") }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs8: "" } },
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      name: "poznamky",
+                      label: "Poznámky k objednavce",
+                      textarea: ""
+                    },
+                    model: {
+                      value: _vm.selectedData.poznamky,
+                      callback: function($$v) {
+                        _vm.$set(_vm.selectedData, "poznamky", $$v)
+                      },
+                      expression: "selectedData.poznamky"
                     }
                   })
                 ],
