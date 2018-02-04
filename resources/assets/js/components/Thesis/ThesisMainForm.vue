@@ -487,7 +487,6 @@
                     barvaDesek: [
                         {text: 'MODRÁ', value: 40},
                         {text: 'ČERNÁ', value: 41},
-
                     ],
 
                     barvaPisma: [
