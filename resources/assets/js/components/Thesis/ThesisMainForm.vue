@@ -8,7 +8,7 @@
                 <v-flex xs8>
                     <v-select
                             v-bind:items="formItemsData.typZadani"
-                            v-model="selectedData.typaZadani"
+                            v-model="selectedData.typZadani"
                             label=""
                             light
                             item-value="value"
@@ -16,7 +16,7 @@
                 </v-flex>
             </v-layout>
 
-            <v-layout row wrap v-show="selectedData.typaZadani == 2">
+            <v-layout row wrap v-show="selectedData.typZadani == 2">
                 <v-flex xs4>
                 </v-flex>
                 <v-flex xs8>
@@ -30,7 +30,7 @@
                 </v-flex>
             </v-layout>
 
-            <v-layout row wrap v-show="selectedData.typaZadani == 1">
+            <v-layout row wrap v-show="selectedData.typZadani == 1">
                 <v-flex xs4>
                     <v-subheader v-text="'Přesný počet listů'"></v-subheader>
                 </v-flex>
@@ -383,7 +383,16 @@
                     ></v-text-field>
                 </v-flex>
             </v-layout>
-        </v-container>    </div>
+            <v-layout row wrap>
+                <v-flex xs4>
+                    <v-subheader v-if="selectedData.price > 0"v-text="'cena: '+selectedData.price"></v-subheader>
+                </v-flex>
+                <v-flex xs8>
+                    <v-btn @click="getTotalPrice()">Spocti</v-btn>
+                </v-flex>
+            </v-layout>
+        </v-container>
+    </div>
 </template>
 <script>
     export default {
@@ -396,7 +405,7 @@
                 kapsaProPosudek: false,
 
                 selectedData: {
-                    typaZadani: 1,
+                    typZadani: 1,
                     pribliznyPocetListu: 3,
                     presnyPocetStran: 0,
                     typTisku: 11,
@@ -426,9 +435,10 @@
 
                 formItemsData: {
                     typZadani: [
-                        {text: 'Vytisknout praci a vyrobit desky', value: 1},
-                        {text: 'Vyrobit pouze desky', value: 2},
+                        {text: 'Vytisknout praci a vyrobit desky', value: 1, price: 10},
+                        {text: 'Vyrobit pouze desky', value: 2, price: 20},
                     ],
+
                     rozsahStran: [
                         {text: '25 - 40 listů', value: 3},
                         {text: '41 - 55 listů', value: 4},
@@ -500,6 +510,35 @@
                         {text: 'Super expres - 600 Kč ( na počkání )', value: 46},
                     ]
                 },
+            }
+        },
+
+        created() {
+        },
+
+        methods: {
+            getTotalPrice() {
+                this.getListyPrice();
+            },
+
+            getListyPrice() {
+                if (this.selectedData.typZadani == 1) {
+                    var barevnostPrice = this.formItemsData.barevnost.find(function(item) {
+                        return item.value == this.selectedData.barevnost;
+                        console.log(item.value);
+                        console.log(this.selectedData.barevnost);
+                    });
+
+                    console.log('barevnostPrice');
+                    console.log(barevnostPrice);
+                }
+
+
+                for (let i = 0; i < this.formItemsData.typZadani.length; i++) {
+                    if(this.formItemsData.typZadani[i].value == this.selectedData.typZadani) {
+                        this.selectedData.price = this.formItemsData.typZadani[i].price;
+                    }
+                }
             }
         }
     }

@@ -57377,6 +57377,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -57388,7 +57397,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             kapsaProPosudek: false,
 
             selectedData: {
-                typaZadani: 1,
+                typZadani: 1,
                 pribliznyPocetListu: 3,
                 presnyPocetStran: 0,
                 typTisku: 11,
@@ -57417,7 +57426,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             },
 
             formItemsData: {
-                typZadani: [{ text: 'Vytisknout praci a vyrobit desky', value: 1 }, { text: 'Vyrobit pouze desky', value: 2 }],
+                typZadani: [{ text: 'Vytisknout praci a vyrobit desky', value: 1, price: 10 }, { text: 'Vyrobit pouze desky', value: 2, price: 20 }],
+
                 rozsahStran: [{ text: '25 - 40 listů', value: 3 }, { text: '41 - 55 listů', value: 4 }, { text: '56 - 75 listů', value: 5 }, { text: '76 - 100 listů', value: 6 }, { text: '101 - 130 listů', value: 7 }, { text: '101 - 130 listů', value: 8 }, { text: '131 - 160 listů', value: 9 }, { text: '161 - 190 listů', value: 10 }],
 
                 typTisku: [{ text: 'Jednostranny', value: 11 }, { text: 'Oboustranny', value: 12 }, { text: 'Kombinovany', value: 13 }],
@@ -57437,6 +57447,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 dobaZhotoveni: [{ text: 'Základ - 239 Kč ( do 4 pracovních dnů )', value: 44 }, { text: 'Expres - 399 Kč ( do 24 hodin )', value: 45 }, { text: 'Super expres - 600 Kč ( na počkání )', value: 46 }]
             }
         };
+    },
+    created: function created() {},
+
+
+    methods: {
+        getTotalPrice: function getTotalPrice() {
+            this.getListyPrice();
+        },
+        getListyPrice: function getListyPrice() {
+            if (this.selectedData.typZadani == 1) {
+                var barevnostPrice = this.formItemsData.barevnost.find(function (item) {
+                    return item.value == this.selectedData.barevnost;
+                    console.log(item.value);
+                    console.log(this.selectedData.barevnost);
+                });
+
+                console.log('barevnostPrice');
+                console.log(barevnostPrice);
+            }
+
+            for (var i = 0; i < this.formItemsData.typZadani.length; i++) {
+                if (this.formItemsData.typZadani[i].value == this.selectedData.typZadani) {
+                    this.selectedData.price = this.formItemsData.typZadani[i].price;
+                }
+            }
+        }
     }
 });
 
@@ -57482,11 +57518,11 @@ var render = function() {
                       "item-value": "value"
                     },
                     model: {
-                      value: _vm.selectedData.typaZadani,
+                      value: _vm.selectedData.typZadani,
                       callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "typaZadani", $$v)
+                        _vm.$set(_vm.selectedData, "typZadani", $$v)
                       },
-                      expression: "selectedData.typaZadani"
+                      expression: "selectedData.typZadani"
                     }
                   })
                 ],
@@ -57503,8 +57539,8 @@ var render = function() {
                 {
                   name: "show",
                   rawName: "v-show",
-                  value: _vm.selectedData.typaZadani == 2,
-                  expression: "selectedData.typaZadani == 2"
+                  value: _vm.selectedData.typZadani == 2,
+                  expression: "selectedData.typZadani == 2"
                 }
               ],
               attrs: { row: "", wrap: "" }
@@ -57545,8 +57581,8 @@ var render = function() {
                 {
                   name: "show",
                   rawName: "v-show",
-                  value: _vm.selectedData.typaZadani == 1,
-                  expression: "selectedData.typaZadani == 1"
+                  value: _vm.selectedData.typZadani == 1,
+                  expression: "selectedData.typZadani == 1"
                 }
               ],
               attrs: { row: "", wrap: "" }
@@ -58628,6 +58664,47 @@ var render = function() {
                       expression: "selectedData.poznamky"
                     }
                   })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
+            [
+              _c(
+                "v-flex",
+                { attrs: { xs4: "" } },
+                [
+                  _vm.selectedData.price > 0
+                    ? _c("v-subheader", {
+                        domProps: {
+                          textContent: _vm._s("cena: " + _vm.selectedData.price)
+                        }
+                      })
+                    : _vm._e()
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs8: "" } },
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      on: {
+                        click: function($event) {
+                          _vm.getTotalPrice()
+                        }
+                      }
+                    },
+                    [_vm._v("Spocti")]
+                  )
                 ],
                 1
               )
