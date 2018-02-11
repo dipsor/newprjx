@@ -53337,6 +53337,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = (_props$data$props$cre = {
     props: {
         drawer: true
@@ -56650,25 +56651,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['currentUser'],
     data: function data() {
         return {
             e1: 0,
-            items: [{
-                text: 'Dashboard',
-                disabled: false,
-                link: this.$laroute.route('dashboard.index')
-
-            }, {
-                text: 'Tvorba Bakalarky',
-                disabled: false
-            }]
+            items: [],
+            accessUpload: false
         };
     },
     mounted: function mounted() {
+        var _this = this;
+
         this.items = this.getBreadCrumbs();
+
+        this.eventBus.$on('form-is-valid', function () {
+            _this.accessUpload = true;
+        });
     },
 
 
@@ -56790,7 +56790,10 @@ var render = function() {
                                   _c(
                                     "v-btn",
                                     {
-                                      attrs: { color: "primary" },
+                                      attrs: {
+                                        color: "primary",
+                                        disabled: !_vm.accessUpload
+                                      },
                                       nativeOn: {
                                         click: function($event) {
                                           _vm.e1 = 2
@@ -57377,6 +57380,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -57388,7 +57400,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             kapsaProPosudek: false,
 
             selectedData: {
-                typaZadani: 1,
+                typZadani: 1,
                 pribliznyPocetListu: 3,
                 presnyPocetStran: 0,
                 typTisku: 11,
@@ -57412,17 +57424,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 kapsaCdVpredu: null,
                 kapsaPosudekVpredu: null,
                 dobaZhotoveni: 44,
-                poznamky: null,
-                price: 0
+                poznamky: null
             },
 
+            price: 0,
+
             formItemsData: {
-                typZadani: [{ text: 'Vytisknout praci a vyrobit desky', value: 1 }, { text: 'Vyrobit pouze desky', value: 2 }],
+                typZadani: [{ text: 'Vytisknout praci a vyrobit desky', value: 1, price: 10 }, { text: 'Vyrobit pouze desky', value: 2, price: 20 }],
+
                 rozsahStran: [{ text: '25 - 40 listů', value: 3 }, { text: '41 - 55 listů', value: 4 }, { text: '56 - 75 listů', value: 5 }, { text: '76 - 100 listů', value: 6 }, { text: '101 - 130 listů', value: 7 }, { text: '101 - 130 listů', value: 8 }, { text: '131 - 160 listů', value: 9 }, { text: '161 - 190 listů', value: 10 }],
 
                 typTisku: [{ text: 'Jednostranny', value: 11 }, { text: 'Oboustranny', value: 12 }, { text: 'Kombinovany', value: 13 }],
 
-                barevnost: [{ text: 'Dle soubou (cernobile / barevne)', value: 14 }, { text: 'Cernobile', value: 15 }],
+                barevnost: [{ text: 'Cernobile', value: 14 }, { text: 'Dle soubou (cernobile / barevne)', value: 15 }],
 
                 skoly: [{ text: 'ZÁPADOČESKÁ UNIVERZITA V PLZNI', value: 16 }, { text: 'UNIVERZITA JANA AMOSE KOMENSKÉHO PRAHA', value: 17 }, { text: 'JIHOČESKÁ UNIVERZITA V ČESKÝCH BUDĚJOVICÍCH', value: 18 }, { text: 'UNIVERZITA KARLOVA V PRAZE', value: 19 }, { text: 'Střední zdravotnická škola a Vyšší odborná škola zdravotnická Plzeň, Karlovarská 99, 323 17 Plzeň', value: 20 }, { text: 'Vyšší odborná škola zdravotnická, managementu a veřejnosprávních studií, s.r.o. Ledecká 35,  Plzeň', value: 21 }, { text: 'jiná ...', value: 0 }],
 
@@ -57435,8 +57449,119 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 barvaPisma: [{ text: 'ZLATÉ', value: 42 }, { text: 'STŘÍBRNÉ', value: 43 }],
 
                 dobaZhotoveni: [{ text: 'Základ - 239 Kč ( do 4 pracovních dnů )', value: 44 }, { text: 'Expres - 399 Kč ( do 24 hodin )', value: 45 }, { text: 'Super expres - 600 Kč ( na počkání )', value: 46 }]
-            }
+            },
+            priceList: []
         };
+    },
+    created: function created() {
+        this.setPrices();
+    },
+    mounted: function mounted() {
+        this.setPrices();
+        console.log(this.priceList);
+    },
+
+
+    methods: {
+        setPrices: function setPrices() {
+            this.priceList[0] = 49; // potisk hrbetu
+            this.priceList[5] = 0; //jednostranny tisk
+            this.priceList[6] = 0; //oboustranny tisk
+            this.priceList[13] = 0; //barevnost kombinovana
+            this.priceList[14] = 1.5; //barevnost cb
+            this.priceList[15] = 7.49; //barevnost barevna
+            this.priceList[44] = 239; // doba zhotoveni zaklad
+            this.priceList[45] = 399; // doba zhotoveni exopress
+            this.priceList[46] = 399; // doba zhotoveni super express
+            this.priceList[100] = 40; // cena za krouzkove desky
+            this.priceList[101] = 30; // cena za kapsa pro cd
+            this.priceList[102] = 30; // cena za kapsu pro posudek
+        },
+        getTotalPrice: function getTotalPrice() {
+            console.log('calculating price');
+            this.price = 0;
+            this.price += this.getListyPrice();
+            this.price += this.getPotiskHrbetuPrice();
+            this.price += this.getPevneDeskyPrice();
+            this.price += this.getKrouzkoveDeskyPrice();
+            this.price += this.getKapsaCDPrice();
+            this.price += this.getKapsaPosudekPrice();
+        },
+        getListyPrice: function getListyPrice() {
+            var price = 0;
+            if (this.selectedData.typZadani == 1) {
+                // prace a desky
+                price = this.priceList[this.selectedData.barevnost] * this.selectedData.presnyPocetStran;
+            }
+
+            return price;
+        },
+        getPotiskHrbetuPrice: function getPotiskHrbetuPrice() {
+            var price = 0;
+            if (this.potiskHrbetu) {
+                price = this.selectedData.pocetPevnychDesek * this.priceList[0];
+            }
+
+            return price;
+        },
+        getPevneDeskyPrice: function getPevneDeskyPrice() {
+            var price = 0;
+            if (this.selectedData.pocetPevnychDesek >= 0) {
+                price = this.priceList[this.selectedData.dobaZhotoveni] * this.selectedData.pocetPevnychDesek;
+            }
+
+            return price;
+        },
+        getKrouzkoveDeskyPrice: function getKrouzkoveDeskyPrice() {
+            var price = 0;
+            if (this.selectedData.pocetKrouzkovychDesek >= 0) {
+                price = this.priceList[100] * this.selectedData.pocetKrouzkovychDesek;
+            }
+
+            return price;
+        },
+        getKapsaCDPrice: function getKapsaCDPrice() {
+            var price = 0;
+            if (this.kapsaProCD) {
+                price = this.priceList[101] * this.selectedData.pocetKapesProCD;
+            }
+
+            return price;
+        },
+        getKapsaPosudekPrice: function getKapsaPosudekPrice() {
+            var price = 0;
+            if (this.kapsaProPosudek) {
+                price = this.priceList[102] * this.selectedData.pocetKapesProPosudek;
+            }
+
+            return price;
+        }
+    },
+
+    watch: {
+        selectedData: {
+            handler: function handler() {
+                this.getTotalPrice();
+            },
+
+            deep: true
+        },
+
+        potiskHrbetu: function potiskHrbetu() {
+            this.getTotalPrice();
+        },
+        kapsaProCD: function kapsaProCD() {
+            this.getTotalPrice();
+        },
+        kapsaProPosudek: function kapsaProPosudek() {
+            this.getTotalPrice();
+        },
+        price: function price(val) {
+            if (val > 0) {
+                this.eventBus.$emit('form-is-valid', true);
+            }
+            this.eventBus.$emit('form-is-valid', false);
+        }
     }
 });
 
@@ -57482,11 +57607,11 @@ var render = function() {
                       "item-value": "value"
                     },
                     model: {
-                      value: _vm.selectedData.typaZadani,
+                      value: _vm.selectedData.typZadani,
                       callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "typaZadani", $$v)
+                        _vm.$set(_vm.selectedData, "typZadani", $$v)
                       },
-                      expression: "selectedData.typaZadani"
+                      expression: "selectedData.typZadani"
                     }
                   })
                 ],
@@ -57503,8 +57628,8 @@ var render = function() {
                 {
                   name: "show",
                   rawName: "v-show",
-                  value: _vm.selectedData.typaZadani == 2,
-                  expression: "selectedData.typaZadani == 2"
+                  value: _vm.selectedData.typZadani == 2,
+                  expression: "selectedData.typZadani == 2"
                 }
               ],
               attrs: { row: "", wrap: "" }
@@ -57545,8 +57670,8 @@ var render = function() {
                 {
                   name: "show",
                   rawName: "v-show",
-                  value: _vm.selectedData.typaZadani == 1,
-                  expression: "selectedData.typaZadani == 1"
+                  value: _vm.selectedData.typZadani == 1,
+                  expression: "selectedData.typZadani == 1"
                 }
               ],
               attrs: { row: "", wrap: "" }
@@ -57569,6 +57694,7 @@ var render = function() {
                 [
                   _c("v-slider", {
                     attrs: { "thumb-label": "", max: 1000 },
+                    on: { change: _vm.getTotalPrice },
                     model: {
                       value: _vm.selectedData.presnyPocetStran,
                       callback: function($$v) {
@@ -57592,6 +57718,7 @@ var render = function() {
                       id: "selectedPresnyPocetStran",
                       "item-value": "selectedData.presnyPocetStran"
                     },
+                    on: { change: _vm.getTotalPrice },
                     model: {
                       value: _vm.selectedData.presnyPocetStran,
                       callback: function($$v) {
@@ -58628,6 +58755,30 @@ var render = function() {
                       expression: "selectedData.poznamky"
                     }
                   })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
+            [
+              _c("v-flex", { attrs: { xs4: "" } }),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs8: "" } },
+                [
+                  _vm.price >= 0
+                    ? _c("v-subheader", {
+                        domProps: {
+                          textContent: _vm._s("cena: " + _vm.price + " Kč")
+                        }
+                      })
+                    : _vm._e()
                 ],
                 1
               )
