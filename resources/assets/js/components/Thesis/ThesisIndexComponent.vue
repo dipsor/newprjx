@@ -24,7 +24,7 @@
                                         <v-card color="grey lighten-3" class="mb-5">
                                             <thesis-main-form></thesis-main-form>
                                         </v-card>
-                                        <v-btn color="primary" @click.native="e1 = 2">Continue</v-btn>
+                                        <v-btn color="primary" @click.native="e1 = 2" :disabled="!accessUpload">Continue</v-btn>
                                         <v-btn flat>Cancel</v-btn>
                                     </v-stepper-content>
                                     <v-stepper-content step="2">
@@ -47,7 +47,6 @@
                                 </v-stepper-items>
                             </v-stepper>
                         </v-flex>
-
                 </v-layout>
             </v-container>
         </v-content>
@@ -55,31 +54,25 @@
 </template>
 <script>
     export default {
+        props:['currentUser'],
         data () {
             return {
                 e1: 0,
-                items: [
-                    {
-                        text: 'Dashboard',
-                        disabled: false,
-                        link: this.$laroute.route('dashboard.index')
-
-                    },
-                    {
-                        text: 'Tvorba Bakalarky',
-                        disabled: false
-                    }
-
-                ]
+                items: [],
+                accessUpload: false,
             }
         },
 
         mounted() {
             this.items = this.getBreadCrumbs();
+
+            this.eventBus.$on('form-is-valid', () => {
+               this.accessUpload = true;
+            });
         },
 
         methods: {
-            getBreadCrumbs() {
+            getBreadCrumbs(){
                 return [
                     {
                         text: 'Dashboard',
@@ -92,7 +85,7 @@
                         link: this.$laroute.route('thesis.index')
                     }
                 ]
-            }
+            },
         }
     }
 </script>
