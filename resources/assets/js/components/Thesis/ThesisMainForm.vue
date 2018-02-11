@@ -35,10 +35,11 @@
                     <v-subheader v-text="'Přesný počet listů'"></v-subheader>
                 </v-flex>
                 <v-flex xs6>
-                    <v-slider v-model="selectedData.presnyPocetStran" thumb-label v-bind:max="1000"></v-slider>
+                    <v-slider @change="getTotalPrice" v-model="selectedData.presnyPocetStran" thumb-label v-bind:max="1000"></v-slider>
                 </v-flex>
                 <v-flex xs2>
                     <v-text-field
+                            @change="getTotalPrice"
                             name="selectedPresnyPocetstran"
                             label="Počet"
                             id="selectedPresnyPocetStran"
@@ -385,10 +386,9 @@
             </v-layout>
             <v-layout row wrap>
                 <v-flex xs4>
-                    <v-subheader v-if="selectedData.price > 0"v-text="'cena: '+selectedData.price"></v-subheader>
                 </v-flex>
                 <v-flex xs8>
-                    <v-btn @click="getTotalPrice()">Spocti</v-btn>
+                    <v-subheader v-if="price >= 0"v-text="'cena: '+price+' Kč'"></v-subheader>
                 </v-flex>
             </v-layout>
         </v-container>
@@ -430,8 +430,10 @@
                     kapsaPosudekVpredu: null,
                     dobaZhotoveni: 44,
                     poznamky: null,
-                    price: 0,
                 },
+
+                price: 0,
+
 
                 formItemsData: {
                     typZadani: [
@@ -457,8 +459,8 @@
                     ],
 
                     barevnost: [
-                        {text: 'Dle soubou (cernobile / barevne)', value: 14},
-                        {text: 'Cernobile', value: 15},
+                        {text: 'Cernobile', value: 14},
+                        {text: 'Dle soubou (cernobile / barevne)', value: 15},
                     ],
 
                     skoly: [
@@ -510,36 +512,132 @@
                         {text: 'Super expres - 600 Kč ( na počkání )', value: 46},
                     ]
                 },
+                priceList: [],
             }
         },
 
         created() {
+           this.setPrices();
+        },
+
+        mounted() {
+            this.setPrices();
+            console.log(this.priceList);
+
         },
 
         methods: {
+            setPrices() {
+                this.priceList[0] = 49; // potisk hrbetu
+                this.priceList[5] = 0; //jednostranny tisk
+                this.priceList[6] = 0; //oboustranny tisk
+                this.priceList[13] = 0; //barevnost kombinovana
+                this.priceList[14] = 1.5; //barevnost cb
+                this.priceList[15] = 7.49; //barevnost barevna
+                this.priceList[44] = 239 ; // doba zhotoveni zaklad
+                this.priceList[45] = 399; // doba zhotoveni exopress
+                this.priceList[46] = 399; // doba zhotoveni super express
+                this.priceList[100] = 40; // cena za krouzkove desky
+                this.priceList[101] = 30; // cena za kapsa pro cd
+                this.priceList[102] = 30; // cena za kapsu pro posudek
+            },
+
             getTotalPrice() {
-                this.getListyPrice();
+                console.log('calculating price');
+                this.price = 0;
+                this.price += this.getListyPrice();
+                this.price += this.getPotiskHrbetuPrice();
+                this.price += this.getPevneDeskyPrice();
+                this.price += this.getKrouzkoveDeskyPrice();
+                this.price += this.getKapsaCDPrice();
+                this.price += this.getKapsaPosudekPrice();
             },
 
             getListyPrice() {
-                if (this.selectedData.typZadani == 1) {
-                    var barevnostPrice = this.formItemsData.barevnost.find(function(item) {
-                        return item.value == this.selectedData.barevnost;
-                        console.log(item.value);
-                        console.log(this.selectedData.barevnost);
-                    });
-
-                    console.log('barevnostPrice');
-                    console.log(barevnostPrice);
+                var price = 0;
+                if (this.selectedData.typZadani == 1) { // prace a desky
+                    price = this.priceList[this.selectedData.barevnost] * this.selectedData.presnyPocetStran;
                 }
 
+                return price;
+            },
 
-                for (let i = 0; i < this.formItemsData.typZadani.length; i++) {
-                    if(this.formItemsData.typZadani[i].value == this.selectedData.typZadani) {
-                        this.selectedData.price = this.formItemsData.typZadani[i].price;
-                    }
+            getPotiskHrbetuPrice() {
+                var price = 0;
+                if (this.potiskHrbetu) {
+                    price = this.selectedData.pocetPevnychDesek * this.priceList[0];
                 }
+
+                return price;
+            },
+
+            getPevneDeskyPrice() {
+                var price = 0;
+                if (this.selectedData.pocetPevnychDesek >= 0) {
+                    price = this.priceList[this.selectedData.dobaZhotoveni] * this.selectedData.pocetPevnychDesek;
+                }
+
+                return price;
+            },
+
+            getKrouzkoveDeskyPrice() {
+                var price = 0;
+                if (this.selectedData.pocetKrouzkovychDesek >= 0) {
+                    price = this.priceList[100] * this.selectedData.pocetKrouzkovychDesek;
+                }
+
+                return price;
+            },
+
+            getKapsaCDPrice() {
+                var price = 0;
+                if (this.kapsaProCD) {
+                    price = this.priceList[101] * this.selectedData.pocetKapesProCD
+                }
+
+                return price;
+            },
+
+            getKapsaPosudekPrice() {
+                var price = 0;
+                if (this.kapsaProPosudek) {
+                    price = this.priceList[102] * this.selectedData.pocetKapesProPosudek
+                }
+
+                return price;
             }
+        },
+
+        watch: {
+            selectedData: {
+                handler() {
+                    this.getTotalPrice();
+                },
+                deep: true,
+            },
+
+            potiskHrbetu() {
+                this.getTotalPrice();
+            },
+
+            kapsaProCD() {
+                this.getTotalPrice();
+            },
+
+            kapsaProPosudek() {
+                this.getTotalPrice();
+            },
+
+            price(val) {
+                if (val > 0) {
+                    this.eventBus.$emit('form-is-valid', true);
+                }
+                this.eventBus.$emit('form-is-valid', false);
+            }
+
+
+
+
         }
     }
 </script>

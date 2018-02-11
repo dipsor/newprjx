@@ -1,4 +1,4 @@
 @extends('layout')
 @section('content')
-    <thesis-index></thesis-index>
+    <thesis-index :current-user="{{Auth::user()}}"></thesis-index>
 @endsection
