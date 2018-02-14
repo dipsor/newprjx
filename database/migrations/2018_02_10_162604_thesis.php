@@ -13,33 +13,36 @@ class Thesis extends Migration
      */
     public function up()
     {
-        Schema::create('thesis', function (Blueprint $table) {
+        Schema::create('theses', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->string('typZadani');
-            $table->string('pribliznyPocetListu');
-            $table->string('presnyPocetStran');
-            $table->string('typTisku');
-            $table->string('barevnost');
-            $table->string('skoly');
-            $table->string('jinaSkola');
-            $table->string('fakulty');
-            $table->string('jinaFakulta');
-            $table->string('typPrace');
-            $table->string('jinyTypPrace');
-            $table->string('spodniTextVlevo');
-            $table->string('potiskNahore');
-            $table->string('potiskDole');
-            $table->string('pocetPevnychDesek');
-            $table->string('pocetKrouzkovychDesek');
-            $table->string('barvaDesek');
-            $table->string('barvaPisma');
-            $table->string('pocetKapesProCD');
-            $table->string('pocetKapesProPosudek');
-            $table->string('kapsaCdVpredu');
-            $table->string('kapsaPosudekVpredu');
-            $table->string('dobaZhotoveni');
-            $table->string('poznamky');
+            $table->string('filePath')->nullable();
+            $table->string('price')->nullable();
+            $table->string('typZadani')->nullable();
+            $table->string('pribliznyPocetListu')->nullable();
+            $table->string('presnyPocetStran')->nullable();
+            $table->string('typTisku')->nullable();
+            $table->string('barevnost')->nullable();
+            $table->string('skoly')->nullable();
+            $table->string('jinaSkola')->nullable();
+            $table->string('fakulty')->nullable();
+            $table->string('jinaFakulta')->nullable();
+            $table->string('typPrace')->nullable();
+            $table->string('jinyTypPrace')->nullable();
+            $table->string('spodniTextVlevo')->nullable();
+            $table->string('spodniTextVpravo')->nullable();
+            $table->string('potiskNahore')->nullable();
+            $table->string('potiskDole')->nullable();
+            $table->string('pocetPevnychDesek')->nullable();
+            $table->string('pocetKrouzkovychDesek')->nullable();
+            $table->string('barvaDesek')->nullable();
+            $table->string('barvaPisma')->nullable();
+            $table->string('pocetKapesProCD')->nullable();
+            $table->string('pocetKapesProPosudek')->nullable();
+            $table->string('kapsaCdVpredu')->nullable();
+            $table->string('kapsaPosudekVpredu')->nullable();
+            $table->string('dobaZhotoveni')->nullable();
+            $table->string('poznamky')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -52,6 +55,6 @@ class Thesis extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('theses');
     }
 }

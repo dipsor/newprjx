@@ -15,10 +15,18 @@ class UsersSeeder extends Seeder
         $user = factory(User::class)->create([
             'name' => 'Miroslav  Masek',
             'email' => 'miroslav@digitonic.co.uk',
-            'password' => 'password123'
+            'password' => 'password123',
+            'first_name' => 'Miroslav',
+            'last_name' => 'Masek',
+            'phone_number' => '07709837117',
+            'city' => 'Edinburgh',
+            'street' => '2/4 westfield court',
+            'postal_code' => 'EH112RJ',
+            'country_code' => 'UK',
         ]);
 
         $user->attachTeam(1);
         $user->assignRole('admin');
+        $user->assignRole('customer');
     }
 }

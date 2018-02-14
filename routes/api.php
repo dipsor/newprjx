@@ -31,4 +31,10 @@ Route::group(['namespace' => 'Api', 'prefix' => '/v1'], function () {
         Route::get('/', 'TeamsController@index')->name('teams.api.index');
     });
 
+    Route::group(['prefix' => '/thesis'], function() {
+        Route::post('/', 'ThesisController@store')->name('thesis.api.store');
+        Route::get('/{id}', 'ThesisController@show')->name('thesis.api.show');
+        Route::put('/{id}', 'ThesisController@update')->name('thesis.api.update');
+    });
+
 });

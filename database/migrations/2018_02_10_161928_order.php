@@ -18,7 +18,6 @@ class Order extends Migration
             $table->integer('user_id');
             $table->integer('thesis_id');
             $table->string('orderName');
-            $table->string('email')->unique();
             $table->integer('price');
             $table->integer('gopay_order_id');
             $table->timestamps();
@@ -32,6 +31,6 @@ class Order extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('orders');
     }
 }

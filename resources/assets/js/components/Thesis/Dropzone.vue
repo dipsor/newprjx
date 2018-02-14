@@ -42,6 +42,7 @@
 </style>
 <script>
     export default {
+        props: ['currentUser', 'thesisId'],
         data() {
             return {
                 csrfToken: document.head.querySelector('meta[name="csrf-token"]').content,
@@ -58,6 +59,11 @@
                     dictDefaultMessage: '<i class="material-icons">file_upload</i><p>NAHRAJTE PDF</p>'
                 }
             }
+        },
+
+        mounted() {
+            console.log(this.currentUser);
+            console.log(this.thesisId);
         },
 
         methods: {
