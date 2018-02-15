@@ -36,7 +36,6 @@ class ThesisController extends Controller
      */
     public function store(Request $request)
     {
-        logger($request);
         $thesis = Thesis::create([
             'user_id'               => $request->user_id,
             'typZadani'             => $request->typZadani,
