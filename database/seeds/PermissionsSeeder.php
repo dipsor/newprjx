@@ -12,9 +12,6 @@ class PermissionsSeeder extends Seeder
      */
     public function run()
     {
-        factory( Permission::create([
-            'name' => 'users.all',
-            'guard_name' => 'web',
-        ]));
+
     }
 }

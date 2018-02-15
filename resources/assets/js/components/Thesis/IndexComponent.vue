@@ -22,20 +22,22 @@
                                 <v-stepper-items>
                                     <v-stepper-content step="1">
                                         <v-card color="grey lighten-3" class="mb-5">
-                                            <thesis-main-form></thesis-main-form>
+                                            <thesis-main-form :current-user="currentUser"></thesis-main-form>
                                         </v-card>
                                         <v-btn color="primary" @click.native="e1 = 2" :disabled="!accessUpload">Continue</v-btn>
                                         <v-btn flat>Cancel</v-btn>
                                     </v-stepper-content>
                                     <v-stepper-content step="2">
                                         <v-card color="grey lighten-2" class="mb-5">
-                                            <thesis-dropzone></thesis-dropzone>
+                                            <thesis-dropzone :current-user="currentUser" :thesis-id="bcId"></thesis-dropzone>
                                         </v-card>
                                         <v-btn color="primary" @click.native="e1 = 3">Continue</v-btn>
                                         <v-btn flat>Cancel</v-btn>
                                     </v-stepper-content>
                                     <v-stepper-content step="3">
-                                        <v-card color="grey lighten-1" class="mb-5" height="200px"></v-card>
+                                        <v-card color="grey lighten-1" class="mb-5" height="200px">
+                                            <thesis-review :current-user="currentUser" :thesis-id="bcId"></thesis-review>
+                                        </v-card>
                                         <v-btn color="primary" @click.native="e1 = 4">Continue</v-btn>
                                         <v-btn flat>Cancel</v-btn>
                                     </v-stepper-content>
@@ -60,6 +62,7 @@
                 e1: 0,
                 items: [],
                 accessUpload: false,
+                bcId: null,
             }
         },
 
@@ -68,6 +71,13 @@
 
             this.eventBus.$on('form-is-valid', () => {
                this.accessUpload = true;
+            });
+
+            this.eventBus.$on('go-to-next-page', (payload) => {
+                this.e1 = payload.page_id;
+                this.bcId = payload.bc_id;
+               console.log('payload');
+               console.log(payload);
             });
         },
 

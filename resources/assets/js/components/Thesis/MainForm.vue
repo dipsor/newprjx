@@ -11,12 +11,12 @@
                             v-model="selectedData.typZadani"
                             label=""
                             light
-                            item-value="value"
+                            return-object
                     ></v-select>
                 </v-flex>
             </v-layout>
 
-            <v-layout row wrap v-show="selectedData.typZadani == 2">
+            <v-layout row wrap v-show="selectedData.typZadani.value == 2">
                 <v-flex xs4>
                 </v-flex>
                 <v-flex xs8>
@@ -30,7 +30,7 @@
                 </v-flex>
             </v-layout>
 
-            <v-layout row wrap v-show="selectedData.typZadani == 1">
+            <v-layout row wrap v-show="selectedData.typZadani.value == 1">
                 <v-flex xs4>
                     <v-subheader v-text="'Přesný počet listů'"></v-subheader>
                 </v-flex>
@@ -56,7 +56,8 @@
                             v-model="selectedData.typTisku"
                             label="Typ tisku"
                             light
-                            item-value="value"
+                            return-object
+
                     ></v-select>
                 </v-flex>
                 <v-flex xs4>
@@ -65,7 +66,7 @@
                             v-model="selectedData.barevnost"
                             label="Barevnost"
                             light
-                            item-value="value"
+                            return-object
                     ></v-select>
                 </v-flex>
             </v-layout>
@@ -80,12 +81,12 @@
                             v-model="selectedData.skoly"
                             label="Zde prosím vyberte školu"
                             light
-                            item-value="value"
+                            return-object
                     ></v-select>
                 </v-flex>
             </v-layout>
 
-            <v-layout row wrap v-show="selectedData.skoly == 0">
+            <v-layout row wrap v-show="selectedData.skoly.value == 0">
                 <v-flex xs4>
                 </v-flex>
                 <v-flex xs8>
@@ -108,7 +109,7 @@
                         v-model="selectedData.fakulty"
                         label="Zde prosím vyberte fakultu"
                         light
-                        item-value="value"
+                        return-object
                     ></v-select>
                 </v-flex>
             </v-layout>
@@ -162,7 +163,7 @@
                             v-model="selectedData.typPrace"
                             label="Zde prosím vyberte typ práce"
                             light
-                            item-value="value"
+                            return-object
                     ></v-select>
                 </v-flex>
             </v-layout>
@@ -279,7 +280,7 @@
                             v-model="selectedData.barvaDesek"
                             label="Vyberte barvu desek"
                             light
-                            item-value="value"
+                            return-object
                     ></v-select>
                 </v-flex>
             </v-layout>
@@ -294,7 +295,7 @@
                             v-model="selectedData.barvaPisma"
                             label="Vyberte barvu písma"
                             light
-                            item-value="value"
+                            return-object
                     ></v-select>
                 </v-flex>
             </v-layout>
@@ -366,14 +367,14 @@
                             v-model="selectedData.dobaZhotoveni"
                             label="vyberte dobu zhotovení"
                             light
-                            item-value="value"
+                            return-object
                     ></v-select>
                 </v-flex>
             </v-layout>
 
             <v-layout row wrap>
             <v-flex xs4>
-                    <v-subheader v-text="'Poznamky k objednavce'"></v-subheader>
+                    <v-subheader v-text="'Poznámky k objednávce'"></v-subheader>
                 </v-flex>
                 <v-flex xs8>
                     <v-text-field
@@ -391,30 +392,44 @@
                     <v-subheader v-if="price >= 0"v-text="'cena: '+price+' Kč'"></v-subheader>
                 </v-flex>
             </v-layout>
+            <v-layout row wrap>
+                <v-flex xs4>
+                </v-flex>
+                <v-flex xs8>
+                    <v-btn @click="createThesis" color="primary" :disabled="!accessUpload">Vytvořit &nbsp<v-progress-circular v-show="loading" indeterminate color="white"></v-progress-circular>
+                    </v-btn>
+                </v-flex>
+            </v-layout>
         </v-container>
     </div>
 </template>
 <script>
     export default {
+        props: {
+            currentUser: null,
+        },
         data () {
             return {
                 isFormValid: false,
+                loading: false,
+                accessUpload: false,
 
                 potiskHrbetu: false,
                 kapsaProCD: false,
                 kapsaProPosudek: false,
 
                 selectedData: {
-                    typZadani: 1,
-                    pribliznyPocetListu: 3,
+                    user_id: null,
+                    typZadani: {text: 'Vytisknout praci a vyrobit desky', value: 1, price: 10},
+                    pribliznyPocetListu: {text: '25 - 40 listů', value: 3},
                     presnyPocetStran: 0,
-                    typTisku: 11,
-                    barevnost: 14,
-                    skoly: 16,
+                    typTisku: {text: 'Jednostranny', value: 11, price: 10},
+                    barevnost: {text: 'Cernobile', value: 14, price: 1.5},
+                    skoly: {text: 'ZÁPADOČESKÁ UNIVERZITA V PLZNI', value: 16},
                     jinaSkola: null,
-                    fakulty: 23,
+                    fakulty: {text: 'FAKULTA APLIKOVANÝCH VĚD', value: 26},
                     jinaFakulta: null,
-                    typPrace: 33,
+                    typPrace: {text: 'DIPLOMOVÁ PRÁCE', value: 33},
                     jinyTypPrace: null,
                     spodniTextVlevo: null,
                     spodniTextVpravo: null,
@@ -422,15 +437,16 @@
                     potiskDole: null,
                     pocetPevnychDesek: 0,
                     pocetKrouzkovychDesek: 0,
-                    barvaDesek: 40,
-                    barvaPisma: 42,
+                    barvaDesek: {text: 'MODRÁ', value: 40},
+                    barvaPisma: {text: 'ZLATÉ', value: 42},
                     pocetKapesProCD: 0,
                     pocetKapesProPosudek: 0,
                     kapsaCdVpredu: null,
                     kapsaPosudekVpredu: null,
-                    dobaZhotoveni: 44,
+                    dobaZhotoveni: {text: 'Základ - 239 Kč ( do 4 pracovních dnů )', value: 44, price: 239},
                     poznamky: null,
                 },
+                formatedDataForSubmit: {},
 
                 price: 0,
 
@@ -453,14 +469,14 @@
                     ],
 
                     typTisku: [
-                        {text: 'Jednostranny', value: 11},
-                        {text: 'Oboustranny', value: 12},
-                        {text: 'Kombinovany', value: 13},
+                        {text: 'Jednostranny', value: 11, price: 10},
+                        {text: 'Oboustranny', value: 12, price: 15},
+                        {text: 'Kombinovany', value: 13, price: 20},
                     ],
 
                     barevnost: [
-                        {text: 'Cernobile', value: 14},
-                        {text: 'Dle soubou (cernobile / barevne)', value: 15},
+                        {text: 'Cernobile', value: 14, price: 1.5},
+                        {text: 'Dle soubou (cernobile / barevne)', value: 15, price: 7.49},
                     ],
 
                     skoly: [
@@ -507,12 +523,14 @@
                     ],
 
                     dobaZhotoveni: [
-                        {text: 'Základ - 239 Kč ( do 4 pracovních dnů )', value: 44},
-                        {text: 'Expres - 399 Kč ( do 24 hodin )', value: 45},
-                        {text: 'Super expres - 600 Kč ( na počkání )', value: 46},
+                        {text: 'Základ - 239 Kč ( do 4 pracovních dnů )', value: 44, price: 239},
+                        {text: 'Expres - 399 Kč ( do 24 hodin )', value: 45, price: 399},
+                        {text: 'Super expres - 600 Kč ( na počkání )', value: 46, price: 399},
                     ]
                 },
                 priceList: [],
+
+                nextStep: null,
             }
         },
 
@@ -522,28 +540,32 @@
 
         mounted() {
             this.setPrices();
-            console.log(this.priceList);
-
+            this.selectedData.user_id = this.currentUser.id;
         },
 
         methods: {
+            createThesis() {
+                this.loading = true;
+                axios.post(this.$laroute.route('thesis.api.store'),this.getFormattedObjectToSubmit(this.selectedData)).then((response) => {
+                    this.loading = false;
+                    this.eventBus.$emit('go-to-next-page', {page_id: this.nextStep, bc_id: response.data.id, user_id: this.currentUser.id})
+                    console.log(response);
+                }).catch((error) => {
+                    this.loading = false;
+                    console.log(error);
+                });
+            },
+
             setPrices() {
                 this.priceList[0] = 49; // potisk hrbetu
-                this.priceList[5] = 0; //jednostranny tisk
-                this.priceList[6] = 0; //oboustranny tisk
-                this.priceList[13] = 0; //barevnost kombinovana
-                this.priceList[14] = 1.5; //barevnost cb
-                this.priceList[15] = 7.49; //barevnost barevna
-                this.priceList[44] = 239 ; // doba zhotoveni zaklad
-                this.priceList[45] = 399; // doba zhotoveni exopress
-                this.priceList[46] = 399; // doba zhotoveni super express
-                this.priceList[100] = 40; // cena za krouzkove desky
-                this.priceList[101] = 30; // cena za kapsa pro cd
-                this.priceList[102] = 30; // cena za kapsu pro posudek
+                this.priceList[1] = 40; // cena za krouzkove desky
+                this.priceList[2] = 30; // cena za kapsa pro cd
+                this.priceList[3] = 30; // cena za kapsu pro posudek
             },
 
             getTotalPrice() {
                 console.log('calculating price');
+                this.setNextStep();
                 this.price = 0;
                 this.price += this.getListyPrice();
                 this.price += this.getPotiskHrbetuPrice();
@@ -553,12 +575,19 @@
                 this.price += this.getKapsaPosudekPrice();
             },
 
+            setNextStep() {
+                this.nextStep = 2; // go to upload
+                if (this.selectedData.typZadani.value == 2) {
+                    this.nextStep = 3; // go to review
+                }
+            },
+
             getListyPrice() {
                 var price = 0;
-                if (this.selectedData.typZadani == 1) { // prace a desky
-                    price = this.priceList[this.selectedData.barevnost] * this.selectedData.presnyPocetStran;
-                }
 
+                if (this.selectedData.typZadani.value == 1) { // prace a desky
+                    price = this.selectedData.barevnost.price * this.selectedData.presnyPocetStran;
+                }
                 return price;
             },
 
@@ -574,7 +603,7 @@
             getPevneDeskyPrice() {
                 var price = 0;
                 if (this.selectedData.pocetPevnychDesek >= 0) {
-                    price = this.priceList[this.selectedData.dobaZhotoveni] * this.selectedData.pocetPevnychDesek;
+                    price = this.selectedData.dobaZhotoveni.price * this.selectedData.pocetPevnychDesek;
                 }
 
                 return price;
@@ -583,7 +612,7 @@
             getKrouzkoveDeskyPrice() {
                 var price = 0;
                 if (this.selectedData.pocetKrouzkovychDesek >= 0) {
-                    price = this.priceList[100] * this.selectedData.pocetKrouzkovychDesek;
+                    price = this.priceList[1] * this.selectedData.pocetKrouzkovychDesek;
                 }
 
                 return price;
@@ -592,7 +621,7 @@
             getKapsaCDPrice() {
                 var price = 0;
                 if (this.kapsaProCD) {
-                    price = this.priceList[101] * this.selectedData.pocetKapesProCD
+                    price = this.priceList[2] * this.selectedData.pocetKapesProCD
                 }
 
                 return price;
@@ -601,10 +630,44 @@
             getKapsaPosudekPrice() {
                 var price = 0;
                 if (this.kapsaProPosudek) {
-                    price = this.priceList[102] * this.selectedData.pocetKapesProPosudek
+                    price = this.priceList[3] * this.selectedData.pocetKapesProPosudek
                 }
 
                 return price;
+            },
+
+            getFormattedObjectToSubmit(object) {
+                this.formatedDataForSubmit.user_id = object.user_id;
+                this.formatedDataForSubmit.typZadani = object.typZadani.text;
+                this.formatedDataForSubmit.pribliznyPocetListu = object.pribliznyPocetListu.text;
+                this.formatedDataForSubmit.presnyPocetStran = object.presnyPocetStran;
+                this.formatedDataForSubmit.typTisku = object.typTisku.text;
+                this.formatedDataForSubmit.barevnost = object.barevnost.text;
+                this.formatedDataForSubmit.skoly = object.skoly.text;
+                this.formatedDataForSubmit.jinaSkola = object.jinaSkola;
+                this.formatedDataForSubmit.fakulty = object.fakulty.text;
+                this.formatedDataForSubmit.jinaFakulta = object.jinaFakulta;
+                this.formatedDataForSubmit.typPrace = object.typPrace.text;
+                this.formatedDataForSubmit.jinyTypPrace = object.jinyTypPrace;
+                this.formatedDataForSubmit.spodniTextVlevo = object.spodniTextVlevo;
+                this.formatedDataForSubmit.spodniTextVpravo = object.spodniTextVpravo;
+                this.formatedDataForSubmit.potiskNahore = object.potiskNahore;
+                this.formatedDataForSubmit.potiskDole = object.potiskDole;
+                this.formatedDataForSubmit.pocetPevnychDesek = object.pocetPevnychDesek;
+                this.formatedDataForSubmit.pocetKrouzkovychDesek = object.pocetKrouzkovychDesek;
+                this.formatedDataForSubmit.barvaDesek = object.barvaDesek.text;
+                this.formatedDataForSubmit.barvaPisma = object.barvaPisma.text;
+                this.formatedDataForSubmit.pocetKapesProCD = object.pocetKapesProCD;
+                this.formatedDataForSubmit.pocetKapesProPosudek = object.pocetKapesProPosudek;
+                this.formatedDataForSubmit.kapsaCdVpredu = object.kapsaCdVpredu;
+                this.formatedDataForSubmit.kapsaPosudekVpredu = object.kapsaPosudekVpredu;
+                this.formatedDataForSubmit.dobaZhotoveni = object.dobaZhotoveni.text;
+                this.formatedDataForSubmit.poznamky = object.poznamky;
+                this.formatedDataForSubmit.price = this.price;
+
+                console.log(this.formatedDataForSubmit)
+
+                return this.formatedDataForSubmit;
             }
         },
 
@@ -629,15 +692,14 @@
             },
 
             price(val) {
+                this.accessUpload = false;
+
                 if (val > 0) {
+                    this.accessUpload = true;
                     this.eventBus.$emit('form-is-valid', true);
                 }
                 this.eventBus.$emit('form-is-valid', false);
             }
-
-
-
-
         }
     }
 </script>

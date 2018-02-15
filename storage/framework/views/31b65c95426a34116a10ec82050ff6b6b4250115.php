@@ -15,7 +15,8 @@
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
-    <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+    
+    <link href="https://unpkg.com/vuetify@v0.17.7/dist/vuetify.min.css" rel="stylesheet">
     <!-- CORE CSS-->
     
 

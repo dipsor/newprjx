@@ -42,6 +42,7 @@
 </style>
 <script>
     export default {
+        props: ['currentUser', 'thesisId'],
         data() {
             return {
                 csrfToken: document.head.querySelector('meta[name="csrf-token"]').content,
@@ -50,14 +51,22 @@
                 },
                 loading: false,
                 customOptions: {
-                    url: 'https://httpbin.org/post',
+                    url: 'thesis/upload',
                     thumbnailWidth: 150,
                     previewTemplate: this.template(),
                     maxFilesize: 0.5,
                     headers: { "My-Awesome-Header": "header value" },
                     dictDefaultMessage: '<i class="material-icons">file_upload</i><p>NAHRAJTE PDF</p>'
-                }
+                },
+                url: '',
+
             }
+        },
+
+        mounted() {
+            this.url = this.$laroute.route('thesis.api.upload');
+            console.log(this.currentUser);
+            console.log(this.thesisId);
         },
 
         methods: {
