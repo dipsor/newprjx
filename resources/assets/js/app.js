@@ -50,9 +50,10 @@ Vue.component('users-edit-generals', require('./components/Users/UsersEditGenera
 Vue.component('users-edit-billings', require('./components/Users/UsersEditBillinsFormComponent.vue'));
 Vue.component('users-change-pass', require('./components/Users/UsersChangePassFormComponent.vue'));
 
-Vue.component('thesis-index', require('./components/Thesis/ThesisIndexComponent.vue'));
-Vue.component('thesis-main-form', require('./components/Thesis/ThesisMainForm.vue'));
-Vue.component('thesis-dropzone', require('./components/Thesis/ThesisDropzone.vue'));
+Vue.component('thesis-index', require('./components/Thesis/IndexComponent.vue'));
+Vue.component('thesis-main-form', require('./components/Thesis/MainForm.vue'));
+Vue.component('thesis-dropzone', require('./components/Thesis/Dropzone.vue'));
+Vue.component('thesis-review', require('./components/Thesis/Review.vue'));
 
 Vue.component('custom-dialog', require('./components/CustomDialog.vue'));
 Vue.component('landing-page', require('./components/LandingPage.vue'));
