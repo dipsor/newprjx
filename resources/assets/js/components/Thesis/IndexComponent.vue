@@ -24,27 +24,20 @@
                                         <v-card color="grey lighten-3" class="mb-5">
                                             <thesis-main-form :current-user="currentUser"></thesis-main-form>
                                         </v-card>
-                                        <v-btn color="primary" @click.native="e1 = 2" :disabled="!accessUpload">Continue</v-btn>
-                                        <v-btn flat>Cancel</v-btn>
                                     </v-stepper-content>
                                     <v-stepper-content step="2">
-                                        <v-card color="grey lighten-2" class="mb-5">
+                                        <v-card color="grey lighten-3" class="mb-5">
                                             <thesis-dropzone :current-user="currentUser" :thesis-id="bcId"></thesis-dropzone>
                                         </v-card>
-                                        <v-btn color="primary" @click.native="e1 = 3">Continue</v-btn>
-                                        <v-btn flat>Cancel</v-btn>
                                     </v-stepper-content>
                                     <v-stepper-content step="3">
-                                        <v-card color="grey lighten-1" class="mb-5" height="200px">
+                                        <v-card color="grey lighten-3" class="mb-5">
                                             <thesis-review :current-user="currentUser" :thesis-id="bcId"></thesis-review>
                                         </v-card>
-                                        <v-btn color="primary" @click.native="e1 = 4">Continue</v-btn>
-                                        <v-btn flat>Cancel</v-btn>
                                     </v-stepper-content>
                                     <v-stepper-content step="4">
-                                        <v-card color="grey lighten-1" class="mb-5" height="200px"></v-card>
+                                        <v-card color="grey lighten-3" class="mb-5"></v-card>
                                         <v-btn color="primary" @click.native="e1 = 1">Continue</v-btn>
-                                        <v-btn flat>Cancel</v-btn>
                                     </v-stepper-content>
                                 </v-stepper-items>
                             </v-stepper>
@@ -59,10 +52,11 @@
         props:['currentUser'],
         data () {
             return {
-                e1: 0,
+                e1: 1,
                 items: [],
                 accessUpload: false,
                 bcId: null,
+                bcCreated: false,
             }
         },
 
@@ -74,10 +68,10 @@
             });
 
             this.eventBus.$on('go-to-next-page', (payload) => {
-                this.e1 = payload.page_id;
                 this.bcId = payload.bc_id;
-               console.log('payload');
-               console.log(payload);
+                this.e1 = payload.page_id;
+                this.bcCreated = true;
+
             });
         },
 

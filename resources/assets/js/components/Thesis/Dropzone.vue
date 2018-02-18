@@ -3,13 +3,18 @@
         <dropzone
                   :options="customOptions"
                   id="dropzone"
-                  url="/api/v1/upload"
+                  url="/api/v1/thesis/upload"
                   :useFontAwesome="true"
                   :maxFileSizeInMB="50"
                   v-on:vdropzone-success="showSuccess"
+                  v-on:vdropzone-error="handleError"
                   :headers="csrfHeader">
             <input type="hidden" name="csrf-token" :value="csrfToken">
             ></dropzone>
+        <div>
+            <v-btn color="primary" @click.native="goToNextPage(1)">Zpět</v-btn>
+            <v-btn color="primary" @click.native="goToNextPage(3)">Další</v-btn>
+        </div>
     </div>
 </template>
 <style>
@@ -51,11 +56,13 @@
                 },
                 loading: false,
                 customOptions: {
-                    url: 'thesis/upload',
+                    url: '/api/v1/thesis/upload',
                     thumbnailWidth: 150,
                     previewTemplate: this.template(),
                     maxFilesize: 0.5,
-                    headers: { "My-Awesome-Header": "header value" },
+                    headers: {
+                        thesisid: null
+                    },
                     dictDefaultMessage: '<i class="material-icons">file_upload</i><p>NAHRAJTE PDF</p>'
                 },
                 url: '',
@@ -65,12 +72,20 @@
 
         mounted() {
             this.url = this.$laroute.route('thesis.api.upload');
-            console.log(this.currentUser);
-            console.log(this.thesisId);
+        },
+
+        watch: {
+            thesisId(val) {
+                this.customOptions.headers.thesisid = val;
+            }
         },
 
         methods: {
             showSuccess() {
+                this.eventBus.$emit('go-to-next-page', {bc_id: this.thesisId, page_id: 3});
+                this.eventBus.$emit('load-bc');
+            },
+            handleError() {
 
             },
             template: function () {
@@ -88,7 +103,14 @@
                 <div class="dz-error-mark"><i class="fa fa-close"></i></div>
             </div>
         `;
-            }
+            },
+
+            goToNextPage(pageId) {
+                this.eventBus.$emit('go-to-next-page', {page_id: pageId, bc_id: this.thesisId});
+                if (pageId = 3) {
+                    this.eventBus.$emit('load-thesis', {thesisI: this.thesisId});
+                }
+            },
         }
     }
 </script>
