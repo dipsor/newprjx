@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use App\Thesis\Models\Thesis;
 use App\Transformers\Thesis\ThesisTransformer;
+use Illuminate\Http\Response;
 
 
 class ThesisController extends Controller
@@ -72,13 +73,15 @@ class ThesisController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\Response
      */
-    public function show($id): JsonResponse
+    public function show($id): Response
     {
+        logger($id);
+
         $thesis = Thesis::find($id);
 
-        return $this->repsonse->withItem($thesis, new ThesisTransformer());
+        return response($this->transformer->transform($thesis));
     }
 
 
@@ -87,16 +90,15 @@ class ThesisController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id): JsonResponse
+    public function update(Request $request, $id): Response
     {
         $thesis = Thesis::find($id);
 
-        $thesis::update([
+        $thesis->update([
             'user_id'               => $request->user_id,
             'typZadani'             => $request->typZadani,
-            'filePath'              => $request->filePath,
             'price'                 => $request->price,
             'pribliznyPocetListu'   => $request->pribliznyPocetListu,
             'presnyPocetStran'      => $request->presnyPocetStran,
@@ -123,7 +125,8 @@ class ThesisController extends Controller
             'poznamky'              => $request->poznamky,
         ]);
 
-        return $this->response->withItem($thesis, new ThesisTransformer());
+        return response($this->transformer->transform($thesis));
+
     }
 
     /**

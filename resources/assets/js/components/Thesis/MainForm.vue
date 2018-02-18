@@ -396,8 +396,13 @@
                 <v-flex xs4>
                 </v-flex>
                 <v-flex xs8>
-                    <v-btn @click="createThesis" color="primary" :disabled="!accessUpload">Vytvořit &nbsp<v-progress-circular v-show="loading" indeterminate color="white"></v-progress-circular>
+                    <v-btn v-if="!thesisCreated" @click="createThesis" color="primary" :disabled="!accessUpload">Vytvořit &nbsp<v-progress-circular v-show="loading" indeterminate color="white"></v-progress-circular>
                     </v-btn>
+                    <div v-if="thesisCreated">
+                        <v-btn color="primary" @click="updateThesis" :disabled="!accessUpload">Uložit změny</v-btn>
+                        <v-btn color="primary" @click="goToNextPage" :disabled="!accessUpload">Pokračovat k dalšímu kroku</v-btn>
+                    </div>
+
                 </v-flex>
             </v-layout>
         </v-container>
@@ -449,7 +454,7 @@
                 formatedDataForSubmit: {},
 
                 price: 0,
-
+                bcId: null,
 
                 formItemsData: {
                     typZadani: [
@@ -529,8 +534,8 @@
                     ]
                 },
                 priceList: [],
-
                 nextStep: null,
+                thesisCreated: false,
             }
         },
 
@@ -545,11 +550,28 @@
 
         methods: {
             createThesis() {
-                this.loading = true;
+                this.getTotalPrice();
+                    this.loading = true;
                 axios.post(this.$laroute.route('thesis.api.store'),this.getFormattedObjectToSubmit(this.selectedData)).then((response) => {
                     this.loading = false;
-                    this.eventBus.$emit('go-to-next-page', {page_id: this.nextStep, bc_id: response.data.id, user_id: this.currentUser.id})
-                    console.log(response);
+                    console.log('bc id');
+                    console.log(response.data.id);
+                    this.bcId = response.data.id;
+
+                    this.thesisCreated = true;
+                    this.eventBus.$emit('go-to-next-page', {page_id: this.nextStep, bc_id: response.data.id})
+                }).catch((error) => {
+                    this.loading = false;
+                    console.log(error);
+                });
+            },
+
+            updateThesis() {
+                this.loading = true;
+                axios.put(this.$laroute.route('thesis.api.update', {'id': this.bcId}),this.getFormattedObjectToSubmit(this.selectedData)).then((response) => {
+                    this.loading = false;
+                    this.thesisCreated = true;
+                    this.eventBus.$emit('go-to-next-page', {page_id: this.nextStep, bc_id: response.data.id})
                 }).catch((error) => {
                     this.loading = false;
                     console.log(error);
@@ -665,9 +687,14 @@
                 this.formatedDataForSubmit.poznamky = object.poznamky;
                 this.formatedDataForSubmit.price = this.price;
 
-                console.log(this.formatedDataForSubmit)
-
                 return this.formatedDataForSubmit;
+            },
+
+            goToNextPage() {
+                this.setNextStep();
+                if (this.bcId != null) {
+                    this.eventBus.$emit('go-to-next-page', {page_id: this.nextStep, bc_id: this.bcId})
+                }
             }
         },
 

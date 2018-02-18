@@ -36,7 +36,7 @@ Route::group(['namespace' => 'Api', 'prefix' => '/v1'], function () {
         Route::get('/{id}', 'ThesisController@show')->name('thesis.api.show');
         Route::put('/{id}', 'ThesisController@update')->name('thesis.api.update');
 
-        Route::post('/upload', 'UploadController@update')->name('thesis.api.upload');
+        Route::post('/upload', 'UploadController@upload')->name('thesis.api.upload');
 
     });
 
