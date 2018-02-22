@@ -181,5 +181,33 @@ class UsersController extends Controller
         return response('Password updated', 200);
     }
 
+    public function updateBillingDetails(Request $request, $userId)
+    {
+        $user = User::find($userId);
+
+        $this->validate($request, [
+            'last_name' => 'required',
+            'phone_number' => 'required',
+            'city' => 'required',
+            'street' => 'required',
+            'postal_code' => 'required',
+            'country_code' => 'required',
+        ]);
+
+
+
+        $user->update([
+            'first_name2'        => $request->first_name,
+            'last_name'         => $request->last_name ,
+            'phone_number'      => $request->phone_number,
+            'city'              => $request->city,
+            'street'            => $request->street,
+            'postal_code'       => $request->postal_code,
+            'country_code'      => $request->country_code,
+        ]);
+
+        return response($this->transformer->transform($user), 200);
+    }
+
 
 }

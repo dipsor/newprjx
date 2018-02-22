@@ -92,7 +92,7 @@
 
         methods: {
             updatePassword() {
-//                this.isLoading = true;
+                this.isLoading = true;
 
                 axios.put(this.$laroute.route('users.api.update.password',{id: this.currentUser.id}), this.password).
                 then((response) => {
@@ -100,10 +100,9 @@
                 }).catch((error) => {
                     this.isLoading = false;
 //                    Materialize.toast(error, 4000);
-
                     console.log(error);
                 });
-            }
+            },
         }
     }
 </script>

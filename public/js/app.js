@@ -47355,7 +47355,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;var _typeof = typeof Symbol === "function" && 
 
             absolute: false,
             rootUrl: 'http://localhost',
-            routes: [{ "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizationController@authorize" }, { "host": null, "methods": ["POST"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\ApproveAuthorizationController@approve" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\DenyAuthorizationController@deny" }, { "host": null, "methods": ["POST"], "uri": "oauth\/token", "name": null, "action": "\Laravel\Passport\Http\Controllers\AccessTokenController@issueToken" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController@forUser" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/tokens\/{token_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController@destroy" }, { "host": null, "methods": ["POST"], "uri": "oauth\/token\/refresh", "name": null, "action": "\Laravel\Passport\Http\Controllers\TransientTokenController@refresh" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/clients", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@forUser" }, { "host": null, "methods": ["POST"], "uri": "oauth\/clients", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@store" }, { "host": null, "methods": ["PUT"], "uri": "oauth\/clients\/{client_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@update" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/clients\/{client_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/scopes", "name": null, "action": "\Laravel\Passport\Http\Controllers\ScopeController@all" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/personal-access-tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@forUser" }, { "host": null, "methods": ["POST"], "uri": "oauth\/personal-access-tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@store" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/personal-access-tokens\/{token_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/users", "name": "users.api.index", "action": "AppHttpControllersApiUsersController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/users", "name": "users.api.store", "action": "AppHttpControllersApiUsersController@store" }, { "host": null, "methods": ["DELETE"], "uri": "api\/v1\/users\/{id}", "name": "users.api.destroy", "action": "AppHttpControllersApiUsersController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/users\/{id}", "name": "users.api.show", "action": "AppHttpControllersApiUsersController@show" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/{id}", "name": "users.api.update", "action": "AppHttpControllersApiUsersController@update" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/profile-update\/{id}", "name": "users.api.update.general.info", "action": "AppHttpControllersApiUsersController@updateGeneralInfo" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/user-password-update\/{id}", "name": "users.api.update.password", "action": "AppHttpControllersApiUsersController@updatePassword" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/roles", "name": "roles.api.index", "action": "App\Http\Controllers\Api\RolesController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/teams", "name": "teams.api.index", "action": "App\Http\Controllers\Api\TeamsController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/thesis", "name": "thesis.api.store", "action": "App\Http\Controllers\Api\ThesisController@store" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/thesis\/{id}", "name": "thesis.api.show", "action": "App\Http\Controllers\Api\ThesisController@show" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/thesis\/{id}", "name": "thesis.api.update", "action": "App\Http\Controllers\Api\ThesisController@update" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/thesis\/upload", "name": "thesis.api.upload", "action": "AppHttpControllersApiUploadController@upload" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "impersonate\/take\/{id}", "name": "impersonate", "action": "\Lab404\Impersonate\Controllers\ImpersonateController@take" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "impersonate\/leave", "name": "impersonate.leave", "action": "\Lab404\Impersonate\Controllers\ImpersonateController@leave" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "\/", "name": "home", "action": "App\Http\Controllers\LandingPageController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "admin", "name": "dashboard.index", "action": "App\Http\Controllers\DashboardController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "admin\/users", "name": "admin.users.index", "action": "AppHttpControllersAdminUsersUsersController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "uzivatele", "name": "users.index", "action": "AppHttpControllersUsersUsersController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "uzivatele\/{id}", "name": "users.show", "action": "AppHttpControllersUsersUsersController@show" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "thesis", "name": "thesis.index", "action": "App\Http\Controllers\Thesis\ThesisController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/facebook", "name": "facebook.login", "action": "App\Http\Controllers\Auth\FacebookAuthController@redirectToProvider" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/facebook\/callback", "name": "facebook.login.callback", "action": "App\Http\Controllers\Auth\FacebookAuthController@handleProviderCallback" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/google", "name": "google.login", "action": "App\Http\Controllers\Auth\GoogleAuthController@redirectToProvider" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/google\/callback", "name": "google.login.callback", "action": "App\Http\Controllers\Auth\GoogleAuthController@handleProviderCallback" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "logout", "name": "users.logout", "action": "\App\Http\Controllers\Auth\LoginController@customLogout" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login", "name": "login", "action": "App\Http\Controllers\Auth\LoginController@showLoginForm" }, { "host": null, "methods": ["POST"], "uri": "login", "name": null, "action": "App\Http\Controllers\Auth\LoginController@login" }, { "host": null, "methods": ["POST"], "uri": "logout", "name": "logout", "action": "App\Http\Controllers\Auth\LoginController@logout" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "register", "name": "register", "action": "App\Http\Controllers\Auth\RegisterController@showRegistrationForm" }, { "host": null, "methods": ["POST"], "uri": "register", "name": null, "action": "App\Http\Controllers\Auth\RegisterController@register" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "password\/reset", "name": "password.request", "action": "App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm" }, { "host": null, "methods": ["POST"], "uri": "password\/email", "name": "password.email", "action": "App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "password\/reset\/{token}", "name": "password.reset", "action": "App\Http\Controllers\Auth\ResetPasswordController@showResetForm" }, { "host": null, "methods": ["POST"], "uri": "password\/reset", "name": null, "action": "App\Http\Controllers\Auth\ResetPasswordController@reset" }],
+            routes: [{ "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizationController@authorize" }, { "host": null, "methods": ["POST"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\ApproveAuthorizationController@approve" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\DenyAuthorizationController@deny" }, { "host": null, "methods": ["POST"], "uri": "oauth\/token", "name": null, "action": "\Laravel\Passport\Http\Controllers\AccessTokenController@issueToken" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController@forUser" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/tokens\/{token_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController@destroy" }, { "host": null, "methods": ["POST"], "uri": "oauth\/token\/refresh", "name": null, "action": "\Laravel\Passport\Http\Controllers\TransientTokenController@refresh" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/clients", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@forUser" }, { "host": null, "methods": ["POST"], "uri": "oauth\/clients", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@store" }, { "host": null, "methods": ["PUT"], "uri": "oauth\/clients\/{client_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@update" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/clients\/{client_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/scopes", "name": null, "action": "\Laravel\Passport\Http\Controllers\ScopeController@all" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/personal-access-tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@forUser" }, { "host": null, "methods": ["POST"], "uri": "oauth\/personal-access-tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@store" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/personal-access-tokens\/{token_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/users", "name": "users.api.index", "action": "AppHttpControllersApiUsersController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/users", "name": "users.api.store", "action": "AppHttpControllersApiUsersController@store" }, { "host": null, "methods": ["DELETE"], "uri": "api\/v1\/users\/{id}", "name": "users.api.destroy", "action": "AppHttpControllersApiUsersController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/users\/{id}", "name": "users.api.show", "action": "AppHttpControllersApiUsersController@show" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/{id}", "name": "users.api.update", "action": "AppHttpControllersApiUsersController@update" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/profile-update\/{id}", "name": "users.api.update.general.info", "action": "AppHttpControllersApiUsersController@updateGeneralInfo" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/user-password-update\/{id}", "name": "users.api.update.password", "action": "AppHttpControllersApiUsersController@updatePassword" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/user-billing-update\/{id}", "name": "users.api.update.billing", "action": "AppHttpControllersApiUsersController@updateBillingDetails" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/roles", "name": "roles.api.index", "action": "App\Http\Controllers\Api\RolesController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/teams", "name": "teams.api.index", "action": "App\Http\Controllers\Api\TeamsController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/thesis", "name": "thesis.api.store", "action": "App\Http\Controllers\Api\ThesisController@store" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/thesis\/{id}", "name": "thesis.api.show", "action": "App\Http\Controllers\Api\ThesisController@show" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/thesis\/{id}", "name": "thesis.api.update", "action": "App\Http\Controllers\Api\ThesisController@update" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/thesis\/upload", "name": "thesis.api.upload", "action": "AppHttpControllersApiUploadController@upload" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/order", "name": "orders.api.index", "action": "App\Http\Controllers\Api\OrdersController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/order", "name": "orders.api.store", "action": "App\Http\Controllers\Api\OrdersController@store" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "impersonate\/take\/{id}", "name": "impersonate", "action": "\Lab404\Impersonate\Controllers\ImpersonateController@take" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "impersonate\/leave", "name": "impersonate.leave", "action": "\Lab404\Impersonate\Controllers\ImpersonateController@leave" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "\/", "name": "home", "action": "App\Http\Controllers\LandingPageController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "admin", "name": "dashboard.index", "action": "App\Http\Controllers\DashboardController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "admin\/users", "name": "admin.users.index", "action": "AppHttpControllersAdminUsersUsersController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "uzivatele", "name": "users.index", "action": "AppHttpControllersUsersUsersController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "uzivatele\/{id}", "name": "users.show", "action": "AppHttpControllersUsersUsersController@show" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "thesis", "name": "thesis.index", "action": "App\Http\Controllers\Thesis\ThesisController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/facebook", "name": "facebook.login", "action": "App\Http\Controllers\Auth\FacebookAuthController@redirectToProvider" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/facebook\/callback", "name": "facebook.login.callback", "action": "App\Http\Controllers\Auth\FacebookAuthController@handleProviderCallback" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/google", "name": "google.login", "action": "App\Http\Controllers\Auth\GoogleAuthController@redirectToProvider" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/google\/callback", "name": "google.login.callback", "action": "App\Http\Controllers\Auth\GoogleAuthController@handleProviderCallback" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "logout", "name": "users.logout", "action": "\App\Http\Controllers\Auth\LoginController@customLogout" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login", "name": "login", "action": "App\Http\Controllers\Auth\LoginController@showLoginForm" }, { "host": null, "methods": ["POST"], "uri": "login", "name": null, "action": "App\Http\Controllers\Auth\LoginController@login" }, { "host": null, "methods": ["POST"], "uri": "logout", "name": "logout", "action": "App\Http\Controllers\Auth\LoginController@logout" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "register", "name": "register", "action": "App\Http\Controllers\Auth\RegisterController@showRegistrationForm" }, { "host": null, "methods": ["POST"], "uri": "register", "name": null, "action": "App\Http\Controllers\Auth\RegisterController@register" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "password\/reset", "name": "password.request", "action": "App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm" }, { "host": null, "methods": ["POST"], "uri": "password\/email", "name": "password.email", "action": "App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "password\/reset\/{token}", "name": "password.reset", "action": "App\Http\Controllers\Auth\ResetPasswordController@showResetForm" }, { "host": null, "methods": ["POST"], "uri": "password\/reset", "name": null, "action": "App\Http\Controllers\Auth\ResetPasswordController@reset" }],
             prefix: '',
 
             route: function route(name, parameters, _route) {
@@ -55888,38 +55888,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            countries: ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Anguilla", "Antigua & Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia & Herzegovina", "Botswana", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Cape Verde", "Cayman Islands", "Chad", "Chile", "China", "Colombia", "Congo", "Cook Islands", "Costa Rica", "Cote D Ivoire", "Croatia", "Cruise Ship", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Estonia", "Ethiopia", "Falkland Islands", "Faroe Islands", "Fiji", "Finland", "France", "French Polynesia", "French West Indies", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kuwait", "Kyrgyz Republic", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Mauritania", "Mauritius", "Mexico", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Namibia", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Norway", "Oman", "Pakistan", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russia", "Rwanda", "Saint Pierre & Miquelon", "Samoa", "San Marino", "Satellite", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "South Africa", "South Korea", "Spain", "Sri Lanka", "St Kitts & Nevis", "St Lucia", "St Vincent", "St. Lucia", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor L'Este", "Togo", "Tonga", "Trinidad & Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks & Caicos", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Venezuela", "Vietnam", "Virgin Islands (US)", "Yemen", "Zambia", "Zimbabwe"],
+            countries: ['Česká Republika', 'Slovenko'],
             errorMessages: [],
-            name: null,
-            address: null,
-            city: null,
-            state: null,
-            zip: null,
-            country: null,
-            formHasErrors: false
+            formHasErrors: false,
+            user: {
+                'first_name': null,
+                'last_name': null,
+                'phone_number': null,
+                'city': null,
+                'street': null,
+                'postal_code': null,
+                'country_code': null
+            },
+            isLoading: false
         };
     },
-
     props: {
         currentUser: null
     },
 
-    computed: {
-        form: function form() {
-            return {
-                name: this.name,
-                address: this.address,
-                city: this.city,
-                state: this.state,
-                zip: this.zip,
-                country: this.country
-            };
-        }
-    },
+    computed: {},
 
     watch: {
         name: function name() {
@@ -55927,31 +55924,58 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     },
 
-    methods: {
-        addressCheck: function addressCheck() {
-            this.errorMessages = this.address && !this.name ? ['Hey! I\'m required'] : [];
+    mounted: function mounted() {
+        this.getDetails();
+    },
 
-            return true;
+
+    methods: {
+        updateBillings: function updateBillings() {
+            var _this = this;
+
+            this.isLoading = true;
+            axios.put(this.$laroute.route('users.api.update.billing', { id: this.currentUser.id }), this.user).then(function (response) {
+                console.log(response);
+                _this.eventBus.$emit('billing-updated');
+            }).catch(function (error) {
+                _this.isLoading = false;
+                console.log(error);
+            });
+        },
+        getDetails: function getDetails() {
+            var _this2 = this;
+
+            axios.get(this.$laroute.route('users.api.show', { id: this.currentUser.id })).then(function (response) {
+                _this2.user.first_name = response.data.first_name;
+                _this2.user.last_name = response.data.last_name;
+                _this2.user.phone_number = response.data.phone_number;
+                _this2.user.city = response.data.city;
+                _this2.user.street = response.data.street;
+                _this2.user.postal_code = response.data.postal_code;
+                _this2.user.country_code = response.data.country_code;
+            }).catch(function (error) {
+                console.log(error);
+            });
         },
         resetForm: function resetForm() {
-            var _this = this;
+            var _this3 = this;
 
             this.errorMessages = [];
             this.formHasErrors = false;
 
             Object.keys(this.form).forEach(function (f) {
-                _this.$refs[f].reset();
+                _this3.$refs[f].reset();
             });
         },
         submit: function submit() {
-            var _this2 = this;
+            var _this4 = this;
 
             this.formHasErrors = false;
 
             Object.keys(this.form).forEach(function (f) {
-                if (!_this2.form[f]) _this2.formHasErrors = true;
+                if (!_this4.form[f]) _this4.formHasErrors = true;
 
-                _this2.$refs[f].validate(true);
+                _this4.$refs[f].validate(true);
             });
         }
     }
@@ -55974,117 +55998,131 @@ var render = function() {
         "v-card-text",
         [
           _c("v-text-field", {
-            ref: "name",
+            ref: "first_name",
             attrs: {
-              label: "Full Name",
-              placeholder: "John Doe",
+              label: "Křestní jméno",
+              placeholder: "Josef",
               required: "",
               rules: [
                 function() {
-                  return !!_vm.name || "This field is required"
+                  return !!_vm.user.first_name || "Prosím výplňte křestní jméno"
                 }
               ],
               "error-messages": _vm.errorMessages
             },
             model: {
-              value: _vm.name,
+              value: _vm.user.first_name,
               callback: function($$v) {
-                _vm.name = $$v
+                _vm.$set(_vm.user, "first_name", $$v)
               },
-              expression: "name"
+              expression: "user.first_name"
             }
           }),
           _vm._v(" "),
           _c("v-text-field", {
-            ref: "address",
+            ref: "last_name",
             attrs: {
-              label: "Address Line",
-              placeholder: "Snowy Rock Pl",
+              label: "Příjmení",
+              placeholder: "Novák",
               rules: [
                 function() {
-                  return !!_vm.address || "This field is required"
-                },
-                function() {
-                  return (
-                    (!!_vm.address && _vm.address.length <= 25) ||
-                    "Address must be less than 25 characters"
-                  )
-                },
-                this.addressCheck
+                  return !!_vm.user.last_name || "Prosím výplňte příjmení"
+                }
               ],
-              counter: "25",
               required: ""
             },
             model: {
-              value: _vm.address,
+              value: _vm.user.last_name,
               callback: function($$v) {
-                _vm.address = $$v
+                _vm.$set(_vm.user, "last_name", $$v)
               },
-              expression: "address"
+              expression: "user.last_name"
+            }
+          }),
+          _vm._v(" "),
+          _c("v-text-field", {
+            ref: "phone",
+            attrs: {
+              label: "Telefon",
+              placeholder: "774123456",
+              rules: [
+                function() {
+                  return (
+                    !!_vm.user.phone_number || "Prosím výplňte telefonní číslo"
+                  )
+                }
+              ],
+              required: ""
+            },
+            model: {
+              value: _vm.user.phone_number,
+              callback: function($$v) {
+                _vm.$set(_vm.user, "phone_number", $$v)
+              },
+              expression: "user.phone_number"
             }
           }),
           _vm._v(" "),
           _c("v-text-field", {
             ref: "city",
             attrs: {
-              label: "City",
-              placeholder: "El Paso",
+              label: "Město",
+              placeholder: "Praha",
               rules: [
                 function() {
-                  return !!_vm.city || "This field is required"
-                },
-                this.addressCheck
+                  return !!_vm.user.city || "Prosím výplňte město"
+                }
               ],
               required: ""
             },
             model: {
-              value: _vm.city,
+              value: _vm.user.city,
               callback: function($$v) {
-                _vm.city = $$v
+                _vm.$set(_vm.user, "city", $$v)
               },
-              expression: "city"
+              expression: "user.city"
             }
           }),
           _vm._v(" "),
           _c("v-text-field", {
             ref: "state",
             attrs: {
-              label: "State/Province/Region",
+              label: "Ulice",
               rules: [
                 function() {
-                  return !!_vm.state || "This field is required"
+                  return !!_vm.user.street || "Prosím výplňte ulici"
                 }
               ],
               required: "",
-              placeholder: "TX"
+              placeholder: "Alej Svobody 100"
             },
             model: {
-              value: _vm.state,
+              value: _vm.user.street,
               callback: function($$v) {
-                _vm.state = $$v
+                _vm.$set(_vm.user, "street", $$v)
               },
-              expression: "state"
+              expression: "user.street"
             }
           }),
           _vm._v(" "),
           _c("v-text-field", {
             ref: "zip",
             attrs: {
-              label: "ZIP / Postal Code",
+              label: "PSČ",
               required: "",
               rules: [
                 function() {
-                  return !!_vm.zip || "This field is required"
+                  return !!_vm.user.postal_code || "Prosím výplňte psč"
                 }
               ],
-              placeholder: "79938"
+              placeholder: "32300"
             },
             model: {
-              value: _vm.zip,
+              value: _vm.user.postal_code,
               callback: function($$v) {
-                _vm.zip = $$v
+                _vm.$set(_vm.user, "postal_code", $$v)
               },
-              expression: "zip"
+              expression: "user.postal_code"
             }
           }),
           _vm._v(" "),
@@ -56092,22 +56130,24 @@ var render = function() {
             ref: "country",
             attrs: {
               autocomplete: "",
-              label: "Country",
-              placeholder: "Select...",
+              label: "Kód země",
+              placeholder: "Vyberte...",
               rules: [
                 function() {
-                  return !!_vm.country || "This field is required"
+                  return (
+                    !!_vm.user.country_code || "Prosím výplňte ulici kód země"
+                  )
                 }
               ],
               items: _vm.countries,
               required: ""
             },
             model: {
-              value: _vm.country,
+              value: _vm.user.country_code,
               callback: function($$v) {
-                _vm.country = $$v
+                _vm.$set(_vm.user, "country_code", $$v)
               },
-              expression: "country"
+              expression: "user.country_code"
             }
           })
         ],
@@ -56154,10 +56194,7 @@ var render = function() {
           _vm._v(" "),
           _c(
             "v-btn",
-            {
-              attrs: { color: "primary", flat: "" },
-              on: { click: _vm.submit }
-            },
+            { attrs: { color: "primary" }, on: { click: _vm.updateBillings } },
             [_vm._v("Submit")]
           )
         ],
@@ -56328,14 +56365,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         updatePassword: function updatePassword() {
             var _this = this;
 
-            //                this.isLoading = true;
+            this.isLoading = true;
 
             axios.put(this.$laroute.route('users.api.update.password', { id: this.currentUser.id }), this.password).then(function (response) {
                 _this.eventBus.$emit('password-updated');
             }).catch(function (error) {
                 _this.isLoading = false;
                 //                    Materialize.toast(error, 4000);
-
                 console.log(error);
             });
         }
@@ -59412,6 +59448,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['currentUser', 'thesisId'],
@@ -59421,12 +59468,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             items: [],
             accessUpload: false,
             bcId: null,
-            thesis: null
+            thesis: null,
+            loading: false,
+            errors: null
         };
     },
     mounted: function mounted() {
         var _this = this;
 
+        console.log(this.currentUser);
         this.eventBus.$on('load-thesis', function (payload) {
             _this.getThesis();
         });
@@ -59438,19 +59488,49 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
     methods: {
-        getThesis: function getThesis() {
+        createOrder: function createOrder() {
             var _this2 = this;
 
-            axios.get(this.$laroute.route('thesis.api.show', { id: this.thesisId })).then(function (response) {
+            this.loading = true;
+            axios.post(this.$laroute.route('orders.api.store'), this.getOrderData()).then(function (response) {
                 _this2.loading = false;
-                _this2.thesis = response.data;
+                console.log(response.data.id);
+                //                    this.eventBus.$emit('go-to-next-page', {page_id: this.nextStep, bc_id: response.data.id})
             }).catch(function (error) {
                 _this2.loading = false;
-                console.log(error);
+                _this2.errors = error.response.data.errors;
+            });
+        },
+        getThesis: function getThesis() {
+            var _this3 = this;
+
+            axios.get(this.$laroute.route('thesis.api.show', { id: this.thesisId })).then(function (response) {
+                _this3.loading = false;
+                _this3.thesis = response.data;
+            }).catch(function (error) {
+                _this3.loading = false;
+                _this3.error = error.response.data.errors;
+                console.log(error.response);
             });
         },
         goToNextPage: function goToNextPage(pageId) {
             this.eventBus.$emit('go-to-next-page', { page_id: pageId, bc_id: this.thesisId });
+        },
+        getOrderData: function getOrderData() {
+            return {
+                'user_id': this.currentUser.id,
+                'thesis_id': this.thesisId,
+                'orderName': this.thesis.typZadani,
+                'first_name': this.currentUser.first_name2,
+                'last_name': this.currentUser.last_name,
+                'phone_number': this.currentUser.phone_number,
+                'city': this.currentUser.city,
+                'street': this.currentUser.street,
+                'postal_code': this.currentUser.postal_code,
+                'country_code': this.currentUser.country_code,
+                'gopay_order_id': 3452345,
+                'price': this.thesis.price
+            };
         }
     }
 });
@@ -59972,6 +60052,16 @@ var render = function() {
         1
       ),
       _vm._v(" "),
+      _vm.errors !== null
+        ? _c(
+            "v-alert",
+            { attrs: { type: "error", value: true } },
+            _vm._l(_vm.errors, function(error) {
+              return _c("div", [_vm._v(_vm._s(error))])
+            })
+          )
+        : _vm._e(),
+      _vm._v(" "),
       _c(
         "v-btn",
         {
@@ -59982,7 +60072,7 @@ var render = function() {
             }
           }
         },
-        [_vm._v("Zpět")]
+        [_vm._v("\n        Zpět\n    ")]
       ),
       _vm._v(" "),
       _c(
@@ -59995,7 +60085,48 @@ var render = function() {
             }
           }
         },
-        [_vm._v("Další")]
+        [
+          _vm._v("\n        Vytvořit objednávku  "),
+          _c("v-progress-circular", {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.loading,
+                expression: "loading"
+              }
+            ],
+            attrs: { indeterminate: "", color: "white" }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-btn",
+        {
+          attrs: { color: "primary" },
+          on: {
+            click: function($event) {
+              _vm.createOrder()
+            }
+          }
+        },
+        [
+          _vm._v("\n        Vytvořit objednávku  "),
+          _c("v-progress-circular", {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.loading,
+                expression: "loading"
+              }
+            ],
+            attrs: { indeterminate: "", color: "white" }
+          })
+        ],
+        1
       )
     ],
     1
