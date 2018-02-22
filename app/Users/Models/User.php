@@ -26,7 +26,18 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'google_id', 'facebook_id'
+        'name',
+        'email',
+        'password',
+        'google_id',
+        'facebook_id',
+        'first_name2',
+        'last_name',
+        'phone_number',
+        'city',
+        'street',
+        'postal_code',
+        'country_code',
     ];
 
     /**
@@ -55,5 +66,10 @@ class User extends Authenticatable
     public function thesis()
     {
         return $this->hasMany(Thesis::class);
+    }
+
+    public function setFirstNameAttribute()
+    {
+
     }
 }

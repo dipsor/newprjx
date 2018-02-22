@@ -19,10 +19,17 @@ class OrderTransformer extends TransformerAbstract
             'user_id'           => (int)$order->user_id,
             'thesis_id'         => (int)$order->thesis_id,
             'orderName'         => (string)$order->orderName,
+            'first_name'        => (string)$order->first_name,
+            'last_name'         => (string)$order->last_name,
+            'phone_number'      => (string)$order->phone_number,
+            'city'              => (string)$order->city,
+            'street'            => (string)$order->street,
+            'postal_code'       => (string)$order->postal_code,
+            'country_code'      => (string)$order->country_code,
             'price'             => (string)$order->price,
             'gopay_order_id'    => (int)$order->gopay_order_id,
-            'created_at'        => (int)$order->created_at,
-            'updated_at'        => (int)$order->updated_at,
+            'created_at'        => (string)$order->created_at,
+            'updated_at'        => (string)$order->updated_at,
         ];
     }
 }
