@@ -18,8 +18,15 @@ class Order extends Migration
             $table->integer('user_id');
             $table->integer('thesis_id');
             $table->string('orderName');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('phone_number');
+            $table->string('city');
+            $table->string('street');
+            $table->string('postal_code');
+            $table->string('country_code');
             $table->integer('price');
-            $table->integer('gopay_order_id');
+            $table->integer('gopay_order_id')->nullable();
             $table->timestamps();
         });
     }

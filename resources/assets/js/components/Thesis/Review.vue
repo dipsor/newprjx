@@ -134,8 +134,19 @@
             </v-layout>
 
         </v-container>
-        <v-btn color="primary" @click.native="goToNextPage(2)">Zpět</v-btn>
-        <v-btn color="primary" @click.native="goToNextPage(4)">Další</v-btn>
+        <v-alert v-if="errors !== null" type="error" :value="true">
+            <div v-for="error in errors">{{error}}</div>
+        </v-alert>
+        <v-btn color="primary" @click.native="goToNextPage(2)">
+            Zpět
+        </v-btn>
+        <v-btn color="primary" @click.native="goToNextPage(4)">
+            Vytvořit objednávku &nbsp<v-progress-circular v-show="loading" indeterminate color="white"></v-progress-circular>
+        </v-btn>
+
+        <v-btn color="primary" @click="createOrder()">
+            Vytvořit objednávku &nbsp<v-progress-circular v-show="loading" indeterminate color="white"></v-progress-circular>
+        </v-btn>
     </div>
 </template>
 <script>
@@ -148,11 +159,13 @@
                 accessUpload: false,
                 bcId: null,
                 thesis: null,
+                loading: false,
+                errors: null,
             }
         },
 
         mounted() {
-
+            console.log(this.currentUser);
             this.eventBus.$on('load-thesis', (payload) => {
                 this.getThesis();
             });
@@ -163,17 +176,48 @@
         },
 
         methods: {
+            createOrder() {
+                this.loading = true;
+                axios.post(this.$laroute.route('orders.api.store'),this.getOrderData()).then((response) => {
+                    this.loading = false;
+                    console.log(response.data.id);
+//                    this.eventBus.$emit('go-to-next-page', {page_id: this.nextStep, bc_id: response.data.id})
+                }).catch((error) => {
+                    this.loading = false;
+                    this.errors = error.response.data.errors;
+
+                });
+            },
+
             getThesis() {
                 axios.get(this.$laroute.route('thesis.api.show', {id: this.thesisId})).then((response) => {
                     this.loading = false;
                     this.thesis = response.data;
                 }).catch((error) => {
                     this.loading = false;
-                    console.log(error);
+                    this.error = error.response.data.errors;
+                    console.log(error.response);
                 });
             },
             goToNextPage(pageId) {
                 this.eventBus.$emit('go-to-next-page', {page_id: pageId, bc_id: this.thesisId});
+            },
+
+            getOrderData() {
+                return {
+                    'user_id' : this.currentUser.id,
+                    'thesis_id' : this.thesisId,
+                    'orderName': this.thesis.typZadani,
+                    'first_name' : this.currentUser.first_name2,
+                    'last_name' : this.currentUser.last_name,
+                    'phone_number' : this.currentUser.phone_number,
+                    'city' : this.currentUser.city,
+                    'street' : this.currentUser.street,
+                    'postal_code' : this.currentUser.postal_code,
+                    'country_code' : this.currentUser.country_code,
+                    'gopay_order_id' : 3452345,
+                    'price' : this.thesis.price,
+                }
             }
         }
     }

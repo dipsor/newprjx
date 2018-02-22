@@ -14,7 +14,7 @@ class AddBillingDetailsToUser extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('first_name')->nullable();
+            $table->string('first_name2')->nullable();
             $table->string('last_name')->nullable();
             $table->string('phone_number')->nullable();
             $table->string('city')->nullable();
@@ -31,5 +31,14 @@ class AddBillingDetailsToUser extends Migration
      */
     public function down()
     {
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('first_name2');
+            $table->dropColumn('last_name');
+            $table->dropColumn('phone_number');
+            $table->dropColumn('city');
+            $table->dropColumn('street');
+            $table->dropColumn('postal_code');
+            $table->dropColumn('country_code');
+        });
     }
 }

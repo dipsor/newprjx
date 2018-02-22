@@ -21,6 +21,8 @@ Route::group(['namespace' => 'Api', 'prefix' => '/v1'], function () {
         Route::put('/{id}', 'UsersController@update')->name('users.api.update');
         Route::put('/profile-update/{id}', 'UsersController@updateGeneralInfo')->name('users.api.update.general.info');
         Route::put('/user-password-update/{id}', 'UsersController@updatePassword')->name('users.api.update.password');
+        Route::put('/user-billing-update/{id}', 'UsersController@updateBillingDetails')->name('users.api.update.billing');
+
     });
 
     Route::group(['prefix' => '/roles'], function() {
@@ -37,8 +39,10 @@ Route::group(['namespace' => 'Api', 'prefix' => '/v1'], function () {
         Route::put('/{id}', 'ThesisController@update')->name('thesis.api.update');
 
         Route::post('/upload', 'UploadController@upload')->name('thesis.api.upload');
-
     });
 
-
+    Route::group(['prefix' => '/order'], function() {
+        Route::get('/', 'OrdersController@index')->name('orders.api.index');
+        Route::post('/', 'OrdersController@store')->name('orders.api.store');
+    });
 });

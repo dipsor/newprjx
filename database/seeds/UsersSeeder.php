@@ -16,7 +16,7 @@ class UsersSeeder extends Seeder
             'name' => 'Miroslav  Masek',
             'email' => 'miroslav@digitonic.co.uk',
             'password' => 'password123',
-            'first_name' => 'Miroslav',
+            'first_name2' => 'Miroslav',
             'last_name' => 'Masek',
             'phone_number' => '07709837117',
             'city' => 'Edinburgh',

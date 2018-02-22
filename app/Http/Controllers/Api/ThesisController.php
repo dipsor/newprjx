@@ -26,6 +26,9 @@ class ThesisController extends Controller
      */
     public function index()
     {
+        $thesis = Thesis::all();
+
+        return response($this->transformer->transform($thesis));
     }
 
 
@@ -133,14 +136,13 @@ class ThesisController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\Response
      */
-    public function destroy($id): JsonResponse
+    public function destroy($id): Response
     {
         $thesis = Thesis::findOrFail($id);
         $thesis->delete();
 
-        return $this->response->withArray([1]);
-
+        return response('ok', 200);
     }
 }
