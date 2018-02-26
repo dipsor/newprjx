@@ -36,8 +36,9 @@
                                         </v-card>
                                     </v-stepper-content>
                                     <v-stepper-content step="4">
-                                        <v-card color="grey lighten-3" class="mb-5"></v-card>
-                                        <v-btn color="primary" @click.native="e1 = 1">Continue</v-btn>
+                                        <v-card color="grey lighten-3" class="mb-5">
+                                            <thesis-payment :current-user="currentUser" :thesis-id="bcId"></thesis-payment>
+                                        </v-card>
                                     </v-stepper-content>
                                 </v-stepper-items>
                             </v-stepper>
@@ -52,7 +53,7 @@
         props:['currentUser'],
         data () {
             return {
-                e1: 1,
+                e1: 4,
                 items: [],
                 accessUpload: false,
                 bcId: null,
@@ -71,7 +72,6 @@
                 this.bcId = payload.bc_id;
                 this.e1 = payload.page_id;
                 this.bcCreated = true;
-
             });
         },
 

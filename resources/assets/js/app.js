@@ -54,6 +54,7 @@ Vue.component('thesis-index', require('./components/Thesis/IndexComponent.vue'))
 Vue.component('thesis-main-form', require('./components/Thesis/MainForm.vue'));
 Vue.component('thesis-dropzone', require('./components/Thesis/Dropzone.vue'));
 Vue.component('thesis-review', require('./components/Thesis/Review.vue'));
+Vue.component('thesis-payment', require('./components/Thesis/Payment.vue'));
 
 Vue.component('custom-dialog', require('./components/CustomDialog.vue'));
 Vue.component('landing-page', require('./components/LandingPage.vue'));

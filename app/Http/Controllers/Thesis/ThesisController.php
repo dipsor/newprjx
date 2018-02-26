@@ -11,4 +11,16 @@ class ThesisController extends Controller
     {
         return view('thesis.index');
     }
+
+    public function returnIt(Request $request)
+    {
+        logger($request->get('id'));
+        return view('thesis.return')->with('request', $request);
+    }
+
+
+    public function notify(Request $request)
+    {
+        return view('thesis.notify')->with('request', $request);
+    }
 }

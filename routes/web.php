@@ -30,6 +30,8 @@ Route::group(['prefix' => 'uzivatele', 'namespace' => 'Users', 'middleware' => [
 
 Route::group(['prefix' => 'thesis', 'namespace' => 'Thesis', 'middleware' => ['role:customer', 'auth']], function () {
     Route::get('/', 'ThesisController@index')->name('thesis.index');
+    Route::get('/return', 'ThesisController@returnIt')->name('thesis.return');
+    Route::get('/notify', 'ThesisController@notify')->name('thesis.notify');
 });
 
 

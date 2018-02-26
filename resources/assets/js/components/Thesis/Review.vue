@@ -181,7 +181,9 @@
                 axios.post(this.$laroute.route('orders.api.store'),this.getOrderData()).then((response) => {
                     this.loading = false;
                     console.log(response.data.id);
-//                    this.eventBus.$emit('go-to-next-page', {page_id: this.nextStep, bc_id: response.data.id})
+                    this.eventBus.$emit('go-to-next-page', {page_id: 4, bc_id: response.data.id});
+                    this.eventBus.$emit('order-created', true);
+
                 }).catch((error) => {
                     this.loading = false;
                     this.errors = error.response.data.errors;
