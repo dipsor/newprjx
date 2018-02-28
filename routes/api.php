@@ -49,5 +49,6 @@ Route::group(['namespace' => 'Api', 'prefix' => '/v1'], function () {
 
     Route::group(['prefix' => '/gopay'], function() {
         Route::post('/', 'GopayController@payment')->name('gopay.api.create.payment');
+        Route::get('/', 'GopayController@getStatus')->name('gopay.api.status');
     });
 });

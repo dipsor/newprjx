@@ -7,9 +7,15 @@ use App\Http\Controllers\Controller;
 
 class UsersController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('users.index');
+        $id = null;
+
+        if ($request->get('id') !== null) {
+            $id = $request->get('id');
+        }
+
+        return view('users.index')->with('id', $id);
     }
 
     public function show($id)

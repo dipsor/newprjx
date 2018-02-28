@@ -21,24 +21,16 @@
                                 </v-stepper-header>
                                 <v-stepper-items>
                                     <v-stepper-content step="1">
-                                        <v-card color="grey lighten-3" class="mb-5">
                                             <thesis-main-form :current-user="currentUser"></thesis-main-form>
-                                        </v-card>
                                     </v-stepper-content>
                                     <v-stepper-content step="2">
-                                        <v-card color="grey lighten-3" class="mb-5">
                                             <thesis-dropzone :current-user="currentUser" :thesis-id="bcId"></thesis-dropzone>
-                                        </v-card>
                                     </v-stepper-content>
                                     <v-stepper-content step="3">
-                                        <v-card color="grey lighten-3" class="mb-5">
                                             <thesis-review :current-user="currentUser" :thesis-id="bcId"></thesis-review>
-                                        </v-card>
                                     </v-stepper-content>
                                     <v-stepper-content step="4">
-                                        <v-card color="grey lighten-3" class="mb-5">
                                             <thesis-payment :current-user="currentUser" :thesis-id="bcId"></thesis-payment>
-                                        </v-card>
                                     </v-stepper-content>
                                 </v-stepper-items>
                             </v-stepper>
@@ -53,7 +45,7 @@
         props:['currentUser'],
         data () {
             return {
-                e1: 4,
+                e1: 1,
                 items: [],
                 accessUpload: false,
                 bcId: null,

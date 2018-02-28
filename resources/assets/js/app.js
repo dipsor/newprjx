@@ -9,8 +9,17 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import Vuetify from 'vuetify'
-Vue.use(Vuetify)
-
+Vue.use(Vuetify, {
+    theme: {
+        primary: '#4A148C',
+        secondary: '#424242',
+        accent: '#82B1FF',
+        error: '#FF5252',
+        info: '#2196F3',
+        success: '#4CAF50',
+        warning: '#FFC107'
+    }
+});
 Vue.prototype.$laroute = require('./laroute.js');
 
 const eventBus = new Vue();

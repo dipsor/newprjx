@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,4 +41,3 @@ Route::get('login/google/callback', 'Auth\GoogleAuthController@handleProviderCal
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@customLogout')->name('users.logout');
 
 Auth::routes();
-
