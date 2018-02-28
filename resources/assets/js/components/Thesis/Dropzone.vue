@@ -1,20 +1,36 @@
 <template>
     <div>
-        <dropzone
-                  :options="customOptions"
-                  id="dropzone"
-                  url="/api/v1/thesis/upload"
-                  :useFontAwesome="true"
-                  :maxFileSizeInMB="50"
-                  v-on:vdropzone-success="showSuccess"
-                  v-on:vdropzone-error="handleError"
-                  :headers="csrfHeader">
-            <input type="hidden" name="csrf-token" :value="csrfToken">
-            ></dropzone>
-        <div>
-            <v-btn color="primary" @click.native="goToNextPage(1)">Zpět</v-btn>
-            <v-btn color="primary" @click.native="goToNextPage(3)">Další</v-btn>
-        </div>
+        <v-card color="grey lighten-3">
+            <v-card-text>
+                <v-layout row>
+                    <v-flex xs12>
+                        <v-card :class="'pb-1'">
+                            <v-toolbar color="purple darken-3" dark>
+                                <v-toolbar-title>Nahrani souboru</v-toolbar-title>
+                                <v-spacer></v-spacer>
+                            </v-toolbar>
+                            <dropzone
+                                    :options="customOptions"
+                                    id="dropzone"
+                                    url="/api/v1/thesis/upload"
+                                    :useFontAwesome="true"
+                                    :maxFileSizeInMB="50"
+                                    v-on:vdropzone-success="showSuccess"
+                                    v-on:vdropzone-error="handleError"
+                                    :headers="csrfHeader">
+                                <input type="hidden" name="csrf-token" :value="csrfToken">
+                                ></dropzone>
+                        </v-card>
+                    </v-flex>
+                </v-layout>
+            </v-card-text>
+            <v-divider class="mt-5"></v-divider>
+            <v-card-actions>
+                <v-btn color="primary" @click.native="goToNextPage(1)">Zpět</v-btn>
+                <v-spacer></v-spacer>
+                <v-btn color="primary" @click.native="goToNextPage(3)">Další</v-btn>
+            </v-card-actions>
+        </v-card>
     </div>
 </template>
 <style>

@@ -9,6 +9,7 @@
         "davejamesmiller/laravel-breadcrumbs": "^4.2",
         "ellipsesynergie/api-response": "^0.15.0",
         "fideloper/proxy": "~3.3",
+        "hazestudio/laravel-gopay-sdk": "^0.1.5",
         "lab404/laravel-impersonate": "^1.2",
         "laravel/framework": "5.5.*",
         "laravel/passport": "^4.0",

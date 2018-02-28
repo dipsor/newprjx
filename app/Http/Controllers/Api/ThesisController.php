@@ -80,8 +80,6 @@ class ThesisController extends Controller
      */
     public function show($id): Response
     {
-        logger($id);
-
         $thesis = Thesis::find($id);
 
         return response($this->transformer->transform($thesis));
