@@ -9,8 +9,17 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import Vuetify from 'vuetify'
-Vue.use(Vuetify)
-
+Vue.use(Vuetify, {
+    theme: {
+        primary: '#4A148C',
+        secondary: '#424242',
+        accent: '#82B1FF',
+        error: '#FF5252',
+        info: '#2196F3',
+        success: '#4CAF50',
+        warning: '#FFC107'
+    }
+});
 Vue.prototype.$laroute = require('./laroute.js');
 
 const eventBus = new Vue();
@@ -54,6 +63,7 @@ Vue.component('thesis-index', require('./components/Thesis/IndexComponent.vue'))
 Vue.component('thesis-main-form', require('./components/Thesis/MainForm.vue'));
 Vue.component('thesis-dropzone', require('./components/Thesis/Dropzone.vue'));
 Vue.component('thesis-review', require('./components/Thesis/Review.vue'));
+Vue.component('thesis-payment', require('./components/Thesis/Payment.vue'));
 
 Vue.component('custom-dialog', require('./components/CustomDialog.vue'));
 Vue.component('landing-page', require('./components/LandingPage.vue'));

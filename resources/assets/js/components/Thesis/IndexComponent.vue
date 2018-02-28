@@ -21,23 +21,16 @@
                                 </v-stepper-header>
                                 <v-stepper-items>
                                     <v-stepper-content step="1">
-                                        <v-card color="grey lighten-3" class="mb-5">
                                             <thesis-main-form :current-user="currentUser"></thesis-main-form>
-                                        </v-card>
                                     </v-stepper-content>
                                     <v-stepper-content step="2">
-                                        <v-card color="grey lighten-3" class="mb-5">
                                             <thesis-dropzone :current-user="currentUser" :thesis-id="bcId"></thesis-dropzone>
-                                        </v-card>
                                     </v-stepper-content>
                                     <v-stepper-content step="3">
-                                        <v-card color="grey lighten-3" class="mb-5">
                                             <thesis-review :current-user="currentUser" :thesis-id="bcId"></thesis-review>
-                                        </v-card>
                                     </v-stepper-content>
                                     <v-stepper-content step="4">
-                                        <v-card color="grey lighten-3" class="mb-5"></v-card>
-                                        <v-btn color="primary" @click.native="e1 = 1">Continue</v-btn>
+                                            <thesis-payment :current-user="currentUser" :thesis-id="bcId"></thesis-payment>
                                     </v-stepper-content>
                                 </v-stepper-items>
                             </v-stepper>
@@ -71,7 +64,6 @@
                 this.bcId = payload.bc_id;
                 this.e1 = payload.page_id;
                 this.bcCreated = true;
-
             });
         },
 

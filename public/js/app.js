@@ -1403,8 +1403,8 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(14);
-__webpack_require__(139);
-module.exports = __webpack_require__(140);
+__webpack_require__(142);
+module.exports = __webpack_require__(143);
 
 
 /***/ }),
@@ -1426,8 +1426,17 @@ __webpack_require__(15);
 window.Vue = __webpack_require__(36);
 
 
-Vue.use(__WEBPACK_IMPORTED_MODULE_0_vuetify___default.a);
-
+Vue.use(__WEBPACK_IMPORTED_MODULE_0_vuetify___default.a, {
+    theme: {
+        primary: '#4A148C',
+        secondary: '#424242',
+        accent: '#82B1FF',
+        error: '#FF5252',
+        info: '#2196F3',
+        success: '#4CAF50',
+        warning: '#FFC107'
+    }
+});
 Vue.prototype.$laroute = __webpack_require__(40);
 
 var eventBus = new Vue();
@@ -1470,15 +1479,16 @@ Vue.component('thesis-index', __webpack_require__(94));
 Vue.component('thesis-main-form', __webpack_require__(97));
 Vue.component('thesis-dropzone', __webpack_require__(100));
 Vue.component('thesis-review', __webpack_require__(105));
+Vue.component('thesis-payment', __webpack_require__(108));
 
-Vue.component('custom-dialog', __webpack_require__(108));
-Vue.component('landing-page', __webpack_require__(111));
-Vue.component('example-component', __webpack_require__(114));
-Vue.component('users-list', __webpack_require__(116));
-Vue.component('users-form', __webpack_require__(121));
-Vue.component('left-sidebar', __webpack_require__(126));
-Vue.component('navigation', __webpack_require__(131));
-Vue.component('users-profile', __webpack_require__(134));
+Vue.component('custom-dialog', __webpack_require__(111));
+Vue.component('landing-page', __webpack_require__(114));
+Vue.component('example-component', __webpack_require__(117));
+Vue.component('users-list', __webpack_require__(119));
+Vue.component('users-form', __webpack_require__(124));
+Vue.component('left-sidebar', __webpack_require__(129));
+Vue.component('navigation', __webpack_require__(134));
+Vue.component('users-profile', __webpack_require__(137));
 
 var app = new Vue({
 
@@ -47355,7 +47365,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;var _typeof = typeof Symbol === "function" && 
 
             absolute: false,
             rootUrl: 'http://localhost',
-            routes: [{ "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizationController@authorize" }, { "host": null, "methods": ["POST"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\ApproveAuthorizationController@approve" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\DenyAuthorizationController@deny" }, { "host": null, "methods": ["POST"], "uri": "oauth\/token", "name": null, "action": "\Laravel\Passport\Http\Controllers\AccessTokenController@issueToken" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController@forUser" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/tokens\/{token_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController@destroy" }, { "host": null, "methods": ["POST"], "uri": "oauth\/token\/refresh", "name": null, "action": "\Laravel\Passport\Http\Controllers\TransientTokenController@refresh" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/clients", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@forUser" }, { "host": null, "methods": ["POST"], "uri": "oauth\/clients", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@store" }, { "host": null, "methods": ["PUT"], "uri": "oauth\/clients\/{client_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@update" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/clients\/{client_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/scopes", "name": null, "action": "\Laravel\Passport\Http\Controllers\ScopeController@all" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/personal-access-tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@forUser" }, { "host": null, "methods": ["POST"], "uri": "oauth\/personal-access-tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@store" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/personal-access-tokens\/{token_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/users", "name": "users.api.index", "action": "AppHttpControllersApiUsersController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/users", "name": "users.api.store", "action": "AppHttpControllersApiUsersController@store" }, { "host": null, "methods": ["DELETE"], "uri": "api\/v1\/users\/{id}", "name": "users.api.destroy", "action": "AppHttpControllersApiUsersController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/users\/{id}", "name": "users.api.show", "action": "AppHttpControllersApiUsersController@show" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/{id}", "name": "users.api.update", "action": "AppHttpControllersApiUsersController@update" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/profile-update\/{id}", "name": "users.api.update.general.info", "action": "AppHttpControllersApiUsersController@updateGeneralInfo" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/user-password-update\/{id}", "name": "users.api.update.password", "action": "AppHttpControllersApiUsersController@updatePassword" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/user-billing-update\/{id}", "name": "users.api.update.billing", "action": "AppHttpControllersApiUsersController@updateBillingDetails" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/roles", "name": "roles.api.index", "action": "App\Http\Controllers\Api\RolesController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/teams", "name": "teams.api.index", "action": "App\Http\Controllers\Api\TeamsController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/thesis", "name": "thesis.api.store", "action": "App\Http\Controllers\Api\ThesisController@store" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/thesis\/{id}", "name": "thesis.api.show", "action": "App\Http\Controllers\Api\ThesisController@show" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/thesis\/{id}", "name": "thesis.api.update", "action": "App\Http\Controllers\Api\ThesisController@update" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/thesis\/upload", "name": "thesis.api.upload", "action": "AppHttpControllersApiUploadController@upload" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/order", "name": "orders.api.index", "action": "App\Http\Controllers\Api\OrdersController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/order", "name": "orders.api.store", "action": "App\Http\Controllers\Api\OrdersController@store" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "impersonate\/take\/{id}", "name": "impersonate", "action": "\Lab404\Impersonate\Controllers\ImpersonateController@take" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "impersonate\/leave", "name": "impersonate.leave", "action": "\Lab404\Impersonate\Controllers\ImpersonateController@leave" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "\/", "name": "home", "action": "App\Http\Controllers\LandingPageController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "admin", "name": "dashboard.index", "action": "App\Http\Controllers\DashboardController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "admin\/users", "name": "admin.users.index", "action": "AppHttpControllersAdminUsersUsersController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "uzivatele", "name": "users.index", "action": "AppHttpControllersUsersUsersController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "uzivatele\/{id}", "name": "users.show", "action": "AppHttpControllersUsersUsersController@show" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "thesis", "name": "thesis.index", "action": "App\Http\Controllers\Thesis\ThesisController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/facebook", "name": "facebook.login", "action": "App\Http\Controllers\Auth\FacebookAuthController@redirectToProvider" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/facebook\/callback", "name": "facebook.login.callback", "action": "App\Http\Controllers\Auth\FacebookAuthController@handleProviderCallback" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/google", "name": "google.login", "action": "App\Http\Controllers\Auth\GoogleAuthController@redirectToProvider" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/google\/callback", "name": "google.login.callback", "action": "App\Http\Controllers\Auth\GoogleAuthController@handleProviderCallback" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "logout", "name": "users.logout", "action": "\App\Http\Controllers\Auth\LoginController@customLogout" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login", "name": "login", "action": "App\Http\Controllers\Auth\LoginController@showLoginForm" }, { "host": null, "methods": ["POST"], "uri": "login", "name": null, "action": "App\Http\Controllers\Auth\LoginController@login" }, { "host": null, "methods": ["POST"], "uri": "logout", "name": "logout", "action": "App\Http\Controllers\Auth\LoginController@logout" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "register", "name": "register", "action": "App\Http\Controllers\Auth\RegisterController@showRegistrationForm" }, { "host": null, "methods": ["POST"], "uri": "register", "name": null, "action": "App\Http\Controllers\Auth\RegisterController@register" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "password\/reset", "name": "password.request", "action": "App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm" }, { "host": null, "methods": ["POST"], "uri": "password\/email", "name": "password.email", "action": "App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "password\/reset\/{token}", "name": "password.reset", "action": "App\Http\Controllers\Auth\ResetPasswordController@showResetForm" }, { "host": null, "methods": ["POST"], "uri": "password\/reset", "name": null, "action": "App\Http\Controllers\Auth\ResetPasswordController@reset" }],
+            routes: [{ "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizationController@authorize" }, { "host": null, "methods": ["POST"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\ApproveAuthorizationController@approve" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\DenyAuthorizationController@deny" }, { "host": null, "methods": ["POST"], "uri": "oauth\/token", "name": null, "action": "\Laravel\Passport\Http\Controllers\AccessTokenController@issueToken" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController@forUser" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/tokens\/{token_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController@destroy" }, { "host": null, "methods": ["POST"], "uri": "oauth\/token\/refresh", "name": null, "action": "\Laravel\Passport\Http\Controllers\TransientTokenController@refresh" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/clients", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@forUser" }, { "host": null, "methods": ["POST"], "uri": "oauth\/clients", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@store" }, { "host": null, "methods": ["PUT"], "uri": "oauth\/clients\/{client_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@update" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/clients\/{client_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/scopes", "name": null, "action": "\Laravel\Passport\Http\Controllers\ScopeController@all" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/personal-access-tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@forUser" }, { "host": null, "methods": ["POST"], "uri": "oauth\/personal-access-tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@store" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/personal-access-tokens\/{token_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/users", "name": "users.api.index", "action": "AppHttpControllersApiUsersController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/users", "name": "users.api.store", "action": "AppHttpControllersApiUsersController@store" }, { "host": null, "methods": ["DELETE"], "uri": "api\/v1\/users\/{id}", "name": "users.api.destroy", "action": "AppHttpControllersApiUsersController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/users\/{id}", "name": "users.api.show", "action": "AppHttpControllersApiUsersController@show" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/{id}", "name": "users.api.update", "action": "AppHttpControllersApiUsersController@update" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/profile-update\/{id}", "name": "users.api.update.general.info", "action": "AppHttpControllersApiUsersController@updateGeneralInfo" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/user-password-update\/{id}", "name": "users.api.update.password", "action": "AppHttpControllersApiUsersController@updatePassword" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/user-billing-update\/{id}", "name": "users.api.update.billing", "action": "AppHttpControllersApiUsersController@updateBillingDetails" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/roles", "name": "roles.api.index", "action": "App\Http\Controllers\Api\RolesController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/teams", "name": "teams.api.index", "action": "App\Http\Controllers\Api\TeamsController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/thesis", "name": "thesis.api.store", "action": "App\Http\Controllers\Api\ThesisController@store" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/thesis\/{id}", "name": "thesis.api.show", "action": "App\Http\Controllers\Api\ThesisController@show" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/thesis\/{id}", "name": "thesis.api.update", "action": "App\Http\Controllers\Api\ThesisController@update" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/thesis\/upload", "name": "thesis.api.upload", "action": "AppHttpControllersApiUploadController@upload" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/order", "name": "orders.api.index", "action": "App\Http\Controllers\Api\OrdersController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/order", "name": "orders.api.store", "action": "App\Http\Controllers\Api\OrdersController@store" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/order\/{id}", "name": "orders.api.show", "action": "App\Http\Controllers\Api\OrdersController@show" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/gopay", "name": "gopay.api.create.payment", "action": "App\Http\Controllers\Api\GopayController@payment" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/gopay", "name": "gopay.api.status", "action": "App\Http\Controllers\Api\GopayController@getStatus" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "impersonate\/take\/{id}", "name": "impersonate", "action": "\Lab404\Impersonate\Controllers\ImpersonateController@take" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "impersonate\/leave", "name": "impersonate.leave", "action": "\Lab404\Impersonate\Controllers\ImpersonateController@leave" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "\/", "name": "home", "action": "App\Http\Controllers\LandingPageController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "admin", "name": "dashboard.index", "action": "App\Http\Controllers\DashboardController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "admin\/users", "name": "admin.users.index", "action": "AppHttpControllersAdminUsersUsersController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "uzivatele", "name": "users.index", "action": "AppHttpControllersUsersUsersController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "uzivatele\/{id}", "name": "users.show", "action": "AppHttpControllersUsersUsersController@show" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "thesis", "name": "thesis.index", "action": "App\Http\Controllers\Thesis\ThesisController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "thesis\/return", "name": "thesis.return", "action": "App\Http\Controllers\Thesis\ThesisController@returnIt" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "thesis\/notify", "name": "thesis.notify", "action": "App\Http\Controllers\Thesis\ThesisController@notify" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/facebook", "name": "facebook.login", "action": "App\Http\Controllers\Auth\FacebookAuthController@redirectToProvider" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/facebook\/callback", "name": "facebook.login.callback", "action": "App\Http\Controllers\Auth\FacebookAuthController@handleProviderCallback" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/google", "name": "google.login", "action": "App\Http\Controllers\Auth\GoogleAuthController@redirectToProvider" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/google\/callback", "name": "google.login.callback", "action": "App\Http\Controllers\Auth\GoogleAuthController@handleProviderCallback" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "logout", "name": "users.logout", "action": "\App\Http\Controllers\Auth\LoginController@customLogout" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login", "name": "login", "action": "App\Http\Controllers\Auth\LoginController@showLoginForm" }, { "host": null, "methods": ["POST"], "uri": "login", "name": null, "action": "App\Http\Controllers\Auth\LoginController@login" }, { "host": null, "methods": ["POST"], "uri": "logout", "name": "logout", "action": "App\Http\Controllers\Auth\LoginController@logout" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "register", "name": "register", "action": "App\Http\Controllers\Auth\RegisterController@showRegistrationForm" }, { "host": null, "methods": ["POST"], "uri": "register", "name": null, "action": "App\Http\Controllers\Auth\RegisterController@register" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "password\/reset", "name": "password.request", "action": "App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm" }, { "host": null, "methods": ["POST"], "uri": "password\/email", "name": "password.email", "action": "App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "password\/reset\/{token}", "name": "password.reset", "action": "App\Http\Controllers\Auth\ResetPasswordController@showResetForm" }, { "host": null, "methods": ["POST"], "uri": "password\/reset", "name": null, "action": "App\Http\Controllers\Auth\ResetPasswordController@reset" }],
             prefix: '',
 
             route: function route(name, parameters, _route) {
@@ -54926,6 +54936,19 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+var _this = this;
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -54960,19 +54983,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 text: 'Dashboard',
                 disabled: false
             }],
-            divider: true
+            divider: true,
+            status: '',
+            messages: {
+                'PAID': 'Objednávka byla zaplacena.',
+                'PAYMENT_METHOD_CHOSEN': 'Metoda byla vybrána.',
+                'REFUNDED': 'Platba byla vrácena.',
+                'PARTIALLY_REFUNDED': 'Platba byla částečnê zrušena.',
+                'CANCELED': 'Platba byla zrušena.',
+                'TIMEOUTED': 'Platební proces vypršel.'
+            }
         };
     },
 
 
     props: {
-        currentUser: null
+        currentUser: null,
+        gopayOrderId: 0
     },
 
     mounted: function mounted() {
         this.items = this.getBreadCrumbs();
+        this.getStatus(this.gopayOrderId);
     },
 
+
+    watch: {
+        gopayOrderId: function gopayOrderId(val) {
+            console.log('gopayOrderId changed');
+            console.log(val);
+            _this.getStatus(val);
+        }
+    },
 
     methods: {
         getBreadCrumbs: function getBreadCrumbs() {
@@ -54985,6 +55027,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 disabled: false,
                 link: this.$laroute.route('users.index')
             }];
+        },
+        getStatus: function getStatus(id) {
+            var _this2 = this;
+
+            if (id > 0) {
+                axios.get(this.$laroute.route('gopay.api.status', { 'id': id })).then(function (response) {
+                    _this2.loading = false;
+                    _this2.status = response.data.state;
+                    console.log(_this2.status);
+                }).catch(function (error) {
+                    _this2.loading = false;
+                    _this2.error = error.response.data.errors;
+                    console.log(error.response);
+                });
+            }
         }
     }
 });
@@ -55023,6 +55080,56 @@ var render = function() {
                 "v-flex",
                 { attrs: { xs12: "" } },
                 [
+                  _c(
+                    "v-alert",
+                    { attrs: { type: "success", value: _vm.status == "PAID" } },
+                    [
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(_vm.messages[_vm.status]) +
+                          "\n                "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-alert",
+                    {
+                      attrs: {
+                        type: "info",
+                        value:
+                          _vm.status == "PAYMENT_METHOD_CHOSEN" ||
+                          _vm.status == "REFUNDED" ||
+                          _vm.status == "PARTIALLY_REFUNDED"
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(_vm.messages[_vm.status]) +
+                          "\n                "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-alert",
+                    {
+                      attrs: {
+                        type: "error",
+                        value:
+                          _vm.status == "CANCELED" || _vm.status == "TIMEOUTED"
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(_vm.messages[_vm.status]) +
+                          "\n                "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
                   _c(
                     "v-card",
                     [
@@ -56676,13 +56783,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['currentUser'],
@@ -56817,21 +56917,9 @@ var render = function() {
                                 "v-stepper-content",
                                 { attrs: { step: "1" } },
                                 [
-                                  _c(
-                                    "v-card",
-                                    {
-                                      staticClass: "mb-5",
-                                      attrs: { color: "grey lighten-3" }
-                                    },
-                                    [
-                                      _c("thesis-main-form", {
-                                        attrs: {
-                                          "current-user": _vm.currentUser
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  )
+                                  _c("thesis-main-form", {
+                                    attrs: { "current-user": _vm.currentUser }
+                                  })
                                 ],
                                 1
                               ),
@@ -56840,22 +56928,12 @@ var render = function() {
                                 "v-stepper-content",
                                 { attrs: { step: "2" } },
                                 [
-                                  _c(
-                                    "v-card",
-                                    {
-                                      staticClass: "mb-5",
-                                      attrs: { color: "grey lighten-3" }
-                                    },
-                                    [
-                                      _c("thesis-dropzone", {
-                                        attrs: {
-                                          "current-user": _vm.currentUser,
-                                          "thesis-id": _vm.bcId
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  )
+                                  _c("thesis-dropzone", {
+                                    attrs: {
+                                      "current-user": _vm.currentUser,
+                                      "thesis-id": _vm.bcId
+                                    }
+                                  })
                                 ],
                                 1
                               ),
@@ -56864,22 +56942,12 @@ var render = function() {
                                 "v-stepper-content",
                                 { attrs: { step: "3" } },
                                 [
-                                  _c(
-                                    "v-card",
-                                    {
-                                      staticClass: "mb-5",
-                                      attrs: { color: "grey lighten-3" }
-                                    },
-                                    [
-                                      _c("thesis-review", {
-                                        attrs: {
-                                          "current-user": _vm.currentUser,
-                                          "thesis-id": _vm.bcId
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  )
+                                  _c("thesis-review", {
+                                    attrs: {
+                                      "current-user": _vm.currentUser,
+                                      "thesis-id": _vm.bcId
+                                    }
+                                  })
                                 ],
                                 1
                               ),
@@ -56888,23 +56956,12 @@ var render = function() {
                                 "v-stepper-content",
                                 { attrs: { step: "4" } },
                                 [
-                                  _c("v-card", {
-                                    staticClass: "mb-5",
-                                    attrs: { color: "grey lighten-3" }
-                                  }),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-btn",
-                                    {
-                                      attrs: { color: "primary" },
-                                      nativeOn: {
-                                        click: function($event) {
-                                          _vm.e1 = 1
-                                        }
-                                      }
-                                    },
-                                    [_vm._v("Continue")]
-                                  )
+                                  _c("thesis-payment", {
+                                    attrs: {
+                                      "current-user": _vm.currentUser,
+                                      "thesis-id": _vm.bcId
+                                    }
+                                  })
                                 ],
                                 1
                               )
@@ -56994,6 +57051,29 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -57672,43 +57752,1495 @@ var render = function() {
     "div",
     [
       _c(
-        "v-container",
-        { attrs: { fluid: "" } },
+        "v-card",
+        { attrs: { color: "grey lighten-3" } },
         [
           _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
+            "v-card-text",
             [
               _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
+                "v-layout",
+                { attrs: { row: "" } },
                 [
-                  _c("v-subheader", {
-                    domProps: { textContent: _vm._s("Typ zadání") }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs8: "" } },
-                [
-                  _c("v-select", {
-                    attrs: {
-                      items: _vm.formItemsData.typZadani,
-                      label: "",
-                      light: "",
-                      "return-object": ""
-                    },
-                    model: {
-                      value: _vm.selectedData.typZadani,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "typZadani", $$v)
-                      },
-                      expression: "selectedData.typZadani"
-                    }
-                  })
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "" } },
+                    [
+                      _c(
+                        "v-card",
+                        [
+                          _c(
+                            "v-toolbar",
+                            { attrs: { color: "purple darken-3", dark: "" } },
+                            [
+                              _c("v-toolbar-title", [
+                                _vm._v("Zde vytvorte formular")
+                              ]),
+                              _vm._v(" "),
+                              _c("v-spacer")
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-container",
+                            [
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "", wrap: "" } },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [
+                                      _c("v-subheader", {
+                                        domProps: {
+                                          textContent: _vm._s("Typ zadání")
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs8: "" } },
+                                    [
+                                      _c("v-select", {
+                                        attrs: {
+                                          items: _vm.formItemsData.typZadani,
+                                          label: "",
+                                          light: "",
+                                          "return-object": ""
+                                        },
+                                        model: {
+                                          value: _vm.selectedData.typZadani,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "typZadani",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "selectedData.typZadani"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                {
+                                  directives: [
+                                    {
+                                      name: "show",
+                                      rawName: "v-show",
+                                      value:
+                                        _vm.selectedData.typZadani.value == 2,
+                                      expression:
+                                        "selectedData.typZadani.value == 2"
+                                    }
+                                  ],
+                                  attrs: { row: "", wrap: "" }
+                                },
+                                [
+                                  _c("v-flex", { attrs: { xs4: "" } }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs8: "" } },
+                                    [
+                                      _c("v-select", {
+                                        attrs: {
+                                          items: _vm.formItemsData.rozsahStran,
+                                          label: "Předpokládaný rozsah stran",
+                                          light: "",
+                                          "item-value": "value"
+                                        },
+                                        model: {
+                                          value:
+                                            _vm.selectedData
+                                              .pribliznyPocetListu,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "pribliznyPocetListu",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "selectedData.pribliznyPocetListu"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                {
+                                  directives: [
+                                    {
+                                      name: "show",
+                                      rawName: "v-show",
+                                      value:
+                                        _vm.selectedData.typZadani.value == 1,
+                                      expression:
+                                        "selectedData.typZadani.value == 1"
+                                    }
+                                  ],
+                                  attrs: { row: "", wrap: "" }
+                                },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [
+                                      _c("v-subheader", {
+                                        domProps: {
+                                          textContent: _vm._s(
+                                            "Přesný počet listů"
+                                          )
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs6: "" } },
+                                    [
+                                      _c("v-slider", {
+                                        attrs: { "thumb-label": "", max: 1000 },
+                                        on: { change: _vm.getTotalPrice },
+                                        model: {
+                                          value:
+                                            _vm.selectedData.presnyPocetStran,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "presnyPocetStran",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "selectedData.presnyPocetStran"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs2: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: {
+                                          name: "selectedPresnyPocetstran",
+                                          label: "Počet",
+                                          id: "selectedPresnyPocetStran",
+                                          "item-value":
+                                            "selectedData.presnyPocetStran"
+                                        },
+                                        on: { change: _vm.getTotalPrice },
+                                        model: {
+                                          value:
+                                            _vm.selectedData.presnyPocetStran,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "presnyPocetStran",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "selectedData.presnyPocetStran"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-flex", { attrs: { xs4: "" } }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [
+                                      _c("v-select", {
+                                        attrs: {
+                                          items: _vm.formItemsData.typTisku,
+                                          label: "Typ tisku",
+                                          light: "",
+                                          "return-object": ""
+                                        },
+                                        model: {
+                                          value: _vm.selectedData.typTisku,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "typTisku",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "selectedData.typTisku"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [
+                                      _c("v-select", {
+                                        attrs: {
+                                          items: _vm.formItemsData.barevnost,
+                                          label: "Barevnost",
+                                          light: "",
+                                          "return-object": ""
+                                        },
+                                        model: {
+                                          value: _vm.selectedData.barevnost,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "barevnost",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "selectedData.barevnost"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "", wrap: "" } },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [
+                                      _c("v-subheader", {
+                                        domProps: {
+                                          textContent: _vm._s("Škola")
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs8: "" } },
+                                    [
+                                      _c("v-select", {
+                                        attrs: {
+                                          items: _vm.formItemsData.skoly,
+                                          label: "Zde prosím vyberte školu",
+                                          light: "",
+                                          "return-object": ""
+                                        },
+                                        model: {
+                                          value: _vm.selectedData.skoly,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "skoly",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "selectedData.skoly"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                {
+                                  directives: [
+                                    {
+                                      name: "show",
+                                      rawName: "v-show",
+                                      value: _vm.selectedData.skoly.value == 0,
+                                      expression:
+                                        "selectedData.skoly.value == 0"
+                                    }
+                                  ],
+                                  attrs: { row: "", wrap: "" }
+                                },
+                                [
+                                  _c("v-flex", { attrs: { xs4: "" } }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs8: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: {
+                                          name: "jinaSkola",
+                                          label: "Jiná škola",
+                                          id: "jinaSkola"
+                                        },
+                                        model: {
+                                          value: _vm.selectedData.jinaSkola,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "jinaSkola",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "selectedData.jinaSkola"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "", wrap: "" } },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [
+                                      _c("v-subheader", {
+                                        domProps: {
+                                          textContent: _vm._s("Fakulta")
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs8: "" } },
+                                    [
+                                      _c("v-select", {
+                                        attrs: {
+                                          items: _vm.formItemsData.fakulty,
+                                          label: "Zde prosím vyberte fakultu",
+                                          light: "",
+                                          "return-object": ""
+                                        },
+                                        model: {
+                                          value: _vm.selectedData.fakulty,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "fakulty",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "selectedData.fakulty"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                {
+                                  directives: [
+                                    {
+                                      name: "show",
+                                      rawName: "v-show",
+                                      value: _vm.selectedData.fakulty == 0,
+                                      expression: "selectedData.fakulty == 0"
+                                    }
+                                  ],
+                                  attrs: { row: "", wrap: "" }
+                                },
+                                [
+                                  _c("v-flex", { attrs: { xs4: "" } }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs8: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: {
+                                          name: "jinaFakulta",
+                                          label: "Jiná fakulta",
+                                          id: "jinaFakulta"
+                                        },
+                                        model: {
+                                          value: _vm.selectedData.jinaFakulta,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "jinaFakulta",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "selectedData.jinaFakulta"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "", wrap: "" } },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [_c("v-subheader", [_vm._v("Katedra")])],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs8: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: {
+                                          name: "input-1",
+                                          label: "Název katedry",
+                                          id: "katedra"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "", wrap: "" } },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [
+                                      _c("v-subheader", [_vm._v("Název práce")])
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs8: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: {
+                                          name: "input-1",
+                                          label: "Název práce",
+                                          id: "nazevPrace"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "", wrap: "" } },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [
+                                      _c("v-subheader", {
+                                        domProps: {
+                                          textContent: _vm._s("Typ práce")
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs8: "" } },
+                                    [
+                                      _c("v-select", {
+                                        attrs: {
+                                          items: _vm.formItemsData.typPrace,
+                                          label: "Zde prosím vyberte typ práce",
+                                          light: "",
+                                          "return-object": ""
+                                        },
+                                        model: {
+                                          value: _vm.selectedData.typPrace,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "typPrace",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "selectedData.typPrace"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                {
+                                  directives: [
+                                    {
+                                      name: "show",
+                                      rawName: "v-show",
+                                      value: _vm.selectedData.typPrace == 0,
+                                      expression: "selectedData.typPrace == 0"
+                                    }
+                                  ],
+                                  attrs: { row: "", wrap: "" }
+                                },
+                                [
+                                  _c("v-flex", { attrs: { xs4: "" } }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs8: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: {
+                                          name: "jinyTypPrace",
+                                          label: "Jiná práce",
+                                          id: "jinyTypPrace"
+                                        },
+                                        model: {
+                                          value: _vm.selectedData.jinyTypPrace,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "jinyTypPrace",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "selectedData.jinyTypPrace"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "", wrap: "" } },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [
+                                      _c("v-subheader", {
+                                        domProps: {
+                                          textContent: _vm._s("Spodní řádek")
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: {
+                                          name: "input-1",
+                                          label: "Text vlevo",
+                                          id: "spodniTextVlevo"
+                                        },
+                                        model: {
+                                          value:
+                                            _vm.selectedData.spodniTextVlevo,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "spodniTextVlevo",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "selectedData.spodniTextVlevo"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: {
+                                          name: "input-1",
+                                          label: "Text vpravo",
+                                          id: "spodniTextVpravo"
+                                        },
+                                        model: {
+                                          value:
+                                            _vm.selectedData.spodniTextVpravo,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "spodniTextVpravo",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "selectedData.spodniTextVpravo"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "", wrap: "" } },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [
+                                      _c("v-subheader", {
+                                        domProps: {
+                                          textContent: _vm._s("Potisk hřbetu")
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs8: "" } },
+                                    [
+                                      _c("v-switch", {
+                                        attrs: {
+                                          label:
+                                            _vm.potiskHrbetu == false
+                                              ? "Ne"
+                                              : "Ano"
+                                        },
+                                        model: {
+                                          value: _vm.potiskHrbetu,
+                                          callback: function($$v) {
+                                            _vm.potiskHrbetu = $$v
+                                          },
+                                          expression: "potiskHrbetu"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                {
+                                  directives: [
+                                    {
+                                      name: "show",
+                                      rawName: "v-show",
+                                      value: _vm.potiskHrbetu == true,
+                                      expression: "potiskHrbetu == true"
+                                    }
+                                  ],
+                                  attrs: { row: "", wrap: "" }
+                                },
+                                [
+                                  _c("v-flex", { attrs: { xs4: "" } }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: {
+                                          name: "potiskNahore",
+                                          label: "Potisk hřbetu nahoře",
+                                          id: "potiskNahore"
+                                        },
+                                        model: {
+                                          value: _vm.selectedData.potiskNahore,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "potiskNahore",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "selectedData.potiskNahore"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: {
+                                          name: "potiskDole",
+                                          label: "Potisk hřbetu dole",
+                                          id: "potiskDole"
+                                        },
+                                        model: {
+                                          value: _vm.selectedData.potiskDole,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "potiskDole",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "selectedData.potiskDole"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "", wrap: "" } },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [
+                                      _c("v-subheader", {
+                                        domProps: {
+                                          textContent: _vm._s(
+                                            "Počet pevných desek"
+                                          )
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs6: "" } },
+                                    [
+                                      _c("v-slider", {
+                                        attrs: { "thumb-label": "", max: 20 },
+                                        model: {
+                                          value:
+                                            _vm.selectedData.pocetPevnychDesek,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "pocetPevnychDesek",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "selectedData.pocetPevnychDesek"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs2: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: {
+                                          name: "pocetPevnychDesek",
+                                          label: "Počet",
+                                          id: "pocetPevnychDesek",
+                                          "item-value":
+                                            "selectedData.pocetPevnychDesek"
+                                        },
+                                        model: {
+                                          value:
+                                            _vm.selectedData.pocetPevnychDesek,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "pocetPevnychDesek",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "selectedData.pocetPevnychDesek"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "", wrap: "" } },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [
+                                      _c("v-subheader", {
+                                        domProps: {
+                                          textContent: _vm._s(
+                                            "Počet kroužkových desek"
+                                          )
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs6: "" } },
+                                    [
+                                      _c("v-slider", {
+                                        attrs: { "thumb-label": "", max: 20 },
+                                        model: {
+                                          value:
+                                            _vm.selectedData
+                                              .pocetKrouzkovychDesek,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "pocetKrouzkovychDesek",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "selectedData.pocetKrouzkovychDesek"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs2: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: {
+                                          name: "pocetKrouzkovychDesek",
+                                          label: "Počet",
+                                          id: "pocetKrouzkovychDesek",
+                                          "item-value":
+                                            "selectedData.pocetKrouzkovychDesek"
+                                        },
+                                        model: {
+                                          value:
+                                            _vm.selectedData
+                                              .pocetKrouzkovychDesek,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "pocetKrouzkovychDesek",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "selectedData.pocetKrouzkovychDesek"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "", wrap: "" } },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [
+                                      _c("v-subheader", {
+                                        domProps: {
+                                          textContent: _vm._s("Barva desek")
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs8: "" } },
+                                    [
+                                      _c("v-select", {
+                                        attrs: {
+                                          items: _vm.formItemsData.barvaDesek,
+                                          label: "Vyberte barvu desek",
+                                          light: "",
+                                          "return-object": ""
+                                        },
+                                        model: {
+                                          value: _vm.selectedData.barvaDesek,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "barvaDesek",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "selectedData.barvaDesek"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "", wrap: "" } },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [
+                                      _c("v-subheader", {
+                                        domProps: {
+                                          textContent: _vm._s("Barva písma")
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs8: "" } },
+                                    [
+                                      _c("v-select", {
+                                        attrs: {
+                                          items: _vm.formItemsData.barvaPisma,
+                                          label: "Vyberte barvu písma",
+                                          light: "",
+                                          "return-object": ""
+                                        },
+                                        model: {
+                                          value: _vm.selectedData.barvaPisma,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "barvaPisma",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "selectedData.barvaPisma"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "", wrap: "" } },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [
+                                      _c("v-subheader", {
+                                        domProps: {
+                                          textContent: _vm._s("Kapsa pro CD")
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs1: "" } },
+                                    [
+                                      _c("v-switch", {
+                                        attrs: {
+                                          label:
+                                            _vm.kapsaProCD == true
+                                              ? "Ano"
+                                              : "Ne"
+                                        },
+                                        model: {
+                                          value: _vm.kapsaProCD,
+                                          callback: function($$v) {
+                                            _vm.kapsaProCD = $$v
+                                          },
+                                          expression: "kapsaProCD"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                {
+                                  directives: [
+                                    {
+                                      name: "show",
+                                      rawName: "v-show",
+                                      value: _vm.kapsaProCD == true,
+                                      expression: "kapsaProCD == true"
+                                    }
+                                  ],
+                                  attrs: { row: "", wrap: "" }
+                                },
+                                [
+                                  _c("v-flex", { attrs: { xs4: "" } }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [
+                                      _c("v-slider", {
+                                        attrs: { "thumb-label": "", max: 5 },
+                                        model: {
+                                          value:
+                                            _vm.selectedData.pocetKapesProCD,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "pocetKapesProCD",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "selectedData.pocetKapesProCD"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs2: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: {
+                                          name: "pocetKapesProCD",
+                                          label: "Počet",
+                                          id: "pocetKapesProCD",
+                                          "item-value":
+                                            "selectedData.pocetKapesProCD"
+                                        },
+                                        model: {
+                                          value:
+                                            _vm.selectedData.pocetKapesProCD,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "pocetKapesProCD",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "selectedData.pocetKapesProCD"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs2: "" } },
+                                    [
+                                      _c("v-switch", {
+                                        attrs: {
+                                          label:
+                                            _vm.kapsaProCD == true
+                                              ? "Vpředu"
+                                              : "Vzadu"
+                                        },
+                                        model: {
+                                          value: _vm.selectedData.kapsaCdVpredu,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "kapsaCdVpredu",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "selectedData.kapsaCdVpredu"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "", wrap: "" } },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [
+                                      _c("v-subheader", {
+                                        domProps: {
+                                          textContent: _vm._s(
+                                            "Kapsa pro posudek"
+                                          )
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs2: "" } },
+                                    [
+                                      _c("v-switch", {
+                                        attrs: {
+                                          label:
+                                            _vm.kapsaProPosudek == true
+                                              ? "Ano"
+                                              : "Ne"
+                                        },
+                                        model: {
+                                          value: _vm.kapsaProPosudek,
+                                          callback: function($$v) {
+                                            _vm.kapsaProPosudek = $$v
+                                          },
+                                          expression: "kapsaProPosudek"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                {
+                                  directives: [
+                                    {
+                                      name: "show",
+                                      rawName: "v-show",
+                                      value: _vm.kapsaProPosudek == true,
+                                      expression: "kapsaProPosudek == true"
+                                    }
+                                  ],
+                                  attrs: { row: "", wrap: "" }
+                                },
+                                [
+                                  _c("v-flex", { attrs: { xs4: "" } }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [
+                                      _c("v-slider", {
+                                        attrs: { "thumb-label": "", max: 5 },
+                                        model: {
+                                          value:
+                                            _vm.selectedData
+                                              .pocetKapesProPosudek,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "pocetKapesProPosudek",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "selectedData.pocetKapesProPosudek"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs2: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: {
+                                          name: "pocetKapesProPosudek",
+                                          label: "Počet",
+                                          id: "pocetKapesProPosudek",
+                                          "item-value":
+                                            "selectedData.pocetKapesProPosudek"
+                                        },
+                                        model: {
+                                          value:
+                                            _vm.selectedData
+                                              .pocetKapesProPosudek,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "pocetKapesProPosudek",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "selectedData.pocetKapesProPosudek"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs2: "" } },
+                                    [
+                                      _c("v-switch", {
+                                        attrs: {
+                                          label:
+                                            _vm.kapsaProCD == true
+                                              ? "Vpředu"
+                                              : "Vzadu"
+                                        },
+                                        model: {
+                                          value:
+                                            _vm.selectedData.kapsaPosudekVpredu,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "kapsaPosudekVpredu",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "selectedData.kapsaPosudekVpredu"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "", wrap: "" } },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [
+                                      _c("v-subheader", {
+                                        domProps: {
+                                          textContent: _vm._s("Doba zhotovení")
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs8: "" } },
+                                    [
+                                      _c("v-select", {
+                                        attrs: {
+                                          items:
+                                            _vm.formItemsData.dobaZhotoveni,
+                                          label: "vyberte dobu zhotovení",
+                                          light: "",
+                                          "return-object": ""
+                                        },
+                                        model: {
+                                          value: _vm.selectedData.dobaZhotoveni,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "dobaZhotoveni",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "selectedData.dobaZhotoveni"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "", wrap: "" } },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs4: "" } },
+                                    [
+                                      _c("v-subheader", {
+                                        domProps: {
+                                          textContent: _vm._s(
+                                            "Poznámky k objednávce"
+                                          )
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs8: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: {
+                                          name: "poznamky",
+                                          label: "Poznámky k objednavce",
+                                          textarea: ""
+                                        },
+                                        model: {
+                                          value: _vm.selectedData.poznamky,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.selectedData,
+                                              "poznamky",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "selectedData.poznamky"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "", wrap: "" } },
+                                [
+                                  _c("v-flex", { attrs: { xs4: "" } }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs8: "" } },
+                                    [
+                                      _vm.price >= 0
+                                        ? _c("v-subheader", {
+                                            domProps: {
+                                              textContent: _vm._s(
+                                                "cena: " + _vm.price + " Kč"
+                                              )
+                                            }
+                                          })
+                                        : _vm._e()
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "", wrap: "" } },
+                                [
+                                  _c("v-flex", { attrs: { xs4: "" } }),
+                                  _vm._v(" "),
+                                  _c("v-flex", { attrs: { xs8: "" } })
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
                 ],
                 1
               )
@@ -57716,1249 +59248,77 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c(
-            "v-layout",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.selectedData.typZadani.value == 2,
-                  expression: "selectedData.typZadani.value == 2"
-                }
-              ],
-              attrs: { row: "", wrap: "" }
-            },
-            [
-              _c("v-flex", { attrs: { xs4: "" } }),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs8: "" } },
-                [
-                  _c("v-select", {
-                    attrs: {
-                      items: _vm.formItemsData.rozsahStran,
-                      label: "Předpokládaný rozsah stran",
-                      light: "",
-                      "item-value": "value"
-                    },
-                    model: {
-                      value: _vm.selectedData.pribliznyPocetListu,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "pribliznyPocetListu", $$v)
-                      },
-                      expression: "selectedData.pribliznyPocetListu"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
+          _c("v-divider", { staticClass: "mt-5" }),
           _vm._v(" "),
           _c(
-            "v-layout",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.selectedData.typZadani.value == 1,
-                  expression: "selectedData.typZadani.value == 1"
-                }
-              ],
-              attrs: { row: "", wrap: "" }
-            },
+            "v-card-actions",
             [
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [
-                  _c("v-subheader", {
-                    domProps: { textContent: _vm._s("Přesný počet listů") }
-                  })
-                ],
-                1
-              ),
+              _c("v-spacer"),
               _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs6: "" } },
-                [
-                  _c("v-slider", {
-                    attrs: { "thumb-label": "", max: 1000 },
-                    on: { change: _vm.getTotalPrice },
-                    model: {
-                      value: _vm.selectedData.presnyPocetStran,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "presnyPocetStran", $$v)
-                      },
-                      expression: "selectedData.presnyPocetStran"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs2: "" } },
-                [
-                  _c("v-text-field", {
-                    attrs: {
-                      name: "selectedPresnyPocetstran",
-                      label: "Počet",
-                      id: "selectedPresnyPocetStran",
-                      "item-value": "selectedData.presnyPocetStran"
+              !_vm.thesisCreated
+                ? _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "primary", disabled: !_vm.accessUpload },
+                      on: { click: _vm.createThesis }
                     },
-                    on: { change: _vm.getTotalPrice },
-                    model: {
-                      value: _vm.selectedData.presnyPocetStran,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "presnyPocetStran", $$v)
-                      },
-                      expression: "selectedData.presnyPocetStran"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c("v-flex", { attrs: { xs4: "" } }),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [
-                  _c("v-select", {
-                    attrs: {
-                      items: _vm.formItemsData.typTisku,
-                      label: "Typ tisku",
-                      light: "",
-                      "return-object": ""
-                    },
-                    model: {
-                      value: _vm.selectedData.typTisku,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "typTisku", $$v)
-                      },
-                      expression: "selectedData.typTisku"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [
-                  _c("v-select", {
-                    attrs: {
-                      items: _vm.formItemsData.barevnost,
-                      label: "Barevnost",
-                      light: "",
-                      "return-object": ""
-                    },
-                    model: {
-                      value: _vm.selectedData.barevnost,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "barevnost", $$v)
-                      },
-                      expression: "selectedData.barevnost"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
-            [
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [
-                  _c("v-subheader", {
-                    domProps: { textContent: _vm._s("Škola") }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs8: "" } },
-                [
-                  _c("v-select", {
-                    attrs: {
-                      items: _vm.formItemsData.skoly,
-                      label: "Zde prosím vyberte školu",
-                      light: "",
-                      "return-object": ""
-                    },
-                    model: {
-                      value: _vm.selectedData.skoly,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "skoly", $$v)
-                      },
-                      expression: "selectedData.skoly"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.selectedData.skoly.value == 0,
-                  expression: "selectedData.skoly.value == 0"
-                }
-              ],
-              attrs: { row: "", wrap: "" }
-            },
-            [
-              _c("v-flex", { attrs: { xs4: "" } }),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs8: "" } },
-                [
-                  _c("v-text-field", {
-                    attrs: {
-                      name: "jinaSkola",
-                      label: "Jiná škola",
-                      id: "jinaSkola"
-                    },
-                    model: {
-                      value: _vm.selectedData.jinaSkola,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "jinaSkola", $$v)
-                      },
-                      expression: "selectedData.jinaSkola"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
-            [
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [
-                  _c("v-subheader", {
-                    domProps: { textContent: _vm._s("Fakulta") }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs8: "" } },
-                [
-                  _c("v-select", {
-                    attrs: {
-                      items: _vm.formItemsData.fakulty,
-                      label: "Zde prosím vyberte fakultu",
-                      light: "",
-                      "return-object": ""
-                    },
-                    model: {
-                      value: _vm.selectedData.fakulty,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "fakulty", $$v)
-                      },
-                      expression: "selectedData.fakulty"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.selectedData.fakulty == 0,
-                  expression: "selectedData.fakulty == 0"
-                }
-              ],
-              attrs: { row: "", wrap: "" }
-            },
-            [
-              _c("v-flex", { attrs: { xs4: "" } }),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs8: "" } },
-                [
-                  _c("v-text-field", {
-                    attrs: {
-                      name: "jinaFakulta",
-                      label: "Jiná fakulta",
-                      id: "jinaFakulta"
-                    },
-                    model: {
-                      value: _vm.selectedData.jinaFakulta,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "jinaFakulta", $$v)
-                      },
-                      expression: "selectedData.jinaFakulta"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
-            [
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [_c("v-subheader", [_vm._v("Katedra")])],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs8: "" } },
-                [
-                  _c("v-text-field", {
-                    attrs: {
-                      name: "input-1",
-                      label: "Název katedry",
-                      id: "katedra"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
-            [
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [_c("v-subheader", [_vm._v("Název práce")])],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs8: "" } },
-                [
-                  _c("v-text-field", {
-                    attrs: {
-                      name: "input-1",
-                      label: "Název práce",
-                      id: "nazevPrace"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
-            [
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [
-                  _c("v-subheader", {
-                    domProps: { textContent: _vm._s("Typ práce") }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs8: "" } },
-                [
-                  _c("v-select", {
-                    attrs: {
-                      items: _vm.formItemsData.typPrace,
-                      label: "Zde prosím vyberte typ práce",
-                      light: "",
-                      "return-object": ""
-                    },
-                    model: {
-                      value: _vm.selectedData.typPrace,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "typPrace", $$v)
-                      },
-                      expression: "selectedData.typPrace"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.selectedData.typPrace == 0,
-                  expression: "selectedData.typPrace == 0"
-                }
-              ],
-              attrs: { row: "", wrap: "" }
-            },
-            [
-              _c("v-flex", { attrs: { xs4: "" } }),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs8: "" } },
-                [
-                  _c("v-text-field", {
-                    attrs: {
-                      name: "jinyTypPrace",
-                      label: "Jiná práce",
-                      id: "jinyTypPrace"
-                    },
-                    model: {
-                      value: _vm.selectedData.jinyTypPrace,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "jinyTypPrace", $$v)
-                      },
-                      expression: "selectedData.jinyTypPrace"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
-            [
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [
-                  _c("v-subheader", {
-                    domProps: { textContent: _vm._s("Spodní řádek") }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [
-                  _c("v-text-field", {
-                    attrs: {
-                      name: "input-1",
-                      label: "Text vlevo",
-                      id: "spodniTextVlevo"
-                    },
-                    model: {
-                      value: _vm.selectedData.spodniTextVlevo,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "spodniTextVlevo", $$v)
-                      },
-                      expression: "selectedData.spodniTextVlevo"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [
-                  _c("v-text-field", {
-                    attrs: {
-                      name: "input-1",
-                      label: "Text vpravo",
-                      id: "spodniTextVpravo"
-                    },
-                    model: {
-                      value: _vm.selectedData.spodniTextVpravo,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "spodniTextVpravo", $$v)
-                      },
-                      expression: "selectedData.spodniTextVpravo"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
-            [
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [
-                  _c("v-subheader", {
-                    domProps: { textContent: _vm._s("Potisk hřbetu") }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs8: "" } },
-                [
-                  _c("v-switch", {
-                    attrs: { label: _vm.potiskHrbetu == false ? "Ne" : "Ano" },
-                    model: {
-                      value: _vm.potiskHrbetu,
-                      callback: function($$v) {
-                        _vm.potiskHrbetu = $$v
-                      },
-                      expression: "potiskHrbetu"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.potiskHrbetu == true,
-                  expression: "potiskHrbetu == true"
-                }
-              ],
-              attrs: { row: "", wrap: "" }
-            },
-            [
-              _c("v-flex", { attrs: { xs4: "" } }),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [
-                  _c("v-text-field", {
-                    attrs: {
-                      name: "potiskNahore",
-                      label: "Potisk hřbetu nahoře",
-                      id: "potiskNahore"
-                    },
-                    model: {
-                      value: _vm.selectedData.potiskNahore,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "potiskNahore", $$v)
-                      },
-                      expression: "selectedData.potiskNahore"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [
-                  _c("v-text-field", {
-                    attrs: {
-                      name: "potiskDole",
-                      label: "Potisk hřbetu dole",
-                      id: "potiskDole"
-                    },
-                    model: {
-                      value: _vm.selectedData.potiskDole,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "potiskDole", $$v)
-                      },
-                      expression: "selectedData.potiskDole"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
-            [
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [
-                  _c("v-subheader", {
-                    domProps: { textContent: _vm._s("Počet pevných desek") }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs6: "" } },
-                [
-                  _c("v-slider", {
-                    attrs: { "thumb-label": "", max: 20 },
-                    model: {
-                      value: _vm.selectedData.pocetPevnychDesek,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "pocetPevnychDesek", $$v)
-                      },
-                      expression: "selectedData.pocetPevnychDesek"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs2: "" } },
-                [
-                  _c("v-text-field", {
-                    attrs: {
-                      name: "pocetPevnychDesek",
-                      label: "Počet",
-                      id: "pocetPevnychDesek",
-                      "item-value": "selectedData.pocetPevnychDesek"
-                    },
-                    model: {
-                      value: _vm.selectedData.pocetPevnychDesek,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "pocetPevnychDesek", $$v)
-                      },
-                      expression: "selectedData.pocetPevnychDesek"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
-            [
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [
-                  _c("v-subheader", {
-                    domProps: { textContent: _vm._s("Počet kroužkových desek") }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs6: "" } },
-                [
-                  _c("v-slider", {
-                    attrs: { "thumb-label": "", max: 20 },
-                    model: {
-                      value: _vm.selectedData.pocetKrouzkovychDesek,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "pocetKrouzkovychDesek", $$v)
-                      },
-                      expression: "selectedData.pocetKrouzkovychDesek"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs2: "" } },
-                [
-                  _c("v-text-field", {
-                    attrs: {
-                      name: "pocetKrouzkovychDesek",
-                      label: "Počet",
-                      id: "pocetKrouzkovychDesek",
-                      "item-value": "selectedData.pocetKrouzkovychDesek"
-                    },
-                    model: {
-                      value: _vm.selectedData.pocetKrouzkovychDesek,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "pocetKrouzkovychDesek", $$v)
-                      },
-                      expression: "selectedData.pocetKrouzkovychDesek"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
-            [
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [
-                  _c("v-subheader", {
-                    domProps: { textContent: _vm._s("Barva desek") }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs8: "" } },
-                [
-                  _c("v-select", {
-                    attrs: {
-                      items: _vm.formItemsData.barvaDesek,
-                      label: "Vyberte barvu desek",
-                      light: "",
-                      "return-object": ""
-                    },
-                    model: {
-                      value: _vm.selectedData.barvaDesek,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "barvaDesek", $$v)
-                      },
-                      expression: "selectedData.barvaDesek"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
-            [
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [
-                  _c("v-subheader", {
-                    domProps: { textContent: _vm._s("Barva písma") }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs8: "" } },
-                [
-                  _c("v-select", {
-                    attrs: {
-                      items: _vm.formItemsData.barvaPisma,
-                      label: "Vyberte barvu písma",
-                      light: "",
-                      "return-object": ""
-                    },
-                    model: {
-                      value: _vm.selectedData.barvaPisma,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "barvaPisma", $$v)
-                      },
-                      expression: "selectedData.barvaPisma"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
-            [
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [
-                  _c("v-subheader", {
-                    domProps: { textContent: _vm._s("Kapsa pro CD") }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs1: "" } },
-                [
-                  _c("v-switch", {
-                    attrs: { label: _vm.kapsaProCD == true ? "Ano" : "Ne" },
-                    model: {
-                      value: _vm.kapsaProCD,
-                      callback: function($$v) {
-                        _vm.kapsaProCD = $$v
-                      },
-                      expression: "kapsaProCD"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.kapsaProCD == true,
-                  expression: "kapsaProCD == true"
-                }
-              ],
-              attrs: { row: "", wrap: "" }
-            },
-            [
-              _c("v-flex", { attrs: { xs4: "" } }),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [
-                  _c("v-slider", {
-                    attrs: { "thumb-label": "", max: 5 },
-                    model: {
-                      value: _vm.selectedData.pocetKapesProCD,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "pocetKapesProCD", $$v)
-                      },
-                      expression: "selectedData.pocetKapesProCD"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs2: "" } },
-                [
-                  _c("v-text-field", {
-                    attrs: {
-                      name: "pocetKapesProCD",
-                      label: "Počet",
-                      id: "pocetKapesProCD",
-                      "item-value": "selectedData.pocetKapesProCD"
-                    },
-                    model: {
-                      value: _vm.selectedData.pocetKapesProCD,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "pocetKapesProCD", $$v)
-                      },
-                      expression: "selectedData.pocetKapesProCD"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs2: "" } },
-                [
-                  _c("v-switch", {
-                    attrs: {
-                      label: _vm.kapsaProCD == true ? "Vpředu" : "Vzadu"
-                    },
-                    model: {
-                      value: _vm.selectedData.kapsaCdVpredu,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "kapsaCdVpredu", $$v)
-                      },
-                      expression: "selectedData.kapsaCdVpredu"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
-            [
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [
-                  _c("v-subheader", {
-                    domProps: { textContent: _vm._s("Kapsa pro posudek") }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs2: "" } },
-                [
-                  _c("v-switch", {
-                    attrs: {
-                      label: _vm.kapsaProPosudek == true ? "Ano" : "Ne"
-                    },
-                    model: {
-                      value: _vm.kapsaProPosudek,
-                      callback: function($$v) {
-                        _vm.kapsaProPosudek = $$v
-                      },
-                      expression: "kapsaProPosudek"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.kapsaProPosudek == true,
-                  expression: "kapsaProPosudek == true"
-                }
-              ],
-              attrs: { row: "", wrap: "" }
-            },
-            [
-              _c("v-flex", { attrs: { xs4: "" } }),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [
-                  _c("v-slider", {
-                    attrs: { "thumb-label": "", max: 5 },
-                    model: {
-                      value: _vm.selectedData.pocetKapesProPosudek,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "pocetKapesProPosudek", $$v)
-                      },
-                      expression: "selectedData.pocetKapesProPosudek"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs2: "" } },
-                [
-                  _c("v-text-field", {
-                    attrs: {
-                      name: "pocetKapesProPosudek",
-                      label: "Počet",
-                      id: "pocetKapesProPosudek",
-                      "item-value": "selectedData.pocetKapesProPosudek"
-                    },
-                    model: {
-                      value: _vm.selectedData.pocetKapesProPosudek,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "pocetKapesProPosudek", $$v)
-                      },
-                      expression: "selectedData.pocetKapesProPosudek"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs2: "" } },
-                [
-                  _c("v-switch", {
-                    attrs: {
-                      label: _vm.kapsaProCD == true ? "Vpředu" : "Vzadu"
-                    },
-                    model: {
-                      value: _vm.selectedData.kapsaPosudekVpredu,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "kapsaPosudekVpredu", $$v)
-                      },
-                      expression: "selectedData.kapsaPosudekVpredu"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
-            [
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [
-                  _c("v-subheader", {
-                    domProps: { textContent: _vm._s("Doba zhotovení") }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs8: "" } },
-                [
-                  _c("v-select", {
-                    attrs: {
-                      items: _vm.formItemsData.dobaZhotoveni,
-                      label: "vyberte dobu zhotovení",
-                      light: "",
-                      "return-object": ""
-                    },
-                    model: {
-                      value: _vm.selectedData.dobaZhotoveni,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "dobaZhotoveni", $$v)
-                      },
-                      expression: "selectedData.dobaZhotoveni"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
-            [
-              _c(
-                "v-flex",
-                { attrs: { xs4: "" } },
-                [
-                  _c("v-subheader", {
-                    domProps: { textContent: _vm._s("Poznámky k objednávce") }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs8: "" } },
-                [
-                  _c("v-text-field", {
-                    attrs: {
-                      name: "poznamky",
-                      label: "Poznámky k objednavce",
-                      textarea: ""
-                    },
-                    model: {
-                      value: _vm.selectedData.poznamky,
-                      callback: function($$v) {
-                        _vm.$set(_vm.selectedData, "poznamky", $$v)
-                      },
-                      expression: "selectedData.poznamky"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
-            [
-              _c("v-flex", { attrs: { xs4: "" } }),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs8: "" } },
-                [
-                  _vm.price >= 0
-                    ? _c("v-subheader", {
-                        domProps: {
-                          textContent: _vm._s("cena: " + _vm.price + " Kč")
-                        }
+                    [
+                      _vm._v("Vytvořit  "),
+                      _c("v-progress-circular", {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.loading,
+                            expression: "loading"
+                          }
+                        ],
+                        attrs: { indeterminate: "", color: "white" }
                       })
-                    : _vm._e()
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
-            [
-              _c("v-flex", { attrs: { xs4: "" } }),
+                    ],
+                    1
+                  )
+                : _vm._e(),
               _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs8: "" } },
-                [
-                  !_vm.thesisCreated
-                    ? _c(
+              _vm.thesisCreated
+                ? _c(
+                    "div",
+                    [
+                      _c(
                         "v-btn",
                         {
                           attrs: {
                             color: "primary",
                             disabled: !_vm.accessUpload
                           },
-                          on: { click: _vm.createThesis }
+                          on: { click: _vm.updateThesis }
                         },
-                        [
-                          _vm._v("Vytvořit  "),
-                          _c("v-progress-circular", {
-                            directives: [
-                              {
-                                name: "show",
-                                rawName: "v-show",
-                                value: _vm.loading,
-                                expression: "loading"
-                              }
-                            ],
-                            attrs: { indeterminate: "", color: "white" }
-                          })
-                        ],
-                        1
+                        [_vm._v("Uložit změny")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: {
+                            color: "primary",
+                            disabled: !_vm.accessUpload
+                          },
+                          on: { click: _vm.goToNextPage }
+                        },
+                        [_vm._v("Pokračovat k dalšímu kroku")]
                       )
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.thesisCreated
-                    ? _c(
-                        "div",
-                        [
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: {
-                                color: "primary",
-                                disabled: !_vm.accessUpload
-                              },
-                              on: { click: _vm.updateThesis }
-                            },
-                            [_vm._v("Uložit změny")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: {
-                                color: "primary",
-                                disabled: !_vm.accessUpload
-                              },
-                              on: { click: _vm.goToNextPage }
-                            },
-                            [_vm._v("Pokračovat k dalšímu kroku")]
-                          )
-                        ],
-                        1
-                      )
-                    : _vm._e()
-                ],
-                1
-              )
+                    ],
+                    1
+                  )
+                : _vm._e()
             ],
             1
           )
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("v-container", { attrs: { fluid: "" } })
     ],
     1
   )
@@ -59118,6 +59478,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['currentUser', 'thesisId'],
@@ -59185,57 +59561,108 @@ var render = function() {
     "div",
     [
       _c(
-        "dropzone",
-        {
-          attrs: {
-            options: _vm.customOptions,
-            id: "dropzone",
-            url: "/api/v1/thesis/upload",
-            useFontAwesome: true,
-            maxFileSizeInMB: 50,
-            headers: _vm.csrfHeader
-          },
-          on: {
-            "vdropzone-success": _vm.showSuccess,
-            "vdropzone-error": _vm.handleError
-          }
-        },
-        [
-          _c("input", {
-            attrs: { type: "hidden", name: "csrf-token" },
-            domProps: { value: _vm.csrfToken }
-          }),
-          _vm._v("\n        >")
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
+        "v-card",
+        { attrs: { color: "grey lighten-3" } },
         [
           _c(
-            "v-btn",
-            {
-              attrs: { color: "primary" },
-              nativeOn: {
-                click: function($event) {
-                  _vm.goToNextPage(1)
-                }
-              }
-            },
-            [_vm._v("Zpět")]
+            "v-card-text",
+            [
+              _c(
+                "v-layout",
+                { attrs: { row: "" } },
+                [
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "" } },
+                    [
+                      _c(
+                        "v-card",
+                        { class: "pb-1" },
+                        [
+                          _c(
+                            "v-toolbar",
+                            { attrs: { color: "purple darken-3", dark: "" } },
+                            [
+                              _c("v-toolbar-title", [
+                                _vm._v("Nahrani souboru")
+                              ]),
+                              _vm._v(" "),
+                              _c("v-spacer")
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "dropzone",
+                            {
+                              attrs: {
+                                options: _vm.customOptions,
+                                id: "dropzone",
+                                url: "/api/v1/thesis/upload",
+                                useFontAwesome: true,
+                                maxFileSizeInMB: 50,
+                                headers: _vm.csrfHeader
+                              },
+                              on: {
+                                "vdropzone-success": _vm.showSuccess,
+                                "vdropzone-error": _vm.handleError
+                              }
+                            },
+                            [
+                              _c("input", {
+                                attrs: { type: "hidden", name: "csrf-token" },
+                                domProps: { value: _vm.csrfToken }
+                              }),
+                              _vm._v("\n                            >")
+                            ]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
           ),
           _vm._v(" "),
+          _c("v-divider", { staticClass: "mt-5" }),
+          _vm._v(" "),
           _c(
-            "v-btn",
-            {
-              attrs: { color: "primary" },
-              nativeOn: {
-                click: function($event) {
-                  _vm.goToNextPage(3)
-                }
-              }
-            },
-            [_vm._v("Další")]
+            "v-card-actions",
+            [
+              _c(
+                "v-btn",
+                {
+                  attrs: { color: "primary" },
+                  nativeOn: {
+                    click: function($event) {
+                      _vm.goToNextPage(1)
+                    }
+                  }
+                },
+                [_vm._v("Zpět")]
+              ),
+              _vm._v(" "),
+              _c("v-spacer"),
+              _vm._v(" "),
+              _c(
+                "v-btn",
+                {
+                  attrs: { color: "primary" },
+                  nativeOn: {
+                    click: function($event) {
+                      _vm.goToNextPage(3)
+                    }
+                  }
+                },
+                [_vm._v("Další")]
+              )
+            ],
+            1
           )
         ],
         1
@@ -59445,20 +59872,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['currentUser', 'thesisId'],
@@ -59495,7 +59908,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.post(this.$laroute.route('orders.api.store'), this.getOrderData()).then(function (response) {
                 _this2.loading = false;
                 console.log(response.data.id);
-                //                    this.eventBus.$emit('go-to-next-page', {page_id: this.nextStep, bc_id: response.data.id})
+                _this2.eventBus.$emit('go-to-next-page', { page_id: 4, bc_id: response.data.id });
+                _this2.eventBus.$emit('order-created', true);
             }).catch(function (error) {
                 _this2.loading = false;
                 _this2.errors = error.response.data.errors;
@@ -59547,24 +59961,27 @@ var render = function() {
     "div",
     [
       _c(
-        "v-container",
-        { attrs: { fluid: "" } },
+        "v-card",
+        { attrs: { color: "grey lighten-3" } },
         [
-          _vm.thesis != null
-            ? _c(
+          _c(
+            "v-card-text",
+            [
+              _c(
                 "v-layout",
                 { attrs: { row: "" } },
                 [
                   _c(
                     "v-flex",
-                    { attrs: { xs12: "", sm6: "" } },
+                    { attrs: { xs12: "" } },
                     [
                       _c(
                         "v-card",
+                        { class: "pb-1" },
                         [
                           _c(
                             "v-toolbar",
-                            { attrs: { color: "indigo", dark: "" } },
+                            { attrs: { color: "purple darken-3", dark: "" } },
                             [
                               _c("v-toolbar-title", [_vm._v("Shrnutí")]),
                               _vm._v(" "),
@@ -59573,471 +59990,450 @@ var render = function() {
                             1
                           ),
                           _vm._v(" "),
-                          _c(
-                            "v-list",
-                            [
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
+                          _vm.thesis != null
+                            ? _c(
+                                "v-list",
                                 [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Typ zadání:")
-                                  ]),
-                                  _vm._v(" "),
                                   _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
-                                    [_vm._v(_vm._s(_vm.thesis.typZadani))]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Předpokládaný rozsah stran:")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
-                                    [_vm._v(_vm._s(_vm.thesis.rozsahStran))]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Přesný počet listů:")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
                                     [
-                                      _vm._v(
-                                        _vm._s(_vm.thesis.presnyPocetStran)
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Typ zadání:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [_vm._v(_vm._s(_vm.thesis.typZadani))]
                                       )
-                                    ]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Typ tisku:")
-                                  ]),
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-divider"),
                                   _vm._v(" "),
                                   _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
-                                    [_vm._v(_vm._s(_vm.thesis.typTisku))]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Barevnost:")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
-                                    [_vm._v(_vm._s(_vm.thesis.barevnost))]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [_vm._v("Škola:")]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
-                                    [_vm._v(_vm._s(_vm.thesis.skoly))]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Fakulta:")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
-                                    [_vm._v(_vm._s(_vm.thesis.fakulty))]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Katedra:")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
-                                    [_vm._v(_vm._s(_vm.thesis.typZadani))]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Název práce:")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
-                                    [_vm._v(_vm._s(_vm.thesis.typZadani))]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Spodní řádek vlevo:")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
-                                    [_vm._v(_vm._s(_vm.thesis.spodniTextVlevo))]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Spodní řádek vpravo:")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
                                     [
-                                      _vm._v(
-                                        _vm._s(_vm.thesis.spodniTextVpravo)
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Předpokládaný rozsah stran:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [_vm._v(_vm._s(_vm.thesis.rozsahStran))]
                                       )
-                                    ]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Potisk hřbetu nahoře:")
-                                  ]),
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-divider"),
                                   _vm._v(" "),
                                   _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
-                                    [_vm._v(_vm._s(_vm.thesis.potiskNahore))]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Potisk hřbetu dole:")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
-                                    [_vm._v(_vm._s(_vm.thesis.potiskDole))]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Počet pevných desek:")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
                                     [
-                                      _vm._v(
-                                        _vm._s(_vm.thesis.pocetPevnychDesek)
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Přesný počet listů:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [
+                                          _vm._v(
+                                            _vm._s(_vm.thesis.presnyPocetStran)
+                                          )
+                                        ]
                                       )
-                                    ]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Počet kroužkových desek:")
-                                  ]),
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-divider"),
                                   _vm._v(" "),
                                   _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
                                     [
-                                      _vm._v(
-                                        _vm._s(_vm.thesis.pocetKrouzkovychDesek)
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Typ tisku:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [_vm._v(_vm._s(_vm.thesis.typTisku))]
                                       )
-                                    ]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Barva desek:")
-                                  ]),
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-divider"),
                                   _vm._v(" "),
                                   _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
-                                    [_vm._v(_vm._s(_vm.thesis.barvaDesek))]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Barva písma:")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
-                                    [_vm._v(_vm._s(_vm.thesis.barvaPisma))]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Kapsa pro CD:")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
-                                    [_vm._v(_vm._s(_vm.thesis.pocetKapesProCD))]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Kapsa pro posudek:")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
                                     [
-                                      _vm._v(
-                                        _vm._s(_vm.thesis.pocetKapesProPosudek)
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Barevnost:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [_vm._v(_vm._s(_vm.thesis.barevnost))]
                                       )
-                                    ]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Doba zhotovení:")
-                                  ]),
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-divider"),
                                   _vm._v(" "),
                                   _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
-                                    [_vm._v(_vm._s(_vm.thesis.dobaZhotoveni))]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Poznámky k objednávce:")
-                                  ]),
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Škola:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [_vm._v(_vm._s(_vm.thesis.skoly))]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-divider"),
                                   _vm._v(" "),
                                   _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
-                                    [_vm._v(_vm._s(_vm.thesis.poznamky))]
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Fakulta:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [_vm._v(_vm._s(_vm.thesis.fakulty))]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-divider"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Katedra:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [_vm._v(_vm._s(_vm.thesis.typZadani))]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-divider"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Název práce:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [_vm._v(_vm._s(_vm.thesis.typZadani))]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-divider"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Spodní řádek vlevo:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [
+                                          _vm._v(
+                                            _vm._s(_vm.thesis.spodniTextVlevo)
+                                          )
+                                        ]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-divider"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Spodní řádek vpravo:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [
+                                          _vm._v(
+                                            _vm._s(_vm.thesis.spodniTextVpravo)
+                                          )
+                                        ]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-divider"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Potisk hřbetu nahoře:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [
+                                          _vm._v(
+                                            _vm._s(_vm.thesis.potiskNahore)
+                                          )
+                                        ]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-divider"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Potisk hřbetu dole:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [_vm._v(_vm._s(_vm.thesis.potiskDole))]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-divider"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Počet pevných desek:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [
+                                          _vm._v(
+                                            _vm._s(_vm.thesis.pocetPevnychDesek)
+                                          )
+                                        ]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-divider"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Počet kroužkových desek:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [
+                                          _vm._v(
+                                            _vm._s(
+                                              _vm.thesis.pocetKrouzkovychDesek
+                                            )
+                                          )
+                                        ]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-divider"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Barva desek:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [_vm._v(_vm._s(_vm.thesis.barvaDesek))]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-divider"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Barva písma:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [_vm._v(_vm._s(_vm.thesis.barvaPisma))]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-divider"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Kapsa pro CD:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [
+                                          _vm._v(
+                                            _vm._s(_vm.thesis.pocetKapesProCD)
+                                          )
+                                        ]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-divider"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Kapsa pro posudek:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [
+                                          _vm._v(
+                                            _vm._s(
+                                              _vm.thesis.pocetKapesProPosudek
+                                            )
+                                          )
+                                        ]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-divider"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Doba zhotovení:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [
+                                          _vm._v(
+                                            _vm._s(_vm.thesis.dobaZhotoveni)
+                                          )
+                                        ]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-divider"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Poznámky k objednávce:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [_vm._v(_vm._s(_vm.thesis.poznamky))]
+                                      )
+                                    ],
+                                    1
                                   )
                                 ],
                                 1
                               )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    { attrs: { xs12: "", sm6: "" } },
-                    [
-                      _c(
-                        "v-card",
-                        [
-                          _c(
-                            "v-toolbar",
-                            { attrs: { color: "indigo", dark: "" } },
-                            [
-                              _c("v-toolbar-title", [_vm._v("Cena")]),
-                              _vm._v(" "),
-                              _c("v-spacer")
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-list",
-                            [
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [_vm._v("Cena:")]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
-                                    [_vm._v(_vm._s(_vm.thesis.price) + " Kč")]
-                                  )
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
+                            : _vm._e()
                         ],
                         1
                       )
@@ -60047,84 +60443,69 @@ var render = function() {
                 ],
                 1
               )
-            : _vm._e()
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _vm.errors !== null
-        ? _c(
-            "v-alert",
-            { attrs: { type: "error", value: true } },
-            _vm._l(_vm.errors, function(error) {
-              return _c("div", [_vm._v(_vm._s(error))])
-            })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _vm.errors !== null
+            ? _c(
+                "v-alert",
+                { attrs: { type: "error", value: true } },
+                _vm._l(_vm.errors, function(error) {
+                  return _c("div", [_vm._v(_vm._s(error))])
+                })
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _c("v-divider", { staticClass: "mt-5" }),
+          _vm._v(" "),
+          _c(
+            "v-card-actions",
+            [
+              _c(
+                "v-btn",
+                {
+                  attrs: { color: "primary" },
+                  nativeOn: {
+                    click: function($event) {
+                      _vm.goToNextPage(2)
+                    }
+                  }
+                },
+                [_vm._v("\n                Zpět\n            ")]
+              ),
+              _vm._v(" "),
+              _c("v-spacer"),
+              _vm._v(" "),
+              _c(
+                "v-btn",
+                {
+                  attrs: { color: "primary" },
+                  on: {
+                    click: function($event) {
+                      _vm.createOrder()
+                    }
+                  }
+                },
+                [
+                  _vm._v("\n                Vytvořit objednávku  "),
+                  _c("v-progress-circular", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.loading,
+                        expression: "loading"
+                      }
+                    ],
+                    attrs: { indeterminate: "", color: "white" }
+                  })
+                ],
+                1
+              )
+            ],
+            1
           )
-        : _vm._e(),
-      _vm._v(" "),
-      _c(
-        "v-btn",
-        {
-          attrs: { color: "primary" },
-          nativeOn: {
-            click: function($event) {
-              _vm.goToNextPage(2)
-            }
-          }
-        },
-        [_vm._v("\n        Zpět\n    ")]
-      ),
-      _vm._v(" "),
-      _c(
-        "v-btn",
-        {
-          attrs: { color: "primary" },
-          nativeOn: {
-            click: function($event) {
-              _vm.goToNextPage(4)
-            }
-          }
-        },
-        [
-          _vm._v("\n        Vytvořit objednávku  "),
-          _c("v-progress-circular", {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.loading,
-                expression: "loading"
-              }
-            ],
-            attrs: { indeterminate: "", color: "white" }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-btn",
-        {
-          attrs: { color: "primary" },
-          on: {
-            click: function($event) {
-              _vm.createOrder()
-            }
-          }
-        },
-        [
-          _vm._v("\n        Vytvořit objednávku  "),
-          _c("v-progress-circular", {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.loading,
-                expression: "loading"
-              }
-            ],
-            attrs: { indeterminate: "", color: "white" }
-          })
         ],
         1
       )
@@ -60168,6 +60549,430 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
+Component.options.__file = "resources/assets/js/components/Thesis/Payment.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-569085ec", Component.options)
+  } else {
+    hotAPI.reload("data-v-569085ec", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 109 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['currentUser', 'thesisId'],
+    data: function data() {
+        return {
+            items: [],
+            accessUpload: false,
+            bcId: null,
+            orderId: 1,
+            thesis: null,
+            loading: false,
+            errors: null,
+            embedJs: null,
+            gw_url: null,
+            order: null
+        };
+    },
+    mounted: function mounted() {
+        var _this = this;
+
+        this.createPayment();
+        this.getOrder();
+        this.eventBus.$on('order-created', function (val) {
+            _this.createPayment();
+        });
+    },
+
+
+    methods: {
+        createPayment: function createPayment() {
+            var _this2 = this;
+
+            this.loading = true;
+            axios.post(this.$laroute.route('gopay.api.create.payment', { orderId: this.orderId })).then(function (response) {
+                _this2.loading = false;
+                _this2.gw_url = response.data.gw_url;
+                //                    this.eventBus.$emit('go-to-next-page', {page_id: this.nextStep, bc_id: response.data.id})
+            }).catch(function (error) {
+                _this2.loading = false;
+                _this2.errors = error.response.data.errors;
+            });
+        },
+        getOrder: function getOrder() {
+            var _this3 = this;
+
+            axios.get(this.$laroute.route('orders.api.show', { id: this.orderId })).then(function (response) {
+                _this3.loading = false;
+                _this3.order = response.data;
+                console.log(_this3.order);
+            }).catch(function (error) {
+                _this3.loading = false;
+                _this3.error = error.response.data.errors;
+                console.log(error.response);
+            });
+        },
+        goToNextPage: function goToNextPage(pageId) {
+            this.eventBus.$emit('go-to-next-page', { page_id: pageId, bc_id: this.thesisId });
+        }
+    }
+});
+
+/***/ }),
+/* 110 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-card",
+        { attrs: { color: "grey lighten-3" } },
+        [
+          _c(
+            "v-card-text",
+            [
+              _vm.order != null
+                ? _c(
+                    "v-layout",
+                    { attrs: { row: "" } },
+                    [
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm6: "" } },
+                        [
+                          _c(
+                            "v-card",
+                            [
+                              _c(
+                                "v-toolbar",
+                                {
+                                  attrs: { color: "purple darken-3", dark: "" }
+                                },
+                                [
+                                  _c("v-toolbar-title", [
+                                    _vm._v("Shrnutí objednavky")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("v-spacer")
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _vm.order !== null
+                                ? _c(
+                                    "v-list",
+                                    [
+                                      _c(
+                                        "v-list-tile",
+                                        { on: { click: function($event) {} } },
+                                        [
+                                          _c("v-list-tile-content", [
+                                            _vm._v("Jméno:")
+                                          ]),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile-content",
+                                            { staticClass: "align-end" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(_vm.order.first_name)
+                                              )
+                                            ]
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile",
+                                        { on: { click: function($event) {} } },
+                                        [
+                                          _c("v-list-tile-content", [
+                                            _vm._v("Príjmení:")
+                                          ]),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile-content",
+                                            { staticClass: "align-end" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(_vm.order.last_name)
+                                              )
+                                            ]
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile",
+                                        { on: { click: function($event) {} } },
+                                        [
+                                          _c("v-list-tile-content", [
+                                            _vm._v("Ulice:")
+                                          ]),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile-content",
+                                            { staticClass: "align-end" },
+                                            [_vm._v(_vm._s(_vm.order.street))]
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                : _vm._e()
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm6: "" } },
+                        [
+                          _c(
+                            "v-card",
+                            [
+                              _c(
+                                "v-toolbar",
+                                {
+                                  attrs: { color: "purple darken-3", dark: "" }
+                                },
+                                [
+                                  _c("v-toolbar-title", [_vm._v("Cena")]),
+                                  _vm._v(" "),
+                                  _c("v-spacer")
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-list",
+                                [
+                                  _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Název:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [_vm._v(_vm._s(_vm.order.orderName))]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Cena:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [
+                                          _vm._v(
+                                            _vm._s(_vm.order.price) + " Kč"
+                                          )
+                                        ]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                : _vm._e()
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("v-divider", { staticClass: "mt-5" }),
+          _vm._v(" "),
+          _c(
+            "v-card-actions",
+            [
+              _c("v-spacer"),
+              _vm._v(" "),
+              _c(
+                "form",
+                {
+                  attrs: {
+                    action: _vm.gw_url,
+                    method: "post",
+                    id: "gopay-payment-button"
+                  }
+                },
+                [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn primary",
+                      attrs: { name: "pay", type: "submit" }
+                    },
+                    [
+                      _c("div", { staticClass: "btn__content" }, [
+                        _vm._v(
+                          "\n                        Zaplatit\n                    "
+                        )
+                      ])
+                    ]
+                  )
+                ]
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-569085ec", module.exports)
+  }
+}
+
+/***/ }),
+/* 111 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(112)
+/* template */
+var __vue_template__ = __webpack_require__(113)
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
 Component.options.__file = "resources/assets/js/components/CustomDialog.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
@@ -60191,7 +60996,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 109 */
+/* 112 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -60325,7 +61130,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 110 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -60569,15 +61374,15 @@ if (false) {
 }
 
 /***/ }),
-/* 111 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(112)
+var __vue_script__ = __webpack_require__(115)
 /* template */
-var __vue_template__ = __webpack_require__(113)
+var __vue_template__ = __webpack_require__(116)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -60617,7 +61422,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 112 */
+/* 115 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -60880,7 +61685,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 113 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -61578,7 +62383,7 @@ if (false) {
 }
 
 /***/ }),
-/* 114 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -61586,7 +62391,7 @@ var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(115)
+var __vue_template__ = __webpack_require__(118)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -61626,7 +62431,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 115 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -61672,19 +62477,19 @@ if (false) {
 }
 
 /***/ }),
-/* 116 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(117)
+  __webpack_require__(120)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(119)
+var __vue_script__ = __webpack_require__(122)
 /* template */
-var __vue_template__ = __webpack_require__(120)
+var __vue_template__ = __webpack_require__(123)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -61724,13 +62529,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 117 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(118);
+var content = __webpack_require__(121);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -61750,7 +62555,7 @@ if(false) {
 }
 
 /***/ }),
-/* 118 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -61764,7 +62569,7 @@ exports.push([module.i, "\n.content-header {\n    display: inline-block;\n}\n", 
 
 
 /***/ }),
-/* 119 */
+/* 122 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -61911,7 +62716,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 120 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -62050,19 +62855,19 @@ if (false) {
 }
 
 /***/ }),
-/* 121 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(122)
+  __webpack_require__(125)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(124)
+var __vue_script__ = __webpack_require__(127)
 /* template */
-var __vue_template__ = __webpack_require__(125)
+var __vue_template__ = __webpack_require__(128)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -62102,13 +62907,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 122 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(123);
+var content = __webpack_require__(126);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -62128,7 +62933,7 @@ if(false) {
 }
 
 /***/ }),
-/* 123 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -62142,7 +62947,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 124 */
+/* 127 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -62298,7 +63103,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 125 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -62562,19 +63367,19 @@ if (false) {
 }
 
 /***/ }),
-/* 126 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(127)
+  __webpack_require__(130)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(129)
+var __vue_script__ = __webpack_require__(132)
 /* template */
-var __vue_template__ = __webpack_require__(130)
+var __vue_template__ = __webpack_require__(133)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -62614,13 +63419,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 127 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(128);
+var content = __webpack_require__(131);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -62640,7 +63445,7 @@ if(false) {
 }
 
 /***/ }),
-/* 128 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -62654,7 +63459,7 @@ exports.push([module.i, "\n.content-header {\n    display: inline-block;\n}\n", 
 
 
 /***/ }),
-/* 129 */
+/* 132 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -62749,7 +63554,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }), _props$data$created$m);
 
 /***/ }),
-/* 130 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -62895,15 +63700,15 @@ if (false) {
 }
 
 /***/ }),
-/* 131 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(132)
+var __vue_script__ = __webpack_require__(135)
 /* template */
-var __vue_template__ = __webpack_require__(133)
+var __vue_template__ = __webpack_require__(136)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -62943,7 +63748,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 132 */
+/* 135 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -63020,7 +63825,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 133 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -63106,19 +63911,19 @@ if (false) {
 }
 
 /***/ }),
-/* 134 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(135)
+  __webpack_require__(138)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(137)
+var __vue_script__ = __webpack_require__(140)
 /* template */
-var __vue_template__ = __webpack_require__(138)
+var __vue_template__ = __webpack_require__(141)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -63158,13 +63963,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 135 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(136);
+var content = __webpack_require__(139);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -63184,7 +63989,7 @@ if(false) {
 }
 
 /***/ }),
-/* 136 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -63198,7 +64003,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 137 */
+/* 140 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -63380,7 +64185,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 138 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -63721,13 +64526,13 @@ if (false) {
 }
 
 /***/ }),
-/* 139 */
+/* 142 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 140 */
+/* 143 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

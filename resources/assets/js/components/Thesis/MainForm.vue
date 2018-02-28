@@ -1,410 +1,433 @@
 <template>
     <div>
+        <v-card color="grey lighten-3">
+            <v-card-text>
+                <v-layout row>
+                    <v-flex xs12>
+                        <v-card>
+                            <v-toolbar color="purple darken-3" dark>
+                                <v-toolbar-title>Zde vytvorte formular</v-toolbar-title>
+                                <v-spacer></v-spacer>
+                            </v-toolbar>
+                            <v-container>
+
+                            <v-layout row wrap>
+                                <v-flex xs4>
+                                    <v-subheader v-text="'Typ zadání'"></v-subheader>
+                                </v-flex>
+                                <v-flex xs8>
+                                    <v-select
+                                            v-bind:items="formItemsData.typZadani"
+                                            v-model="selectedData.typZadani"
+                                            label=""
+                                            light
+                                            return-object
+                                    ></v-select>
+                                </v-flex>
+                            </v-layout>
+
+                            <v-layout row wrap v-show="selectedData.typZadani.value == 2">
+                                <v-flex xs4>
+                                </v-flex>
+                                <v-flex xs8>
+                                    <v-select
+                                            v-bind:items="formItemsData.rozsahStran"
+                                            v-model="selectedData.pribliznyPocetListu"
+                                            label="Předpokládaný rozsah stran"
+                                            light
+                                            item-value="value"
+                                    ></v-select>
+                                </v-flex>
+                            </v-layout>
+
+                            <v-layout row wrap v-show="selectedData.typZadani.value == 1">
+                                <v-flex xs4>
+                                    <v-subheader v-text="'Přesný počet listů'"></v-subheader>
+                                </v-flex>
+                                <v-flex xs6>
+                                    <v-slider @change="getTotalPrice" v-model="selectedData.presnyPocetStran" thumb-label v-bind:max="1000"></v-slider>
+                                </v-flex>
+                                <v-flex xs2>
+                                    <v-text-field
+                                            @change="getTotalPrice"
+                                            name="selectedPresnyPocetstran"
+                                            label="Počet"
+                                            id="selectedPresnyPocetStran"
+                                            item-value="selectedData.presnyPocetStran"
+                                            v-model="selectedData.presnyPocetStran"
+                                    ></v-text-field>
+                                </v-flex>
+
+                                <v-flex xs4>
+                                </v-flex>
+                                <v-flex xs4>
+                                    <v-select
+                                            v-bind:items="formItemsData.typTisku"
+                                            v-model="selectedData.typTisku"
+                                            label="Typ tisku"
+                                            light
+                                            return-object
+
+                                    ></v-select>
+                                </v-flex>
+                                <v-flex xs4>
+                                    <v-select
+                                            v-bind:items="formItemsData.barevnost"
+                                            v-model="selectedData.barevnost"
+                                            label="Barevnost"
+                                            light
+                                            return-object
+                                    ></v-select>
+                                </v-flex>
+                            </v-layout>
+
+                            <v-layout row wrap>
+                                <v-flex xs4>
+                                    <v-subheader v-text="'Škola'"></v-subheader>
+                                </v-flex>
+                                <v-flex xs8>
+                                    <v-select
+                                            v-bind:items="formItemsData.skoly"
+                                            v-model="selectedData.skoly"
+                                            label="Zde prosím vyberte školu"
+                                            light
+                                            return-object
+                                    ></v-select>
+                                </v-flex>
+                            </v-layout>
+
+                            <v-layout row wrap v-show="selectedData.skoly.value == 0">
+                                <v-flex xs4>
+                                </v-flex>
+                                <v-flex xs8>
+                                    <v-text-field
+                                            v-model="selectedData.jinaSkola"
+                                            name="jinaSkola"
+                                            label="Jiná škola"
+                                            id="jinaSkola"
+                                    ></v-text-field>
+                                </v-flex>
+                            </v-layout>
+
+                            <v-layout row wrap>
+                                <v-flex xs4>
+                                    <v-subheader v-text="'Fakulta'"></v-subheader>
+                                </v-flex>
+                                <v-flex xs8>
+                                    <v-select
+                                            v-bind:items="formItemsData.fakulty"
+                                            v-model="selectedData.fakulty"
+                                            label="Zde prosím vyberte fakultu"
+                                            light
+                                            return-object
+                                    ></v-select>
+                                </v-flex>
+                            </v-layout>
+
+                            <v-layout row wrap v-show="selectedData.fakulty == 0">
+                                <v-flex xs4>
+                                </v-flex>
+                                <v-flex xs8>
+                                    <v-text-field
+                                            v-model="selectedData.jinaFakulta"
+                                            name="jinaFakulta"
+                                            label="Jiná fakulta"
+                                            id="jinaFakulta"
+                                    ></v-text-field>
+                                </v-flex>
+                            </v-layout>
+
+                            <v-layout row wrap>
+                                <v-flex xs4>
+                                    <v-subheader>Katedra</v-subheader>
+                                </v-flex>
+                                <v-flex xs8>
+                                    <v-text-field
+                                            name="input-1"
+                                            label="Název katedry"
+                                            id="katedra"
+                                    ></v-text-field>
+                                </v-flex>
+                            </v-layout>
+
+                            <v-layout row wrap>
+                                <v-flex xs4>
+                                    <v-subheader>Název práce</v-subheader>
+                                </v-flex>
+                                <v-flex xs8>
+                                    <v-text-field
+                                            name="input-1"
+                                            label="Název práce"
+                                            id="nazevPrace"
+                                    ></v-text-field>
+                                </v-flex>
+                            </v-layout>
+
+                            <v-layout row wrap>
+                                <v-flex xs4>
+                                    <v-subheader v-text="'Typ práce'"></v-subheader>
+                                </v-flex>
+                                <v-flex xs8>
+                                    <v-select
+                                            v-bind:items="formItemsData.typPrace"
+                                            v-model="selectedData.typPrace"
+                                            label="Zde prosím vyberte typ práce"
+                                            light
+                                            return-object
+                                    ></v-select>
+                                </v-flex>
+                            </v-layout>
+
+
+                            <v-layout row wrap v-show="selectedData.typPrace == 0">
+                                <v-flex xs4>
+                                </v-flex>
+                                <v-flex xs8>
+                                    <v-text-field
+                                            v-model="selectedData.jinyTypPrace"
+                                            name="jinyTypPrace"
+                                            label="Jiná práce"
+                                            id="jinyTypPrace"
+                                    ></v-text-field>
+                                </v-flex>
+                            </v-layout>
+
+                            <v-layout row wrap>
+                                <v-flex xs4>
+                                    <v-subheader v-text="'Spodní řádek'"></v-subheader>
+                                </v-flex>
+                                <v-flex xs4>
+                                    <v-text-field
+                                            v-model="selectedData.spodniTextVlevo"
+                                            name="input-1"
+                                            label="Text vlevo"
+                                            id="spodniTextVlevo"
+                                    ></v-text-field>
+                                </v-flex>
+                                <v-flex xs4>
+                                    <v-text-field
+                                            v-model="selectedData.spodniTextVpravo"
+                                            name="input-1"
+                                            label="Text vpravo"
+                                            id="spodniTextVpravo"
+                                    ></v-text-field>
+                                </v-flex>
+                            </v-layout>
+
+                            <v-layout row wrap>
+                                <v-flex xs4>
+                                    <v-subheader v-text="'Potisk hřbetu'"></v-subheader>
+                                </v-flex>
+                                <v-flex xs8>
+                                    <v-switch v-bind:label="potiskHrbetu == false ? 'Ne' : 'Ano'" v-model="potiskHrbetu"></v-switch>
+                                </v-flex>
+                            </v-layout>
+
+                            <v-layout row wrap v-show="potiskHrbetu == true">
+                                <v-flex xs4>
+                                </v-flex>
+                                <v-flex xs4>
+                                    <v-text-field
+                                            v-model="selectedData.potiskNahore"
+                                            name="potiskNahore"
+                                            label="Potisk hřbetu nahoře"
+                                            id="potiskNahore"
+                                    ></v-text-field>
+                                </v-flex>
+                                <v-flex xs4>
+                                    <v-text-field
+                                            v-model="selectedData.potiskDole"
+                                            name="potiskDole"
+                                            label="Potisk hřbetu dole"
+                                            id="potiskDole"
+                                    ></v-text-field>
+                                </v-flex>
+                            </v-layout>
+
+                            <v-layout row wrap>
+                                <v-flex xs4>
+                                    <v-subheader v-text="'Počet pevných desek'"></v-subheader>
+                                </v-flex>
+                                <v-flex xs6>
+                                    <v-slider v-model="selectedData.pocetPevnychDesek" thumb-label v-bind:max="20"></v-slider>
+                                </v-flex>
+                                <v-flex xs2>
+                                    <v-text-field
+                                            name="pocetPevnychDesek"
+                                            label="Počet"
+                                            id="pocetPevnychDesek"
+                                            item-value="selectedData.pocetPevnychDesek"
+                                            v-model="selectedData.pocetPevnychDesek"
+                                    ></v-text-field>
+                                </v-flex>
+                            </v-layout>
+
+                            <v-layout row wrap>
+                                <v-flex xs4>
+                                    <v-subheader v-text="'Počet kroužkových desek'"></v-subheader>
+                                </v-flex>
+                                <v-flex xs6>
+                                    <v-slider v-model="selectedData.pocetKrouzkovychDesek" thumb-label v-bind:max="20"></v-slider>
+                                </v-flex>
+                                <v-flex xs2>
+                                    <v-text-field
+                                            name="pocetKrouzkovychDesek"
+                                            label="Počet"
+                                            id="pocetKrouzkovychDesek"
+                                            item-value="selectedData.pocetKrouzkovychDesek"
+                                            v-model="selectedData.pocetKrouzkovychDesek"
+                                    ></v-text-field>
+                                </v-flex>
+                            </v-layout>
+
+                            <v-layout row wrap>
+                                <v-flex xs4>
+                                    <v-subheader v-text="'Barva desek'"></v-subheader>
+                                </v-flex>
+                                <v-flex xs8>
+                                    <v-select
+                                            v-bind:items="formItemsData.barvaDesek"
+                                            v-model="selectedData.barvaDesek"
+                                            label="Vyberte barvu desek"
+                                            light
+                                            return-object
+                                    ></v-select>
+                                </v-flex>
+                            </v-layout>
+
+                            <v-layout row wrap>
+                                <v-flex xs4>
+                                    <v-subheader v-text="'Barva písma'"></v-subheader>
+                                </v-flex>
+                                <v-flex xs8>
+                                    <v-select
+                                            v-bind:items="formItemsData.barvaPisma"
+                                            v-model="selectedData.barvaPisma"
+                                            label="Vyberte barvu písma"
+                                            light
+                                            return-object
+                                    ></v-select>
+                                </v-flex>
+                            </v-layout>
+
+                            <v-layout row wrap>
+                                <v-flex xs4>
+                                    <v-subheader v-text="'Kapsa pro CD'"></v-subheader>
+                                </v-flex>
+                                <v-flex xs1>
+                                    <v-switch v-bind:label="kapsaProCD == true ? 'Ano' : 'Ne'" v-model="kapsaProCD"></v-switch>
+                                </v-flex>
+                            </v-layout>
+
+                            <v-layout row wrap v-show="kapsaProCD == true">
+                                <v-flex xs4>
+                                </v-flex>
+                                <v-flex xs4>
+                                    <v-slider v-model="selectedData.pocetKapesProCD" thumb-label v-bind:max="5"></v-slider>
+                                </v-flex>
+                                <v-flex xs2>
+                                    <v-text-field
+                                            name="pocetKapesProCD"
+                                            label="Počet"
+                                            id="pocetKapesProCD"
+                                            item-value="selectedData.pocetKapesProCD"
+                                            v-model="selectedData.pocetKapesProCD"
+                                    ></v-text-field>
+                                </v-flex>
+                                <v-flex xs2>
+                                    <v-switch v-bind:label="kapsaProCD == true ? 'Vpředu' : 'Vzadu'" v-model="selectedData.kapsaCdVpredu"></v-switch>
+                                </v-flex>
+                            </v-layout>
+
+                            <v-layout row wrap>
+                                <v-flex xs4>
+                                    <v-subheader v-text="'Kapsa pro posudek'"></v-subheader>
+                                </v-flex>
+                                <v-flex xs2>
+                                    <v-switch v-bind:label="kapsaProPosudek == true ? 'Ano' : 'Ne'" v-model="kapsaProPosudek"></v-switch>
+                                </v-flex>
+                            </v-layout>
+
+                            <v-layout row wrap  v-show="kapsaProPosudek == true">
+                                <v-flex xs4></v-flex>
+                                <v-flex xs4>
+                                    <v-slider v-model="selectedData.pocetKapesProPosudek" thumb-label v-bind:max="5"></v-slider>
+                                </v-flex>
+                                <v-flex xs2>
+                                    <v-text-field
+                                            name="pocetKapesProPosudek"
+                                            label="Počet"
+                                            id="pocetKapesProPosudek"
+                                            item-value="selectedData.pocetKapesProPosudek"
+                                            v-model="selectedData.pocetKapesProPosudek"
+                                    ></v-text-field>
+                                </v-flex>
+                                <v-flex xs2>
+                                    <v-switch v-bind:label="kapsaProCD == true ? 'Vpředu' : 'Vzadu'" v-model="selectedData.kapsaPosudekVpredu"></v-switch>
+                                </v-flex>
+                            </v-layout>
+
+                            <v-layout row wrap>
+                                <v-flex xs4>
+                                    <v-subheader v-text="'Doba zhotovení'"></v-subheader>
+                                </v-flex>
+                                <v-flex xs8>
+                                    <v-select
+                                            v-bind:items="formItemsData.dobaZhotoveni"
+                                            v-model="selectedData.dobaZhotoveni"
+                                            label="vyberte dobu zhotovení"
+                                            light
+                                            return-object
+                                    ></v-select>
+                                </v-flex>
+                            </v-layout>
+
+                            <v-layout row wrap>
+                                <v-flex xs4>
+                                    <v-subheader v-text="'Poznámky k objednávce'"></v-subheader>
+                                </v-flex>
+                                <v-flex xs8>
+                                    <v-text-field
+                                            v-model="selectedData.poznamky"
+                                            name="poznamky"
+                                            label="Poznámky k objednavce"
+                                            textarea
+                                    ></v-text-field>
+                                </v-flex>
+                            </v-layout>
+                            <v-layout row wrap>
+                                <v-flex xs4>
+                                </v-flex>
+                                <v-flex xs8>
+                                    <v-subheader v-if="price >= 0"v-text="'cena: '+price+' Kč'"></v-subheader>
+                                </v-flex>
+                            </v-layout>
+                            <v-layout row wrap>
+                                <v-flex xs4>
+                                </v-flex>
+                                <v-flex xs8>
+
+                                </v-flex>
+                            </v-layout>
+                            </v-container>
+                        </v-card>
+                    </v-flex>
+                </v-layout>
+            </v-card-text>
+            <v-divider class="mt-5"></v-divider>
+            <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn v-if="!thesisCreated" @click="createThesis" color="primary" :disabled="!accessUpload">Vytvořit &nbsp<v-progress-circular v-show="loading" indeterminate color="white"></v-progress-circular>
+                </v-btn>
+                <div v-if="thesisCreated">
+                    <v-btn color="primary" @click="updateThesis" :disabled="!accessUpload">Uložit změny</v-btn>
+                    <v-btn color="primary" @click="goToNextPage" :disabled="!accessUpload">Pokračovat k dalšímu kroku</v-btn>
+                </div>
+            </v-card-actions>
+        </v-card>
+
         <v-container fluid>
-            <v-layout row wrap>
-                <v-flex xs4>
-                    <v-subheader v-text="'Typ zadání'"></v-subheader>
-                </v-flex>
-                <v-flex xs8>
-                    <v-select
-                            v-bind:items="formItemsData.typZadani"
-                            v-model="selectedData.typZadani"
-                            label=""
-                            light
-                            return-object
-                    ></v-select>
-                </v-flex>
-            </v-layout>
 
-            <v-layout row wrap v-show="selectedData.typZadani.value == 2">
-                <v-flex xs4>
-                </v-flex>
-                <v-flex xs8>
-                    <v-select
-                            v-bind:items="formItemsData.rozsahStran"
-                            v-model="selectedData.pribliznyPocetListu"
-                            label="Předpokládaný rozsah stran"
-                            light
-                            item-value="value"
-                    ></v-select>
-                </v-flex>
-            </v-layout>
-
-            <v-layout row wrap v-show="selectedData.typZadani.value == 1">
-                <v-flex xs4>
-                    <v-subheader v-text="'Přesný počet listů'"></v-subheader>
-                </v-flex>
-                <v-flex xs6>
-                    <v-slider @change="getTotalPrice" v-model="selectedData.presnyPocetStran" thumb-label v-bind:max="1000"></v-slider>
-                </v-flex>
-                <v-flex xs2>
-                    <v-text-field
-                            @change="getTotalPrice"
-                            name="selectedPresnyPocetstran"
-                            label="Počet"
-                            id="selectedPresnyPocetStran"
-                            item-value="selectedData.presnyPocetStran"
-                            v-model="selectedData.presnyPocetStran"
-                    ></v-text-field>
-                </v-flex>
-
-                <v-flex xs4>
-                </v-flex>
-                <v-flex xs4>
-                    <v-select
-                            v-bind:items="formItemsData.typTisku"
-                            v-model="selectedData.typTisku"
-                            label="Typ tisku"
-                            light
-                            return-object
-
-                    ></v-select>
-                </v-flex>
-                <v-flex xs4>
-                    <v-select
-                            v-bind:items="formItemsData.barevnost"
-                            v-model="selectedData.barevnost"
-                            label="Barevnost"
-                            light
-                            return-object
-                    ></v-select>
-                </v-flex>
-            </v-layout>
-
-            <v-layout row wrap>
-                <v-flex xs4>
-                    <v-subheader v-text="'Škola'"></v-subheader>
-                </v-flex>
-                <v-flex xs8>
-                    <v-select
-                            v-bind:items="formItemsData.skoly"
-                            v-model="selectedData.skoly"
-                            label="Zde prosím vyberte školu"
-                            light
-                            return-object
-                    ></v-select>
-                </v-flex>
-            </v-layout>
-
-            <v-layout row wrap v-show="selectedData.skoly.value == 0">
-                <v-flex xs4>
-                </v-flex>
-                <v-flex xs8>
-                    <v-text-field
-                        v-model="selectedData.jinaSkola"
-                        name="jinaSkola"
-                        label="Jiná škola"
-                        id="jinaSkola"
-                    ></v-text-field>
-                </v-flex>
-            </v-layout>
-
-            <v-layout row wrap>
-            <v-flex xs4>
-                    <v-subheader v-text="'Fakulta'"></v-subheader>
-                </v-flex>
-                <v-flex xs8>
-                    <v-select
-                        v-bind:items="formItemsData.fakulty"
-                        v-model="selectedData.fakulty"
-                        label="Zde prosím vyberte fakultu"
-                        light
-                        return-object
-                    ></v-select>
-                </v-flex>
-            </v-layout>
-
-            <v-layout row wrap v-show="selectedData.fakulty == 0">
-                <v-flex xs4>
-                </v-flex>
-                <v-flex xs8>
-                    <v-text-field
-                        v-model="selectedData.jinaFakulta"
-                        name="jinaFakulta"
-                        label="Jiná fakulta"
-                        id="jinaFakulta"
-                    ></v-text-field>
-                </v-flex>
-            </v-layout>
-
-            <v-layout row wrap>
-                <v-flex xs4>
-                    <v-subheader>Katedra</v-subheader>
-                </v-flex>
-                <v-flex xs8>
-                    <v-text-field
-                        name="input-1"
-                        label="Název katedry"
-                        id="katedra"
-                    ></v-text-field>
-                </v-flex>
-            </v-layout>
-
-            <v-layout row wrap>
-                <v-flex xs4>
-                    <v-subheader>Název práce</v-subheader>
-                </v-flex>
-                <v-flex xs8>
-                    <v-text-field
-                        name="input-1"
-                        label="Název práce"
-                        id="nazevPrace"
-                    ></v-text-field>
-                </v-flex>
-            </v-layout>
-
-            <v-layout row wrap>
-            <v-flex xs4>
-                    <v-subheader v-text="'Typ práce'"></v-subheader>
-                </v-flex>
-                <v-flex xs8>
-                    <v-select
-                            v-bind:items="formItemsData.typPrace"
-                            v-model="selectedData.typPrace"
-                            label="Zde prosím vyberte typ práce"
-                            light
-                            return-object
-                    ></v-select>
-                </v-flex>
-            </v-layout>
-
-
-            <v-layout row wrap v-show="selectedData.typPrace == 0">
-            <v-flex xs4>
-                </v-flex>
-                <v-flex xs8>
-                    <v-text-field
-                            v-model="selectedData.jinyTypPrace"
-                            name="jinyTypPrace"
-                            label="Jiná práce"
-                            id="jinyTypPrace"
-                    ></v-text-field>
-                </v-flex>
-            </v-layout>
-
-            <v-layout row wrap>
-            <v-flex xs4>
-                    <v-subheader v-text="'Spodní řádek'"></v-subheader>
-                </v-flex>
-                <v-flex xs4>
-                    <v-text-field
-                            v-model="selectedData.spodniTextVlevo"
-                            name="input-1"
-                            label="Text vlevo"
-                            id="spodniTextVlevo"
-                    ></v-text-field>
-                </v-flex>
-                <v-flex xs4>
-                    <v-text-field
-                            v-model="selectedData.spodniTextVpravo"
-                            name="input-1"
-                            label="Text vpravo"
-                            id="spodniTextVpravo"
-                    ></v-text-field>
-                </v-flex>
-            </v-layout>
-
-            <v-layout row wrap>
-            <v-flex xs4>
-                    <v-subheader v-text="'Potisk hřbetu'"></v-subheader>
-                </v-flex>
-                <v-flex xs8>
-                    <v-switch v-bind:label="potiskHrbetu == false ? 'Ne' : 'Ano'" v-model="potiskHrbetu"></v-switch>
-                </v-flex>
-            </v-layout>
-
-            <v-layout row wrap v-show="potiskHrbetu == true">
-                <v-flex xs4>
-                </v-flex>
-                <v-flex xs4>
-                    <v-text-field
-                        v-model="selectedData.potiskNahore"
-                        name="potiskNahore"
-                        label="Potisk hřbetu nahoře"
-                        id="potiskNahore"
-                    ></v-text-field>
-                </v-flex>
-                <v-flex xs4>
-                    <v-text-field
-                        v-model="selectedData.potiskDole"
-                        name="potiskDole"
-                        label="Potisk hřbetu dole"
-                        id="potiskDole"
-                    ></v-text-field>
-                </v-flex>
-            </v-layout>
-
-            <v-layout row wrap>
-                <v-flex xs4>
-                    <v-subheader v-text="'Počet pevných desek'"></v-subheader>
-                </v-flex>
-                <v-flex xs6>
-                    <v-slider v-model="selectedData.pocetPevnychDesek" thumb-label v-bind:max="20"></v-slider>
-                </v-flex>
-                <v-flex xs2>
-                    <v-text-field
-                            name="pocetPevnychDesek"
-                            label="Počet"
-                            id="pocetPevnychDesek"
-                            item-value="selectedData.pocetPevnychDesek"
-                            v-model="selectedData.pocetPevnychDesek"
-                    ></v-text-field>
-                </v-flex>
-            </v-layout>
-
-            <v-layout row wrap>
-            <v-flex xs4>
-                    <v-subheader v-text="'Počet kroužkových desek'"></v-subheader>
-                </v-flex>
-                <v-flex xs6>
-                    <v-slider v-model="selectedData.pocetKrouzkovychDesek" thumb-label v-bind:max="20"></v-slider>
-                </v-flex>
-            <v-flex xs2>
-                <v-text-field
-                        name="pocetKrouzkovychDesek"
-                        label="Počet"
-                        id="pocetKrouzkovychDesek"
-                        item-value="selectedData.pocetKrouzkovychDesek"
-                        v-model="selectedData.pocetKrouzkovychDesek"
-                ></v-text-field>
-            </v-flex>
-            </v-layout>
-
-            <v-layout row wrap>
-            <v-flex xs4>
-                    <v-subheader v-text="'Barva desek'"></v-subheader>
-                </v-flex>
-                <v-flex xs8>
-                    <v-select
-                            v-bind:items="formItemsData.barvaDesek"
-                            v-model="selectedData.barvaDesek"
-                            label="Vyberte barvu desek"
-                            light
-                            return-object
-                    ></v-select>
-                </v-flex>
-            </v-layout>
-
-            <v-layout row wrap>
-            <v-flex xs4>
-                    <v-subheader v-text="'Barva písma'"></v-subheader>
-                </v-flex>
-                <v-flex xs8>
-                    <v-select
-                            v-bind:items="formItemsData.barvaPisma"
-                            v-model="selectedData.barvaPisma"
-                            label="Vyberte barvu písma"
-                            light
-                            return-object
-                    ></v-select>
-                </v-flex>
-            </v-layout>
-
-            <v-layout row wrap>
-                <v-flex xs4>
-                    <v-subheader v-text="'Kapsa pro CD'"></v-subheader>
-                </v-flex>
-                <v-flex xs1>
-                    <v-switch v-bind:label="kapsaProCD == true ? 'Ano' : 'Ne'" v-model="kapsaProCD"></v-switch>
-                </v-flex>
-            </v-layout>
-
-            <v-layout row wrap v-show="kapsaProCD == true">
-                <v-flex xs4>
-                </v-flex>
-                <v-flex xs4>
-                    <v-slider v-model="selectedData.pocetKapesProCD" thumb-label v-bind:max="5"></v-slider>
-                </v-flex>
-                <v-flex xs2>
-                    <v-text-field
-                            name="pocetKapesProCD"
-                            label="Počet"
-                            id="pocetKapesProCD"
-                            item-value="selectedData.pocetKapesProCD"
-                            v-model="selectedData.pocetKapesProCD"
-                    ></v-text-field>
-                </v-flex>
-                <v-flex xs2>
-                    <v-switch v-bind:label="kapsaProCD == true ? 'Vpředu' : 'Vzadu'" v-model="selectedData.kapsaCdVpredu"></v-switch>
-                </v-flex>
-            </v-layout>
-
-            <v-layout row wrap>
-                <v-flex xs4>
-                    <v-subheader v-text="'Kapsa pro posudek'"></v-subheader>
-                </v-flex>
-                <v-flex xs2>
-                    <v-switch v-bind:label="kapsaProPosudek == true ? 'Ano' : 'Ne'" v-model="kapsaProPosudek"></v-switch>
-                </v-flex>
-            </v-layout>
-
-            <v-layout row wrap  v-show="kapsaProPosudek == true">
-                <v-flex xs4></v-flex>
-                <v-flex xs4>
-                    <v-slider v-model="selectedData.pocetKapesProPosudek" thumb-label v-bind:max="5"></v-slider>
-                </v-flex>
-                <v-flex xs2>
-                    <v-text-field
-                            name="pocetKapesProPosudek"
-                            label="Počet"
-                            id="pocetKapesProPosudek"
-                            item-value="selectedData.pocetKapesProPosudek"
-                            v-model="selectedData.pocetKapesProPosudek"
-                    ></v-text-field>
-                </v-flex>
-                <v-flex xs2>
-                    <v-switch v-bind:label="kapsaProCD == true ? 'Vpředu' : 'Vzadu'" v-model="selectedData.kapsaPosudekVpredu"></v-switch>
-                </v-flex>
-            </v-layout>
-
-            <v-layout row wrap>
-            <v-flex xs4>
-                    <v-subheader v-text="'Doba zhotovení'"></v-subheader>
-                </v-flex>
-                <v-flex xs8>
-                    <v-select
-                            v-bind:items="formItemsData.dobaZhotoveni"
-                            v-model="selectedData.dobaZhotoveni"
-                            label="vyberte dobu zhotovení"
-                            light
-                            return-object
-                    ></v-select>
-                </v-flex>
-            </v-layout>
-
-            <v-layout row wrap>
-            <v-flex xs4>
-                    <v-subheader v-text="'Poznámky k objednávce'"></v-subheader>
-                </v-flex>
-                <v-flex xs8>
-                    <v-text-field
-                            v-model="selectedData.poznamky"
-                            name="poznamky"
-                            label="Poznámky k objednavce"
-                            textarea
-                    ></v-text-field>
-                </v-flex>
-            </v-layout>
-            <v-layout row wrap>
-                <v-flex xs4>
-                </v-flex>
-                <v-flex xs8>
-                    <v-subheader v-if="price >= 0"v-text="'cena: '+price+' Kč'"></v-subheader>
-                </v-flex>
-            </v-layout>
-            <v-layout row wrap>
-                <v-flex xs4>
-                </v-flex>
-                <v-flex xs8>
-                    <v-btn v-if="!thesisCreated" @click="createThesis" color="primary" :disabled="!accessUpload">Vytvořit &nbsp<v-progress-circular v-show="loading" indeterminate color="white"></v-progress-circular>
-                    </v-btn>
-                    <div v-if="thesisCreated">
-                        <v-btn color="primary" @click="updateThesis" :disabled="!accessUpload">Uložit změny</v-btn>
-                        <v-btn color="primary" @click="goToNextPage" :disabled="!accessUpload">Pokračovat k dalšímu kroku</v-btn>
-                    </div>
-
-                </v-flex>
-            </v-layout>
         </v-container>
     </div>
 </template>

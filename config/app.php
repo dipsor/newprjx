@@ -172,6 +172,8 @@ return [
         Lab404\Impersonate\ImpersonateServiceProvider::class,
         Lord\Laroute\LarouteServiceProvider::class,
         //Laravel\Socialite\SocialiteServiceProvider::class,
+        HazeStudio\LaravelGoPaySDK\GopayServiceProvider::class,
+
 
         /*
          * Application Service Providers...
@@ -230,6 +232,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'GoPay' => HazeStudio\LaravelGoPaySDK\Facade::class,
     ],
 
 ];

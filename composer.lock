@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3e97a2b6fe82bca89ea20967abe8a2aa",
+    "content-hash": "258b225ceb0368dd9a71a8db387f30b3",
     "packages": [
         {
             "name": "davejamesmiller/laravel-breadcrumbs",
@@ -549,6 +549,57 @@
             "time": "2017-06-27T22:17:23+00:00"
         },
         {
+            "name": "gopay/payments-sdk-php",
+            "version": "v1.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gopaycommunity/gopay-php-api.git",
+                "reference": "be503f52818f793050f05e1ba21bb7c8e2f43855"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gopaycommunity/gopay-php-api/zipball/be503f52818f793050f05e1ba21bb7c8e2f43855",
+                "reference": "be503f52818f793050f05e1ba21bb7c8e2f43855",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^5.3.1|^6.2.1",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "hamcrest/hamcrest-php": "*",
+                "phpunit/phpunit": "<6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GoPay\\": "src/"
+                },
+                "files": [
+                    "factory.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "GoPay",
+                    "homepage": "https://github.com/gopaycommunity/gopay-php-api/contributors"
+                }
+            ],
+            "description": "GoPay's PHP SDK for Payments REST API",
+            "keywords": [
+                "api",
+                "gopay",
+                "payments",
+                "rest",
+                "sdk"
+            ],
+            "time": "2017-11-02T14:24:56+00:00"
+        },
+        {
             "name": "guzzlehttp/guzzle",
             "version": "6.3.0",
             "source": {
@@ -728,6 +779,47 @@
                 "url"
             ],
             "time": "2017-03-20T17:10:46+00:00"
+        },
+        {
+            "name": "hazestudio/laravel-gopay-sdk",
+            "version": "v0.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hazestudio/laravel-gopay-sdk.git",
+                "reference": "9e1dd35db1882b50ff43a8fd5ac422df76c13839"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hazestudio/laravel-gopay-sdk/zipball/9e1dd35db1882b50ff43a8fd5ac422df76c13839",
+                "reference": "9e1dd35db1882b50ff43a8fd5ac422df76c13839",
+                "shasum": ""
+            },
+            "require": {
+                "gopay/payments-sdk-php": "^1.1",
+                "illuminate/cache": "5.*",
+                "illuminate/config": "5.*",
+                "illuminate/container": "5.*",
+                "illuminate/support": "5.*",
+                "php": ">=5.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "HazeStudio\\LaravelGoPaySDK\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Haze Studio",
+                    "email": "studio@haze.sk"
+                }
+            ],
+            "description": "GoPay SDK integration with Laravel Framework",
+            "time": "2017-08-09T14:12:53+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
