@@ -21,14 +21,23 @@
                     </v-alert>
                     <v-card>
                         <v-toolbar color="primary">
-                            <v-toolbar-title class="white--text">Uzivatele</v-toolbar-title>
+                            <v-toolbar-title class="white--text">Objednávky uživatele {{currentUser.name}}</v-toolbar-title>
                         </v-toolbar>
-
-                        <v-flex xs12>
-                            Dashboard pro uzivatele
-                        </v-flex>
+                        <v-data-table
+                                v-bind:headers="headers"
+                                :items="items2"
+                                hide-actions
+                                class="elevation-1"
+                        >
+                            <template slot="items" slot-scope="props">
+                                <td class="text-xs-left">{{ props.item.orderName }}</td>
+                                <td class="text-xs-left">{{ props.item.created_at }}</td>
+                                <td class="text-xs-left">{{ props.item.price }}</td>
+                                <td class="text-xs-left">{{ props.item.status }}</td>
+                                <td class="text-xs-left"><a :href="'/orders/'+props.item.id">Zobrazit</a></td>
+                            </template>
+                        </v-data-table>
                     </v-card>
-
                 </v-flex>
             </v-layout>
         </v-container>
@@ -55,7 +64,40 @@
                     'PARTIALLY_REFUNDED' : 'Platba byla částečnê zrušena.',
                     'CANCELED' : 'Platba byla zrušena.',
                     'TIMEOUTED' : 'Platební proces vypršel.',
-                }
+                },
+                headers: [
+                    {
+                        text: 'Objednávka',
+                        align: 'left',
+                        sortable: false,
+                        value: 'orderName'
+                    },
+                    {
+                        text: 'Zadáno',
+                        align: 'left',
+                        sortable: true,
+                        value: 'created_at'
+                    },
+                    {
+                        text: 'Cena',
+                        align: 'left',
+                        sortable: true,
+                        value: 'price'
+                    },
+                    {
+                        text: 'Zaplaceno',
+                        align: 'left',
+                        sortable: true,
+                        value: 'status'
+                    },
+                    {
+                        text: 'Zobrazit',
+                        align: 'left',
+                        sortable: false,
+                        value: 'action'
+                    },
+                ],
+                items2: []
             }
         },
 
@@ -67,12 +109,11 @@
         mounted() {
             this.items = this.getBreadCrumbs();
             this.getStatus(this.gopayOrderId);
+            this.getUsersOrders();
         },
 
         watch: {
             gopayOrderId: (val) => {
-                console.log('gopayOrderId changed');
-                console.log(val);
                 this.getStatus(val);
             },
         },
@@ -98,7 +139,6 @@
                     axios.get(this.$laroute.route('gopay.api.status', {'id': id})).then((response) => {
                         this.loading = false;
                         this.status = response.data.state;
-                        console.log(this.status);
                     }).catch((error) => {
                         this.loading = false;
                         this.error = error.response.data.errors;
@@ -106,6 +146,18 @@
                     });
                 }
             },
+
+            getUsersOrders() {
+                axios.get(this.$laroute.route('users.api.orders', {'id': this.currentUser.id}))
+                .then((response) => {
+                    this.loading = false;
+                    this.items2 = response.data;
+                }).catch((error) => {
+                    this.loading = false;
+                    this.error = error.response.data.errors;
+                    console.log(error.response);
+                });
+            }
 
 
         }

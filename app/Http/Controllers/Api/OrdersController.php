@@ -6,6 +6,8 @@ use App\Orders\Models\Order;
 use App\Transformers\Orders\OrderTransformer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Users\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class OrdersController extends Controller
 {
@@ -141,5 +143,18 @@ class OrdersController extends Controller
         $order->delete();
 
         return response('ok', 200);
+    }
+
+    /**
+     * @param $userId
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
+     */
+    public function getUsersOrders(Request $request, int $userId)
+    {
+        $user = User::find($userId);
+
+        if (!empty($user->orders)) {
+            return response($user->orders, 200);
+        }
     }
 }

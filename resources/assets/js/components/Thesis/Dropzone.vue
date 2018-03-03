@@ -88,6 +88,7 @@
 
         mounted() {
             this.url = this.$laroute.route('thesis.api.upload');
+            console.log(this.thesisId);
         },
 
         watch: {

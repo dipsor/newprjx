@@ -582,7 +582,8 @@
                     this.bcId = response.data.id;
 
                     this.thesisCreated = true;
-                    this.eventBus.$emit('go-to-next-page', {page_id: this.nextStep, bc_id: response.data.id})
+                    this.goToNextPage();
+                    //this.eventBus.$emit('go-to-next-page', {page_id: this.nextStep, bc_id: response.data.id})
                 }).catch((error) => {
                     this.loading = false;
                     console.log(error);
@@ -594,7 +595,9 @@
                 axios.put(this.$laroute.route('thesis.api.update', {'id': this.bcId}),this.getFormattedObjectToSubmit(this.selectedData)).then((response) => {
                     this.loading = false;
                     this.thesisCreated = true;
-                    this.eventBus.$emit('go-to-next-page', {page_id: this.nextStep, bc_id: response.data.id})
+                    this.goToNextPage();
+
+//                    this.eventBus.$emit('go-to-next-page', {page_id: this.nextStep, bc_id: response.data.id})
                 }).catch((error) => {
                     this.loading = false;
                     console.log(error);

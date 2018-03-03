@@ -47365,7 +47365,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;var _typeof = typeof Symbol === "function" && 
 
             absolute: false,
             rootUrl: 'http://localhost',
-            routes: [{ "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizationController@authorize" }, { "host": null, "methods": ["POST"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\ApproveAuthorizationController@approve" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\DenyAuthorizationController@deny" }, { "host": null, "methods": ["POST"], "uri": "oauth\/token", "name": null, "action": "\Laravel\Passport\Http\Controllers\AccessTokenController@issueToken" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController@forUser" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/tokens\/{token_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController@destroy" }, { "host": null, "methods": ["POST"], "uri": "oauth\/token\/refresh", "name": null, "action": "\Laravel\Passport\Http\Controllers\TransientTokenController@refresh" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/clients", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@forUser" }, { "host": null, "methods": ["POST"], "uri": "oauth\/clients", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@store" }, { "host": null, "methods": ["PUT"], "uri": "oauth\/clients\/{client_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@update" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/clients\/{client_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/scopes", "name": null, "action": "\Laravel\Passport\Http\Controllers\ScopeController@all" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/personal-access-tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@forUser" }, { "host": null, "methods": ["POST"], "uri": "oauth\/personal-access-tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@store" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/personal-access-tokens\/{token_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/users", "name": "users.api.index", "action": "AppHttpControllersApiUsersController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/users", "name": "users.api.store", "action": "AppHttpControllersApiUsersController@store" }, { "host": null, "methods": ["DELETE"], "uri": "api\/v1\/users\/{id}", "name": "users.api.destroy", "action": "AppHttpControllersApiUsersController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/users\/{id}", "name": "users.api.show", "action": "AppHttpControllersApiUsersController@show" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/{id}", "name": "users.api.update", "action": "AppHttpControllersApiUsersController@update" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/profile-update\/{id}", "name": "users.api.update.general.info", "action": "AppHttpControllersApiUsersController@updateGeneralInfo" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/user-password-update\/{id}", "name": "users.api.update.password", "action": "AppHttpControllersApiUsersController@updatePassword" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/user-billing-update\/{id}", "name": "users.api.update.billing", "action": "AppHttpControllersApiUsersController@updateBillingDetails" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/roles", "name": "roles.api.index", "action": "App\Http\Controllers\Api\RolesController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/teams", "name": "teams.api.index", "action": "App\Http\Controllers\Api\TeamsController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/thesis", "name": "thesis.api.store", "action": "App\Http\Controllers\Api\ThesisController@store" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/thesis\/{id}", "name": "thesis.api.show", "action": "App\Http\Controllers\Api\ThesisController@show" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/thesis\/{id}", "name": "thesis.api.update", "action": "App\Http\Controllers\Api\ThesisController@update" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/thesis\/upload", "name": "thesis.api.upload", "action": "AppHttpControllersApiUploadController@upload" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/order", "name": "orders.api.index", "action": "App\Http\Controllers\Api\OrdersController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/order", "name": "orders.api.store", "action": "App\Http\Controllers\Api\OrdersController@store" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/order\/{id}", "name": "orders.api.show", "action": "App\Http\Controllers\Api\OrdersController@show" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/gopay", "name": "gopay.api.create.payment", "action": "App\Http\Controllers\Api\GopayController@payment" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/gopay", "name": "gopay.api.status", "action": "App\Http\Controllers\Api\GopayController@getStatus" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "impersonate\/take\/{id}", "name": "impersonate", "action": "\Lab404\Impersonate\Controllers\ImpersonateController@take" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "impersonate\/leave", "name": "impersonate.leave", "action": "\Lab404\Impersonate\Controllers\ImpersonateController@leave" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "\/", "name": "home", "action": "App\Http\Controllers\LandingPageController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "admin", "name": "dashboard.index", "action": "App\Http\Controllers\DashboardController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "admin\/users", "name": "admin.users.index", "action": "AppHttpControllersAdminUsersUsersController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "uzivatele", "name": "users.index", "action": "AppHttpControllersUsersUsersController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "uzivatele\/{id}", "name": "users.show", "action": "AppHttpControllersUsersUsersController@show" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "thesis", "name": "thesis.index", "action": "App\Http\Controllers\Thesis\ThesisController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "thesis\/return", "name": "thesis.return", "action": "App\Http\Controllers\Thesis\ThesisController@returnIt" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "thesis\/notify", "name": "thesis.notify", "action": "App\Http\Controllers\Thesis\ThesisController@notify" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/facebook", "name": "facebook.login", "action": "App\Http\Controllers\Auth\FacebookAuthController@redirectToProvider" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/facebook\/callback", "name": "facebook.login.callback", "action": "App\Http\Controllers\Auth\FacebookAuthController@handleProviderCallback" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/google", "name": "google.login", "action": "App\Http\Controllers\Auth\GoogleAuthController@redirectToProvider" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/google\/callback", "name": "google.login.callback", "action": "App\Http\Controllers\Auth\GoogleAuthController@handleProviderCallback" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "logout", "name": "users.logout", "action": "\App\Http\Controllers\Auth\LoginController@customLogout" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login", "name": "login", "action": "App\Http\Controllers\Auth\LoginController@showLoginForm" }, { "host": null, "methods": ["POST"], "uri": "login", "name": null, "action": "App\Http\Controllers\Auth\LoginController@login" }, { "host": null, "methods": ["POST"], "uri": "logout", "name": "logout", "action": "App\Http\Controllers\Auth\LoginController@logout" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "register", "name": "register", "action": "App\Http\Controllers\Auth\RegisterController@showRegistrationForm" }, { "host": null, "methods": ["POST"], "uri": "register", "name": null, "action": "App\Http\Controllers\Auth\RegisterController@register" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "password\/reset", "name": "password.request", "action": "App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm" }, { "host": null, "methods": ["POST"], "uri": "password\/email", "name": "password.email", "action": "App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "password\/reset\/{token}", "name": "password.reset", "action": "App\Http\Controllers\Auth\ResetPasswordController@showResetForm" }, { "host": null, "methods": ["POST"], "uri": "password\/reset", "name": null, "action": "App\Http\Controllers\Auth\ResetPasswordController@reset" }],
+            routes: [{ "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizationController@authorize" }, { "host": null, "methods": ["POST"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\ApproveAuthorizationController@approve" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\DenyAuthorizationController@deny" }, { "host": null, "methods": ["POST"], "uri": "oauth\/token", "name": null, "action": "\Laravel\Passport\Http\Controllers\AccessTokenController@issueToken" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController@forUser" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/tokens\/{token_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController@destroy" }, { "host": null, "methods": ["POST"], "uri": "oauth\/token\/refresh", "name": null, "action": "\Laravel\Passport\Http\Controllers\TransientTokenController@refresh" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/clients", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@forUser" }, { "host": null, "methods": ["POST"], "uri": "oauth\/clients", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@store" }, { "host": null, "methods": ["PUT"], "uri": "oauth\/clients\/{client_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@update" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/clients\/{client_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/scopes", "name": null, "action": "\Laravel\Passport\Http\Controllers\ScopeController@all" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/personal-access-tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@forUser" }, { "host": null, "methods": ["POST"], "uri": "oauth\/personal-access-tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@store" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/personal-access-tokens\/{token_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/users", "name": "users.api.index", "action": "AppHttpControllersApiUsersController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/users", "name": "users.api.store", "action": "AppHttpControllersApiUsersController@store" }, { "host": null, "methods": ["DELETE"], "uri": "api\/v1\/users\/{id}", "name": "users.api.destroy", "action": "AppHttpControllersApiUsersController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/users\/{id}", "name": "users.api.show", "action": "AppHttpControllersApiUsersController@show" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/{id}", "name": "users.api.update", "action": "AppHttpControllersApiUsersController@update" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/profile-update\/{id}", "name": "users.api.update.general.info", "action": "AppHttpControllersApiUsersController@updateGeneralInfo" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/user-password-update\/{id}", "name": "users.api.update.password", "action": "AppHttpControllersApiUsersController@updatePassword" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/user-billing-update\/{id}", "name": "users.api.update.billing", "action": "AppHttpControllersApiUsersController@updateBillingDetails" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/users\/{id}\/orders", "name": "users.api.orders", "action": "App\Http\Controllers\Api\OrdersController@getUsersOrders" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/roles", "name": "roles.api.index", "action": "App\Http\Controllers\Api\RolesController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/teams", "name": "teams.api.index", "action": "App\Http\Controllers\Api\TeamsController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/thesis", "name": "thesis.api.store", "action": "App\Http\Controllers\Api\ThesisController@store" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/thesis\/{id}", "name": "thesis.api.show", "action": "App\Http\Controllers\Api\ThesisController@show" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/thesis\/{id}", "name": "thesis.api.update", "action": "App\Http\Controllers\Api\ThesisController@update" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/thesis\/upload", "name": "thesis.api.upload", "action": "AppHttpControllersApiUploadController@upload" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/order", "name": "orders.api.index", "action": "App\Http\Controllers\Api\OrdersController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/order", "name": "orders.api.store", "action": "App\Http\Controllers\Api\OrdersController@store" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/order\/{id}", "name": "orders.api.show", "action": "App\Http\Controllers\Api\OrdersController@show" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/order\/paid\/{id}", "name": "orders.api.paid", "action": "App\Http\Controllers\Api\OrdersController@changePaid" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/gopay", "name": "gopay.api.create.payment", "action": "App\Http\Controllers\Api\GopayController@payment" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/gopay", "name": "gopay.api.status", "action": "App\Http\Controllers\Api\GopayController@getStatus" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "impersonate\/take\/{id}", "name": "impersonate", "action": "\Lab404\Impersonate\Controllers\ImpersonateController@take" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "impersonate\/leave", "name": "impersonate.leave", "action": "\Lab404\Impersonate\Controllers\ImpersonateController@leave" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "\/", "name": "home", "action": "App\Http\Controllers\LandingPageController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "admin", "name": "dashboard.index", "action": "App\Http\Controllers\DashboardController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "admin\/users", "name": "admin.users.index", "action": "AppHttpControllersAdminUsersUsersController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "profil", "name": "users.index", "action": "AppHttpControllersUsersUsersController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "profil\/{id}", "name": "users.show", "action": "AppHttpControllersUsersUsersController@show" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "thesis", "name": "thesis.index", "action": "App\Http\Controllers\Thesis\ThesisController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "thesis\/return", "name": "thesis.return", "action": "App\Http\Controllers\Thesis\ThesisController@returnIt" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "thesis\/notify", "name": "thesis.notify", "action": "App\Http\Controllers\Thesis\ThesisController@notify" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/facebook", "name": "facebook.login", "action": "App\Http\Controllers\Auth\FacebookAuthController@redirectToProvider" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/facebook\/callback", "name": "facebook.login.callback", "action": "App\Http\Controllers\Auth\FacebookAuthController@handleProviderCallback" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/google", "name": "google.login", "action": "App\Http\Controllers\Auth\GoogleAuthController@redirectToProvider" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/google\/callback", "name": "google.login.callback", "action": "App\Http\Controllers\Auth\GoogleAuthController@handleProviderCallback" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "logout", "name": "users.logout", "action": "\App\Http\Controllers\Auth\LoginController@customLogout" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login", "name": "login", "action": "App\Http\Controllers\Auth\LoginController@showLoginForm" }, { "host": null, "methods": ["POST"], "uri": "login", "name": null, "action": "App\Http\Controllers\Auth\LoginController@login" }, { "host": null, "methods": ["POST"], "uri": "logout", "name": "logout", "action": "App\Http\Controllers\Auth\LoginController@logout" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "register", "name": "register", "action": "App\Http\Controllers\Auth\RegisterController@showRegistrationForm" }, { "host": null, "methods": ["POST"], "uri": "register", "name": null, "action": "App\Http\Controllers\Auth\RegisterController@register" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "password\/reset", "name": "password.request", "action": "App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm" }, { "host": null, "methods": ["POST"], "uri": "password\/email", "name": "password.email", "action": "App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "password\/reset\/{token}", "name": "password.reset", "action": "App\Http\Controllers\Auth\ResetPasswordController@showResetForm" }, { "host": null, "methods": ["POST"], "uri": "password\/reset", "name": null, "action": "App\Http\Controllers\Auth\ResetPasswordController@reset" }],
             prefix: '',
 
             route: function route(name, parameters, _route) {
@@ -54975,6 +54975,15 @@ var _this = this;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -54992,7 +55001,34 @@ var _this = this;
                 'PARTIALLY_REFUNDED': 'Platba byla částečnê zrušena.',
                 'CANCELED': 'Platba byla zrušena.',
                 'TIMEOUTED': 'Platební proces vypršel.'
-            }
+            },
+            headers: [{
+                text: 'Objednávka',
+                align: 'left',
+                sortable: false,
+                value: 'orderName'
+            }, {
+                text: 'Zadáno',
+                align: 'left',
+                sortable: true,
+                value: 'created_at'
+            }, {
+                text: 'Cena',
+                align: 'left',
+                sortable: true,
+                value: 'price'
+            }, {
+                text: 'Zaplaceno',
+                align: 'left',
+                sortable: true,
+                value: 'status'
+            }, {
+                text: 'Zobrazit',
+                align: 'left',
+                sortable: false,
+                value: 'action'
+            }],
+            items2: []
         };
     },
 
@@ -55005,13 +55041,12 @@ var _this = this;
     mounted: function mounted() {
         this.items = this.getBreadCrumbs();
         this.getStatus(this.gopayOrderId);
+        this.getUsersOrders();
     },
 
 
     watch: {
         gopayOrderId: function gopayOrderId(val) {
-            console.log('gopayOrderId changed');
-            console.log(val);
             _this.getStatus(val);
         }
     },
@@ -55035,13 +55070,24 @@ var _this = this;
                 axios.get(this.$laroute.route('gopay.api.status', { 'id': id })).then(function (response) {
                     _this2.loading = false;
                     _this2.status = response.data.state;
-                    console.log(_this2.status);
                 }).catch(function (error) {
                     _this2.loading = false;
                     _this2.error = error.response.data.errors;
                     console.log(error.response);
                 });
             }
+        },
+        getUsersOrders: function getUsersOrders() {
+            var _this3 = this;
+
+            axios.get(this.$laroute.route('users.api.orders', { 'id': this.currentUser.id })).then(function (response) {
+                _this3.loading = false;
+                _this3.items2 = response.data;
+            }).catch(function (error) {
+                _this3.loading = false;
+                _this3.error = error.response.data.errors;
+                console.log(error.response);
+            });
         }
     }
 });
@@ -55140,17 +55186,61 @@ var render = function() {
                           _c(
                             "v-toolbar-title",
                             { staticClass: "white--text" },
-                            [_vm._v("Uzivatele")]
+                            [
+                              _vm._v(
+                                "Objednávky uživatele " +
+                                  _vm._s(_vm.currentUser.name)
+                              )
+                            ]
                           )
                         ],
                         1
                       ),
                       _vm._v(" "),
-                      _c("v-flex", { attrs: { xs12: "" } }, [
-                        _vm._v(
-                          "\n                        Dashboard pro uzivatele\n                    "
-                        )
-                      ])
+                      _c("v-data-table", {
+                        staticClass: "elevation-1",
+                        attrs: {
+                          headers: _vm.headers,
+                          items: _vm.items2,
+                          "hide-actions": ""
+                        },
+                        scopedSlots: _vm._u([
+                          {
+                            key: "items",
+                            fn: function(props) {
+                              return [
+                                _c("td", { staticClass: "text-xs-left" }, [
+                                  _vm._v(_vm._s(props.item.orderName))
+                                ]),
+                                _vm._v(" "),
+                                _c("td", { staticClass: "text-xs-left" }, [
+                                  _vm._v(_vm._s(props.item.created_at))
+                                ]),
+                                _vm._v(" "),
+                                _c("td", { staticClass: "text-xs-left" }, [
+                                  _vm._v(_vm._s(props.item.price))
+                                ]),
+                                _vm._v(" "),
+                                _c("td", { staticClass: "text-xs-left" }, [
+                                  _vm._v(_vm._s(props.item.status))
+                                ]),
+                                _vm._v(" "),
+                                _c("td", { staticClass: "text-xs-left" }, [
+                                  _c(
+                                    "a",
+                                    {
+                                      attrs: {
+                                        href: "/orders/" + props.item.id
+                                      }
+                                    },
+                                    [_vm._v("Zobrazit")]
+                                  )
+                                ])
+                              ]
+                            }
+                          }
+                        ])
+                      })
                     ],
                     1
                   )
@@ -57580,7 +57670,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this.bcId = response.data.id;
 
                 _this.thesisCreated = true;
-                _this.eventBus.$emit('go-to-next-page', { page_id: _this.nextStep, bc_id: response.data.id });
+                _this.goToNextPage();
+                //this.eventBus.$emit('go-to-next-page', {page_id: this.nextStep, bc_id: response.data.id})
             }).catch(function (error) {
                 _this.loading = false;
                 console.log(error);
@@ -57593,7 +57684,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.put(this.$laroute.route('thesis.api.update', { 'id': this.bcId }), this.getFormattedObjectToSubmit(this.selectedData)).then(function (response) {
                 _this2.loading = false;
                 _this2.thesisCreated = true;
-                _this2.eventBus.$emit('go-to-next-page', { page_id: _this2.nextStep, bc_id: response.data.id });
+                _this2.goToNextPage();
+
+                //                    this.eventBus.$emit('go-to-next-page', {page_id: this.nextStep, bc_id: response.data.id})
             }).catch(function (error) {
                 _this2.loading = false;
                 console.log(error);
@@ -59520,6 +59613,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     mounted: function mounted() {
         this.url = this.$laroute.route('thesis.api.upload');
+        console.log(this.thesisId);
     },
 
 
@@ -59886,44 +59980,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             errors: null
         };
     },
-    mounted: function mounted() {
-        var _this = this;
+    mounted: function mounted() {},
 
-        console.log(this.currentUser);
-        this.eventBus.$on('load-thesis', function (payload) {
-            _this.getThesis();
-        });
 
-        this.eventBus.$on('load-bc', function () {
-            _this.getThesis();
-        });
+    watch: {
+        thesisId: function thesisId(val) {
+            this.getThesis();
+        }
     },
-
 
     methods: {
         createOrder: function createOrder() {
-            var _this2 = this;
+            var _this = this;
 
             this.loading = true;
             axios.post(this.$laroute.route('orders.api.store'), this.getOrderData()).then(function (response) {
-                _this2.loading = false;
-                console.log(response.data.id);
-                _this2.eventBus.$emit('go-to-next-page', { page_id: 4, bc_id: response.data.id });
-                _this2.eventBus.$emit('order-created', true);
+                _this.loading = false;
+                _this.eventBus.$emit('go-to-next-page', { page_id: 4, bc_id: response.data.id });
+                _this.eventBus.$emit('order-created', response.data.id);
             }).catch(function (error) {
-                _this2.loading = false;
-                _this2.errors = error.response.data.errors;
+                _this.loading = false;
+                _this.errors = error.response.data.errors;
             });
         },
         getThesis: function getThesis() {
-            var _this3 = this;
+            var _this2 = this;
 
             axios.get(this.$laroute.route('thesis.api.show', { id: this.thesisId })).then(function (response) {
-                _this3.loading = false;
-                _this3.thesis = response.data;
+                _this2.loading = false;
+                _this2.thesis = response.data;
             }).catch(function (error) {
-                _this3.loading = false;
-                _this3.error = error.response.data.errors;
+                _this2.loading = false;
+                _this2.error = error.response.data.errors;
                 console.log(error.response);
             });
         },
@@ -59942,7 +60030,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 'street': this.currentUser.street,
                 'postal_code': this.currentUser.postal_code,
                 'country_code': this.currentUser.country_code,
-                'gopay_order_id': 3452345,
                 'price': this.thesis.price
             };
         }
@@ -60646,7 +60733,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             items: [],
             accessUpload: false,
             bcId: null,
-            orderId: 1,
+            orderId: null,
             thesis: null,
             loading: false,
             errors: null,
@@ -60658,9 +60745,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         var _this = this;
 
-        this.createPayment();
-        this.getOrder();
         this.eventBus.$on('order-created', function (val) {
+            _this.orderId = val;
+            _this.getOrder();
             _this.createPayment();
         });
     },

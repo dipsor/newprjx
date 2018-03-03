@@ -22,7 +22,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin', 'auth']], func
 });
 
 
-Route::group(['prefix' => 'uzivatele', 'namespace' => 'Users', 'middleware' => ['role:customer', 'auth']], function () {
+Route::group(['prefix' => 'profil', 'namespace' => 'Users', 'middleware' => ['role:customer', 'auth']], function () {
     Route::get('/', 'UsersController@index')->name('users.index');
     Route::get('/{id}', 'UsersController@show')->name('users.show');
 });

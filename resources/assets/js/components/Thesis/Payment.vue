@@ -67,7 +67,7 @@
                 items: [],
                 accessUpload: false,
                 bcId: null,
-                orderId: 1,
+                orderId: null,
                 thesis: null,
                 loading: false,
                 errors: null,
@@ -78,9 +78,9 @@
         },
 
         mounted() {
-            this.createPayment();
-            this.getOrder();
             this.eventBus.$on('order-created', (val) => {
+                this.orderId = val;
+                this.getOrder();
                 this.createPayment();
             });
 
