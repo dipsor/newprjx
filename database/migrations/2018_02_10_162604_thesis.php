@@ -15,7 +15,7 @@ class Thesis extends Migration
     {
         Schema::create('theses', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();
             $table->string('filePath')->nullable();
             $table->string('price')->nullable();
             $table->string('typZadani')->nullable();
@@ -46,6 +46,10 @@ class Thesis extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
+
+//        Schema::table('orders', function($table) {
+//            $table->foreign('user_id')->references('id')->on('users');
+//        });
     }
 
     /**
@@ -55,6 +59,8 @@ class Thesis extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('theses');
+        Schema::dropIfExists('theses', function (Blueprint $table) {
+//            $table->dropForeign(['user_id']);
+        });
     }
 }

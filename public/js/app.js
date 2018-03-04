@@ -1403,8 +1403,8 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(14);
-__webpack_require__(142);
-module.exports = __webpack_require__(143);
+__webpack_require__(145);
+module.exports = __webpack_require__(146);
 
 
 /***/ }),
@@ -1466,6 +1466,7 @@ Vue.component('navigations', __webpack_require__(62));
 Vue.component('tabs', __webpack_require__(67));
 Vue.component('content-card', __webpack_require__(70));
 Vue.component('breadcrumbs', __webpack_require__(73));
+Vue.component('footer-component', __webpack_require__(153));
 
 Vue.component('dashboard-index', __webpack_require__(76));
 
@@ -1489,6 +1490,7 @@ Vue.component('users-form', __webpack_require__(124));
 Vue.component('left-sidebar', __webpack_require__(129));
 Vue.component('navigation', __webpack_require__(134));
 Vue.component('users-profile', __webpack_require__(137));
+Vue.component('order-detail', __webpack_require__(142));
 
 var app = new Vue({
 
@@ -47365,7 +47367,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;var _typeof = typeof Symbol === "function" && 
 
             absolute: false,
             rootUrl: 'http://localhost',
-            routes: [{ "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizationController@authorize" }, { "host": null, "methods": ["POST"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\ApproveAuthorizationController@approve" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\DenyAuthorizationController@deny" }, { "host": null, "methods": ["POST"], "uri": "oauth\/token", "name": null, "action": "\Laravel\Passport\Http\Controllers\AccessTokenController@issueToken" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController@forUser" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/tokens\/{token_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController@destroy" }, { "host": null, "methods": ["POST"], "uri": "oauth\/token\/refresh", "name": null, "action": "\Laravel\Passport\Http\Controllers\TransientTokenController@refresh" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/clients", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@forUser" }, { "host": null, "methods": ["POST"], "uri": "oauth\/clients", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@store" }, { "host": null, "methods": ["PUT"], "uri": "oauth\/clients\/{client_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@update" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/clients\/{client_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/scopes", "name": null, "action": "\Laravel\Passport\Http\Controllers\ScopeController@all" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/personal-access-tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@forUser" }, { "host": null, "methods": ["POST"], "uri": "oauth\/personal-access-tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@store" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/personal-access-tokens\/{token_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/users", "name": "users.api.index", "action": "AppHttpControllersApiUsersController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/users", "name": "users.api.store", "action": "AppHttpControllersApiUsersController@store" }, { "host": null, "methods": ["DELETE"], "uri": "api\/v1\/users\/{id}", "name": "users.api.destroy", "action": "AppHttpControllersApiUsersController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/users\/{id}", "name": "users.api.show", "action": "AppHttpControllersApiUsersController@show" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/{id}", "name": "users.api.update", "action": "AppHttpControllersApiUsersController@update" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/profile-update\/{id}", "name": "users.api.update.general.info", "action": "AppHttpControllersApiUsersController@updateGeneralInfo" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/user-password-update\/{id}", "name": "users.api.update.password", "action": "AppHttpControllersApiUsersController@updatePassword" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/user-billing-update\/{id}", "name": "users.api.update.billing", "action": "AppHttpControllersApiUsersController@updateBillingDetails" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/roles", "name": "roles.api.index", "action": "App\Http\Controllers\Api\RolesController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/teams", "name": "teams.api.index", "action": "App\Http\Controllers\Api\TeamsController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/thesis", "name": "thesis.api.store", "action": "App\Http\Controllers\Api\ThesisController@store" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/thesis\/{id}", "name": "thesis.api.show", "action": "App\Http\Controllers\Api\ThesisController@show" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/thesis\/{id}", "name": "thesis.api.update", "action": "App\Http\Controllers\Api\ThesisController@update" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/thesis\/upload", "name": "thesis.api.upload", "action": "AppHttpControllersApiUploadController@upload" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/order", "name": "orders.api.index", "action": "App\Http\Controllers\Api\OrdersController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/order", "name": "orders.api.store", "action": "App\Http\Controllers\Api\OrdersController@store" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/order\/{id}", "name": "orders.api.show", "action": "App\Http\Controllers\Api\OrdersController@show" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/gopay", "name": "gopay.api.create.payment", "action": "App\Http\Controllers\Api\GopayController@payment" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/gopay", "name": "gopay.api.status", "action": "App\Http\Controllers\Api\GopayController@getStatus" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "impersonate\/take\/{id}", "name": "impersonate", "action": "\Lab404\Impersonate\Controllers\ImpersonateController@take" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "impersonate\/leave", "name": "impersonate.leave", "action": "\Lab404\Impersonate\Controllers\ImpersonateController@leave" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "\/", "name": "home", "action": "App\Http\Controllers\LandingPageController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "admin", "name": "dashboard.index", "action": "App\Http\Controllers\DashboardController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "admin\/users", "name": "admin.users.index", "action": "AppHttpControllersAdminUsersUsersController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "uzivatele", "name": "users.index", "action": "AppHttpControllersUsersUsersController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "uzivatele\/{id}", "name": "users.show", "action": "AppHttpControllersUsersUsersController@show" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "thesis", "name": "thesis.index", "action": "App\Http\Controllers\Thesis\ThesisController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "thesis\/return", "name": "thesis.return", "action": "App\Http\Controllers\Thesis\ThesisController@returnIt" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "thesis\/notify", "name": "thesis.notify", "action": "App\Http\Controllers\Thesis\ThesisController@notify" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/facebook", "name": "facebook.login", "action": "App\Http\Controllers\Auth\FacebookAuthController@redirectToProvider" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/facebook\/callback", "name": "facebook.login.callback", "action": "App\Http\Controllers\Auth\FacebookAuthController@handleProviderCallback" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/google", "name": "google.login", "action": "App\Http\Controllers\Auth\GoogleAuthController@redirectToProvider" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/google\/callback", "name": "google.login.callback", "action": "App\Http\Controllers\Auth\GoogleAuthController@handleProviderCallback" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "logout", "name": "users.logout", "action": "\App\Http\Controllers\Auth\LoginController@customLogout" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login", "name": "login", "action": "App\Http\Controllers\Auth\LoginController@showLoginForm" }, { "host": null, "methods": ["POST"], "uri": "login", "name": null, "action": "App\Http\Controllers\Auth\LoginController@login" }, { "host": null, "methods": ["POST"], "uri": "logout", "name": "logout", "action": "App\Http\Controllers\Auth\LoginController@logout" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "register", "name": "register", "action": "App\Http\Controllers\Auth\RegisterController@showRegistrationForm" }, { "host": null, "methods": ["POST"], "uri": "register", "name": null, "action": "App\Http\Controllers\Auth\RegisterController@register" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "password\/reset", "name": "password.request", "action": "App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm" }, { "host": null, "methods": ["POST"], "uri": "password\/email", "name": "password.email", "action": "App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "password\/reset\/{token}", "name": "password.reset", "action": "App\Http\Controllers\Auth\ResetPasswordController@showResetForm" }, { "host": null, "methods": ["POST"], "uri": "password\/reset", "name": null, "action": "App\Http\Controllers\Auth\ResetPasswordController@reset" }],
+            routes: [{ "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizationController@authorize" }, { "host": null, "methods": ["POST"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\ApproveAuthorizationController@approve" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\DenyAuthorizationController@deny" }, { "host": null, "methods": ["POST"], "uri": "oauth\/token", "name": null, "action": "\Laravel\Passport\Http\Controllers\AccessTokenController@issueToken" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController@forUser" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/tokens\/{token_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController@destroy" }, { "host": null, "methods": ["POST"], "uri": "oauth\/token\/refresh", "name": null, "action": "\Laravel\Passport\Http\Controllers\TransientTokenController@refresh" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/clients", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@forUser" }, { "host": null, "methods": ["POST"], "uri": "oauth\/clients", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@store" }, { "host": null, "methods": ["PUT"], "uri": "oauth\/clients\/{client_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@update" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/clients\/{client_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/scopes", "name": null, "action": "\Laravel\Passport\Http\Controllers\ScopeController@all" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/personal-access-tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@forUser" }, { "host": null, "methods": ["POST"], "uri": "oauth\/personal-access-tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@store" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/personal-access-tokens\/{token_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/users", "name": "users.api.index", "action": "AppHttpControllersApiUsersController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/users", "name": "users.api.store", "action": "AppHttpControllersApiUsersController@store" }, { "host": null, "methods": ["DELETE"], "uri": "api\/v1\/users\/{id}", "name": "users.api.destroy", "action": "AppHttpControllersApiUsersController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/users\/{id}", "name": "users.api.show", "action": "AppHttpControllersApiUsersController@show" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/{id}", "name": "users.api.update", "action": "AppHttpControllersApiUsersController@update" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/profile-update\/{id}", "name": "users.api.update.general.info", "action": "AppHttpControllersApiUsersController@updateGeneralInfo" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/user-password-update\/{id}", "name": "users.api.update.password", "action": "AppHttpControllersApiUsersController@updatePassword" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/user-billing-update\/{id}", "name": "users.api.update.billing", "action": "AppHttpControllersApiUsersController@updateBillingDetails" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/users\/{id}\/orders", "name": "users.api.orders", "action": "App\Http\Controllers\Api\OrdersController@getUsersOrders" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/roles", "name": "roles.api.index", "action": "App\Http\Controllers\Api\RolesController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/teams", "name": "teams.api.index", "action": "App\Http\Controllers\Api\TeamsController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/thesis", "name": "thesis.api.store", "action": "App\Http\Controllers\Api\ThesisController@store" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/thesis\/{id}", "name": "thesis.api.show", "action": "App\Http\Controllers\Api\ThesisController@show" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/thesis\/{id}", "name": "thesis.api.update", "action": "App\Http\Controllers\Api\ThesisController@update" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/thesis\/upload", "name": "thesis.api.upload", "action": "AppHttpControllersApiUploadController@upload" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/order", "name": "orders.api.index", "action": "App\Http\Controllers\Api\OrdersController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/order", "name": "orders.api.store", "action": "App\Http\Controllers\Api\OrdersController@store" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/order\/{id}", "name": "orders.api.show", "action": "App\Http\Controllers\Api\OrdersController@show" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/order\/paid\/{id}", "name": "orders.api.paid", "action": "App\Http\Controllers\Api\OrdersController@changePaid" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/gopay", "name": "gopay.api.create.payment", "action": "App\Http\Controllers\Api\GopayController@payment" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/gopay", "name": "gopay.api.status", "action": "App\Http\Controllers\Api\GopayController@getStatus" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "impersonate\/take\/{id}", "name": "impersonate", "action": "\Lab404\Impersonate\Controllers\ImpersonateController@take" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "impersonate\/leave", "name": "impersonate.leave", "action": "\Lab404\Impersonate\Controllers\ImpersonateController@leave" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "\/", "name": "home", "action": "App\Http\Controllers\LandingPageController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "admin", "name": "dashboard.index", "action": "App\Http\Controllers\DashboardController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "admin\/users", "name": "admin.users.index", "action": "AppHttpControllersAdminUsersUsersController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "profil", "name": "users.index", "action": "AppHttpControllersUsersUsersController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "profil\/{id}", "name": "users.show", "action": "AppHttpControllersUsersUsersController@show" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "thesis", "name": "thesis.index", "action": "App\Http\Controllers\Thesis\ThesisController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "thesis\/return", "name": "thesis.return", "action": "App\Http\Controllers\Thesis\ThesisController@returnIt" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "thesis\/notify", "name": "thesis.notify", "action": "App\Http\Controllers\Thesis\ThesisController@notify" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/facebook", "name": "facebook.login", "action": "App\Http\Controllers\Auth\FacebookAuthController@redirectToProvider" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/facebook\/callback", "name": "facebook.login.callback", "action": "App\Http\Controllers\Auth\FacebookAuthController@handleProviderCallback" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/google", "name": "google.login", "action": "App\Http\Controllers\Auth\GoogleAuthController@redirectToProvider" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/google\/callback", "name": "google.login.callback", "action": "App\Http\Controllers\Auth\GoogleAuthController@handleProviderCallback" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "logout", "name": "users.logout", "action": "\App\Http\Controllers\Auth\LoginController@customLogout" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login", "name": "login", "action": "App\Http\Controllers\Auth\LoginController@showLoginForm" }, { "host": null, "methods": ["POST"], "uri": "login", "name": null, "action": "App\Http\Controllers\Auth\LoginController@login" }, { "host": null, "methods": ["POST"], "uri": "logout", "name": "logout", "action": "App\Http\Controllers\Auth\LoginController@logout" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "register", "name": "register", "action": "App\Http\Controllers\Auth\RegisterController@showRegistrationForm" }, { "host": null, "methods": ["POST"], "uri": "register", "name": null, "action": "App\Http\Controllers\Auth\RegisterController@register" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "password\/reset", "name": "password.request", "action": "App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm" }, { "host": null, "methods": ["POST"], "uri": "password\/email", "name": "password.email", "action": "App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "password\/reset\/{token}", "name": "password.reset", "action": "App\Http\Controllers\Auth\ResetPasswordController@showResetForm" }, { "host": null, "methods": ["POST"], "uri": "password\/reset", "name": null, "action": "App\Http\Controllers\Auth\ResetPasswordController@reset" }],
             prefix: '',
 
             route: function route(name, parameters, _route) {
@@ -53787,35 +53789,92 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             drawer: null,
             dashboardUrl: 'ddd',
-            items: []
+            items: [],
+            adminItems: [],
+            isAdmin: false
         };
     },
-
     props: {
         source: String,
         currentUser: null
     },
 
     mounted: function mounted() {
+        this.isItAdmin();
         this.items = this.setMenu();
+        this.adminItems = this.setAdminMenu();
+
+        console.log(this.currentUser.roles);
     },
 
 
     methods: {
         setMenu: function setMenu() {
-            return [{ icon: 'dashboard', text: 'Dashboard', link: this.$laroute.route('dashboard.index'), forAdmin: false }, {
+            return [{
                 icon: 'keyboard_arrow_up',
                 'icon-alt': 'keyboard_arrow_down',
-                text: 'User',
+                text: 'Uživatel',
                 model: false,
-                children: [{ text: 'Profil', link: this.$laroute.route('users.index') }, { text: 'Edit Details', link: this.$laroute.route('users.show', { id: this.currentUser.id }) }]
-            }, { icon: 'shopping_cart', text: 'Vytvorit objednavku', 'link': this.$laroute.route('thesis.index') }];
+                children: [{ text: 'Objednávky', link: this.$laroute.route('users.index') }, { text: 'Změna údajů', link: this.$laroute.route('users.show', { id: this.currentUser.id }) }]
+            }, { icon: 'shopping_cart', text: 'Vytvořit objednávku', 'link': this.$laroute.route('thesis.index') }];
+        },
+        setAdminMenu: function setAdminMenu() {
+            return [{ icon: 'dashboard', text: 'Admin', link: this.$laroute.route('dashboard.index'), forAdmin: true }];
+        },
+        logout: function logout() {
+            var _this = this;
+
+            axios.get(this.$laroute.route('users.logout')).then(function (response) {
+                window.location.href = _this.$laroute.route('home');
+            }, function (error) {
+                console.log(error);
+            });
+        },
+        isItAdmin: function isItAdmin() {
+            var _this2 = this;
+
+            this.isAdmin = false;
+            this.currentUser.roles.forEach(function (role) {
+                console.log(role.name);
+                if (role.name === 'admin') {
+                    _this2.isAdmin = true;
+                }
+            });
         }
     }
 
@@ -53887,7 +53946,8 @@ var render = function() {
                                   attrs: { href: "#!" }
                                 },
                                 [_vm._v("EDIT")]
-                              )
+                              ),
+                              _vm._v(" edit\n                ")
                             ]
                           )
                         ],
@@ -54021,6 +54081,150 @@ var render = function() {
                           1
                         )
                 ]
+              }),
+              _vm._v(" "),
+              _vm.isAdmin ? _c("v-divider") : _vm._e(),
+              _vm._v(" "),
+              _vm._l(_vm.adminItems, function(item, i) {
+                return _vm.isAdmin
+                  ? [
+                      item.heading
+                        ? _c("v-layout", {
+                            key: i,
+                            attrs: { row: "", "align-center": "" }
+                          })
+                        : item.children
+                          ? _c(
+                              "v-list-group",
+                              {
+                                attrs: { "no-action": "" },
+                                model: {
+                                  value: item.model,
+                                  callback: function($$v) {
+                                    _vm.$set(item, "model", $$v)
+                                  },
+                                  expression: "item.model"
+                                }
+                              },
+                              [
+                                _c(
+                                  "v-list-tile",
+                                  {
+                                    attrs: { slot: "item" },
+                                    on: { click: function($event) {} },
+                                    slot: "item"
+                                  },
+                                  [
+                                    _c(
+                                      "v-list-tile-action",
+                                      [
+                                        _c("v-icon", [
+                                          _vm._v(
+                                            _vm._s(
+                                              item.model
+                                                ? item.icon
+                                                : item["icon-alt"]
+                                            )
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-list-tile-content",
+                                      [
+                                        _c("v-list-tile-title", [
+                                          _vm._v(
+                                            "\n                            " +
+                                              _vm._s(item.text) +
+                                              "\n                        "
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _vm._l(item.children, function(child, i) {
+                                  return _c(
+                                    "v-list-tile",
+                                    {
+                                      key: i,
+                                      on: { click: function($event) {} }
+                                    },
+                                    [
+                                      child.icon
+                                        ? _c(
+                                            "v-list-tile-action",
+                                            [
+                                              _c("v-icon", [
+                                                _vm._v(_vm._s(child.icon))
+                                              ])
+                                            ],
+                                            1
+                                          )
+                                        : _vm._e(),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        [
+                                          _c("v-list-tile-title", [
+                                            _c(
+                                              "a",
+                                              {
+                                                staticClass: "menu-item",
+                                                attrs: { href: child.link }
+                                              },
+                                              [_vm._v(_vm._s(child.text))]
+                                            )
+                                          ])
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                })
+                              ],
+                              2
+                            )
+                          : _c(
+                              "v-list-tile",
+                              {
+                                attrs: { href: item.link },
+                                on: { click: function($event) {} }
+                              },
+                              [
+                                _c(
+                                  "v-list-tile-action",
+                                  [_c("v-icon", [_vm._v(_vm._s(item.icon))])],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-tile-content",
+                                  [
+                                    _c("v-list-tile-title", [
+                                      _c(
+                                        "a",
+                                        {
+                                          staticClass: "menu-item",
+                                          attrs: { href: item.link }
+                                        },
+                                        [_vm._v(_vm._s(item.text))]
+                                      )
+                                    ])
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                    ]
+                  : _vm._e()
               })
             ],
             2
@@ -54065,21 +54269,11 @@ var render = function() {
                   staticClass: "hidden-xs-only nav-link",
                   attrs: { href: _vm.$laroute.route("home") }
                 },
-                [_vm._v("Landing Page")]
+                [_vm._v("Hlavní strana")]
               )
             ],
             1
           ),
-          _vm._v(" "),
-          _c("v-text-field", {
-            staticStyle: { "max-width": "500px", "min-width": "128px" },
-            attrs: {
-              light: "",
-              solo: "",
-              "prepend-icon": "search",
-              placeholder: "Search"
-            }
-          }),
           _vm._v(" "),
           _c(
             "div",
@@ -54090,30 +54284,10 @@ var render = function() {
             [
               _c(
                 "v-btn",
-                { attrs: { icon: "" } },
-                [_c("v-icon", [_vm._v("apps")])],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-btn",
-                { attrs: { icon: "" } },
-                [_c("v-icon", [_vm._v("notifications")])],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-btn",
-                { attrs: { icon: "", large: "" } },
+                { attrs: { light: "" }, on: { click: _vm.logout } },
                 [
-                  _c("v-avatar", { attrs: { size: "32px", tile: "" } }, [
-                    _c("img", {
-                      attrs: {
-                        src: "https://vuetifyjs.com/static/doc-images/logo.svg",
-                        alt: "Vuetify"
-                      }
-                    })
-                  ])
+                  _c("v-icon", [_vm._v("person_outline")]),
+                  _vm._v("\n                Odhlásit\n            ")
                 ],
                 1
               )
@@ -54975,6 +55149,21 @@ var _this = this;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -54992,7 +55181,34 @@ var _this = this;
                 'PARTIALLY_REFUNDED': 'Platba byla částečnê zrušena.',
                 'CANCELED': 'Platba byla zrušena.',
                 'TIMEOUTED': 'Platební proces vypršel.'
-            }
+            },
+            headers: [{
+                text: 'Objednávka',
+                align: 'left',
+                sortable: false,
+                value: 'orderName'
+            }, {
+                text: 'Zadáno',
+                align: 'left',
+                sortable: true,
+                value: 'created_at'
+            }, {
+                text: 'Cena',
+                align: 'left',
+                sortable: true,
+                value: 'price'
+            }, {
+                text: 'Zaplaceno',
+                align: 'left',
+                sortable: true,
+                value: 'status'
+            }, {
+                text: 'Zobrazit',
+                align: 'left',
+                sortable: false,
+                value: 'action'
+            }],
+            items2: []
         };
     },
 
@@ -55005,27 +55221,29 @@ var _this = this;
     mounted: function mounted() {
         this.items = this.getBreadCrumbs();
         this.getStatus(this.gopayOrderId);
+        this.getUsersOrders();
     },
 
 
     watch: {
         gopayOrderId: function gopayOrderId(val) {
-            console.log('gopayOrderId changed');
-            console.log(val);
             _this.getStatus(val);
+        },
+
+        status: function status() {
+            this.getUsersOrders();
         }
     },
 
     methods: {
         getBreadCrumbs: function getBreadCrumbs() {
             return [{
-                text: 'Dashboard',
-                disabled: false,
-                link: this.$laroute.route('dashboard.index')
-            }, {
                 text: this.currentUser.name,
                 disabled: false,
                 link: this.$laroute.route('users.index')
+            }, {
+                text: 'Objednávky',
+                disabled: false
             }];
         },
         getStatus: function getStatus(id) {
@@ -55034,14 +55252,26 @@ var _this = this;
             if (id > 0) {
                 axios.get(this.$laroute.route('gopay.api.status', { 'id': id })).then(function (response) {
                     _this2.loading = false;
-                    _this2.status = response.data.state;
-                    console.log(_this2.status);
+                    _this2.status = response.data;
+                    console.log(response.data);
                 }).catch(function (error) {
                     _this2.loading = false;
                     _this2.error = error.response.data.errors;
                     console.log(error.response);
                 });
             }
+        },
+        getUsersOrders: function getUsersOrders() {
+            var _this3 = this;
+
+            axios.get(this.$laroute.route('users.api.orders', { 'id': this.currentUser.id })).then(function (response) {
+                _this3.loading = false;
+                _this3.items2 = response.data;
+            }).catch(function (error) {
+                _this3.loading = false;
+                _this3.error = error.response.data.errors;
+                console.log(error.response);
+            });
         }
     }
 });
@@ -55055,102 +55285,197 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-content",
+    "div",
     [
       _c(
-        "v-container",
-        { attrs: { "grid-list-md": "", "text-xs-center": "" } },
+        "v-content",
         [
           _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
+            "v-container",
+            { attrs: { "grid-list-md": "", "text-xs-center": "" } },
             [
               _c(
-                "v-flex",
-                { attrs: { xs12: "" } },
-                [
-                  _c("breadcrumbs", {
-                    attrs: { "breadcrumbs-items": _vm.items }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs12: "" } },
+                "v-layout",
+                { attrs: { row: "", wrap: "" } },
                 [
                   _c(
-                    "v-alert",
-                    { attrs: { type: "success", value: _vm.status == "PAID" } },
+                    "v-flex",
+                    { attrs: { xs12: "" } },
                     [
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(_vm.messages[_vm.status]) +
-                          "\n                "
-                      )
-                    ]
+                      _c("breadcrumbs", {
+                        attrs: { "breadcrumbs-items": _vm.items }
+                      })
+                    ],
+                    1
                   ),
                   _vm._v(" "),
                   _c(
-                    "v-alert",
-                    {
-                      attrs: {
-                        type: "info",
-                        value:
-                          _vm.status == "PAYMENT_METHOD_CHOSEN" ||
-                          _vm.status == "REFUNDED" ||
-                          _vm.status == "PARTIALLY_REFUNDED"
-                      }
-                    },
-                    [
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(_vm.messages[_vm.status]) +
-                          "\n                "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-alert",
-                    {
-                      attrs: {
-                        type: "error",
-                        value:
-                          _vm.status == "CANCELED" || _vm.status == "TIMEOUTED"
-                      }
-                    },
-                    [
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(_vm.messages[_vm.status]) +
-                          "\n                "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-card",
+                    "v-flex",
+                    { attrs: { xs12: "" } },
                     [
                       _c(
-                        "v-toolbar",
-                        { attrs: { color: "primary" } },
+                        "v-card",
+                        { attrs: { color: "grey lighten-3" } },
                         [
                           _c(
-                            "v-toolbar-title",
-                            { staticClass: "white--text" },
-                            [_vm._v("Uzivatele")]
+                            "v-card-text",
+                            [
+                              _c(
+                                "v-alert",
+                                {
+                                  attrs: {
+                                    type: "success",
+                                    value: _vm.status == "PAID"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                        " +
+                                      _vm._s(_vm.messages[_vm.status]) +
+                                      "\n                                    "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-alert",
+                                {
+                                  attrs: {
+                                    type: "info",
+                                    value:
+                                      _vm.status == "PAYMENT_METHOD_CHOSEN" ||
+                                      _vm.status == "REFUNDED" ||
+                                      _vm.status == "PARTIALLY_REFUNDED"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                        " +
+                                      _vm._s(_vm.messages[_vm.status]) +
+                                      "\n                                    "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-alert",
+                                {
+                                  attrs: {
+                                    type: "error",
+                                    value:
+                                      _vm.status == "CANCELED" ||
+                                      _vm.status == "TIMEOUTED"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                        " +
+                                      _vm._s(_vm.messages[_vm.status]) +
+                                      "\n                                    "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-card",
+                                [
+                                  _c(
+                                    "v-toolbar",
+                                    { attrs: { color: "purple darken-3" } },
+                                    [
+                                      _c(
+                                        "v-toolbar-title",
+                                        { staticClass: "white--text" },
+                                        [
+                                          _vm._v(
+                                            "Objednávky uživatele " +
+                                              _vm._s(_vm.currentUser.name)
+                                          )
+                                        ]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-data-table", {
+                                    staticClass: "elevation-1",
+                                    attrs: {
+                                      headers: _vm.headers,
+                                      items: _vm.items2,
+                                      "hide-actions": ""
+                                    },
+                                    scopedSlots: _vm._u([
+                                      {
+                                        key: "items",
+                                        fn: function(props) {
+                                          return [
+                                            _c(
+                                              "td",
+                                              { staticClass: "text-xs-left" },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(props.item.orderName)
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "td",
+                                              { staticClass: "text-xs-left" },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(props.item.created_at)
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "td",
+                                              { staticClass: "text-xs-left" },
+                                              [_vm._v(_vm._s(props.item.price))]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "td",
+                                              { staticClass: "text-xs-left" },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(props.item.status)
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "td",
+                                              { staticClass: "text-xs-left" },
+                                              [
+                                                _c(
+                                                  "a",
+                                                  {
+                                                    attrs: {
+                                                      href:
+                                                        "profil/order/" +
+                                                        props.item.id
+                                                    }
+                                                  },
+                                                  [_vm._v("Zobrazit")]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        }
+                                      }
+                                    ])
+                                  })
+                                ],
+                                1
+                              )
+                            ],
+                            1
                           )
                         ],
                         1
-                      ),
-                      _vm._v(" "),
-                      _c("v-flex", { attrs: { xs12: "" } }, [
-                        _vm._v(
-                          "\n                        Dashboard pro uzivatele\n                    "
-                        )
-                      ])
+                      )
                     ],
                     1
                   )
@@ -55296,6 +55621,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -55324,10 +55652,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         getBreadCrumbs: function getBreadCrumbs() {
             return [{
-                text: 'Dashboard',
-                disabled: false,
-                link: this.$laroute.route('dashboard.index')
-            }, {
                 text: this.currentUser.name,
                 disabled: false,
                 link: this.$laroute.route('users.index')
@@ -55375,149 +55699,174 @@ var render = function() {
                 [
                   _c(
                     "v-card",
+                    { attrs: { color: "grey lighten-3" } },
                     [
                       _c(
-                        "v-toolbar",
-                        { attrs: { color: "blue lighten-2" } },
+                        "v-card-text",
                         [
                           _c(
-                            "v-toolbar-title",
-                            { staticClass: "white--text" },
-                            [_vm._v("Edit Users")]
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [
-                          _c(
-                            "v-tabs",
-                            {
-                              attrs: { fixed: "" },
-                              model: {
-                                value: _vm.active,
-                                callback: function($$v) {
-                                  _vm.active = $$v
-                                },
-                                expression: "active"
-                              }
-                            },
+                            "v-card",
                             [
                               _c(
-                                "v-tabs-bar",
+                                "v-toolbar",
+                                { attrs: { color: "purple darken-3" } },
                                 [
-                                  _vm._l(_vm.tabs, function(tab) {
-                                    return _c(
-                                      "v-tabs-item",
-                                      {
-                                        key: tab.id,
-                                        attrs: {
-                                          href: "#" + tab.id,
-                                          ripple: ""
-                                        }
-                                      },
-                                      [
-                                        _vm._v(
-                                          "\n                                    " +
-                                            _vm._s(tab.text) +
-                                            "\n                                "
-                                        )
-                                      ]
-                                    )
-                                  }),
-                                  _vm._v(" "),
-                                  _c("v-tabs-slider", {
-                                    attrs: { color: "primary" }
-                                  })
+                                  _c(
+                                    "v-toolbar-title",
+                                    { staticClass: "white--text" },
+                                    [_vm._v("Změnit údaje")]
+                                  )
                                 ],
-                                2
+                                1
                               ),
                               _vm._v(" "),
                               _c(
-                                "v-tabs-items",
-                                _vm._l(_vm.tabs, function(tab) {
-                                  return _c(
-                                    "v-tabs-content",
-                                    { key: tab.id, attrs: { id: tab.id } },
+                                "v-flex",
+                                { attrs: { xs12: "" } },
+                                [
+                                  _c(
+                                    "v-tabs",
+                                    {
+                                      attrs: { fixed: "" },
+                                      model: {
+                                        value: _vm.active,
+                                        callback: function($$v) {
+                                          _vm.active = $$v
+                                        },
+                                        expression: "active"
+                                      }
+                                    },
                                     [
                                       _c(
-                                        "v-card",
-                                        { attrs: { flat: "" } },
+                                        "v-tabs-bar",
                                         [
-                                          _c(
-                                            "v-container",
+                                          _vm._l(_vm.tabs, function(tab) {
+                                            return _c(
+                                              "v-tabs-item",
+                                              {
+                                                key: tab.id,
+                                                attrs: {
+                                                  href: "#" + tab.id,
+                                                  ripple: ""
+                                                }
+                                              },
+                                              [
+                                                _vm._v(
+                                                  "\n                                    " +
+                                                    _vm._s(tab.text) +
+                                                    "\n                                "
+                                                )
+                                              ]
+                                            )
+                                          }),
+                                          _vm._v(" "),
+                                          _c("v-tabs-slider", {
+                                            attrs: { color: "primary" }
+                                          })
+                                        ],
+                                        2
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-tabs-items",
+                                        _vm._l(_vm.tabs, function(tab) {
+                                          return _c(
+                                            "v-tabs-content",
                                             {
-                                              staticClass: "pa-4",
-                                              attrs: { "grid-list-sm": "" }
+                                              key: tab.id,
+                                              attrs: { id: tab.id }
                                             },
                                             [
                                               _c(
-                                                "v-layout",
-                                                {
-                                                  attrs: { row: "", wrap: "" }
-                                                },
+                                                "v-card",
+                                                { attrs: { flat: "" } },
                                                 [
                                                   _c(
-                                                    "v-flex",
-                                                    { attrs: { xs12: "" } },
+                                                    "v-container",
+                                                    {
+                                                      staticClass: "pa-4",
+                                                      attrs: {
+                                                        "grid-list-sm": ""
+                                                      }
+                                                    },
                                                     [
-                                                      tab.id == "tab1"
-                                                        ? _c(
-                                                            "div",
+                                                      _c(
+                                                        "v-layout",
+                                                        {
+                                                          attrs: {
+                                                            row: "",
+                                                            wrap: ""
+                                                          }
+                                                        },
+                                                        [
+                                                          _c(
+                                                            "v-flex",
+                                                            {
+                                                              attrs: {
+                                                                xs12: ""
+                                                              }
+                                                            },
                                                             [
-                                                              _c(
-                                                                "users-edit-generals",
-                                                                {
-                                                                  attrs: {
-                                                                    "current-user":
-                                                                      _vm.currentUser
-                                                                  }
-                                                                }
-                                                              )
-                                                            ],
-                                                            1
+                                                              tab.id == "tab1"
+                                                                ? _c(
+                                                                    "div",
+                                                                    [
+                                                                      _c(
+                                                                        "users-edit-generals",
+                                                                        {
+                                                                          attrs: {
+                                                                            "current-user":
+                                                                              _vm.currentUser
+                                                                          }
+                                                                        }
+                                                                      )
+                                                                    ],
+                                                                    1
+                                                                  )
+                                                                : _vm._e(),
+                                                              _vm._v(" "),
+                                                              tab.id == "tab2"
+                                                                ? _c(
+                                                                    "div",
+                                                                    [
+                                                                      _c(
+                                                                        "users-edit-billings",
+                                                                        {
+                                                                          attrs: {
+                                                                            "current-user":
+                                                                              _vm.currentUser
+                                                                          }
+                                                                        }
+                                                                      )
+                                                                    ],
+                                                                    1
+                                                                  )
+                                                                : _vm._e(),
+                                                              _vm._v(" "),
+                                                              tab.id == "tab3"
+                                                                ? _c(
+                                                                    "div",
+                                                                    [
+                                                                      _c(
+                                                                        "users-change-pass",
+                                                                        {
+                                                                          attrs: {
+                                                                            "current-user":
+                                                                              _vm.currentUser
+                                                                          }
+                                                                        }
+                                                                      )
+                                                                    ],
+                                                                    1
+                                                                  )
+                                                                : _vm._e()
+                                                            ]
                                                           )
-                                                        : _vm._e(),
-                                                      _vm._v(" "),
-                                                      tab.id == "tab2"
-                                                        ? _c(
-                                                            "div",
-                                                            [
-                                                              _c(
-                                                                "users-edit-billings",
-                                                                {
-                                                                  attrs: {
-                                                                    "current-user":
-                                                                      _vm.currentUser
-                                                                  }
-                                                                }
-                                                              )
-                                                            ],
-                                                            1
-                                                          )
-                                                        : _vm._e(),
-                                                      _vm._v(" "),
-                                                      tab.id == "tab3"
-                                                        ? _c(
-                                                            "div",
-                                                            [
-                                                              _c(
-                                                                "users-change-pass",
-                                                                {
-                                                                  attrs: {
-                                                                    "current-user":
-                                                                      _vm.currentUser
-                                                                  }
-                                                                }
-                                                              )
-                                                            ],
-                                                            1
-                                                          )
-                                                        : _vm._e()
-                                                    ]
+                                                        ],
+                                                        1
+                                                      )
+                                                    ],
+                                                    1
                                                   )
                                                 ],
                                                 1
@@ -55525,13 +55874,13 @@ var render = function() {
                                             ],
                                             1
                                           )
-                                        ],
-                                        1
+                                        })
                                       )
                                     ],
                                     1
                                   )
-                                })
+                                ],
+                                1
                               )
                             ],
                             1
@@ -55652,6 +56001,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -55679,7 +56031,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             },
             snackbar: false,
             y: 'top',
-            x: 'right'
+            x: 'right',
+            snackBarMessage: '',
+            loading: false
         };
     },
 
@@ -55689,47 +56043,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     mounted: function mounted() {
+        var _this = this;
+
         this.getUserData();
+        this.eventBus.$on('user-info-updated', function () {
+            _this.getUserData();
+        });
     },
 
 
     methods: {
         getUserData: function getUserData() {
-            var _this = this;
+            var _this2 = this;
 
             axios.get(this.$laroute.route('users.api.show', { id: this.currentUser.id })).then(function (response) {
-                _this.user.name = response.data.name;
-                _this.user.email = response.data.email;
+                _this2.user.name = response.data.name;
+                _this2.user.email = response.data.email;
             }).catch(function (error) {
                 console.log(error);
             });
         },
         updateUser: function updateUser() {
-            var _this2 = this;
-
-            this.isLoading = true;
-
-            axios.put(this.$laroute.route('users.api.update.general.info', { id: this.currentUser.id }), this.user).then(function (response) {
-                _this2.eventBus.$emit('user-info-updated', _this2.user.name);
-                _this2.snackbar = true;
-            }).catch(function (error) {
-                _this2.isLoading = false;
-                _this2.snackbar = true;
-                console.log(error);
-            });
-        },
-        updatePassword: function updatePassword() {
             var _this3 = this;
 
-            this.isLoading = true;
-
-            axios.put(this.$laroute.route('users.api.update.password', { id: this.currentUser.id }), this.password).then(function (response) {
-                _this3.eventBus.$emit('password-updated');
+            this.loading = true;
+            axios.put(this.$laroute.route('users.api.update.general.info', { id: this.currentUser.id }), this.user).then(function (response) {
+                _this3.eventBus.$emit('user-info-updated', _this3.user.name);
+                _this3.snackbar = true;
+                _this3.snackBarMessage = 'Uloženo';
+                _this3.loading = false;
             }).catch(function (error) {
-                _this3.isLoading = false;
-                Materialize.toast(error, 4000);
-
-                console.log(error);
+                _this3.snackbar = true;
+                _this3.snackBarMessage = 'Vyskytla se chyba pri ukládání';
+                _this3.loading = false;
             });
         }
     }
@@ -55763,7 +56109,7 @@ var render = function() {
           }
         },
         [
-          _vm._v("\n        error\n        "),
+          _vm._v("\n        " + _vm._s(_vm.snackBarMessage) + "\n        "),
           _c(
             "v-btn",
             {
@@ -55774,26 +56120,17 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("Close")]
+            [_vm._v("Zavřít")]
           )
         ],
         1
       ),
       _vm._v(" "),
       _c(
-        "v-form",
-        {
-          model: {
-            value: _vm.valid,
-            callback: function($$v) {
-              _vm.valid = $$v
-            },
-            expression: "valid"
-          }
-        },
+        "v-card",
         [
           _c(
-            "v-flex",
+            "v-card-text",
             [
               _c("v-text-field", {
                 attrs: { label: "Jméno", rules: _vm.nameRules, required: "" },
@@ -55820,9 +56157,10 @@ var render = function() {
             1
           ),
           _vm._v(" "),
+          _c("v-divider", { staticClass: "mt-1" }),
+          _vm._v(" "),
           _c(
-            "v-flex",
-            { attrs: { "xs-12": "" } },
+            "v-card-actions",
             [
               _c(
                 "v-btn",
@@ -55835,7 +56173,21 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Odeslat")]
+                [
+                  _vm._v("\n                Uložit  "),
+                  _c("v-progress-circular", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.loading,
+                        expression: "loading"
+                      }
+                    ],
+                    attrs: { indeterminate: "", color: "white" }
+                  })
+                ],
+                1
               )
             ],
             1
@@ -55996,15 +56348,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            countries: ['Česká Republika', 'Slovenko'],
+            countries: [{ text: 'Česká Republika', value: 'CZE' }, { text: 'Slovenko', value: 'SVK' }],
             errorMessages: [],
             formHasErrors: false,
             user: {
@@ -56016,9 +56364,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 'postal_code': null,
                 'country_code': null
             },
-            isLoading: false
+            snackbar: false,
+            y: 'top',
+            x: 'right',
+            snackBarMessage: '',
+            loading: false
         };
     },
+
     props: {
         currentUser: null
     },
@@ -56032,57 +56385,65 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     mounted: function mounted() {
+        var _this = this;
+
         this.getDetails();
+        this.eventBus.$on('billing-updated', function () {
+            _this.getDetails();
+        });
     },
 
 
     methods: {
         updateBillings: function updateBillings() {
-            var _this = this;
+            var _this2 = this;
 
-            this.isLoading = true;
+            this.loading = true;
             axios.put(this.$laroute.route('users.api.update.billing', { id: this.currentUser.id }), this.user).then(function (response) {
-                console.log(response);
-                _this.eventBus.$emit('billing-updated');
+                _this2.eventBus.$emit('billing-updated');
+                _this2.snackbar = true;
+                _this2.snackBarMessage = 'Uloženo';
+                _this2.loading = false;
             }).catch(function (error) {
-                _this.isLoading = false;
-                console.log(error);
+                _this2.loading = false;
+                _this2.snackbar = true;
+                _this2.snackBarMessage = 'Vyskytla se chyba pri ukládání';
             });
         },
         getDetails: function getDetails() {
-            var _this2 = this;
+            var _this3 = this;
 
             axios.get(this.$laroute.route('users.api.show', { id: this.currentUser.id })).then(function (response) {
-                _this2.user.first_name = response.data.first_name;
-                _this2.user.last_name = response.data.last_name;
-                _this2.user.phone_number = response.data.phone_number;
-                _this2.user.city = response.data.city;
-                _this2.user.street = response.data.street;
-                _this2.user.postal_code = response.data.postal_code;
-                _this2.user.country_code = response.data.country_code;
+                _this3.user.first_name = response.data.first_name;
+                _this3.user.last_name = response.data.last_name;
+                _this3.user.phone_number = response.data.phone_number;
+                _this3.user.city = response.data.city;
+                _this3.user.street = response.data.street;
+                _this3.user.postal_code = response.data.postal_code;
+                _this3.user.country_code = response.data.country_code;
             }).catch(function (error) {
                 console.log(error);
             });
         },
         resetForm: function resetForm() {
-            var _this3 = this;
+            var _this4 = this;
 
             this.errorMessages = [];
             this.formHasErrors = false;
 
             Object.keys(this.form).forEach(function (f) {
-                _this3.$refs[f].reset();
+                _this4.$refs[f].reset();
             });
         },
         submit: function submit() {
-            var _this4 = this;
+            var _this5 = this;
 
             this.formHasErrors = false;
 
             Object.keys(this.form).forEach(function (f) {
-                if (!_this4.form[f]) _this4.formHasErrors = true;
+                if (!_this5.form[f]) _this5.formHasErrors = true;
 
-                _this4.$refs[f].validate(true);
+                _this5.$refs[f].validate(true);
             });
         }
     }
@@ -56098,211 +56459,238 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-card",
-    { ref: "form" },
+    "div",
     [
       _c(
-        "v-card-text",
+        "v-snackbar",
+        {
+          attrs: {
+            timeout: 4000,
+            top: _vm.y === "top",
+            right: _vm.x === "right"
+          },
+          model: {
+            value: _vm.snackbar,
+            callback: function($$v) {
+              _vm.snackbar = $$v
+            },
+            expression: "snackbar"
+          }
+        },
         [
-          _c("v-text-field", {
-            ref: "first_name",
-            attrs: {
-              label: "Křestní jméno",
-              placeholder: "Josef",
-              required: "",
-              rules: [
-                function() {
-                  return !!_vm.user.first_name || "Prosím výplňte křestní jméno"
+          _vm._v("\n        " + _vm._s(_vm.snackBarMessage) + "\n        "),
+          _c(
+            "v-btn",
+            {
+              attrs: { flat: "", color: "pink" },
+              nativeOn: {
+                click: function($event) {
+                  _vm.snackbar = false
                 }
-              ],
-              "error-messages": _vm.errorMessages
+              }
             },
-            model: {
-              value: _vm.user.first_name,
-              callback: function($$v) {
-                _vm.$set(_vm.user, "first_name", $$v)
-              },
-              expression: "user.first_name"
-            }
-          }),
-          _vm._v(" "),
-          _c("v-text-field", {
-            ref: "last_name",
-            attrs: {
-              label: "Příjmení",
-              placeholder: "Novák",
-              rules: [
-                function() {
-                  return !!_vm.user.last_name || "Prosím výplňte příjmení"
-                }
-              ],
-              required: ""
-            },
-            model: {
-              value: _vm.user.last_name,
-              callback: function($$v) {
-                _vm.$set(_vm.user, "last_name", $$v)
-              },
-              expression: "user.last_name"
-            }
-          }),
-          _vm._v(" "),
-          _c("v-text-field", {
-            ref: "phone",
-            attrs: {
-              label: "Telefon",
-              placeholder: "774123456",
-              rules: [
-                function() {
-                  return (
-                    !!_vm.user.phone_number || "Prosím výplňte telefonní číslo"
-                  )
-                }
-              ],
-              required: ""
-            },
-            model: {
-              value: _vm.user.phone_number,
-              callback: function($$v) {
-                _vm.$set(_vm.user, "phone_number", $$v)
-              },
-              expression: "user.phone_number"
-            }
-          }),
-          _vm._v(" "),
-          _c("v-text-field", {
-            ref: "city",
-            attrs: {
-              label: "Město",
-              placeholder: "Praha",
-              rules: [
-                function() {
-                  return !!_vm.user.city || "Prosím výplňte město"
-                }
-              ],
-              required: ""
-            },
-            model: {
-              value: _vm.user.city,
-              callback: function($$v) {
-                _vm.$set(_vm.user, "city", $$v)
-              },
-              expression: "user.city"
-            }
-          }),
-          _vm._v(" "),
-          _c("v-text-field", {
-            ref: "state",
-            attrs: {
-              label: "Ulice",
-              rules: [
-                function() {
-                  return !!_vm.user.street || "Prosím výplňte ulici"
-                }
-              ],
-              required: "",
-              placeholder: "Alej Svobody 100"
-            },
-            model: {
-              value: _vm.user.street,
-              callback: function($$v) {
-                _vm.$set(_vm.user, "street", $$v)
-              },
-              expression: "user.street"
-            }
-          }),
-          _vm._v(" "),
-          _c("v-text-field", {
-            ref: "zip",
-            attrs: {
-              label: "PSČ",
-              required: "",
-              rules: [
-                function() {
-                  return !!_vm.user.postal_code || "Prosím výplňte psč"
-                }
-              ],
-              placeholder: "32300"
-            },
-            model: {
-              value: _vm.user.postal_code,
-              callback: function($$v) {
-                _vm.$set(_vm.user, "postal_code", $$v)
-              },
-              expression: "user.postal_code"
-            }
-          }),
-          _vm._v(" "),
-          _c("v-select", {
-            ref: "country",
-            attrs: {
-              autocomplete: "",
-              label: "Kód země",
-              placeholder: "Vyberte...",
-              rules: [
-                function() {
-                  return (
-                    !!_vm.user.country_code || "Prosím výplňte ulici kód země"
-                  )
-                }
-              ],
-              items: _vm.countries,
-              required: ""
-            },
-            model: {
-              value: _vm.user.country_code,
-              callback: function($$v) {
-                _vm.$set(_vm.user, "country_code", $$v)
-              },
-              expression: "user.country_code"
-            }
-          })
+            [_vm._v("Zavřít")]
+          )
         ],
         1
       ),
       _vm._v(" "),
-      _c("v-divider", { staticClass: "mt-5" }),
-      _vm._v(" "),
       _c(
-        "v-card-actions",
+        "v-card",
         [
-          _c("v-btn", { attrs: { flat: "" } }, [_vm._v("Cancel")]),
-          _vm._v(" "),
-          _c("v-spacer"),
-          _vm._v(" "),
           _c(
-            "v-slide-x-reverse-transition",
+            "v-card-text",
             [
-              _vm.formHasErrors
-                ? _c(
-                    "v-tooltip",
-                    { attrs: { left: "" } },
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          staticClass: "my-0",
-                          attrs: { slot: "activator", icon: "" },
-                          on: { click: _vm.resetForm },
-                          slot: "activator"
-                        },
-                        [_c("v-icon", [_vm._v("refresh")])],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("span", [_vm._v("Refresh form")])
-                    ],
-                    1
-                  )
-                : _vm._e()
+              _c("v-text-field", {
+                ref: "first_name",
+                attrs: {
+                  label: "Křestní jméno",
+                  placeholder: "Josef",
+                  required: "",
+                  rules: [
+                    function() {
+                      return (
+                        !!_vm.user.first_name || "Prosím výplňte křestní jméno"
+                      )
+                    }
+                  ],
+                  "error-messages": _vm.errorMessages
+                },
+                model: {
+                  value: _vm.user.first_name,
+                  callback: function($$v) {
+                    _vm.$set(_vm.user, "first_name", $$v)
+                  },
+                  expression: "user.first_name"
+                }
+              }),
+              _vm._v(" "),
+              _c("v-text-field", {
+                ref: "last_name",
+                attrs: {
+                  label: "Příjmení",
+                  placeholder: "Novák",
+                  rules: [
+                    function() {
+                      return !!_vm.user.last_name || "Prosím výplňte příjmení"
+                    }
+                  ],
+                  required: ""
+                },
+                model: {
+                  value: _vm.user.last_name,
+                  callback: function($$v) {
+                    _vm.$set(_vm.user, "last_name", $$v)
+                  },
+                  expression: "user.last_name"
+                }
+              }),
+              _vm._v(" "),
+              _c("v-text-field", {
+                ref: "phone",
+                attrs: {
+                  label: "Telefon",
+                  placeholder: "774123456",
+                  rules: [
+                    function() {
+                      return (
+                        !!_vm.user.phone_number ||
+                        "Prosím výplňte telefonní číslo"
+                      )
+                    }
+                  ],
+                  required: ""
+                },
+                model: {
+                  value: _vm.user.phone_number,
+                  callback: function($$v) {
+                    _vm.$set(_vm.user, "phone_number", $$v)
+                  },
+                  expression: "user.phone_number"
+                }
+              }),
+              _vm._v(" "),
+              _c("v-text-field", {
+                ref: "city",
+                attrs: {
+                  label: "Město",
+                  placeholder: "Praha",
+                  rules: [
+                    function() {
+                      return !!_vm.user.city || "Prosím výplňte město"
+                    }
+                  ],
+                  required: ""
+                },
+                model: {
+                  value: _vm.user.city,
+                  callback: function($$v) {
+                    _vm.$set(_vm.user, "city", $$v)
+                  },
+                  expression: "user.city"
+                }
+              }),
+              _vm._v(" "),
+              _c("v-text-field", {
+                ref: "state",
+                attrs: {
+                  label: "Ulice",
+                  rules: [
+                    function() {
+                      return !!_vm.user.street || "Prosím výplňte ulici"
+                    }
+                  ],
+                  required: "",
+                  placeholder: "Alej Svobody 100"
+                },
+                model: {
+                  value: _vm.user.street,
+                  callback: function($$v) {
+                    _vm.$set(_vm.user, "street", $$v)
+                  },
+                  expression: "user.street"
+                }
+              }),
+              _vm._v(" "),
+              _c("v-text-field", {
+                ref: "zip",
+                attrs: {
+                  label: "PSČ",
+                  required: "",
+                  rules: [
+                    function() {
+                      return !!_vm.user.postal_code || "Prosím výplňte psč"
+                    }
+                  ],
+                  placeholder: "32300"
+                },
+                model: {
+                  value: _vm.user.postal_code,
+                  callback: function($$v) {
+                    _vm.$set(_vm.user, "postal_code", $$v)
+                  },
+                  expression: "user.postal_code"
+                }
+              }),
+              _vm._v(" "),
+              _c("v-select", {
+                ref: "country",
+                attrs: {
+                  autocomplete: "",
+                  label: "Kód země",
+                  placeholder: "Vyberte...",
+                  rules: [
+                    function() {
+                      return (
+                        !!_vm.user.country_code ||
+                        "Prosím výplňte ulici kód země"
+                      )
+                    }
+                  ],
+                  items: _vm.countries,
+                  required: ""
+                },
+                model: {
+                  value: _vm.user.country_code,
+                  callback: function($$v) {
+                    _vm.$set(_vm.user, "country_code", $$v)
+                  },
+                  expression: "user.country_code"
+                }
+              })
             ],
             1
           ),
           _vm._v(" "),
+          _c("v-divider", { staticClass: "mt-1" }),
+          _vm._v(" "),
           _c(
-            "v-btn",
-            { attrs: { color: "primary" }, on: { click: _vm.updateBillings } },
-            [_vm._v("Submit")]
+            "v-card-actions",
+            [
+              _c(
+                "v-btn",
+                {
+                  attrs: { color: "primary" },
+                  on: { click: _vm.updateBillings }
+                },
+                [
+                  _vm._v("\n                Uložit   "),
+                  _c("v-progress-circular", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.loading,
+                        expression: "loading"
+                      }
+                    ],
+                    attrs: { indeterminate: "", color: "white" }
+                  })
+                ],
+                1
+              )
+            ],
+            1
           )
         ],
         1
@@ -56435,14 +56823,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -56456,7 +56836,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 newPassword: '',
                 newPassword_confirmation: ''
             },
-            parsedUser: null
+            parsedUser: null,
+            snackbar: false,
+            y: 'top',
+            x: 'right',
+            snackBarMessage: '',
+            loading: false
         };
     },
 
@@ -56472,15 +56857,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         updatePassword: function updatePassword() {
             var _this = this;
 
-            this.isLoading = true;
+            this.loading = true;
 
             axios.put(this.$laroute.route('users.api.update.password', { id: this.currentUser.id }), this.password).then(function (response) {
                 _this.eventBus.$emit('password-updated');
+                _this.snackbar = true;
+                _this.snackBarMessage = 'Uloženo';
+                _this.loading = false;
+                //this.resetForm();
             }).catch(function (error) {
-                _this.isLoading = false;
-                //                    Materialize.toast(error, 4000);
-                console.log(error);
+                _this.loading = false;
+                _this.snackBarMessage = 'Vyskytla se chyba pri ukládání';
+                //                    this.resetForm();
             });
+        },
+        resetForm: function resetForm() {
+            this.password.old = '';
+            this.password.newPassword = '';
+            this.password.newPassword_confirmation = '';
         }
     }
 });
@@ -56494,176 +56888,162 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-card",
-    { attrs: { color: "grey lighten-4", flat: "" } },
+    "div",
     [
       _c(
-        "v-card-text",
+        "v-snackbar",
+        {
+          attrs: {
+            timeout: 4000,
+            top: _vm.y === "top",
+            right: _vm.x === "right"
+          },
+          model: {
+            value: _vm.snackbar,
+            callback: function($$v) {
+              _vm.snackbar = $$v
+            },
+            expression: "snackbar"
+          }
+        },
+        [
+          _vm._v("\n        " + _vm._s(_vm.snackBarMessage) + "\n        "),
+          _c(
+            "v-btn",
+            {
+              attrs: { flat: "", color: "pink" },
+              nativeOn: {
+                click: function($event) {
+                  _vm.snackbar = false
+                }
+              }
+            },
+            [_vm._v("Zavřít")]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-card",
         [
           _c(
-            "v-container",
-            { attrs: { fluid: "" } },
+            "v-card-text",
+            [
+              _c("v-text-field", {
+                attrs: {
+                  name: "password",
+                  label: "Staré heslo",
+                  hint: "Alespoň 6 znaků",
+                  min: "6",
+                  rules: [
+                    function() {
+                      return !!_vm.password.old || "Prosím výplňte staré heslo."
+                    }
+                  ],
+                  "append-icon": _vm.e1 ? "visibility" : "visibility_off",
+                  "append-icon-cb": function() {
+                    return (_vm.e1 = !_vm.e1)
+                  },
+                  type: _vm.e1 ? "text" : "password",
+                  required: ""
+                },
+                model: {
+                  value: _vm.password.old,
+                  callback: function($$v) {
+                    _vm.$set(_vm.password, "old", $$v)
+                  },
+                  expression: "password.old"
+                }
+              }),
+              _vm._v(" "),
+              _c("v-text-field", {
+                attrs: {
+                  name: "newPassword",
+                  label: "Nové heslo",
+                  hint: "Alespoň 6 znaků",
+                  min: "6",
+                  rules: [
+                    function() {
+                      return (
+                        !!_vm.password.newPassword ||
+                        "Prosím výplňte nové heslo."
+                      )
+                    }
+                  ],
+                  "append-icon": _vm.e2 ? "visibility" : "visibility_off",
+                  "append-icon-cb": function() {
+                    return (_vm.e2 = !_vm.e2)
+                  },
+                  type: _vm.e2 ? "text" : "password",
+                  required: ""
+                },
+                model: {
+                  value: _vm.password.newPassword,
+                  callback: function($$v) {
+                    _vm.$set(_vm.password, "newPassword", $$v)
+                  },
+                  expression: "password.newPassword"
+                }
+              }),
+              _vm._v(" "),
+              _c("v-text-field", {
+                attrs: {
+                  name: "newPasswordConfirmation",
+                  label: "Nové heslo znovu",
+                  hint: "Alespoň 6 znaků",
+                  min: "6",
+                  rules: [
+                    function() {
+                      return (
+                        !!_vm.password.newPassword_confirmation ||
+                        "Prosím výplňte nové heslo."
+                      )
+                    }
+                  ],
+                  "append-icon": _vm.e3 ? "visibility" : "visibility_off",
+                  "append-icon-cb": function() {
+                    return (_vm.e3 = !_vm.e3)
+                  },
+                  type: _vm.e3 ? "text" : "password",
+                  required: ""
+                },
+                model: {
+                  value: _vm.password.newPassword_confirmation,
+                  callback: function($$v) {
+                    _vm.$set(_vm.password, "newPassword_confirmation", $$v)
+                  },
+                  expression: "password.newPassword_confirmation"
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("v-divider", { staticClass: "mt-1" }),
+          _vm._v(" "),
+          _c(
+            "v-card-actions",
             [
               _c(
-                "v-layout",
-                { attrs: { row: "" } },
+                "v-btn",
+                {
+                  attrs: { color: "primary" },
+                  on: { click: _vm.updatePassword }
+                },
                 [
-                  _c(
-                    "v-flex",
-                    { attrs: { xs4: "" } },
-                    [_c("v-subheader", [_vm._v("Staré heslo")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    { attrs: { xs8: "" } },
-                    [
-                      _c("v-text-field", {
-                        staticClass: "input-group--focused",
-                        attrs: {
-                          name: "password",
-                          label: "Staré heslo",
-                          hint: "Alespoň 6 znaků",
-                          min: "6",
-                          "append-icon": _vm.e2
-                            ? "visibility"
-                            : "visibility_off",
-                          "append-icon-cb": function() {
-                            return (_vm.e2 = !_vm.e2)
-                          },
-                          value: "wqfasds",
-                          type: _vm.e2 ? "password" : "text"
-                        },
-                        model: {
-                          value: _vm.password.old,
-                          callback: function($$v) {
-                            _vm.$set(_vm.password, "old", $$v)
-                          },
-                          expression: "password.old"
-                        }
-                      })
+                  _vm._v("\n                Uložit  "),
+                  _c("v-progress-circular", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.loading,
+                        expression: "loading"
+                      }
                     ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-layout",
-                { attrs: { row: "" } },
-                [
-                  _c(
-                    "v-flex",
-                    { attrs: { xs4: "" } },
-                    [_c("v-subheader", [_vm._v("Nové heslo")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    { attrs: { xs8: "" } },
-                    [
-                      _c("v-text-field", {
-                        staticClass: "input-group--focused",
-                        attrs: {
-                          name: "newPassword",
-                          label: "Nové heslo",
-                          hint: "Alespoň 6 znaků",
-                          min: "6",
-                          "append-icon": _vm.e2
-                            ? "visibility"
-                            : "visibility_off",
-                          "append-icon-cb": function() {
-                            return (_vm.e2 = !_vm.e2)
-                          },
-                          value: "wqfasds",
-                          type: _vm.e2 ? "password" : "text"
-                        },
-                        model: {
-                          value: _vm.password.newPassword,
-                          callback: function($$v) {
-                            _vm.$set(_vm.password, "newPassword", $$v)
-                          },
-                          expression: "password.newPassword"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-layout",
-                { attrs: { row: "" } },
-                [
-                  _c(
-                    "v-flex",
-                    { attrs: { xs4: "" } },
-                    [_c("v-subheader", [_vm._v("Nové heslo znovu")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    { attrs: { xs8: "" } },
-                    [
-                      _c("v-text-field", {
-                        staticClass: "input-group--focused",
-                        attrs: {
-                          name: "newPasswordConfirmation",
-                          label: "Nové heslo znovu",
-                          hint: "Alespoň 6 znaků",
-                          min: "6",
-                          "append-icon": _vm.e2
-                            ? "visibility"
-                            : "visibility_off",
-                          "append-icon-cb": function() {
-                            return (_vm.e2 = !_vm.e2)
-                          },
-                          value: "wqfasds",
-                          type: _vm.e2 ? "password" : "text"
-                        },
-                        model: {
-                          value: _vm.password.newPassword_confirmation,
-                          callback: function($$v) {
-                            _vm.$set(
-                              _vm.password,
-                              "newPassword_confirmation",
-                              $$v
-                            )
-                          },
-                          expression: "password.newPassword_confirmation"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-layout",
-                [
-                  _c(
-                    "v-flex",
-                    { attrs: { "xs-12": "" } },
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { left: "", color: "primary" },
-                          on: { click: _vm.updatePassword }
-                        },
-                        [_vm._v("Změnit Heslo")]
-                      )
-                    ],
-                    1
-                  )
+                    attrs: { indeterminate: "", color: "white" }
+                  })
                 ],
                 1
               )
@@ -56815,13 +57195,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         getBreadCrumbs: function getBreadCrumbs() {
             return [{
-                text: 'Dashboard',
-                disabled: false,
-                link: this.$laroute.route('dashboard.index')
-            }, {
                 text: this.currentUser.name,
                 disabled: false,
-                link: this.$laroute.route('thesis.index')
+                link: this.$laroute.route('users.index')
+            }, {
+                text: 'Tvorba Studentské práce',
+                disabled: true
             }];
         }
     }
@@ -57501,11 +57880,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             selectedData: {
                 user_id: null,
-                typZadani: { text: 'Vytisknout praci a vyrobit desky', value: 1, price: 10 },
+                typZadani: { text: 'Vytisknout práci a vyrobit desky', value: 1, price: 10 },
                 pribliznyPocetListu: { text: '25 - 40 listů', value: 3 },
                 presnyPocetStran: 0,
-                typTisku: { text: 'Jednostranny', value: 11, price: 10 },
-                barevnost: { text: 'Cernobile', value: 14, price: 1.5 },
+                typTisku: { text: 'Jednostranný', value: 11, price: 10 },
+                barevnost: { text: 'Černobile', value: 14, price: 1.5 },
                 skoly: { text: 'ZÁPADOČESKÁ UNIVERZITA V PLZNI', value: 16 },
                 jinaSkola: null,
                 fakulty: { text: 'FAKULTA APLIKOVANÝCH VĚD', value: 26 },
@@ -57533,13 +57912,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             bcId: null,
 
             formItemsData: {
-                typZadani: [{ text: 'Vytisknout praci a vyrobit desky', value: 1, price: 10 }, { text: 'Vyrobit pouze desky', value: 2, price: 20 }],
+                typZadani: [{ text: 'Vytisknout práci a vyrobit desky', value: 1, price: 10 }, { text: 'Vyrobit pouze desky', value: 2, price: 20 }],
 
                 rozsahStran: [{ text: '25 - 40 listů', value: 3 }, { text: '41 - 55 listů', value: 4 }, { text: '56 - 75 listů', value: 5 }, { text: '76 - 100 listů', value: 6 }, { text: '101 - 130 listů', value: 7 }, { text: '101 - 130 listů', value: 8 }, { text: '131 - 160 listů', value: 9 }, { text: '161 - 190 listů', value: 10 }],
 
-                typTisku: [{ text: 'Jednostranny', value: 11, price: 10 }, { text: 'Oboustranny', value: 12, price: 15 }, { text: 'Kombinovany', value: 13, price: 20 }],
+                typTisku: [{ text: 'Jednostranný', value: 11, price: 10 }, { text: 'Oboustranný', value: 12, price: 15 }, { text: 'Kombinovaný', value: 13, price: 20 }],
 
-                barevnost: [{ text: 'Cernobile', value: 14, price: 1.5 }, { text: 'Dle soubou (cernobile / barevne)', value: 15, price: 7.49 }],
+                barevnost: [{ text: 'Černobile', value: 14, price: 1.5 }, { text: 'Dle soubou (černobile / barevně)', value: 15, price: 7.49 }],
 
                 skoly: [{ text: 'ZÁPADOČESKÁ UNIVERZITA V PLZNI', value: 16 }, { text: 'UNIVERZITA JANA AMOSE KOMENSKÉHO PRAHA', value: 17 }, { text: 'JIHOČESKÁ UNIVERZITA V ČESKÝCH BUDĚJOVICÍCH', value: 18 }, { text: 'UNIVERZITA KARLOVA V PRAZE', value: 19 }, { text: 'Střední zdravotnická škola a Vyšší odborná škola zdravotnická Plzeň, Karlovarská 99, 323 17 Plzeň', value: 20 }, { text: 'Vyšší odborná škola zdravotnická, managementu a veřejnosprávních studií, s.r.o. Ledecká 35,  Plzeň', value: 21 }, { text: 'jiná ...', value: 0 }],
 
@@ -57580,7 +57959,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this.bcId = response.data.id;
 
                 _this.thesisCreated = true;
-                _this.eventBus.$emit('go-to-next-page', { page_id: _this.nextStep, bc_id: response.data.id });
+                _this.goToNextPage();
+                //this.eventBus.$emit('go-to-next-page', {page_id: this.nextStep, bc_id: response.data.id})
             }).catch(function (error) {
                 _this.loading = false;
                 console.log(error);
@@ -57593,7 +57973,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.put(this.$laroute.route('thesis.api.update', { 'id': this.bcId }), this.getFormattedObjectToSubmit(this.selectedData)).then(function (response) {
                 _this2.loading = false;
                 _this2.thesisCreated = true;
-                _this2.eventBus.$emit('go-to-next-page', { page_id: _this2.nextStep, bc_id: response.data.id });
+                _this2.goToNextPage();
+
+                //                    this.eventBus.$emit('go-to-next-page', {page_id: this.nextStep, bc_id: response.data.id})
             }).catch(function (error) {
                 _this2.loading = false;
                 console.log(error);
@@ -57774,7 +58156,7 @@ var render = function() {
                             { attrs: { color: "purple darken-3", dark: "" } },
                             [
                               _c("v-toolbar-title", [
-                                _vm._v("Zde vytvorte formular")
+                                _vm._v("Zde vytvořte formulář")
                               ]),
                               _vm._v(" "),
                               _c("v-spacer")
@@ -59520,6 +59902,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     mounted: function mounted() {
         this.url = this.$laroute.route('thesis.api.upload');
+        console.log(this.thesisId);
     },
 
 
@@ -59886,44 +60269,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             errors: null
         };
     },
-    mounted: function mounted() {
-        var _this = this;
+    mounted: function mounted() {},
 
-        console.log(this.currentUser);
-        this.eventBus.$on('load-thesis', function (payload) {
-            _this.getThesis();
-        });
 
-        this.eventBus.$on('load-bc', function () {
-            _this.getThesis();
-        });
+    watch: {
+        thesisId: function thesisId(val) {
+            this.getThesis();
+        }
     },
-
 
     methods: {
         createOrder: function createOrder() {
-            var _this2 = this;
+            var _this = this;
 
             this.loading = true;
             axios.post(this.$laroute.route('orders.api.store'), this.getOrderData()).then(function (response) {
-                _this2.loading = false;
-                console.log(response.data.id);
-                _this2.eventBus.$emit('go-to-next-page', { page_id: 4, bc_id: response.data.id });
-                _this2.eventBus.$emit('order-created', true);
+                _this.loading = false;
+                _this.eventBus.$emit('go-to-next-page', { page_id: 4, bc_id: response.data.id });
+                _this.eventBus.$emit('order-created', response.data.id);
             }).catch(function (error) {
-                _this2.loading = false;
-                _this2.errors = error.response.data.errors;
+                _this.loading = false;
+                _this.errors = error.response.data.errors;
             });
         },
         getThesis: function getThesis() {
-            var _this3 = this;
+            var _this2 = this;
 
             axios.get(this.$laroute.route('thesis.api.show', { id: this.thesisId })).then(function (response) {
-                _this3.loading = false;
-                _this3.thesis = response.data;
+                _this2.loading = false;
+                _this2.thesis = response.data;
             }).catch(function (error) {
-                _this3.loading = false;
-                _this3.error = error.response.data.errors;
+                _this2.loading = false;
+                _this2.error = error.response.data.errors;
                 console.log(error.response);
             });
         },
@@ -59942,7 +60319,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 'street': this.currentUser.street,
                 'postal_code': this.currentUser.postal_code,
                 'country_code': this.currentUser.country_code,
-                'gopay_order_id': 3452345,
                 'price': this.thesis.price
             };
         }
@@ -60646,7 +61022,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             items: [],
             accessUpload: false,
             bcId: null,
-            orderId: 1,
+            orderId: null,
             thesis: null,
             loading: false,
             errors: null,
@@ -60658,9 +61034,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         var _this = this;
 
-        this.createPayment();
-        this.getOrder();
         this.eventBus.$on('order-created', function (val) {
+            _this.orderId = val;
+            _this.getOrder();
             _this.createPayment();
         });
     },
@@ -60736,7 +61112,7 @@ var render = function() {
                                 },
                                 [
                                   _c("v-toolbar-title", [
-                                    _vm._v("Shrnutí objednavky")
+                                    _vm._v("Shrnutí objednávky")
                                   ]),
                                   _vm._v(" "),
                                   _c("v-spacer")
@@ -60774,7 +61150,7 @@ var render = function() {
                                         { on: { click: function($event) {} } },
                                         [
                                           _c("v-list-tile-content", [
-                                            _vm._v("Príjmení:")
+                                            _vm._v("Příjmení:")
                                           ]),
                                           _vm._v(" "),
                                           _c(
@@ -61143,7 +61519,7 @@ var render = function() {
       _c(
         "v-btn",
         {
-          staticClass: "blue lighten-2 mt-5",
+          staticClass: "primary mt-5",
           attrs: { dark: "", large: "" },
           on: {
             click: function($event) {
@@ -61181,7 +61557,7 @@ var render = function() {
                     [
                       _c(
                         "v-toolbar",
-                        { attrs: { color: "indigo", dark: "" } },
+                        { attrs: { color: "primary", dark: "" } },
                         [
                           _c("v-toolbar-title", [
                             _c(
@@ -61285,7 +61661,7 @@ var render = function() {
                               on: { click: _vm.login }
                             },
                             [
-                              _vm._v("Prihlasit"),
+                              _vm._v("Přihlásit"),
                               _vm.animateLogin
                                 ? _c("v-progress-circular", {
                                     attrs: {
@@ -61558,95 +61934,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            title: 'Landing Page Example',
+            title: '<img src="/img/alfatisk-logo.png">',
             myDialog: false,
             parsedUser: {
                 name: null
             },
             profileUrl: null,
-            createThesis: ''
+            createThesisUrl: ''
         };
     },
 
@@ -61658,7 +61956,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     mounted: function mounted() {
         this.parsedUser = this.currentUser != '' ? JSON.parse(this.currentUser) : null;
-        this.createThesis = this.$laroute.route('thesis.index');
+        this.createThesisUrl = this.$laroute.route('thesis.index');
     },
 
 
@@ -61700,9 +61998,11 @@ var render = function() {
         "v-toolbar",
         { staticClass: "white" },
         [
-          _c("v-toolbar-title", {
-            domProps: { textContent: _vm._s(_vm.title) }
-          }),
+          _c("v-toolbar-title", [
+            _c("a", { attrs: { href: "/" } }, [
+              _c("img", { attrs: { src: "/img/alfatisk-logo.png" } })
+            ])
+          ]),
           _vm._v(" "),
           _c("v-spacer"),
           _vm._v(" "),
@@ -61714,10 +62014,6 @@ var render = function() {
                     "v-toolbar-items",
                     { staticClass: "hidden-xs-and-down" },
                     [
-                      _c("v-btn", { attrs: { flat: "" } }, [
-                        _vm._v("Vytvorit Bakalarku")
-                      ]),
-                      _vm._v(" "),
                       _c(
                         "v-btn",
                         { attrs: { flat: "" }, on: { click: _vm.profile } },
@@ -61727,7 +62023,7 @@ var render = function() {
                       _c(
                         "v-btn",
                         { attrs: { flat: "" }, on: { click: _vm.logout } },
-                        [_vm._v("Odhlasit")]
+                        [_vm._v("Odhlásit")]
                       )
                     ],
                     1
@@ -61753,7 +62049,7 @@ var render = function() {
                             }
                           }
                         },
-                        [_vm._v("Prihlasit")]
+                        [_vm._v("Přihlásit")]
                       )
                     ],
                     1
@@ -61773,7 +62069,7 @@ var render = function() {
             [
               _c(
                 "v-parallax",
-                { attrs: { src: "/img/hero.jpeg", height: "600" } },
+                { attrs: { src: "/img/bak.jpg", height: "500" } },
                 [
                   _c(
                     "v-layout",
@@ -61786,27 +62082,19 @@ var render = function() {
                       }
                     },
                     [
-                      _c("img", {
-                        attrs: {
-                          src: "/img/vuetify.png",
-                          alt: "Vuetify.js",
-                          height: "200"
-                        }
-                      }),
-                      _vm._v(" "),
                       _c(
                         "h1",
                         {
                           staticClass:
-                            "white--text mb-2 display-1 text-xs-center"
+                            "white--text mb-2 display-3 text-xs-center"
                         },
-                        [_vm._v("Parallax Template")]
+                        [_vm._v("Tvorba Bakalářek")]
                       ),
                       _vm._v(" "),
                       _c(
                         "div",
-                        { staticClass: "subheading mb-3 text-xs-center" },
-                        [_vm._v("Powered by Vuetify")]
+                        { staticClass: "mb-3 display-1 text-xs-center" },
+                        [_vm._v("ALFA-TISK.CZ")]
                       ),
                       _vm._v(" "),
                       !_vm.isUserLoggedIn
@@ -61825,7 +62113,7 @@ var render = function() {
                               _c(
                                 "v-btn",
                                 {
-                                  staticClass: "blue lighten-2 mt-5",
+                                  staticClass: "primary",
                                   attrs: { dark: "", large: "" },
                                   on: { click: _vm.createThesis }
                                 },
@@ -61837,7 +62125,7 @@ var render = function() {
                                     1
                                   ),
                                   _vm._v(
-                                    "vytvorit Bakalarku\n                        "
+                                    "Vytvořit Bakalářku\n                            "
                                   )
                                 ]
                               )
@@ -61868,13 +62156,13 @@ var render = function() {
                     { staticClass: "my-3", attrs: { xs12: "", sm4: "" } },
                     [
                       _c("div", { staticClass: "text-xs-center" }, [
-                        _c("h2", { staticClass: "headline" }, [
-                          _vm._v("The best way to start developing")
+                        _c("h2", { staticClass: "display-1" }, [
+                          _vm._v("Vazby a tisk studentských prací")
                         ]),
                         _vm._v(" "),
                         _c("span", { staticClass: "subheading" }, [
                           _vm._v(
-                            "\n            Cras facilisis mi vitae nunc\n          "
+                            "\n                Nabízíme 2 druhy vazeb, výběr z několika barev desek,\nstříbrný nebo zlatý potisk, potisk hřbetu, kapsy na posudek a CD/DVD,\nto vše lze objednat i přímo zde, online!\n              "
                           )
                         ])
                       ])
@@ -61891,9 +62179,7 @@ var render = function() {
                         [
                           _c(
                             "v-layout",
-                            {
-                              attrs: { row: "", wrap: "", "align-center": "" }
-                            },
+                            { attrs: { row: "", wrap: "" } },
                             [
                               _c(
                                 "v-flex",
@@ -61911,7 +62197,7 @@ var render = function() {
                                             "v-icon",
                                             {
                                               staticClass:
-                                                "blue--text text--lighten-2",
+                                                "primary--text text--lighten-2",
                                               attrs: { "x-large": "" }
                                             },
                                             [_vm._v("color_lens")]
@@ -61931,16 +62217,16 @@ var render = function() {
                                             "div",
                                             {
                                               staticClass:
-                                                "headline text-xs-center"
+                                                "display-1 text-xs-center"
                                             },
-                                            [_vm._v("Material Design")]
+                                            [_vm._v("Data pouze v PDF")]
                                           )
                                         ]
                                       ),
                                       _vm._v(" "),
                                       _c("v-card-text", [
                                         _vm._v(
-                                          "\n                                        Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.\n                                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.\n                                        Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.\n                                    "
+                                          '\n                                            Data k tisku bakalářských a diplomových prací zasílejte pouze ve formátu PDF. Při tisku z jiných formátů (Word atd.)\n                                            může docházet k rozformátovaní Vašich prací*. Ve vlastním zájmu tedy dbejte na dodání dat v PDF. Bohužel jiné formáty pro tisk nemůžeme akceptovat. Pokud Vaše práce obsahuje čb i barevné kopie, připravte si seznam stránek, které budete tisknout v ČB či B. (Např. 1-30 ČB, 30-35 B)\n\n                                            *odlišné verze MS Word různě zalamují konce řádků a mají trochu jiné formátování, což často z naší zkušenosti vedlo k rozformátování celého dokumentu, přestalo sedět stránkování "Obsahu", nadpisy se přesouvaly na konce stránek apod. Bohužel z těchto důvodů nemůžeme zaručit, že zrovna váš dokument takto neutrpí a musíme od tisku Word formátů ustoupit.\n                                        '
                                         )
                                       ])
                                     ],
@@ -61966,7 +62252,7 @@ var render = function() {
                                             "v-icon",
                                             {
                                               staticClass:
-                                                "blue--text text--lighten-2",
+                                                "primary--text text--lighten-2",
                                               attrs: { "x-large": "" }
                                             },
                                             [_vm._v("flash_on")]
@@ -61984,15 +62270,22 @@ var render = function() {
                                         [
                                           _c(
                                             "div",
-                                            { staticClass: "headline" },
-                                            [_vm._v("Fast development")]
+                                            {
+                                              staticClass:
+                                                "display-1  text-xs-center"
+                                            },
+                                            [
+                                              _vm._v(
+                                                "Vazba diplomových prací Classic\n                                            "
+                                              )
+                                            ]
                                           )
                                         ]
                                       ),
                                       _vm._v(" "),
                                       _c("v-card-text", [
                                         _vm._v(
-                                          "\n                                        Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.\n                                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.\n                                        Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.\n                                    "
+                                          "\n                                            Lepená vazba ve hřbetu pomocí tavného polyuretanového lepidla, podobně jak je tomu u knih. Výrazně hezčí a profesionálnější vzhled než u verze Classic. Zároveň je možné na desky aplikovat například logo či jinou grafiku. Nevýhodou je, že nelze hřbet rozvázat, pokud je jednou slepen.\n                                        "
                                         )
                                       ])
                                     ],
@@ -62018,7 +62311,7 @@ var render = function() {
                                             "v-icon",
                                             {
                                               staticClass:
-                                                "blue--text text--lighten-2",
+                                                "primary--text text--lighten-2",
                                               attrs: { "x-large": "" }
                                             },
                                             [_vm._v("build")]
@@ -62038,16 +62331,16 @@ var render = function() {
                                             "div",
                                             {
                                               staticClass:
-                                                "headline text-xs-center"
+                                                "display-1 text-xs-center"
                                             },
-                                            [_vm._v("Completely Open Sourced")]
+                                            [_vm._v("Termovazba")]
                                           )
                                         ]
                                       ),
                                       _vm._v(" "),
                                       _c("v-card-text", [
                                         _vm._v(
-                                          "\n                                        Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.\n                                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.\n                                        Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.\n                                    "
+                                          "\n                                            Terrmovazba u nás nahrazuje kroužkovou vazbu, kdy tištěné dokumenty namístostočeného drátu jsou svázány hřbetem s tavným polyuretanovýmlepidlem. Podobně jako je tomu u vazby DeLuxe.\n\n                                            Oproti vazbě kroužkové nejenže lépe vypadá, ale především se používáním stránky časem nevytrhávají\n                                            a snadno se v ní listuje – jako např. v časopise. Považujeme ji proto za modernější a kvalitnější\n                                            náhradu starší kroužkové vazby.\n                                        "
                                         )
                                       ])
                                     ],
@@ -62072,299 +62365,7 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c(
-            "section",
-            [
-              _c(
-                "v-parallax",
-                { attrs: { src: "/img/section.jpg", height: "380" } },
-                [
-                  _c(
-                    "v-layout",
-                    {
-                      attrs: {
-                        column: "",
-                        "align-center": "",
-                        "justify-center": ""
-                      }
-                    },
-                    [
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "headline white--text mb-3 text-xs-center"
-                        },
-                        [_vm._v("Web development has never been easier")]
-                      ),
-                      _vm._v(" "),
-                      _c("em", [_vm._v("Kick-start your application today")]),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          staticClass: "blue lighten-2 mt-5",
-                          attrs: {
-                            dark: "",
-                            large: "",
-                            href: "/pre-made-themes"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n                        Get Started\n                    "
-                          )
-                        ]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "section",
-            [
-              _c(
-                "v-container",
-                { attrs: { "grid-list-xl": "" } },
-                [
-                  _c(
-                    "v-layout",
-                    {
-                      staticClass: "my-5",
-                      attrs: { row: "", wrap: "", "justify-center": "" }
-                    },
-                    [
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "", sm4: "" } },
-                        [
-                          _c(
-                            "v-card",
-                            { staticClass: "elevation-0 transparent" },
-                            [
-                              _c(
-                                "v-card-title",
-                                {
-                                  staticClass: "layout justify-center",
-                                  attrs: { "primary-title": "" }
-                                },
-                                [
-                                  _c("div", { staticClass: "headline" }, [
-                                    _vm._v("Company info")
-                                  ])
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("v-card-text", [
-                                _vm._v(
-                                  "\n                                Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.\n                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.\n                                Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.\n                            "
-                                )
-                              ])
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "", sm4: "", "offset-sm1": "" } },
-                        [
-                          _c(
-                            "v-card",
-                            { staticClass: "elevation-0 transparent" },
-                            [
-                              _c(
-                                "v-card-title",
-                                {
-                                  staticClass: "layout justify-center",
-                                  attrs: { "primary-title": "" }
-                                },
-                                [
-                                  _c("div", { staticClass: "headline" }, [
-                                    _vm._v("Contact us")
-                                  ])
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("v-card-text", [
-                                _vm._v(
-                                  "\n                                Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.\n                            "
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "v-list",
-                                { staticClass: "transparent" },
-                                [
-                                  _c(
-                                    "v-list-tile",
-                                    [
-                                      _c(
-                                        "v-list-tile-action",
-                                        [
-                                          _c(
-                                            "v-icon",
-                                            {
-                                              staticClass:
-                                                "blue--text text--lighten-2"
-                                            },
-                                            [_vm._v("phone")]
-                                          )
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-list-tile-content",
-                                        [
-                                          _c("v-list-tile-title", [
-                                            _vm._v("777-867-5309")
-                                          ])
-                                        ],
-                                        1
-                                      )
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile",
-                                    [
-                                      _c(
-                                        "v-list-tile-action",
-                                        [
-                                          _c(
-                                            "v-icon",
-                                            {
-                                              staticClass:
-                                                "blue--text text--lighten-2"
-                                            },
-                                            [_vm._v("place")]
-                                          )
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-list-tile-content",
-                                        [
-                                          _c("v-list-tile-title", [
-                                            _vm._v("Chicago, US")
-                                          ])
-                                        ],
-                                        1
-                                      )
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile",
-                                    [
-                                      _c(
-                                        "v-list-tile-action",
-                                        [
-                                          _c(
-                                            "v-icon",
-                                            {
-                                              staticClass:
-                                                "blue--text text--lighten-2"
-                                            },
-                                            [_vm._v("email")]
-                                          )
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-list-tile-content",
-                                        [
-                                          _c("v-list-tile-title", [
-                                            _vm._v("john@vuetifyjs.com")
-                                          ])
-                                        ],
-                                        1
-                                      )
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-footer",
-            { staticClass: "blue darken-2" },
-            [
-              _c(
-                "v-layout",
-                { attrs: { row: "", wrap: "", "align-center": "" } },
-                [
-                  _c("v-flex", { attrs: { xs12: "" } }, [
-                    _c(
-                      "div",
-                      { staticClass: "white--text ml-3" },
-                      [
-                        _vm._v(
-                          "\n                        Made with\n                        "
-                        ),
-                        _c("v-icon", { staticClass: "red--text" }, [
-                          _vm._v("favorite")
-                        ]),
-                        _vm._v("\n                        by "),
-                        _c(
-                          "a",
-                          {
-                            staticClass: "white--text",
-                            attrs: {
-                              href: "https://vuetifyjs.com",
-                              target: "_blank"
-                            }
-                          },
-                          [_vm._v("Vuetify")]
-                        ),
-                        _vm._v("\n                        and "),
-                        _c(
-                          "a",
-                          {
-                            staticClass: "white--text",
-                            attrs: { href: "https://github.com/vwxyzjn" }
-                          },
-                          [_vm._v("Costa Huang")]
-                        )
-                      ],
-                      1
-                    )
-                  ])
-                ],
-                1
-              )
-            ],
-            1
-          )
+          _c("footer-component")
         ],
         1
       )
@@ -64527,15 +64528,1277 @@ if (false) {
 
 /***/ }),
 /* 142 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(143)
+/* template */
+var __vue_template__ = __webpack_require__(144)
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Users/OrderDetail.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-286aa55f", Component.options)
+  } else {
+    hotAPI.reload("data-v-286aa55f", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 143 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['currentUser', 'gopayOrderId'],
+    data: function data() {
+        return {
+            thesis: null,
+            loading: false,
+            errors: null,
+            embedJs: null,
+            gw_url: null,
+            order: null,
+            items: [],
+            status: null,
+            breadcrumText: ''
+        };
+    },
+    mounted: function mounted() {
+        this.items = this.getBreadCrumbs();
+        this.getOrder();
+
+        if (this.status !== 'PAID') {
+            this.createPayment();
+        }
+    },
+
+    watch: {
+        order: function order(val) {
+            console.log('watcher');
+            console.log(val);
+            this.status = val.status;
+            this.breadcrumText = val.orderName;
+            this.items = this.getBreadCrumbs();
+        }
+    },
+
+    methods: {
+        createPayment: function createPayment() {
+            var _this = this;
+
+            this.loading = true;
+            axios.post(this.$laroute.route('gopay.api.create.payment', { orderId: this.gopayOrderId })).then(function (response) {
+                _this.loading = false;
+                _this.gw_url = response.data.gw_url;
+            }).catch(function (error) {
+                _this.loading = false;
+                _this.errors = error.response.data.errors;
+            });
+        },
+        getOrder: function getOrder() {
+            var _this2 = this;
+
+            axios.get(this.$laroute.route('orders.api.show', { id: this.gopayOrderId })).then(function (response) {
+                _this2.loading = false;
+                _this2.order = response.data;
+            }).catch(function (error) {
+                _this2.loading = false;
+                _this2.error = error.response.data.errors;
+                console.log(error.response);
+            });
+        },
+        getBreadCrumbs: function getBreadCrumbs() {
+            return [{
+                text: this.currentUser.name,
+                disabled: false,
+                link: this.$laroute.route('users.index')
+            }, {
+                text: this.breadcrumText,
+                disabled: true
+            }];
+        }
+    }
+});
+
+/***/ }),
+/* 144 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-content",
+        [
+          _c(
+            "v-container",
+            { attrs: { "grid-list-md": "", "text-xs-center": "" } },
+            [
+              _c(
+                "v-layout",
+                { attrs: { row: "", wrap: "" } },
+                [
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "" } },
+                    [
+                      _c("breadcrumbs", {
+                        attrs: { "breadcrumbs-items": _vm.items }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "" } },
+                    [
+                      _c(
+                        "v-card",
+                        { attrs: { color: "grey lighten-3" } },
+                        [
+                          _c(
+                            "v-card-text",
+                            [
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "", wrap: "" } },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    {
+                                      class:
+                                        _vm.status !== null &&
+                                        _vm.status == "PAID"
+                                          ? "xs12"
+                                          : "xs8"
+                                    },
+                                    [
+                                      _c(
+                                        "v-card",
+                                        [
+                                          _c(
+                                            "v-toolbar",
+                                            {
+                                              attrs: {
+                                                color: "purple darken-3",
+                                                dark: ""
+                                              }
+                                            },
+                                            [
+                                              _c("v-toolbar-title", [
+                                                _vm._v("Shrnutí objednávky")
+                                              ]),
+                                              _vm._v(" "),
+                                              _c("v-spacer")
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _vm.order !== null
+                                            ? _c(
+                                                "v-list",
+                                                [
+                                                  _c(
+                                                    "v-list-tile",
+                                                    {
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {}
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        [_vm._v("Objednávka:")]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        {
+                                                          staticClass:
+                                                            "align-end"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            _vm._s(
+                                                              _vm.order
+                                                                .orderName
+                                                            )
+                                                          )
+                                                        ]
+                                                      )
+                                                    ],
+                                                    1
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-tile",
+                                                    {
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {}
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        [_vm._v("Jméno:")]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        {
+                                                          staticClass:
+                                                            "align-end"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            _vm._s(
+                                                              _vm.order
+                                                                .first_name
+                                                            )
+                                                          )
+                                                        ]
+                                                      )
+                                                    ],
+                                                    1
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-tile",
+                                                    {
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {}
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        [_vm._v("Příjmení:")]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        {
+                                                          staticClass:
+                                                            "align-end"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            _vm._s(
+                                                              _vm.order
+                                                                .last_name
+                                                            )
+                                                          )
+                                                        ]
+                                                      )
+                                                    ],
+                                                    1
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-tile",
+                                                    {
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {}
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        [_vm._v("Ulice:")]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        {
+                                                          staticClass:
+                                                            "align-end"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            _vm._s(
+                                                              _vm.order.street
+                                                            )
+                                                          )
+                                                        ]
+                                                      )
+                                                    ],
+                                                    1
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-tile",
+                                                    {
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {}
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        [_vm._v("Cena:")]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        {
+                                                          staticClass:
+                                                            "align-end"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            _vm._s(
+                                                              _vm.order.price
+                                                            ) + " Kč"
+                                                          )
+                                                        ]
+                                                      )
+                                                    ],
+                                                    1
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-tile",
+                                                    {
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {}
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        [_vm._v("Status:")]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        {
+                                                          staticClass:
+                                                            "align-end"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            _vm._s(
+                                                              _vm.order.status
+                                                            )
+                                                          )
+                                                        ]
+                                                      )
+                                                    ],
+                                                    1
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            : _vm._e()
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _vm.status !== null && _vm.status !== "PAID"
+                                    ? _c(
+                                        "v-flex",
+                                        { attrs: { xs4: "" } },
+                                        [
+                                          _c(
+                                            "v-card",
+                                            [
+                                              _c(
+                                                "v-toolbar",
+                                                {
+                                                  attrs: {
+                                                    color: "purple darken-3",
+                                                    dark: ""
+                                                  }
+                                                },
+                                                [
+                                                  _c("v-toolbar-title", [
+                                                    _vm._v("Akce")
+                                                  ]),
+                                                  _vm._v(" "),
+                                                  _c("v-spacer")
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list",
+                                                [
+                                                  _c(
+                                                    "v-list-tile",
+                                                    {
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {}
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        [_vm._v("Platit:")]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        {
+                                                          staticClass:
+                                                            "align-end"
+                                                        },
+                                                        [
+                                                          _c(
+                                                            "form",
+                                                            {
+                                                              attrs: {
+                                                                action:
+                                                                  _vm.gw_url,
+                                                                method: "post",
+                                                                id:
+                                                                  "gopay-payment-button"
+                                                              }
+                                                            },
+                                                            [
+                                                              _c(
+                                                                "button",
+                                                                {
+                                                                  staticClass:
+                                                                    "btn primary",
+                                                                  attrs: {
+                                                                    name: "pay",
+                                                                    type:
+                                                                      "submit"
+                                                                  }
+                                                                },
+                                                                [
+                                                                  _c(
+                                                                    "div",
+                                                                    {
+                                                                      staticClass:
+                                                                        "btn__content"
+                                                                    },
+                                                                    [
+                                                                      _vm._v(
+                                                                        "\n                                                            Zaplatit\n                                                        "
+                                                                      )
+                                                                    ]
+                                                                  )
+                                                                ]
+                                                              )
+                                                            ]
+                                                          )
+                                                        ]
+                                                      )
+                                                    ],
+                                                    1
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    : _vm._e()
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-286aa55f", module.exports)
+  }
+}
+
+/***/ }),
+/* 145 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 143 */
+/* 146 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 147 */,
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(154)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(156)
+/* template */
+var __vue_template__ = __webpack_require__(157)
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Partials/Footer.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7f6808df", Component.options)
+  } else {
+    hotAPI.reload("data-v-7f6808df", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 154 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(155);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("e50d9e22", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7f6808df\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Footer.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7f6808df\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Footer.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 155 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\nfooter.custom-footer {\n    z-index: 1;\n}\n.footer-center {\n    text-align: center;\n}\n.footer-link {\n    cursor: pointer;\n    float: right;\n    color: purple;\n    display:inline-block;\n    line-height: inherit;\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 156 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            mastecardUrl: 'http://eshop.alfa-tisk.cz/Client/Themes/t28-alfatisk-2/Images/Footer/320px-MasterCard_logo.png',
+            mastecardSecureUrl: 'http://eshop.alfa-tisk.cz/Theme/Images/Payments/banners/mastercard-secure-code.png',
+            visaUrl: 'http://eshop.alfa-tisk.cz/Theme/Images/Payments/banners/visa.png',
+            visaVerifiedUrl: 'http://eshop.alfa-tisk.cz/Theme/Images/Payments/banners/verified-by-visa.png',
+            gopayUrl: 'http://eshop.alfa-tisk.cz/Theme/Images/Payments/banners/gopay-white.png',
+            dialog1: false,
+            dialog2: false
+        };
+    }
+});
+
+/***/ }),
+/* 157 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-footer",
+        { attrs: { color: "#f6f6f6" } },
+        [
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "", "align-center": "" } },
+            [
+              _c("v-flex", { attrs: { xs6: "" } }, [
+                _c("div", { staticClass: "white--text ml-3 align-center" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "footer-link ml-2",
+                      on: {
+                        click: function($event) {
+                          $event.stopPropagation()
+                          _vm.dialog1 = !_vm.dialog1
+                        }
+                      }
+                    },
+                    [_vm._v("Dodací podmínky")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "footer-link mr-3",
+                      on: {
+                        click: function($event) {
+                          $event.stopPropagation()
+                          _vm.dialog2 = !_vm.dialog2
+                        }
+                      }
+                    },
+                    [_vm._v("Obchodní podmínky")]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("v-flex", { attrs: { xs6: "" } }, [
+                _c("div", { staticClass: "white--text ml-3 align-center" }, [
+                  _c("img", { attrs: { src: _vm.gopayUrl, height: "30px" } }),
+                  _vm._v(" "),
+                  _c("img", {
+                    attrs: { src: _vm.visaVerifiedUrl, height: "30px" }
+                  }),
+                  _vm._v(" "),
+                  _c("img", { attrs: { src: _vm.visaUrl, height: "30px" } }),
+                  _vm._v(" "),
+                  _c("img", {
+                    attrs: { src: _vm.mastecardSecureUrl, height: "30px" }
+                  }),
+                  _vm._v(" "),
+                  _c("img", {
+                    attrs: { src: _vm.mastecardUrl, height: "40px" }
+                  })
+                ])
+              ])
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-footer",
+        { staticClass: "primary" },
+        [
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "", "align-center": "" } },
+            [
+              _c("v-flex", { attrs: { xs12: "" } }, [
+                _c(
+                  "div",
+                  { staticClass: "white--text ml-3 align-center" },
+                  [
+                    _c(
+                      "v-flex",
+                      { staticClass: "footer-center", attrs: { xs12: "" } },
+                      [
+                        _vm._v(
+                          "\n                        2018 © Alfatisk všechna práva vyhrazena\n                    "
+                        )
+                      ]
+                    )
+                  ],
+                  1
+                )
+              ])
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: { width: "600px" },
+          model: {
+            value: _vm.dialog1,
+            callback: function($$v) {
+              _vm.dialog1 = $$v
+            },
+            expression: "dialog1"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c("v-card-title", [
+                _c("span", { staticClass: "headline" }, [
+                  _vm._v("Dodací podmínky")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("v-card-text", [
+                _vm._v(
+                  "\n                Upozorňujeme, že veškeré objednávky jsou závazné. V případě nevyzvednutí či nepřevzetí zásilky budou vymáhány náklady za výrobu a doručení v plné výši. Dodání zásilek je v rozmezí 7-14 pracovních dní. V průběhu vánoční sezóny  (1.12.-30.12.) se dodání může prodloužit až na 30 pracovních dní . Termín dodání vždy záleží na aktuálním počtu zakázek.\n\n                Způsob dopravy\n                Česká pošta: 120,- Kč (cena do 30 kg váhy balíku)\n                Vyzvednutí na pobočce ALFATISK, s.r.o., Americká 17, 301 00, Plzeň: ZDARMA\n                Způsob platby\n                Dobírka (hodnota objednávky do 500,- Kč): 39,- Kč\n                Při placení na pobočce: 0,- Kč\n                Platba na účet: 0,- Kč\n                Ceny jsou uvedeny včetně DPH.\n\n            "
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "v-card-actions",
+                [
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "primary", flat: "flat" },
+                      on: {
+                        click: function($event) {
+                          _vm.dialog1 = false
+                        }
+                      }
+                    },
+                    [_vm._v("Souhlasím")]
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: { width: "600px" },
+          model: {
+            value: _vm.dialog2,
+            callback: function($$v) {
+              _vm.dialog2 = $$v
+            },
+            expression: "dialog2"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c("v-card-title", [
+                _c("span", { staticClass: "headline" }, [
+                  _vm._v("Obchodní podmínky")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("v-card-text", [
+                _vm._v(
+                  "\n                Obchodní podmínky společnosti\n\n                ALFA-TISK.CZ s.r.o., se sídlem Třemošná, PSČ 330 11\n\n                IČ: 05413273, C33233 vedená u Krajského soudu v Plzni\n\n                (dale též jen jako “Prodávající”)\n\n\n                1. Úvodní ustanovení\n\n                Právní vztahy účastníků při realizaci nákupu zboží/digitálního obsahu a/nebo provedení díla (dále též jen jako „zboží“ a/nebo „dílo“) třetí osobou (dále též jen jako “Kupující”) z nabídky Prodávajícího na webových stránkách http://eshop.alfa-tisk.cz/ (dále též jen jako “e – shop”) se řídí právem ČR, zejména zákonem č. 89/2012 Sb., občanský zákoník ve znění pozdějších předpisů (dále též jen jako „OZ“), těmito obchodními podmínkami (dále též jen jako „OP“) a, je-li Kupujícím spotřebitel, též zákonem č. 634/1992 Sb. o ochraně spotřebitele.\n\n                2. Obchodní podmínky\n\n                OP jsou vydány v souladu s ust. § 1751 odst. 1 OZ a vztahují se na všechny kupní smlouvy, smlouvy o dílo a smlouvy o poskytnutí služby, jejichž předmětem je nákup a prodej zboží a/nebo provedení díla či poskytnutí služby z nabídky Prodávajícího v rámci e – shopu, uzavřené mezi Prodávajícím a Kupujícím, přičemž jsou, resp. se stávají nedílnou součástí každé takové smlouvy, určují část jejího obsahu a jsou závazné pro úpravu právních vztahů Prodávajícího a Kupujícího ze smlouvy.\n\n                Případná odchylná ujednání smlouvy mají přednost před ustanoveními OP.\n\n                Provedením registrace a zřízením účtu ve smyslu bodu 3.1. těchto OP (dále též jen jako „Účet“) a dále vždy a/nebo podáním jednotlivé objednávky vyjadřuje registrovaný zřizovatel Účtu, resp. Kupující souhlas s těmito OP a deklaruje přijetí povinnosti se jimi řídit, jakož i vyjadřuje souhlas s použitím prostředků komunikace na dálku pro uzavření smlouvy.\n\n                Prodávající si vyhrazuje právo změnit OP. Taková změna je vůči Kupujícímu účinná okamžikem, kdy bude Prodávajícím Kupujícímu oznámena. Oznámení provede Prodávající uveřejněním nového znění OP v rámci příslušné sekce e – shopu. Taková změna OP se však nedotýká právních vztahů Prodávajícího a Kupujícího dříve vzniklých.\n\n                Prodávající sděluje, že náklady na prostředky komunikace na dálku se neliší od základní sazby Kupujícího (v příp. internetového i telefonického připojení dle podmínek operátora Kupujícího), přičemž Prodávající si neúčtuje žádné další poplatky nebo ceny nad jejich rámec.\n\n                3. Objednávka zboží/díla/služeb a smlouva\n\n                3.1. Objednávku je Kupující oprávněn uskutečnit jen elektronicky, s využitím svého individuálního uživatelského Účtu, zřízeného v rámci e – shopu, vždy však jen po seznámení se s těmito OP a jejich odsouhlasení.\n\n                Objednávka zadaná Kupujícím je pro Kupujícího závazná po dobu 10 – ti dnů. Před odesláním (zadáním) závazné objednávky má Kupující možnost zkontrolovat a měnit veškeré údaje, které do objednávky vložil, jakož i možnost objednávku jako celek zrušit. Objednávku Kupující odešle (závazně zadá) vůči Prodávajícímu příkazem “Dokončit objednávku” v rámci e – shopu.\n\n                3.2. Objednávka je návrhem Kupujícího na uzavření smlouvy kupní a/nebo o dílo a/nebo o zajištění služby. Smlouva je uzavřena, pokud Prodávající objednávku v době její závaznosti akceptuje. Akceptaci provede Prodávající elektronicky odesláním e – mailové zprávy obsahující výslovnou informaci o přijetí návrhu Kupujícího na uzavření smlouvy na e – mailovou adresu Kupujícího, definovanou v rámci Účtu. Kupující je oprávněn i závaznou objednávku jednostranně zrušit kdykoliv před přijetím objednávky ze strany Prodávajícího.\n\n                Takto uzavřenou smlouvu lze měnit nebo rušit jen po vzájemné dohodě obou stran, z důvodů a způsobem stanovených zákonem, nebo těmito OP.\n\n                3.3. Nepřijme-li Prodávající objednávku ve lhůtě její závaznosti, nebo před jejím zrušením Kupujícím, smlouva uzavřena není. Prodávající není povinen objednávku přijmout.\n\n                3.4. Na základě uzavřené smlouvy se Prodávající zejména zavazuje dodat Kupujícímu zboží/digitální obsah a/nebo provést dílo či poskytnout službu dle uzavřené smlouvy a umožnit Kupujícímu nabýt vlastnické právo/licenci ke zboží a/nebo k dílu a Kupující se zejména zavazuje zboží/digitální obsah a/nebo dílo a/nebo předmět služby převzít a zaplatit za to Prodávajícímu sjednanou cenu, poštovné a balné (expediční poplatky).\n\n                3.5. Smlouva se uzavírá pouze v českém jazyce.\n\n                4. Kupní cena zboží, cena díla a/nebo služby, poštovné a balné – výše a splatnost\n\n                Kupní cena zboží, cena díla a/nebo služby se určí podle ceníku Prodávajícího ve výši, v níž je u konkrétního zboží/díla/služby uvedena ke dni, kdy Kupující zadal objednávku. Cena je vždy stanovena včetně DPH.\n\n                Prodávající si vyhrazuje právo měnit ceník. Změna ceníku je účinná okamžikem uveřejnění na serveru http://eshop.alfa-tisk.cz/. Akční ceny platí výhradně po dobu akce a při splnění vyhlášených podmínek.\n\n                Cena zboží je vždy splatná bezhotovostním převodem před dodáním zboží/provedením díla či služby, nejpozději však do 5 – ti dnů po přijetí objednávky Kupujícího Prodávajícím.\n\n                Výše poštovného a balného (ceny placené Kupujícím za dopravu zboží) je stanovena ve smlouvě a je splatná spolu s cenou za stejných podmínek.\n\n                V případě prodlení Kupujícího se zaplacením sjednané ceny a/nebo poštovného a balného se příslušná smlouva ruší, a to od počátku.\n\n                5. Dodání zboží/provedení díla nebo služby\n\n                Není-li ve smlouvě uvedeno jinak, zavazuje se Prodávající vyexpedovat Kupujícímu zboží, provést dílo či poskytnout službu ve lhůtě do 10–ti pracovních dnů po zaplacení ceny. Ve výjimečných případech (např. údržba nebo oprava strojů v Provozovně) může dojít k prodloužení doby potřebné na vyexpedování.\n\n                Není-li dohodnuto jinak, je místem dodání zboží, provedeného díla či výsledku služby adresa Kupujícího uvedená v rámci jeho Účtu na území ČR nebo SR. Kupující je povinen řádně dodané zboží, dílo či výsledek služby převzít a jeho převzetí Prodávajícímu písemně potvrdit (zpravidla osobě, která provádí doručení) či elektronicky při odpovídajícím druhu dodávky.\n\n                Vlastnické právo ke zboží/dílu a nebezpečí škody na nich přechází na Kupujícího, který je spotřebitelem, okamžikem, kdy je mu zboží/dílo předáno, resp. kdy je Kupujícímu Prodávajícím umožněno s ním disponovat. Předáním zboží/díla či umožněním dispozice s ním je splněna povinnost Prodávajícího odevzdat zboží/provést dílo/poskytnout službu Kupujícímu, který je spotřebitelem. Je-li Kupující podnikatelem, splní Prodávající povinnost odevzdat mu zboží/provést dílo/poskytnout službu umožněním dispozice s ním, nebo jeho předáním prvnímu dopravci k přepravě pro Kupujícího, umožní-li mu uplatnit práva z přepravní smlouvy vůči přepravci; stejným okamžikem přechází na takového Kupujícího též vlastnické právo ke zboží/dílu/výsledku služby a nebezpečí škody na nich.\n\n                Dodání zboží/díla/výsledku služby zajišťuje Prodávající prostřednictvím dopravců. Zásilka obsahuje dodací list nebo fakturu a případně návod na používání v českém jazyce. Daňový doklad (faktura) je vždy ke stažení na webových stránkách http://eshop.alfa-tisk.cz/ po přihlíšení se Kupujícího ke svému účtu.\n\n                6. Množství a jakost, práva z vad, reklamační řád\n\n                Prodávající odpovídá Kupujícímu, že zboží/dílo/služba při převzetí nemá vady. Zejména Prodávající odpovídá Kupujícímu, že v době, kdy Kupující věc převzal,\n\n                má takové vlastnosti, které Prodávající nebo výrobce popsal, nebo které Kupující očekával s ohledem na její povahu a na základě reklamy jimi prováděné,\n\n                se hodí k účelu, kterému se věc tohoto druhu obvykle používá,\n\n                je v odpovídajícím množství, kvalitě, míře nebo hmotnosti a\n\n                vyhovuje požadavkům právních předpisů.\n\n                Projeví-li se vada v průběhu šesti měsíců od převzetí zboží/díla/výsledku služby, má se za to, že vada existovala již při převzetí; Kupující je oprávněn uplatnit právo z vady, která se u zboží/díla vyskytne, v době 24 měsíců od převzetí; to neplatí v případě dle § 2158 OZ.\n\n                Kupující je povinen bez zbytečného odkladu po převzetí zboží/díla/výsledku služby provést jeho prohlídku. Je-li dodáno s vadami, řídí se práva a povinnosti stran příslušnými obecně závaznými právními předpisy (zejména ustanoveními § 1914 až 1925, § 2099 až 2117 a § 2161 až 2174 o.z.).\n\n                Pokud zboží/dílo/výsledek služby při převzetí Kupujícím není ve shodě se smlouvou, má Kupující právo na to, aby jej Prodávající bezplatně a bez zbytečného odkladu uvedl do stavu odpovídajícího smlouvě, a to podle požadavku Kupujícího buď výměnou, nebo opravou; není-li takový postup možný, může Kupující požadovat přiměřenou slevu z ceny nebo od smlouvy odstoupit. To neplatí, pokud Kupující před převzetím o vadě věděl nebo ji sám způsobil.\n\n                Práva z vad (reklamaci) uplatňuje Kupující u Prodávajícího, a to písemně, nebo e – mailem na adresu http://eshop.alfa-tisk.cz/ . Reklamaci Prodávající vyřídí, nebude-li s Kupujícím dohodnuto jinak, bez zbytečného odkladu, nejpozději do 30 - ti kalendářních dnů ode dne uplatnění reklamace. Reklamované zboží/dílo/výsledek služby Kupující, po vyzvání Prodávajícím, odesílá na adresu provozovny Prodávajícího (Americká 17, 301 00, Plzeň), kde je též zajišťován záruční a pozáruční servis.\n\n                Po obdržení reklamovaného zboží/díla/výsledku služby Prodávající Kupujícímu obratem e - mailem zašle potvrzení o reklamaci - Reklamační protokol.\n\n                Uzná-li Prodávající reklamaci za oprávněnou, a není-li možná výměna za bezvadné plnění či odstranění vady, Prodávající uhrazenou cenu, včetně částky za poštovné a balné, poukáže na účet Kupujícího (kromě částky představující dodatečné náklady na dodání zboží vzniklé v důsledku kupujícím zvoleného způsobu dodání, který je jiný než nejlevnější způsob standardního dodání nabízený prodávajícím v souladu s § 1832 odst. 2 OZ).\n\n                Lhůta pro vyřízení reklamace neběží po dobu, dokud Kupující nepředal Prodávajícímu veškeré podklady potřebné pro vyřízení reklamace (části zboží, díla, dalších podkladů). Prodávající je povinen si vyžádat doplnění podkladů od Kupujícího v nejkratší možné době.\n\n                V případě požadavku na tisk více kopií od 1 originálu se předpokládá, že si Kupující objednal v předchozí zakázce 1 zkušební tisk. Pokud k tomuto nedojde, nelze se oprávněně domáhat reklamace na tisk více kopií od 1 originálu.\n\n                Snížená kvalita zboží/díla/výsledku služby, která vznikla v důsledku nízkého rozlišení předaných materiálů Kupujícím, nemůže být předmětem reklamace.\n\n                Právo na reklamaci zboží/díla/výsledku služby není možné uplatňovat u záležitostí vkusu a osobního cítění, jako je např. odstín fotografií a barevné podání. Stejně tak není možné uplatňovat právo na reklamaci v případě, že barvy na dodaných produktech stoprocentně nesouhlasí s předanými materiály Kupujícího.\n\n                V případě nespokojenosti se Kupující může se svým podnětem obrátit na subjekt mimosoudního řešení sporů. K mimosoudnímu řešení spotřebitelských sporů ze smlouvy kupní a/nebo o dílo a/nebo o zajištění služby je příslušná Česká obchodní inspekce, se sídlem Štěpánská 567/15, 120 00 Praha 2, IČ: 000 20 869, internetová adresa: http://www.coi.cz.\n\n                Lhůta pro podání návrhu na řešení sporu je 1 rok ode dne, kdy Kupující poprvé kontaktoval Prodávajícího za účelem řešení sporu.\n\n                7. Odstoupení od smlouvy Kupujícím\n\n                Kupující bere na vědomí, že uzavírá smlouvu o dodávce zboží nebo díla, které bylo upraveno podle přání kupujícího nebo pro jeho osobu. V souladu s § 1837 OZ tedy Kupujícímu nevzniká právo na odstoupení od smlouvy ve lhůtě 14 dnů bez uvedení důvodu.\n\n                Kupující, jako spotřebitel, nemůže podle § 1837 OZ odstoupit od smlouvy\n\n                o poskytování služeb, jestliže byly splněny s jeho předchozím výslovným souhlasem před uplynutím lhůty pro odstoupení od smlouvy a podnikatel před uzavřením smlouvy sdělil spotřebiteli, že v takovém případě nemá právo na odstoupení od smlouvy,\n\n                o dodávce zboží nebo služby, jejichž cena závisí na výchylkách finančního trhu nezávisle na vůli podnikatele a k němuž může dojít během lhůty pro odstoupení od smlouvy,\n\n                o dodání alkoholických nápojů, jež mohou být dodány až po uplynutí třiceti dnů a jejichž cena závisí na výchylkách finančního trhu nezávislých na vůli podnikatele,\n\n                o dodávce zboží nebo díla, které bylo upraveno podle přání spotřebitele nebo pro jeho osobu,\n\n                o dodávce zboží, které podléhá rychlé zkáze, jakož i zboží, které bylo po dodání nenávratně smíseno s jiným zbožím,\n\n                o opravě nebo údržbě provedené v místě určeném spotřebitelem na jeho žádost; to však neplatí v případě následného provedení jiných než vyžádaných oprav či dodání jiných než vyžádaných náhradních dílů,\n\n                o dodávce zboží v uzavřeném obalu, které spotřebitel z obalu vyňal a z hygienických důvodů jej není možné vrátit,\n\n                o dodávce zvukové nebo obrazové nahrávky nebo počítačového programu, pokud porušil jejich původní obal,\n\n                o dodávce novin, periodik nebo časopisů,\n\n                o ubytování, dopravě, stravování nebo využití volného času, pokud podnikatel tato plnění poskytuje v určeném termínu,\n\n                uzavírané na základě veřejné dražby podle zákona upravujícího veřejné dražby, nebo\n\n                o dodání digitálního obsahu, pokud nebyl dodán na hmotném nosiči a byl dodán s předchozím výslovným souhlasem spotřebitele před uplynutím lhůty pro odstoupení od smlouvy a podnikatel před uzavřením smlouvy sdělil spotřebiteli, že v takovém případě nemá právo na odstoupení od smlouvy.\n\n                8. Záruka\n\n                Prodávající poskytuje Kupujícímu záruku za jakost zboží/díla pořízeného prostřednictvím e – shopu v délce trvání 24 měsíců. Záruční doba počíná běžet převzetím zboží/provedením díla Kupujícím. Pro uplatnění práv ze záruky platí příslušná ustanovení OZ.\n\n                9. Ochrana osobních údajů a zasílání obchodních sdělení\n\n                Jakékoliv údaje o Kupujícím, včetně osobních, jakož i o všech osobách, které jednají ve vztahu k Prodávajícímu jménem Kupujícího, jsou uchovávány v souladu s platnými zákony České republiky, zejména se zákonem o ochraně osobních údajů č. 101/2000 Sb. ve znění pozdějších dodatků a předpisů.\n\n                Osobní údaje Prodávající uchovává a shromažďuje pouze za účelem uzavření smlouvy, splnění smlouvy, provedení reklamace a úkonů souvisejících, jakož i pro archivní účely Prodávajícího o provedených nákupech, pro účely poskytování případných slev, zasílaní obchodních sdělení a jiných výhod pro zákazníky.\n\n                Kupující má právo přístupu ke svým osobním údajům, právo na jejich kontrolu a opravu včetně dalších zákonných práv ve vztahu k těmto údajům. Změny osobních údajů lze provést prostřednictvím Účtu.\n\n                Osobní údaje Kupujícího jsou plně zabezpečeny proti zneužití. Prodávající osobní údaje Kupujícího nepředává žádné další osobě, v minimálním rozsahu nezbytně nutném pro doručení je poskytne přepravci.\n\n                Jednotlivé smlouvy jsou po svém uzavření Prodávajícím archivovány po dobu nejméně 5 – ti let, nejdéle však po dobu stanovenou právním přepisem, a to pouze v elektronické formě a jsou přístupné pouze Prodávajícímu a Kupujícímu v rámci jeho Účtu. Informace o jednotlivých technických krocích vedoucích k uzavření smlouvy jsou zřejmé z těchto OP, kde jsou srozumitelně popsány.\n\n                Kupující bere na vědomí svá oprávnění dle z.č. 101/2000 Sb., tj. zejména, že poskytnutí údajů je dobrovolné, že svůj souhlas může bezplatně kdykoliv na adrese Prodávajícího písemně odvolat, že má právo přístupu ke svým osobním údajům a právo na opravu těchto údajů, blokování nesprávných údajů, jejich likvidaci, jakož i další práva vymezená uvedeným právním předpisem.\n\n                Zřízením Účtu nebo zadáním závazné objednávky při jednorázovém nákupu vyslovuje Kupující též souhlas:\n\n                se shora uvedeným zpracováním a shromažďováním svých osobních údajů v databázi Prodávajícího a\n\n                se zasíláním informací souvisejících se zbožím, díly, službami nebo podnikem Prodávajícího na elektronickou adresu Kupujícího a se zasíláním obchodních sdělení Prodávajícího na elektronickou adresu Kupujícího\n\n                s ukládáním tzv. cookies na jeho počítač, které podporují správnou funkci stránek. Zároveň tím dává souhlas k propojení jeho osobních údajů, které v souladu s obchodními podmínkami za účelem naplnění předmětu smlouvy kupní a/nebo o dílo a/nebo o zajištění služby Prodávajícímu poskytl, s informacemi obsaženými v souborech cookies, které se ukládají nebo již jsou uloženy na jeho koncovém zařízení. Kupující prohlašuje, že tento souhlas dává dobrovolně. Tento souhlas Kupující poskytuje až do doby jeho odvolání.\n\n                10. Autorská práva\n\n                Kupující prohlašuje, že je majitelem autorských práv veškerého materiálu, který předává Prodávajícímu ke zpracování. Kupující tedy plně zodpovídá za případná porušení autorských či jiných práv a za případnou způsobenou škodu.\n\n                11. Další ustanovení\n\n                Je-li předmětem plnění provedení tiskového díla či poskytnutí tiskových služeb, dle specifikací uvedených na serveru http://eshop.alfa-tisk.cz/, jsou tyto prováděny dle aktuálních Technických podmínek Prodávajícího. Technické podmínky jsou vždy uvedeny na serveru http://www.alfa-tisk.cz/jedinecny_tisk_plzen\n\n                Kupující nesmí v rámci e - shopu umisťovat či užívat materiály, které jsou v rozporu s platným právním řádem ČR, jsou v rozporu s morálními principy a základy etiky, nebo jiným způsobem omezují soukromí jiných osob. Takové materiály je Prodávající oprávněn bez náhrady odstranit.\n\n                12. Používání souborů cookies\n\n                Soubory cookies jsou malé textové soubory, které se ukládají do koncového zařízení či paměti koncových zařízení uživatelů webových stránek http://eshop.alfa-tisk.cz/ a jejich zákazníků (tito dále jen „Kupující“). Tyto soubory nutně neobsahují osobní údaje jednotlivých Kupujících či uživatelů webových stránek Prodávajícího, ale v případě, kdy Kupující takové údaje společnosti ALFA-TISK.CZ s.r.o. v souvislosti s uzavřením závazkového právního vztahu, zejména pak smlouvy kupní a/nebo o dílo a/nebo o zajištění služby, poskytne, mohou být takové osobní údaje přiřazeny k informacím uloženým v příslušných souborech cookies.\n\n                Společnost ALFA-TISK.CZ s.r.o využívá technologii souborů cookies výhradně za účelem zlepšení a zjednodušení pohybu uživatelů na jejich webových stránkách, optimalizaci těchto stránek pro jejich uživatele, dále za účelem zajištění lepších služeb pro Kupujícího a dále pro marketingové účely, vše za účelem zlepšení péče o své současné i budoucí zákazníky (Kupující) a uživatele webových stránek Prodávajícího odpovídající jejich individuálním potřebám.\n\n                Kupující i uživatelé mohou souhlas s používáním cookies odmítnout prostřednictvím individuálního nastavení ukládání souborů cookies na svém koncovém zařízení (povolení jen pro určité weby), dále prostřednictvím spuštění funkce tzv. anonymního prohlížení v prohlížeči, které jejich koncové zařízení využívá, popř. manuálním smazáním všech či jednotlivých souborů cookies, které jsou v jejich koncovém zařízení již uloženy.\n\n                Společnost ALFA-TISK.CZ s.r.o. si vyhrazuje právo zpřístupnit určitý obsah svých webových stránek jen těm Kupujícím či uživatelům, kteří poskytli souhlas s ukládáním souborů cookies do jejich koncového zařízení.\n\n                13. Závěrečná ustanovení\n\n                Právní vztahy mezi Kupujícím a Prodávajícím při nákupu v e – shopu se řídí Českým právem a těmito OP. Pokud jakékoli ustanovení těchto OP je nebo se stane neplatným či nevymahatelným, nebude toto mít vliv na platnost a vymahatelnost ostatních ustanovení těchto OP. Tyto OP Kupujícímu umožňují jejich archivaci a reprodukci.\n\n                Tyto OP nabývají účinnosti dne 3. října 2016\n\n                ALFA-TISK.CZ s.r.o.\n\n                C 33233 vedená u Krajského soudu v Plzni"
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "v-card-actions",
+                [
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "primary", flat: "flat" },
+                      on: {
+                        click: function($event) {
+                          _vm.dialog2 = false
+                        }
+                      }
+                    },
+                    [_vm._v("Souhlasím")]
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-7f6808df", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

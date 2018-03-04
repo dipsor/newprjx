@@ -2,6 +2,7 @@
 
 namespace App\Orders\Models;
 
+use App\Thesis\Models\Thesis;
 use App\Users\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
@@ -25,5 +26,10 @@ class Order extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function thesis()
+    {
+        return $this->belongsTo(Thesis::class);
     }
 }

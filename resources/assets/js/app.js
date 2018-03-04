@@ -50,6 +50,7 @@ Vue.component('navigations', require('./components/LayoutParts/Navigations.vue')
 Vue.component('tabs', require('./components/Partials/TabsComponent.vue'));
 Vue.component('content-card', require('./components/Partials/ContentCardComponent.vue'));
 Vue.component('breadcrumbs', require('./components/Partials/BreadcrumbsComponent.vue'));
+Vue.component('footer-component', require('./components/Partials/Footer.vue'));
 
 Vue.component('dashboard-index', require('./components/Dashboard/DashboardIndexComponent.vue'));
 
@@ -73,6 +74,7 @@ Vue.component('users-form', require('./components/UsersFormComponent.vue'));
 Vue.component('left-sidebar', require('./components/LeftSidebarComponent.vue'));
 Vue.component('navigation', require('./components/NavigationComponent.vue'));
 Vue.component('users-profile', require('./components/UsersProfileComponent.vue'));
+Vue.component('order-detail', require('./components/Users/OrderDetail.vue'));
 
 const app = new Vue({
 

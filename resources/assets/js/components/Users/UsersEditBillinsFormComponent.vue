@@ -1,96 +1,92 @@
 <template>
-    <v-card ref="form">
-        <v-card-text>
-            <v-text-field
-                    label="Křestní jméno"
-                    placeholder="Josef"
-                    v-model="user.first_name"
-                    required
-                    ref="first_name"
-                    :rules="[() => !!user.first_name || 'Prosím výplňte křestní jméno']"
-                    :error-messages="errorMessages"
-            ></v-text-field>
-            <v-text-field
-                    label="Příjmení"
-                    placeholder="Novák"
-                    :rules="[
-                        () => !!user.last_name || 'Prosím výplňte příjmení'
-                    ]"
-                    v-model="user.last_name"
-                    ref="last_name"
-                    required
-            ></v-text-field>
-            <v-text-field
-                    label="Telefon"
-                    placeholder="774123456"
-                    :rules="[() => !!user.phone_number || 'Prosím výplňte telefonní číslo']"
-                    v-model="user.phone_number"
-                    ref="phone"
-                    required
-            ></v-text-field>
-            <v-text-field
-                    label="Město"
-                    placeholder="Praha"
-                    :rules="[() => !!user.city || 'Prosím výplňte město']"
-                    v-model="user.city"
-                    ref="city"
-                    required
-            ></v-text-field>
-            <v-text-field
-                    label="Ulice"
-                    v-model="user.street"
-                    :rules="[() => !!user.street || 'Prosím výplňte ulici']"
-                    required
-                    ref="state"
-                    placeholder="Alej Svobody 100"
-            ></v-text-field>
-            <v-text-field
-                    label="PSČ"
-                    required
-                    :rules="[() => !!user.postal_code || 'Prosím výplňte psč']"
-                    v-model="user.postal_code"
-                    ref="zip"
-                    placeholder="32300"
-            ></v-text-field>
-            <v-select
-                    autocomplete
-                    label="Kód země"
-                    placeholder="Vyberte..."
-                    :rules="[() => !!user.country_code || 'Prosím výplňte ulici kód země']"
-                    :items="countries"
-                    v-model="user.country_code"
-                    ref="country"
-                    required
-            ></v-select>
-        </v-card-text>
-        <v-divider class="mt-5"></v-divider>
-        <v-card-actions>
-            <v-btn flat>Cancel</v-btn>
-            <v-spacer></v-spacer>
-            <v-slide-x-reverse-transition>
-                <v-tooltip
-                        left
-                        v-if="formHasErrors"
-                >
-                    <v-btn
-                            icon
-                            @click="resetForm"
-                            slot="activator"
-                            class="my-0"
-                    >
-                        <v-icon>refresh</v-icon>
-                    </v-btn>
-                    <span>Refresh form</span>
-                </v-tooltip>
-            </v-slide-x-reverse-transition>
-            <v-btn color="primary" @click="updateBillings">Submit</v-btn>
-        </v-card-actions>
-    </v-card>
+    <div>
+        <v-snackbar
+                :timeout="4000"
+                :top="y === 'top'"
+                :right="x === 'right'"
+                v-model="snackbar"
+        >
+            {{snackBarMessage}}
+            <v-btn flat color="pink" @click.native="snackbar = false">Zavřít</v-btn>
+        </v-snackbar>
+        <v-card>
+            <v-card-text>
+                <v-text-field
+                        label="Křestní jméno"
+                        placeholder="Josef"
+                        v-model="user.first_name"
+                        required
+                        ref="first_name"
+                        :rules="[() => !!user.first_name || 'Prosím výplňte křestní jméno']"
+                        :error-messages="errorMessages"
+                ></v-text-field>
+                <v-text-field
+                        label="Příjmení"
+                        placeholder="Novák"
+                        :rules="[
+                            () => !!user.last_name || 'Prosím výplňte příjmení'
+                        ]"
+                        v-model="user.last_name"
+                        ref="last_name"
+                        required
+                ></v-text-field>
+                <v-text-field
+                        label="Telefon"
+                        placeholder="774123456"
+                        :rules="[() => !!user.phone_number || 'Prosím výplňte telefonní číslo']"
+                        v-model="user.phone_number"
+                        ref="phone"
+                        required
+                ></v-text-field>
+                <v-text-field
+                        label="Město"
+                        placeholder="Praha"
+                        :rules="[() => !!user.city || 'Prosím výplňte město']"
+                        v-model="user.city"
+                        ref="city"
+                        required
+                ></v-text-field>
+                <v-text-field
+                        label="Ulice"
+                        v-model="user.street"
+                        :rules="[() => !!user.street || 'Prosím výplňte ulici']"
+                        required
+                        ref="state"
+                        placeholder="Alej Svobody 100"
+                ></v-text-field>
+                <v-text-field
+                        label="PSČ"
+                        required
+                        :rules="[() => !!user.postal_code || 'Prosím výplňte psč']"
+                        v-model="user.postal_code"
+                        ref="zip"
+                        placeholder="32300"
+                ></v-text-field>
+                <v-select
+                        autocomplete
+                        label="Kód země"
+                        placeholder="Vyberte..."
+                        :rules="[() => !!user.country_code || 'Prosím výplňte ulici kód země']"
+                        :items="countries"
+                        v-model="user.country_code"
+                        ref="country"
+                        required
+                ></v-select>
+            </v-card-text>
+            <v-divider class="mt-1"></v-divider>
+            <v-card-actions>
+                <v-btn color="primary" @click="updateBillings">
+                    Uložit  &nbsp<v-progress-circular v-show="loading" indeterminate color="white"></v-progress-circular>
+                </v-btn>
+            </v-card-actions>
+        </v-card>
+    </div>
+
 </template>
 <script>
     export default {
         data: () => ({
-            countries: ['Česká Republika', 'Slovenko'],
+            countries: [{text: 'Česká Republika', value: 'CZE'}, {text: 'Slovenko', value: 'SVK'}],
             errorMessages: [],
             formHasErrors: false,
             user: {
@@ -102,8 +98,13 @@
                 'postal_code': null,
                 'country_code': null,
             },
-            isLoading: false,
+            snackbar: false,
+            y: 'top',
+            x: 'right',
+            snackBarMessage: '',
+            loading: false,
         }),
+
         props: {
             currentUser: null
         },
@@ -119,18 +120,26 @@
 
         mounted() {
             this.getDetails();
+            this.eventBus.$on('billing-updated', () => {
+                this.getDetails();
+            });
+
         },
 
         methods: {
             updateBillings() {
-                this.isLoading = true;
+                this.loading = true;
                 axios.put(this.$laroute.route('users.api.update.billing',{id: this.currentUser.id}), this.user).
                 then((response) => {
-                    console.log(response);
                     this.eventBus.$emit('billing-updated');
+                    this.snackbar = true;
+                    this.snackBarMessage = 'Uloženo'
+                    this.loading = false;
                 }).catch((error) => {
-                    this.isLoading = false;
-                    console.log(error);
+                    this.loading = false;
+                    this.snackbar = true;
+                    this.snackBarMessage = 'Vyskytla se chyba pri ukládání'
+
                 });
             },
 

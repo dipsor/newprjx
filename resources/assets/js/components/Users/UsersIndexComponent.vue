@@ -1,38 +1,53 @@
 <template>
-    <v-content>
-        <v-container grid-list-md text-xs-center>
-            <v-layout row wrap>
-                <v-flex xs12>
-                    <breadcrumbs
-                            :breadcrumbs-items="items"
-                    ></breadcrumbs>
-                </v-flex>
-                <v-flex xs12>
-                    <v-alert type="success" :value="status == 'PAID'">
-                        {{messages[status]}}
-                    </v-alert>
+    <div>
+        <v-content>
+            <v-container grid-list-md text-xs-center>
+                        <v-layout row wrap>
+                            <v-flex xs12>
+                                <breadcrumbs
+                                        :breadcrumbs-items="items"
+                                ></breadcrumbs>
+                            </v-flex>
+                            <v-flex xs12>
+                                <v-card color="grey lighten-3">
+                                    <v-card-text>
+                                        <v-alert type="success" :value="status == 'PAID'">
+                                            {{messages[status]}}
+                                        </v-alert>
 
-                    <v-alert type="info" :value="status == 'PAYMENT_METHOD_CHOSEN' || status == 'REFUNDED' || status == 'PARTIALLY_REFUNDED'">
-                        {{messages[status]}}
-                    </v-alert>
+                                        <v-alert type="info" :value="status == 'PAYMENT_METHOD_CHOSEN' || status == 'REFUNDED' || status == 'PARTIALLY_REFUNDED'">
+                                            {{messages[status]}}
+                                        </v-alert>
 
-                    <v-alert type="error" :value="status == 'CANCELED' || status == 'TIMEOUTED'">
-                        {{messages[status]}}
-                    </v-alert>
-                    <v-card>
-                        <v-toolbar color="primary">
-                            <v-toolbar-title class="white--text">Uzivatele</v-toolbar-title>
-                        </v-toolbar>
-
-                        <v-flex xs12>
-                            Dashboard pro uzivatele
-                        </v-flex>
-                    </v-card>
-
-                </v-flex>
-            </v-layout>
-        </v-container>
-    </v-content>
+                                        <v-alert type="error" :value="status == 'CANCELED' || status == 'TIMEOUTED'">
+                                            {{messages[status]}}
+                                        </v-alert>
+                                        <v-card>
+                                            <v-toolbar color="purple darken-3">
+                                                <v-toolbar-title class="white--text">Objednávky uživatele {{currentUser.name}}</v-toolbar-title>
+                                            </v-toolbar>
+                                            <v-data-table
+                                                    v-bind:headers="headers"
+                                                    :items="items2"
+                                                    hide-actions
+                                                    class="elevation-1"
+                                            >
+                                                <template slot="items" slot-scope="props">
+                                                    <td class="text-xs-left">{{ props.item.orderName }}</td>
+                                                    <td class="text-xs-left">{{ props.item.created_at }}</td>
+                                                    <td class="text-xs-left">{{ props.item.price }}</td>
+                                                    <td class="text-xs-left">{{ props.item.status }}</td>
+                                                    <td class="text-xs-left"><a :href="'profil/order/'+props.item.id">Zobrazit</a></td>
+                                                </template>
+                                            </v-data-table>
+                                        </v-card>
+                                    </v-card-text>
+                                </v-card>
+                            </v-flex>
+                        </v-layout>
+            </v-container>
+        </v-content>
+    </div>
 </template>
 
 <script>
@@ -55,7 +70,40 @@
                     'PARTIALLY_REFUNDED' : 'Platba byla částečnê zrušena.',
                     'CANCELED' : 'Platba byla zrušena.',
                     'TIMEOUTED' : 'Platební proces vypršel.',
-                }
+                },
+                headers: [
+                    {
+                        text: 'Objednávka',
+                        align: 'left',
+                        sortable: false,
+                        value: 'orderName'
+                    },
+                    {
+                        text: 'Zadáno',
+                        align: 'left',
+                        sortable: true,
+                        value: 'created_at'
+                    },
+                    {
+                        text: 'Cena',
+                        align: 'left',
+                        sortable: true,
+                        value: 'price'
+                    },
+                    {
+                        text: 'Zaplaceno',
+                        align: 'left',
+                        sortable: true,
+                        value: 'status'
+                    },
+                    {
+                        text: 'Zobrazit',
+                        align: 'left',
+                        sortable: false,
+                        value: 'action'
+                    },
+                ],
+                items2: []
             }
         },
 
@@ -67,28 +115,30 @@
         mounted() {
             this.items = this.getBreadCrumbs();
             this.getStatus(this.gopayOrderId);
+            this.getUsersOrders();
         },
 
         watch: {
             gopayOrderId: (val) => {
-                console.log('gopayOrderId changed');
-                console.log(val);
                 this.getStatus(val);
             },
+
+            status() {
+                this.getUsersOrders();
+            }
         },
 
         methods: {
             getBreadCrumbs() {
                 return [
                     {
-                        text: 'Dashboard',
-                        disabled: false,
-                        link: this.$laroute.route('dashboard.index')
-                    },
-                    {
                         text: this.currentUser.name,
                         disabled: false,
                         link: this.$laroute.route('users.index')
+                    },
+                    {
+                        text: 'Objednávky',
+                        disabled: false,
                     }
                 ]
             },
@@ -97,8 +147,8 @@
                 if (id > 0) {
                     axios.get(this.$laroute.route('gopay.api.status', {'id': id})).then((response) => {
                         this.loading = false;
-                        this.status = response.data.state;
-                        console.log(this.status);
+                        this.status = response.data;
+                        console.log(response.data);
                     }).catch((error) => {
                         this.loading = false;
                         this.error = error.response.data.errors;
@@ -106,6 +156,18 @@
                     });
                 }
             },
+
+            getUsersOrders() {
+                axios.get(this.$laroute.route('users.api.orders', {'id': this.currentUser.id}))
+                .then((response) => {
+                    this.loading = false;
+                    this.items2 = response.data;
+                }).catch((error) => {
+                    this.loading = false;
+                    this.error = error.response.data.errors;
+                    console.log(error.response);
+                });
+            }
 
 
         }

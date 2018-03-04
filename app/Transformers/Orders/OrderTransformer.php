@@ -27,6 +27,7 @@ class OrderTransformer extends TransformerAbstract
             'postal_code'       => (string)$order->postal_code,
             'country_code'      => (string)$order->country_code,
             'price'             => (string)$order->price,
+            'status'            => (string)$order->status,
             'gopay_order_id'    => (int)$order->gopay_order_id,
             'created_at'        => (string)$order->created_at,
             'updated_at'        => (string)$order->updated_at,

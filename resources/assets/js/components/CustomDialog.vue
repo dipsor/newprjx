@@ -2,7 +2,7 @@
     <div>
 
     <v-btn
-            class="blue lighten-2 mt-5"
+            class="primary mt-5"
             dark
             large
             @click.stop="myDialog = !myDialog"
@@ -13,7 +13,7 @@
             <v-layout row wrap>
                 <v-flex xs12>
                     <v-card>
-                        <v-toolbar color="indigo" dark>
+                        <v-toolbar color="primary" dark>
                             <v-toolbar-title>
                                 <span class="group pa-2">
                                 <v-icon>lock_outline</v-icon>
@@ -46,7 +46,7 @@
                             <v-flex>
                                 <v-checkbox label="Zapamatovat si" v-model="remember" value="1"></v-checkbox>
                             </v-flex>
-                            <v-btn block color="primary" @click="login">Prihlasit<v-progress-circular v-if="animateLogin" indeterminate color="purple"></v-progress-circular></v-btn>
+                            <v-btn block color="primary" @click="login">Přihlásit<v-progress-circular v-if="animateLogin" indeterminate color="purple"></v-progress-circular></v-btn>
                                 <v-layout row wrap>
                                     <v-flex class="pr-1" xs6><v-btn @click="googleLogin" dark block color="black">Google</v-btn></v-flex>
                                     <v-flex class="pl-1" xs6><v-btn @click="facebookLogin" dark block color="blue darken-4">Facebook</v-btn></v-flex>

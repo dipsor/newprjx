@@ -8,9 +8,11 @@
                     ></breadcrumbs>
                 </v-flex>
                 <v-flex xs12>
+                    <v-card color="grey lighten-3">
+                        <v-card-text>
                     <v-card>
-                        <v-toolbar color="blue lighten-2">
-                            <v-toolbar-title class="white--text">Edit Users</v-toolbar-title>
+                        <v-toolbar color="purple darken-3">
+                            <v-toolbar-title class="white--text">Změnit údaje</v-toolbar-title>
                         </v-toolbar>
 
                         <v-flex xs12>
@@ -56,7 +58,8 @@
                             </v-tabs>
                         </v-flex>
                     </v-card>
-
+                        </v-card-text>
+                    </v-card>
                 </v-flex>
             </v-layout>
         </v-container>
@@ -96,11 +99,6 @@
         methods: {
             getBreadCrumbs() {
                 return [
-                    {
-                        text: 'Dashboard',
-                        disabled: false,
-                        link: this.$laroute.route('dashboard.index')
-                    },
                     {
                         text: this.currentUser.name,
                         disabled: false,

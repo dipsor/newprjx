@@ -6,7 +6,7 @@
                     <v-flex xs12>
                         <v-card>
                             <v-toolbar color="purple darken-3" dark>
-                                <v-toolbar-title>Zde vytvorte formular</v-toolbar-title>
+                                <v-toolbar-title>Zde vytvořte formulář</v-toolbar-title>
                                 <v-spacer></v-spacer>
                             </v-toolbar>
                             <v-container>
@@ -448,11 +448,11 @@
 
                 selectedData: {
                     user_id: null,
-                    typZadani: {text: 'Vytisknout praci a vyrobit desky', value: 1, price: 10},
+                    typZadani: {text: 'Vytisknout práci a vyrobit desky', value: 1, price: 10},
                     pribliznyPocetListu: {text: '25 - 40 listů', value: 3},
                     presnyPocetStran: 0,
-                    typTisku: {text: 'Jednostranny', value: 11, price: 10},
-                    barevnost: {text: 'Cernobile', value: 14, price: 1.5},
+                    typTisku: {text: 'Jednostranný', value: 11, price: 10},
+                    barevnost: {text: 'Černobile', value: 14, price: 1.5},
                     skoly: {text: 'ZÁPADOČESKÁ UNIVERZITA V PLZNI', value: 16},
                     jinaSkola: null,
                     fakulty: {text: 'FAKULTA APLIKOVANÝCH VĚD', value: 26},
@@ -481,7 +481,7 @@
 
                 formItemsData: {
                     typZadani: [
-                        {text: 'Vytisknout praci a vyrobit desky', value: 1, price: 10},
+                        {text: 'Vytisknout práci a vyrobit desky', value: 1, price: 10},
                         {text: 'Vyrobit pouze desky', value: 2, price: 20},
                     ],
 
@@ -497,14 +497,14 @@
                     ],
 
                     typTisku: [
-                        {text: 'Jednostranny', value: 11, price: 10},
-                        {text: 'Oboustranny', value: 12, price: 15},
-                        {text: 'Kombinovany', value: 13, price: 20},
+                        {text: 'Jednostranný', value: 11, price: 10},
+                        {text: 'Oboustranný', value: 12, price: 15},
+                        {text: 'Kombinovaný', value: 13, price: 20},
                     ],
 
                     barevnost: [
-                        {text: 'Cernobile', value: 14, price: 1.5},
-                        {text: 'Dle soubou (cernobile / barevne)', value: 15, price: 7.49},
+                        {text: 'Černobile', value: 14, price: 1.5},
+                        {text: 'Dle soubou (černobile / barevně)', value: 15, price: 7.49},
                     ],
 
                     skoly: [
@@ -582,7 +582,8 @@
                     this.bcId = response.data.id;
 
                     this.thesisCreated = true;
-                    this.eventBus.$emit('go-to-next-page', {page_id: this.nextStep, bc_id: response.data.id})
+                    this.goToNextPage();
+                    //this.eventBus.$emit('go-to-next-page', {page_id: this.nextStep, bc_id: response.data.id})
                 }).catch((error) => {
                     this.loading = false;
                     console.log(error);
@@ -594,7 +595,9 @@
                 axios.put(this.$laroute.route('thesis.api.update', {'id': this.bcId}),this.getFormattedObjectToSubmit(this.selectedData)).then((response) => {
                     this.loading = false;
                     this.thesisCreated = true;
-                    this.eventBus.$emit('go-to-next-page', {page_id: this.nextStep, bc_id: response.data.id})
+                    this.goToNextPage();
+
+//                    this.eventBus.$emit('go-to-next-page', {page_id: this.nextStep, bc_id: response.data.id})
                 }).catch((error) => {
                     this.loading = false;
                     console.log(error);

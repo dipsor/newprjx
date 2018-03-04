@@ -22,4 +22,9 @@ class UsersController extends Controller
     {
         return view('users.edit', ['id' => $id]);
     }
+
+    public function showorder($id)
+    {
+        return view('users.order', ['id' => $id]);
+    }
 }
