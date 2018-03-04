@@ -71,14 +71,13 @@
             getBreadCrumbs(){
                 return [
                     {
-                        text: 'Dashboard',
-                        disabled: false,
-                        link: this.$laroute.route('dashboard.index')
-                    },
-                    {
                         text: this.currentUser.name,
                         disabled: false,
-                        link: this.$laroute.route('thesis.index')
+                        link: this.$laroute.route('users.index')
+                    },
+                    {
+                        text: 'Tvorba Studentské práce',
+                        disabled: true,
                     }
                 ]
             },

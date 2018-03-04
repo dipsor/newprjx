@@ -1,5 +1,14 @@
 <template>
     <div>
+        <v-snackbar
+                :timeout="4000"
+                :top="y === 'top'"
+                :right="x === 'right'"
+                v-model="snackbar"
+        >
+            {{snackBarMessage}}
+            <v-btn flat color="pink" @click.native="snackbar = false">Zavřít</v-btn>
+        </v-snackbar>
         <v-card>
             <v-card-text>
                 <v-text-field
@@ -42,7 +51,9 @@
             </v-card-text>
             <v-divider class="mt-1"></v-divider>
             <v-card-actions>
-                <v-btn @click="updatePassword" color="primary">Uložit</v-btn>
+                <v-btn @click="updatePassword" color="primary">
+                    Uložit &nbsp<v-progress-circular v-show="loading" indeterminate color="white"></v-progress-circular>
+                </v-btn>
             </v-card-actions>
         </v-card>
     </div>
@@ -61,6 +72,11 @@
                     newPassword_confirmation: '',
                 },
                 parsedUser: null,
+                snackbar: false,
+                y: 'top',
+                x: 'right',
+                snackBarMessage: '',
+                loading: false,
             }
         },
 
@@ -73,16 +89,26 @@
 
         methods: {
             updatePassword() {
-                this.isLoading = true;
+                this.loading = true;
 
                 axios.put(this.$laroute.route('users.api.update.password',{id: this.currentUser.id}), this.password).
                 then((response) => {
                     this.eventBus.$emit('password-updated');
+                    this.snackbar = true;
+                    this.snackBarMessage = 'Uloženo'
+                    this.loading = false;
+                    //this.resetForm();
                 }).catch((error) => {
-                    this.isLoading = false;
-//                    Materialize.toast(error, 4000);
-                    console.log(error);
+                    this.loading = false;
+                    this.snackBarMessage = 'Vyskytla se chyba pri ukládání'
+//                    this.resetForm();
                 });
+            },
+
+            resetForm(){
+                this.password.old = '';
+                this.password.newPassword = '';
+                this.password.newPassword_confirmation = '';
             },
         }
     }

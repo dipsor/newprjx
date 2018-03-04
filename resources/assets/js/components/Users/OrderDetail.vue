@@ -88,6 +88,7 @@
                 order: null,
                 items: [],
                 status: null,
+                breadcrumText: '',
             }
         },
 
@@ -104,6 +105,9 @@
                 console.log('watcher');
                 console.log(val);
                 this.status = val.status;
+                this.breadcrumText = val.orderName;
+                this.items = this.getBreadCrumbs();
+
             }
         },
 
@@ -139,9 +143,8 @@
                         link: this.$laroute.route('users.index')
                     },
                     {
-                        text: 'objednavka',
+                        text: this.breadcrumText,
                         disabled: true,
-                        link: this.$laroute.route('thesis.index')
                     }
                 ]
             },

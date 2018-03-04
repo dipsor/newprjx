@@ -53783,35 +53783,98 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             drawer: null,
             dashboardUrl: 'ddd',
-            items: []
+            items: [],
+            adminItems: [],
+            isAdmin: false
         };
     },
-
     props: {
         source: String,
         currentUser: null
     },
 
     mounted: function mounted() {
+        this.isItAdmin();
         this.items = this.setMenu();
+        this.adminItems = this.setAdminMenu();
+
+        console.log(this.currentUser.roles);
     },
 
 
     methods: {
         setMenu: function setMenu() {
-            return [{ icon: 'dashboard', text: 'Admin', link: this.$laroute.route('dashboard.index'), forAdmin: true }, {
+            return [{
                 icon: 'keyboard_arrow_up',
                 'icon-alt': 'keyboard_arrow_down',
                 text: 'Uživatel',
                 model: false,
                 children: [{ text: 'Objednávky', link: this.$laroute.route('users.index') }, { text: 'Změna údajů', link: this.$laroute.route('users.show', { id: this.currentUser.id }) }]
             }, { icon: 'shopping_cart', text: 'Vytvořit objednávku', 'link': this.$laroute.route('thesis.index') }];
+        },
+        setAdminMenu: function setAdminMenu() {
+            return [{ icon: 'dashboard', text: 'Admin', link: this.$laroute.route('dashboard.index'), forAdmin: true }];
+        },
+        logout: function logout() {
+            var _this = this;
+
+            axios.get(this.$laroute.route('users.logout')).then(function (response) {
+                window.location.href = _this.$laroute.route('home');
+            }, function (error) {
+                console.log(error);
+            });
+        },
+        isItAdmin: function isItAdmin() {
+            var _this2 = this;
+
+            this.isAdmin = false;
+            this.currentUser.roles.forEach(function (role) {
+                console.log(role.name);
+                if (role.name === 'admin') {
+                    _this2.isAdmin = true;
+                }
+            });
         }
     }
 
@@ -53883,7 +53946,8 @@ var render = function() {
                                   attrs: { href: "#!" }
                                 },
                                 [_vm._v("EDIT")]
-                              )
+                              ),
+                              _vm._v(" edit\n                ")
                             ]
                           )
                         ],
@@ -54017,6 +54081,150 @@ var render = function() {
                           1
                         )
                 ]
+              }),
+              _vm._v(" "),
+              _vm.isAdmin ? _c("v-divider") : _vm._e(),
+              _vm._v(" "),
+              _vm._l(_vm.adminItems, function(item, i) {
+                return _vm.isAdmin
+                  ? [
+                      item.heading
+                        ? _c("v-layout", {
+                            key: i,
+                            attrs: { row: "", "align-center": "" }
+                          })
+                        : item.children
+                          ? _c(
+                              "v-list-group",
+                              {
+                                attrs: { "no-action": "" },
+                                model: {
+                                  value: item.model,
+                                  callback: function($$v) {
+                                    _vm.$set(item, "model", $$v)
+                                  },
+                                  expression: "item.model"
+                                }
+                              },
+                              [
+                                _c(
+                                  "v-list-tile",
+                                  {
+                                    attrs: { slot: "item" },
+                                    on: { click: function($event) {} },
+                                    slot: "item"
+                                  },
+                                  [
+                                    _c(
+                                      "v-list-tile-action",
+                                      [
+                                        _c("v-icon", [
+                                          _vm._v(
+                                            _vm._s(
+                                              item.model
+                                                ? item.icon
+                                                : item["icon-alt"]
+                                            )
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-list-tile-content",
+                                      [
+                                        _c("v-list-tile-title", [
+                                          _vm._v(
+                                            "\n                            " +
+                                              _vm._s(item.text) +
+                                              "\n                        "
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _vm._l(item.children, function(child, i) {
+                                  return _c(
+                                    "v-list-tile",
+                                    {
+                                      key: i,
+                                      on: { click: function($event) {} }
+                                    },
+                                    [
+                                      child.icon
+                                        ? _c(
+                                            "v-list-tile-action",
+                                            [
+                                              _c("v-icon", [
+                                                _vm._v(_vm._s(child.icon))
+                                              ])
+                                            ],
+                                            1
+                                          )
+                                        : _vm._e(),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        [
+                                          _c("v-list-tile-title", [
+                                            _c(
+                                              "a",
+                                              {
+                                                staticClass: "menu-item",
+                                                attrs: { href: child.link }
+                                              },
+                                              [_vm._v(_vm._s(child.text))]
+                                            )
+                                          ])
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                })
+                              ],
+                              2
+                            )
+                          : _c(
+                              "v-list-tile",
+                              {
+                                attrs: { href: item.link },
+                                on: { click: function($event) {} }
+                              },
+                              [
+                                _c(
+                                  "v-list-tile-action",
+                                  [_c("v-icon", [_vm._v(_vm._s(item.icon))])],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-tile-content",
+                                  [
+                                    _c("v-list-tile-title", [
+                                      _c(
+                                        "a",
+                                        {
+                                          staticClass: "menu-item",
+                                          attrs: { href: item.link }
+                                        },
+                                        [_vm._v(_vm._s(item.text))]
+                                      )
+                                    ])
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                    ]
+                  : _vm._e()
               })
             ],
             2
@@ -54076,30 +54284,10 @@ var render = function() {
             [
               _c(
                 "v-btn",
-                { attrs: { icon: "" } },
-                [_c("v-icon", [_vm._v("apps")])],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-btn",
-                { attrs: { icon: "" } },
-                [_c("v-icon", [_vm._v("notifications")])],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-btn",
-                { attrs: { icon: "", large: "" } },
+                { attrs: { light: "" }, on: { click: _vm.logout } },
                 [
-                  _c("v-avatar", { attrs: { size: "32px", tile: "" } }, [
-                    _c("img", {
-                      attrs: {
-                        src: "https://vuetifyjs.com/static/doc-images/logo.svg",
-                        alt: "Vuetify"
-                      }
-                    })
-                  ])
+                  _c("v-icon", [_vm._v("person_outline")]),
+                  _vm._v("\n                Odhlásit\n            ")
                 ],
                 1
               )
@@ -55050,13 +55238,12 @@ var _this = this;
     methods: {
         getBreadCrumbs: function getBreadCrumbs() {
             return [{
-                text: 'Dashboard',
-                disabled: false,
-                link: this.$laroute.route('dashboard.index')
-            }, {
                 text: this.currentUser.name,
                 disabled: false,
                 link: this.$laroute.route('users.index')
+            }, {
+                text: 'Objednávky',
+                disabled: false
             }];
         },
         getStatus: function getStatus(id) {
@@ -55815,6 +56002,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -55842,7 +56031,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             },
             snackbar: false,
             y: 'top',
-            x: 'right'
+            x: 'right',
+            snackBarMessage: '',
+            loading: false
         };
     },
 
@@ -55852,47 +56043,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     mounted: function mounted() {
+        var _this = this;
+
         this.getUserData();
+        this.eventBus.$on('user-info-updated', function () {
+            _this.getUserData();
+        });
     },
 
 
     methods: {
         getUserData: function getUserData() {
-            var _this = this;
+            var _this2 = this;
 
             axios.get(this.$laroute.route('users.api.show', { id: this.currentUser.id })).then(function (response) {
-                _this.user.name = response.data.name;
-                _this.user.email = response.data.email;
+                _this2.user.name = response.data.name;
+                _this2.user.email = response.data.email;
             }).catch(function (error) {
                 console.log(error);
             });
         },
         updateUser: function updateUser() {
-            var _this2 = this;
-
-            this.isLoading = true;
-
-            axios.put(this.$laroute.route('users.api.update.general.info', { id: this.currentUser.id }), this.user).then(function (response) {
-                _this2.eventBus.$emit('user-info-updated', _this2.user.name);
-                _this2.snackbar = true;
-            }).catch(function (error) {
-                _this2.isLoading = false;
-                _this2.snackbar = true;
-                console.log(error);
-            });
-        },
-        updatePassword: function updatePassword() {
             var _this3 = this;
 
-            this.isLoading = true;
-
-            axios.put(this.$laroute.route('users.api.update.password', { id: this.currentUser.id }), this.password).then(function (response) {
-                _this3.eventBus.$emit('password-updated');
+            this.loading = true;
+            axios.put(this.$laroute.route('users.api.update.general.info', { id: this.currentUser.id }), this.user).then(function (response) {
+                _this3.eventBus.$emit('user-info-updated', _this3.user.name);
+                _this3.snackbar = true;
+                _this3.snackBarMessage = 'Uloženo';
+                _this3.loading = false;
             }).catch(function (error) {
-                _this3.isLoading = false;
-                Materialize.toast(error, 4000);
-
-                console.log(error);
+                _this3.snackbar = true;
+                _this3.snackBarMessage = 'Vyskytla se chyba pri ukládání';
+                _this3.loading = false;
             });
         }
     }
@@ -55926,7 +56109,7 @@ var render = function() {
           }
         },
         [
-          _vm._v("\n        error\n        "),
+          _vm._v("\n        " + _vm._s(_vm.snackBarMessage) + "\n        "),
           _c(
             "v-btn",
             {
@@ -55990,7 +56173,21 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Uložit")]
+                [
+                  _vm._v("\n                Uložit  "),
+                  _c("v-progress-circular", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.loading,
+                        expression: "loading"
+                      }
+                    ],
+                    attrs: { indeterminate: "", color: "white" }
+                  })
+                ],
+                1
               )
             ],
             1
@@ -56137,11 +56334,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            countries: ['Česká Republika', 'Slovenko'],
+            countries: [{ text: 'Česká Republika', value: 'CZE' }, { text: 'Slovenko', value: 'SVK' }],
             errorMessages: [],
             formHasErrors: false,
             user: {
@@ -56153,9 +56364,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 'postal_code': null,
                 'country_code': null
             },
-            isLoading: false
+            snackbar: false,
+            y: 'top',
+            x: 'right',
+            snackBarMessage: '',
+            loading: false
         };
     },
+
     props: {
         currentUser: null
     },
@@ -56169,57 +56385,65 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     mounted: function mounted() {
+        var _this = this;
+
         this.getDetails();
+        this.eventBus.$on('billing-updated', function () {
+            _this.getDetails();
+        });
     },
 
 
     methods: {
         updateBillings: function updateBillings() {
-            var _this = this;
+            var _this2 = this;
 
-            this.isLoading = true;
+            this.loading = true;
             axios.put(this.$laroute.route('users.api.update.billing', { id: this.currentUser.id }), this.user).then(function (response) {
-                console.log(response);
-                _this.eventBus.$emit('billing-updated');
+                _this2.eventBus.$emit('billing-updated');
+                _this2.snackbar = true;
+                _this2.snackBarMessage = 'Uloženo';
+                _this2.loading = false;
             }).catch(function (error) {
-                _this.isLoading = false;
-                console.log(error);
+                _this2.loading = false;
+                _this2.snackbar = true;
+                _this2.snackBarMessage = 'Vyskytla se chyba pri ukládání';
             });
         },
         getDetails: function getDetails() {
-            var _this2 = this;
+            var _this3 = this;
 
             axios.get(this.$laroute.route('users.api.show', { id: this.currentUser.id })).then(function (response) {
-                _this2.user.first_name = response.data.first_name;
-                _this2.user.last_name = response.data.last_name;
-                _this2.user.phone_number = response.data.phone_number;
-                _this2.user.city = response.data.city;
-                _this2.user.street = response.data.street;
-                _this2.user.postal_code = response.data.postal_code;
-                _this2.user.country_code = response.data.country_code;
+                _this3.user.first_name = response.data.first_name;
+                _this3.user.last_name = response.data.last_name;
+                _this3.user.phone_number = response.data.phone_number;
+                _this3.user.city = response.data.city;
+                _this3.user.street = response.data.street;
+                _this3.user.postal_code = response.data.postal_code;
+                _this3.user.country_code = response.data.country_code;
             }).catch(function (error) {
                 console.log(error);
             });
         },
         resetForm: function resetForm() {
-            var _this3 = this;
+            var _this4 = this;
 
             this.errorMessages = [];
             this.formHasErrors = false;
 
             Object.keys(this.form).forEach(function (f) {
-                _this3.$refs[f].reset();
+                _this4.$refs[f].reset();
             });
         },
         submit: function submit() {
-            var _this4 = this;
+            var _this5 = this;
 
             this.formHasErrors = false;
 
             Object.keys(this.form).forEach(function (f) {
-                if (!_this4.form[f]) _this4.formHasErrors = true;
+                if (!_this5.form[f]) _this5.formHasErrors = true;
 
-                _this4.$refs[f].validate(true);
+                _this5.$refs[f].validate(true);
             });
         }
     }
@@ -56235,177 +56459,238 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-card",
+    "div",
     [
       _c(
-        "v-card-text",
+        "v-snackbar",
+        {
+          attrs: {
+            timeout: 4000,
+            top: _vm.y === "top",
+            right: _vm.x === "right"
+          },
+          model: {
+            value: _vm.snackbar,
+            callback: function($$v) {
+              _vm.snackbar = $$v
+            },
+            expression: "snackbar"
+          }
+        },
         [
-          _c("v-text-field", {
-            ref: "first_name",
-            attrs: {
-              label: "Křestní jméno",
-              placeholder: "Josef",
-              required: "",
-              rules: [
-                function() {
-                  return !!_vm.user.first_name || "Prosím výplňte křestní jméno"
+          _vm._v("\n        " + _vm._s(_vm.snackBarMessage) + "\n        "),
+          _c(
+            "v-btn",
+            {
+              attrs: { flat: "", color: "pink" },
+              nativeOn: {
+                click: function($event) {
+                  _vm.snackbar = false
                 }
-              ],
-              "error-messages": _vm.errorMessages
+              }
             },
-            model: {
-              value: _vm.user.first_name,
-              callback: function($$v) {
-                _vm.$set(_vm.user, "first_name", $$v)
-              },
-              expression: "user.first_name"
-            }
-          }),
-          _vm._v(" "),
-          _c("v-text-field", {
-            ref: "last_name",
-            attrs: {
-              label: "Příjmení",
-              placeholder: "Novák",
-              rules: [
-                function() {
-                  return !!_vm.user.last_name || "Prosím výplňte příjmení"
-                }
-              ],
-              required: ""
-            },
-            model: {
-              value: _vm.user.last_name,
-              callback: function($$v) {
-                _vm.$set(_vm.user, "last_name", $$v)
-              },
-              expression: "user.last_name"
-            }
-          }),
-          _vm._v(" "),
-          _c("v-text-field", {
-            ref: "phone",
-            attrs: {
-              label: "Telefon",
-              placeholder: "774123456",
-              rules: [
-                function() {
-                  return (
-                    !!_vm.user.phone_number || "Prosím výplňte telefonní číslo"
-                  )
-                }
-              ],
-              required: ""
-            },
-            model: {
-              value: _vm.user.phone_number,
-              callback: function($$v) {
-                _vm.$set(_vm.user, "phone_number", $$v)
-              },
-              expression: "user.phone_number"
-            }
-          }),
-          _vm._v(" "),
-          _c("v-text-field", {
-            ref: "city",
-            attrs: {
-              label: "Město",
-              placeholder: "Praha",
-              rules: [
-                function() {
-                  return !!_vm.user.city || "Prosím výplňte město"
-                }
-              ],
-              required: ""
-            },
-            model: {
-              value: _vm.user.city,
-              callback: function($$v) {
-                _vm.$set(_vm.user, "city", $$v)
-              },
-              expression: "user.city"
-            }
-          }),
-          _vm._v(" "),
-          _c("v-text-field", {
-            ref: "state",
-            attrs: {
-              label: "Ulice",
-              rules: [
-                function() {
-                  return !!_vm.user.street || "Prosím výplňte ulici"
-                }
-              ],
-              required: "",
-              placeholder: "Alej Svobody 100"
-            },
-            model: {
-              value: _vm.user.street,
-              callback: function($$v) {
-                _vm.$set(_vm.user, "street", $$v)
-              },
-              expression: "user.street"
-            }
-          }),
-          _vm._v(" "),
-          _c("v-text-field", {
-            ref: "zip",
-            attrs: {
-              label: "PSČ",
-              required: "",
-              rules: [
-                function() {
-                  return !!_vm.user.postal_code || "Prosím výplňte psč"
-                }
-              ],
-              placeholder: "32300"
-            },
-            model: {
-              value: _vm.user.postal_code,
-              callback: function($$v) {
-                _vm.$set(_vm.user, "postal_code", $$v)
-              },
-              expression: "user.postal_code"
-            }
-          }),
-          _vm._v(" "),
-          _c("v-select", {
-            ref: "country",
-            attrs: {
-              autocomplete: "",
-              label: "Kód země",
-              placeholder: "Vyberte...",
-              rules: [
-                function() {
-                  return (
-                    !!_vm.user.country_code || "Prosím výplňte ulici kód země"
-                  )
-                }
-              ],
-              items: _vm.countries,
-              required: ""
-            },
-            model: {
-              value: _vm.user.country_code,
-              callback: function($$v) {
-                _vm.$set(_vm.user, "country_code", $$v)
-              },
-              expression: "user.country_code"
-            }
-          })
+            [_vm._v("Zavřít")]
+          )
         ],
         1
       ),
       _vm._v(" "),
-      _c("v-divider", { staticClass: "mt-5" }),
-      _vm._v(" "),
       _c(
-        "v-card-actions",
+        "v-card",
         [
           _c(
-            "v-btn",
-            { attrs: { color: "primary" }, on: { click: _vm.updateBillings } },
-            [_vm._v("Uložit")]
+            "v-card-text",
+            [
+              _c("v-text-field", {
+                ref: "first_name",
+                attrs: {
+                  label: "Křestní jméno",
+                  placeholder: "Josef",
+                  required: "",
+                  rules: [
+                    function() {
+                      return (
+                        !!_vm.user.first_name || "Prosím výplňte křestní jméno"
+                      )
+                    }
+                  ],
+                  "error-messages": _vm.errorMessages
+                },
+                model: {
+                  value: _vm.user.first_name,
+                  callback: function($$v) {
+                    _vm.$set(_vm.user, "first_name", $$v)
+                  },
+                  expression: "user.first_name"
+                }
+              }),
+              _vm._v(" "),
+              _c("v-text-field", {
+                ref: "last_name",
+                attrs: {
+                  label: "Příjmení",
+                  placeholder: "Novák",
+                  rules: [
+                    function() {
+                      return !!_vm.user.last_name || "Prosím výplňte příjmení"
+                    }
+                  ],
+                  required: ""
+                },
+                model: {
+                  value: _vm.user.last_name,
+                  callback: function($$v) {
+                    _vm.$set(_vm.user, "last_name", $$v)
+                  },
+                  expression: "user.last_name"
+                }
+              }),
+              _vm._v(" "),
+              _c("v-text-field", {
+                ref: "phone",
+                attrs: {
+                  label: "Telefon",
+                  placeholder: "774123456",
+                  rules: [
+                    function() {
+                      return (
+                        !!_vm.user.phone_number ||
+                        "Prosím výplňte telefonní číslo"
+                      )
+                    }
+                  ],
+                  required: ""
+                },
+                model: {
+                  value: _vm.user.phone_number,
+                  callback: function($$v) {
+                    _vm.$set(_vm.user, "phone_number", $$v)
+                  },
+                  expression: "user.phone_number"
+                }
+              }),
+              _vm._v(" "),
+              _c("v-text-field", {
+                ref: "city",
+                attrs: {
+                  label: "Město",
+                  placeholder: "Praha",
+                  rules: [
+                    function() {
+                      return !!_vm.user.city || "Prosím výplňte město"
+                    }
+                  ],
+                  required: ""
+                },
+                model: {
+                  value: _vm.user.city,
+                  callback: function($$v) {
+                    _vm.$set(_vm.user, "city", $$v)
+                  },
+                  expression: "user.city"
+                }
+              }),
+              _vm._v(" "),
+              _c("v-text-field", {
+                ref: "state",
+                attrs: {
+                  label: "Ulice",
+                  rules: [
+                    function() {
+                      return !!_vm.user.street || "Prosím výplňte ulici"
+                    }
+                  ],
+                  required: "",
+                  placeholder: "Alej Svobody 100"
+                },
+                model: {
+                  value: _vm.user.street,
+                  callback: function($$v) {
+                    _vm.$set(_vm.user, "street", $$v)
+                  },
+                  expression: "user.street"
+                }
+              }),
+              _vm._v(" "),
+              _c("v-text-field", {
+                ref: "zip",
+                attrs: {
+                  label: "PSČ",
+                  required: "",
+                  rules: [
+                    function() {
+                      return !!_vm.user.postal_code || "Prosím výplňte psč"
+                    }
+                  ],
+                  placeholder: "32300"
+                },
+                model: {
+                  value: _vm.user.postal_code,
+                  callback: function($$v) {
+                    _vm.$set(_vm.user, "postal_code", $$v)
+                  },
+                  expression: "user.postal_code"
+                }
+              }),
+              _vm._v(" "),
+              _c("v-select", {
+                ref: "country",
+                attrs: {
+                  autocomplete: "",
+                  label: "Kód země",
+                  placeholder: "Vyberte...",
+                  rules: [
+                    function() {
+                      return (
+                        !!_vm.user.country_code ||
+                        "Prosím výplňte ulici kód země"
+                      )
+                    }
+                  ],
+                  items: _vm.countries,
+                  required: ""
+                },
+                model: {
+                  value: _vm.user.country_code,
+                  callback: function($$v) {
+                    _vm.$set(_vm.user, "country_code", $$v)
+                  },
+                  expression: "user.country_code"
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("v-divider", { staticClass: "mt-1" }),
+          _vm._v(" "),
+          _c(
+            "v-card-actions",
+            [
+              _c(
+                "v-btn",
+                {
+                  attrs: { color: "primary" },
+                  on: { click: _vm.updateBillings }
+                },
+                [
+                  _vm._v("\n                Uložit   "),
+                  _c("v-progress-circular", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.loading,
+                        expression: "loading"
+                      }
+                    ],
+                    attrs: { indeterminate: "", color: "white" }
+                  })
+                ],
+                1
+              )
+            ],
+            1
           )
         ],
         1
@@ -56527,6 +56812,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -56540,7 +56836,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 newPassword: '',
                 newPassword_confirmation: ''
             },
-            parsedUser: null
+            parsedUser: null,
+            snackbar: false,
+            y: 'top',
+            x: 'right',
+            snackBarMessage: '',
+            loading: false
         };
     },
 
@@ -56556,15 +56857,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         updatePassword: function updatePassword() {
             var _this = this;
 
-            this.isLoading = true;
+            this.loading = true;
 
             axios.put(this.$laroute.route('users.api.update.password', { id: this.currentUser.id }), this.password).then(function (response) {
                 _this.eventBus.$emit('password-updated');
+                _this.snackbar = true;
+                _this.snackBarMessage = 'Uloženo';
+                _this.loading = false;
+                //this.resetForm();
             }).catch(function (error) {
-                _this.isLoading = false;
-                //                    Materialize.toast(error, 4000);
-                console.log(error);
+                _this.loading = false;
+                _this.snackBarMessage = 'Vyskytla se chyba pri ukládání';
+                //                    this.resetForm();
             });
+        },
+        resetForm: function resetForm() {
+            this.password.old = '';
+            this.password.newPassword = '';
+            this.password.newPassword_confirmation = '';
         }
     }
 });
@@ -56580,6 +56890,40 @@ var render = function() {
   return _c(
     "div",
     [
+      _c(
+        "v-snackbar",
+        {
+          attrs: {
+            timeout: 4000,
+            top: _vm.y === "top",
+            right: _vm.x === "right"
+          },
+          model: {
+            value: _vm.snackbar,
+            callback: function($$v) {
+              _vm.snackbar = $$v
+            },
+            expression: "snackbar"
+          }
+        },
+        [
+          _vm._v("\n        " + _vm._s(_vm.snackBarMessage) + "\n        "),
+          _c(
+            "v-btn",
+            {
+              attrs: { flat: "", color: "pink" },
+              nativeOn: {
+                click: function($event) {
+                  _vm.snackbar = false
+                }
+              }
+            },
+            [_vm._v("Zavřít")]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
       _c(
         "v-card",
         [
@@ -56687,7 +57031,21 @@ var render = function() {
                   attrs: { color: "primary" },
                   on: { click: _vm.updatePassword }
                 },
-                [_vm._v("Uložit")]
+                [
+                  _vm._v("\n                Uložit  "),
+                  _c("v-progress-circular", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.loading,
+                        expression: "loading"
+                      }
+                    ],
+                    attrs: { indeterminate: "", color: "white" }
+                  })
+                ],
+                1
               )
             ],
             1
@@ -56837,13 +57195,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         getBreadCrumbs: function getBreadCrumbs() {
             return [{
-                text: 'Dashboard',
-                disabled: false,
-                link: this.$laroute.route('dashboard.index')
-            }, {
                 text: this.currentUser.name,
                 disabled: false,
-                link: this.$laroute.route('thesis.index')
+                link: this.$laroute.route('users.index')
+            }, {
+                text: 'Tvorba Studentské práce',
+                disabled: true
             }];
         }
     }
@@ -61577,15 +61934,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -61666,10 +62014,6 @@ var render = function() {
                     "v-toolbar-items",
                     { staticClass: "hidden-xs-and-down" },
                     [
-                      _c("v-btn", { attrs: { flat: "" } }, [
-                        _vm._v("Vytvořit Bakalářku")
-                      ]),
-                      _vm._v(" "),
                       _c(
                         "v-btn",
                         { attrs: { flat: "" }, on: { click: _vm.profile } },
@@ -62021,31 +62365,7 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c(
-            "v-footer",
-            { staticClass: "primary" },
-            [
-              _c(
-                "v-layout",
-                { attrs: { row: "", wrap: "", "align-center": "" } },
-                [
-                  _c("v-flex", { attrs: { xs12: "" } }, [
-                    _c(
-                      "div",
-                      { staticClass: "white--text ml-3 align-center" },
-                      [
-                        _vm._v(
-                          "\n                            2018 © Alfatisk všechna práva vyhrazena\n                        "
-                        )
-                      ]
-                    )
-                  ])
-                ],
-                1
-              )
-            ],
-            1
-          )
+          _c("footer-component")
         ],
         1
       )
@@ -64349,7 +64669,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             gw_url: null,
             order: null,
             items: [],
-            status: null
+            status: null,
+            breadcrumText: ''
         };
     },
     mounted: function mounted() {
@@ -64366,6 +64687,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             console.log('watcher');
             console.log(val);
             this.status = val.status;
+            this.breadcrumText = val.orderName;
+            this.items = this.getBreadCrumbs();
         }
     },
 
@@ -64400,9 +64723,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 disabled: false,
                 link: this.$laroute.route('users.index')
             }, {
-                text: 'objednavka',
-                disabled: true,
-                link: this.$laroute.route('thesis.index')
+                text: this.breadcrumText,
+                disabled: true
             }];
         }
     }
@@ -64948,15 +65270,17 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "\nfooter.custom-footer {\n    z-index: 1;\n}\n", ""]);
+exports.push([module.i, "\nfooter.custom-footer {\n    z-index: 1;\n}\n.footer-center {\n    text-align: center;\n}\n.footer-link {\n    cursor: pointer;\n    float: right;\n    color: purple;\n    display:inline-block;\n    line-height: inherit;\n}\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 /* 156 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -64969,6 +65293,279 @@ exports.push([module.i, "\nfooter.custom-footer {\n    z-index: 1;\n}\n", ""]);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            mastecardUrl: 'http://eshop.alfa-tisk.cz/Client/Themes/t28-alfatisk-2/Images/Footer/320px-MasterCard_logo.png',
+            mastecardSecureUrl: 'http://eshop.alfa-tisk.cz/Theme/Images/Payments/banners/mastercard-secure-code.png',
+            visaUrl: 'http://eshop.alfa-tisk.cz/Theme/Images/Payments/banners/visa.png',
+            visaVerifiedUrl: 'http://eshop.alfa-tisk.cz/Theme/Images/Payments/banners/verified-by-visa.png',
+            gopayUrl: 'http://eshop.alfa-tisk.cz/Theme/Images/Payments/banners/gopay-white.png',
+            dialog1: false,
+            dialog2: false
+        };
+    }
+});
 
 /***/ }),
 /* 157 */
@@ -64980,15 +65577,214 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "pt-5" },
     [
       _c(
         "v-footer",
+        { attrs: { color: "#f6f6f6" } },
+        [
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "", "align-center": "" } },
+            [
+              _c("v-flex", { attrs: { xs6: "" } }, [
+                _c("div", { staticClass: "white--text ml-3 align-center" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "footer-link ml-2",
+                      on: {
+                        click: function($event) {
+                          $event.stopPropagation()
+                          _vm.dialog1 = !_vm.dialog1
+                        }
+                      }
+                    },
+                    [_vm._v("Dodací podmínky")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "footer-link mr-3",
+                      on: {
+                        click: function($event) {
+                          $event.stopPropagation()
+                          _vm.dialog2 = !_vm.dialog2
+                        }
+                      }
+                    },
+                    [_vm._v("Obchodní podmínky")]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("v-flex", { attrs: { xs6: "" } }, [
+                _c("div", { staticClass: "white--text ml-3 align-center" }, [
+                  _c("img", { attrs: { src: _vm.gopayUrl, height: "30px" } }),
+                  _vm._v(" "),
+                  _c("img", {
+                    attrs: { src: _vm.visaVerifiedUrl, height: "30px" }
+                  }),
+                  _vm._v(" "),
+                  _c("img", { attrs: { src: _vm.visaUrl, height: "30px" } }),
+                  _vm._v(" "),
+                  _c("img", {
+                    attrs: { src: _vm.mastecardSecureUrl, height: "30px" }
+                  }),
+                  _vm._v(" "),
+                  _c("img", {
+                    attrs: { src: _vm.mastecardUrl, height: "40px" }
+                  })
+                ])
+              ])
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-footer",
+        { staticClass: "primary" },
+        [
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "", "align-center": "" } },
+            [
+              _c("v-flex", { attrs: { xs12: "" } }, [
+                _c(
+                  "div",
+                  { staticClass: "white--text ml-3 align-center" },
+                  [
+                    _c(
+                      "v-flex",
+                      { staticClass: "footer-center", attrs: { xs12: "" } },
+                      [
+                        _vm._v(
+                          "\n                        2018 © Alfatisk všechna práva vyhrazena\n                    "
+                        )
+                      ]
+                    )
+                  ],
+                  1
+                )
+              ])
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
         {
-          staticClass: "custom-footer",
-          attrs: { color: "purple darken-4", absolute: "", app: "" }
+          attrs: { width: "600px" },
+          model: {
+            value: _vm.dialog1,
+            callback: function($$v) {
+              _vm.dialog1 = $$v
+            },
+            expression: "dialog1"
+          }
         },
-        [_c("span", { staticClass: "white--text" }, [_vm._v("© 2017")])]
+        [
+          _c(
+            "v-card",
+            [
+              _c("v-card-title", [
+                _c("span", { staticClass: "headline" }, [
+                  _vm._v("Dodací podmínky")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("v-card-text", [
+                _vm._v(
+                  "\n                Upozorňujeme, že veškeré objednávky jsou závazné. V případě nevyzvednutí či nepřevzetí zásilky budou vymáhány náklady za výrobu a doručení v plné výši. Dodání zásilek je v rozmezí 7-14 pracovních dní. V průběhu vánoční sezóny  (1.12.-30.12.) se dodání může prodloužit až na 30 pracovních dní . Termín dodání vždy záleží na aktuálním počtu zakázek.\n\n                Způsob dopravy\n                Česká pošta: 120,- Kč (cena do 30 kg váhy balíku)\n                Vyzvednutí na pobočce ALFATISK, s.r.o., Americká 17, 301 00, Plzeň: ZDARMA\n                Způsob platby\n                Dobírka (hodnota objednávky do 500,- Kč): 39,- Kč\n                Při placení na pobočce: 0,- Kč\n                Platba na účet: 0,- Kč\n                Ceny jsou uvedeny včetně DPH.\n\n            "
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "v-card-actions",
+                [
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "primary", flat: "flat" },
+                      on: {
+                        click: function($event) {
+                          _vm.dialog1 = false
+                        }
+                      }
+                    },
+                    [_vm._v("Souhlasím")]
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: { width: "600px" },
+          model: {
+            value: _vm.dialog2,
+            callback: function($$v) {
+              _vm.dialog2 = $$v
+            },
+            expression: "dialog2"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c("v-card-title", [
+                _c("span", { staticClass: "headline" }, [
+                  _vm._v("Obchodní podmínky")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("v-card-text", [
+                _vm._v(
+                  "\n                Obchodní podmínky společnosti\n\n                ALFA-TISK.CZ s.r.o., se sídlem Třemošná, PSČ 330 11\n\n                IČ: 05413273, C33233 vedená u Krajského soudu v Plzni\n\n                (dale též jen jako “Prodávající”)\n\n\n                1. Úvodní ustanovení\n\n                Právní vztahy účastníků při realizaci nákupu zboží/digitálního obsahu a/nebo provedení díla (dále též jen jako „zboží“ a/nebo „dílo“) třetí osobou (dále též jen jako “Kupující”) z nabídky Prodávajícího na webových stránkách http://eshop.alfa-tisk.cz/ (dále též jen jako “e – shop”) se řídí právem ČR, zejména zákonem č. 89/2012 Sb., občanský zákoník ve znění pozdějších předpisů (dále též jen jako „OZ“), těmito obchodními podmínkami (dále též jen jako „OP“) a, je-li Kupujícím spotřebitel, též zákonem č. 634/1992 Sb. o ochraně spotřebitele.\n\n                2. Obchodní podmínky\n\n                OP jsou vydány v souladu s ust. § 1751 odst. 1 OZ a vztahují se na všechny kupní smlouvy, smlouvy o dílo a smlouvy o poskytnutí služby, jejichž předmětem je nákup a prodej zboží a/nebo provedení díla či poskytnutí služby z nabídky Prodávajícího v rámci e – shopu, uzavřené mezi Prodávajícím a Kupujícím, přičemž jsou, resp. se stávají nedílnou součástí každé takové smlouvy, určují část jejího obsahu a jsou závazné pro úpravu právních vztahů Prodávajícího a Kupujícího ze smlouvy.\n\n                Případná odchylná ujednání smlouvy mají přednost před ustanoveními OP.\n\n                Provedením registrace a zřízením účtu ve smyslu bodu 3.1. těchto OP (dále též jen jako „Účet“) a dále vždy a/nebo podáním jednotlivé objednávky vyjadřuje registrovaný zřizovatel Účtu, resp. Kupující souhlas s těmito OP a deklaruje přijetí povinnosti se jimi řídit, jakož i vyjadřuje souhlas s použitím prostředků komunikace na dálku pro uzavření smlouvy.\n\n                Prodávající si vyhrazuje právo změnit OP. Taková změna je vůči Kupujícímu účinná okamžikem, kdy bude Prodávajícím Kupujícímu oznámena. Oznámení provede Prodávající uveřejněním nového znění OP v rámci příslušné sekce e – shopu. Taková změna OP se však nedotýká právních vztahů Prodávajícího a Kupujícího dříve vzniklých.\n\n                Prodávající sděluje, že náklady na prostředky komunikace na dálku se neliší od základní sazby Kupujícího (v příp. internetového i telefonického připojení dle podmínek operátora Kupujícího), přičemž Prodávající si neúčtuje žádné další poplatky nebo ceny nad jejich rámec.\n\n                3. Objednávka zboží/díla/služeb a smlouva\n\n                3.1. Objednávku je Kupující oprávněn uskutečnit jen elektronicky, s využitím svého individuálního uživatelského Účtu, zřízeného v rámci e – shopu, vždy však jen po seznámení se s těmito OP a jejich odsouhlasení.\n\n                Objednávka zadaná Kupujícím je pro Kupujícího závazná po dobu 10 – ti dnů. Před odesláním (zadáním) závazné objednávky má Kupující možnost zkontrolovat a měnit veškeré údaje, které do objednávky vložil, jakož i možnost objednávku jako celek zrušit. Objednávku Kupující odešle (závazně zadá) vůči Prodávajícímu příkazem “Dokončit objednávku” v rámci e – shopu.\n\n                3.2. Objednávka je návrhem Kupujícího na uzavření smlouvy kupní a/nebo o dílo a/nebo o zajištění služby. Smlouva je uzavřena, pokud Prodávající objednávku v době její závaznosti akceptuje. Akceptaci provede Prodávající elektronicky odesláním e – mailové zprávy obsahující výslovnou informaci o přijetí návrhu Kupujícího na uzavření smlouvy na e – mailovou adresu Kupujícího, definovanou v rámci Účtu. Kupující je oprávněn i závaznou objednávku jednostranně zrušit kdykoliv před přijetím objednávky ze strany Prodávajícího.\n\n                Takto uzavřenou smlouvu lze měnit nebo rušit jen po vzájemné dohodě obou stran, z důvodů a způsobem stanovených zákonem, nebo těmito OP.\n\n                3.3. Nepřijme-li Prodávající objednávku ve lhůtě její závaznosti, nebo před jejím zrušením Kupujícím, smlouva uzavřena není. Prodávající není povinen objednávku přijmout.\n\n                3.4. Na základě uzavřené smlouvy se Prodávající zejména zavazuje dodat Kupujícímu zboží/digitální obsah a/nebo provést dílo či poskytnout službu dle uzavřené smlouvy a umožnit Kupujícímu nabýt vlastnické právo/licenci ke zboží a/nebo k dílu a Kupující se zejména zavazuje zboží/digitální obsah a/nebo dílo a/nebo předmět služby převzít a zaplatit za to Prodávajícímu sjednanou cenu, poštovné a balné (expediční poplatky).\n\n                3.5. Smlouva se uzavírá pouze v českém jazyce.\n\n                4. Kupní cena zboží, cena díla a/nebo služby, poštovné a balné – výše a splatnost\n\n                Kupní cena zboží, cena díla a/nebo služby se určí podle ceníku Prodávajícího ve výši, v níž je u konkrétního zboží/díla/služby uvedena ke dni, kdy Kupující zadal objednávku. Cena je vždy stanovena včetně DPH.\n\n                Prodávající si vyhrazuje právo měnit ceník. Změna ceníku je účinná okamžikem uveřejnění na serveru http://eshop.alfa-tisk.cz/. Akční ceny platí výhradně po dobu akce a při splnění vyhlášených podmínek.\n\n                Cena zboží je vždy splatná bezhotovostním převodem před dodáním zboží/provedením díla či služby, nejpozději však do 5 – ti dnů po přijetí objednávky Kupujícího Prodávajícím.\n\n                Výše poštovného a balného (ceny placené Kupujícím za dopravu zboží) je stanovena ve smlouvě a je splatná spolu s cenou za stejných podmínek.\n\n                V případě prodlení Kupujícího se zaplacením sjednané ceny a/nebo poštovného a balného se příslušná smlouva ruší, a to od počátku.\n\n                5. Dodání zboží/provedení díla nebo služby\n\n                Není-li ve smlouvě uvedeno jinak, zavazuje se Prodávající vyexpedovat Kupujícímu zboží, provést dílo či poskytnout službu ve lhůtě do 10–ti pracovních dnů po zaplacení ceny. Ve výjimečných případech (např. údržba nebo oprava strojů v Provozovně) může dojít k prodloužení doby potřebné na vyexpedování.\n\n                Není-li dohodnuto jinak, je místem dodání zboží, provedeného díla či výsledku služby adresa Kupujícího uvedená v rámci jeho Účtu na území ČR nebo SR. Kupující je povinen řádně dodané zboží, dílo či výsledek služby převzít a jeho převzetí Prodávajícímu písemně potvrdit (zpravidla osobě, která provádí doručení) či elektronicky při odpovídajícím druhu dodávky.\n\n                Vlastnické právo ke zboží/dílu a nebezpečí škody na nich přechází na Kupujícího, který je spotřebitelem, okamžikem, kdy je mu zboží/dílo předáno, resp. kdy je Kupujícímu Prodávajícím umožněno s ním disponovat. Předáním zboží/díla či umožněním dispozice s ním je splněna povinnost Prodávajícího odevzdat zboží/provést dílo/poskytnout službu Kupujícímu, který je spotřebitelem. Je-li Kupující podnikatelem, splní Prodávající povinnost odevzdat mu zboží/provést dílo/poskytnout službu umožněním dispozice s ním, nebo jeho předáním prvnímu dopravci k přepravě pro Kupujícího, umožní-li mu uplatnit práva z přepravní smlouvy vůči přepravci; stejným okamžikem přechází na takového Kupujícího též vlastnické právo ke zboží/dílu/výsledku služby a nebezpečí škody na nich.\n\n                Dodání zboží/díla/výsledku služby zajišťuje Prodávající prostřednictvím dopravců. Zásilka obsahuje dodací list nebo fakturu a případně návod na používání v českém jazyce. Daňový doklad (faktura) je vždy ke stažení na webových stránkách http://eshop.alfa-tisk.cz/ po přihlíšení se Kupujícího ke svému účtu.\n\n                6. Množství a jakost, práva z vad, reklamační řád\n\n                Prodávající odpovídá Kupujícímu, že zboží/dílo/služba při převzetí nemá vady. Zejména Prodávající odpovídá Kupujícímu, že v době, kdy Kupující věc převzal,\n\n                má takové vlastnosti, které Prodávající nebo výrobce popsal, nebo které Kupující očekával s ohledem na její povahu a na základě reklamy jimi prováděné,\n\n                se hodí k účelu, kterému se věc tohoto druhu obvykle používá,\n\n                je v odpovídajícím množství, kvalitě, míře nebo hmotnosti a\n\n                vyhovuje požadavkům právních předpisů.\n\n                Projeví-li se vada v průběhu šesti měsíců od převzetí zboží/díla/výsledku služby, má se za to, že vada existovala již při převzetí; Kupující je oprávněn uplatnit právo z vady, která se u zboží/díla vyskytne, v době 24 měsíců od převzetí; to neplatí v případě dle § 2158 OZ.\n\n                Kupující je povinen bez zbytečného odkladu po převzetí zboží/díla/výsledku služby provést jeho prohlídku. Je-li dodáno s vadami, řídí se práva a povinnosti stran příslušnými obecně závaznými právními předpisy (zejména ustanoveními § 1914 až 1925, § 2099 až 2117 a § 2161 až 2174 o.z.).\n\n                Pokud zboží/dílo/výsledek služby při převzetí Kupujícím není ve shodě se smlouvou, má Kupující právo na to, aby jej Prodávající bezplatně a bez zbytečného odkladu uvedl do stavu odpovídajícího smlouvě, a to podle požadavku Kupujícího buď výměnou, nebo opravou; není-li takový postup možný, může Kupující požadovat přiměřenou slevu z ceny nebo od smlouvy odstoupit. To neplatí, pokud Kupující před převzetím o vadě věděl nebo ji sám způsobil.\n\n                Práva z vad (reklamaci) uplatňuje Kupující u Prodávajícího, a to písemně, nebo e – mailem na adresu http://eshop.alfa-tisk.cz/ . Reklamaci Prodávající vyřídí, nebude-li s Kupujícím dohodnuto jinak, bez zbytečného odkladu, nejpozději do 30 - ti kalendářních dnů ode dne uplatnění reklamace. Reklamované zboží/dílo/výsledek služby Kupující, po vyzvání Prodávajícím, odesílá na adresu provozovny Prodávajícího (Americká 17, 301 00, Plzeň), kde je též zajišťován záruční a pozáruční servis.\n\n                Po obdržení reklamovaného zboží/díla/výsledku služby Prodávající Kupujícímu obratem e - mailem zašle potvrzení o reklamaci - Reklamační protokol.\n\n                Uzná-li Prodávající reklamaci za oprávněnou, a není-li možná výměna za bezvadné plnění či odstranění vady, Prodávající uhrazenou cenu, včetně částky za poštovné a balné, poukáže na účet Kupujícího (kromě částky představující dodatečné náklady na dodání zboží vzniklé v důsledku kupujícím zvoleného způsobu dodání, který je jiný než nejlevnější způsob standardního dodání nabízený prodávajícím v souladu s § 1832 odst. 2 OZ).\n\n                Lhůta pro vyřízení reklamace neběží po dobu, dokud Kupující nepředal Prodávajícímu veškeré podklady potřebné pro vyřízení reklamace (části zboží, díla, dalších podkladů). Prodávající je povinen si vyžádat doplnění podkladů od Kupujícího v nejkratší možné době.\n\n                V případě požadavku na tisk více kopií od 1 originálu se předpokládá, že si Kupující objednal v předchozí zakázce 1 zkušební tisk. Pokud k tomuto nedojde, nelze se oprávněně domáhat reklamace na tisk více kopií od 1 originálu.\n\n                Snížená kvalita zboží/díla/výsledku služby, která vznikla v důsledku nízkého rozlišení předaných materiálů Kupujícím, nemůže být předmětem reklamace.\n\n                Právo na reklamaci zboží/díla/výsledku služby není možné uplatňovat u záležitostí vkusu a osobního cítění, jako je např. odstín fotografií a barevné podání. Stejně tak není možné uplatňovat právo na reklamaci v případě, že barvy na dodaných produktech stoprocentně nesouhlasí s předanými materiály Kupujícího.\n\n                V případě nespokojenosti se Kupující může se svým podnětem obrátit na subjekt mimosoudního řešení sporů. K mimosoudnímu řešení spotřebitelských sporů ze smlouvy kupní a/nebo o dílo a/nebo o zajištění služby je příslušná Česká obchodní inspekce, se sídlem Štěpánská 567/15, 120 00 Praha 2, IČ: 000 20 869, internetová adresa: http://www.coi.cz.\n\n                Lhůta pro podání návrhu na řešení sporu je 1 rok ode dne, kdy Kupující poprvé kontaktoval Prodávajícího za účelem řešení sporu.\n\n                7. Odstoupení od smlouvy Kupujícím\n\n                Kupující bere na vědomí, že uzavírá smlouvu o dodávce zboží nebo díla, které bylo upraveno podle přání kupujícího nebo pro jeho osobu. V souladu s § 1837 OZ tedy Kupujícímu nevzniká právo na odstoupení od smlouvy ve lhůtě 14 dnů bez uvedení důvodu.\n\n                Kupující, jako spotřebitel, nemůže podle § 1837 OZ odstoupit od smlouvy\n\n                o poskytování služeb, jestliže byly splněny s jeho předchozím výslovným souhlasem před uplynutím lhůty pro odstoupení od smlouvy a podnikatel před uzavřením smlouvy sdělil spotřebiteli, že v takovém případě nemá právo na odstoupení od smlouvy,\n\n                o dodávce zboží nebo služby, jejichž cena závisí na výchylkách finančního trhu nezávisle na vůli podnikatele a k němuž může dojít během lhůty pro odstoupení od smlouvy,\n\n                o dodání alkoholických nápojů, jež mohou být dodány až po uplynutí třiceti dnů a jejichž cena závisí na výchylkách finančního trhu nezávislých na vůli podnikatele,\n\n                o dodávce zboží nebo díla, které bylo upraveno podle přání spotřebitele nebo pro jeho osobu,\n\n                o dodávce zboží, které podléhá rychlé zkáze, jakož i zboží, které bylo po dodání nenávratně smíseno s jiným zbožím,\n\n                o opravě nebo údržbě provedené v místě určeném spotřebitelem na jeho žádost; to však neplatí v případě následného provedení jiných než vyžádaných oprav či dodání jiných než vyžádaných náhradních dílů,\n\n                o dodávce zboží v uzavřeném obalu, které spotřebitel z obalu vyňal a z hygienických důvodů jej není možné vrátit,\n\n                o dodávce zvukové nebo obrazové nahrávky nebo počítačového programu, pokud porušil jejich původní obal,\n\n                o dodávce novin, periodik nebo časopisů,\n\n                o ubytování, dopravě, stravování nebo využití volného času, pokud podnikatel tato plnění poskytuje v určeném termínu,\n\n                uzavírané na základě veřejné dražby podle zákona upravujícího veřejné dražby, nebo\n\n                o dodání digitálního obsahu, pokud nebyl dodán na hmotném nosiči a byl dodán s předchozím výslovným souhlasem spotřebitele před uplynutím lhůty pro odstoupení od smlouvy a podnikatel před uzavřením smlouvy sdělil spotřebiteli, že v takovém případě nemá právo na odstoupení od smlouvy.\n\n                8. Záruka\n\n                Prodávající poskytuje Kupujícímu záruku za jakost zboží/díla pořízeného prostřednictvím e – shopu v délce trvání 24 měsíců. Záruční doba počíná běžet převzetím zboží/provedením díla Kupujícím. Pro uplatnění práv ze záruky platí příslušná ustanovení OZ.\n\n                9. Ochrana osobních údajů a zasílání obchodních sdělení\n\n                Jakékoliv údaje o Kupujícím, včetně osobních, jakož i o všech osobách, které jednají ve vztahu k Prodávajícímu jménem Kupujícího, jsou uchovávány v souladu s platnými zákony České republiky, zejména se zákonem o ochraně osobních údajů č. 101/2000 Sb. ve znění pozdějších dodatků a předpisů.\n\n                Osobní údaje Prodávající uchovává a shromažďuje pouze za účelem uzavření smlouvy, splnění smlouvy, provedení reklamace a úkonů souvisejících, jakož i pro archivní účely Prodávajícího o provedených nákupech, pro účely poskytování případných slev, zasílaní obchodních sdělení a jiných výhod pro zákazníky.\n\n                Kupující má právo přístupu ke svým osobním údajům, právo na jejich kontrolu a opravu včetně dalších zákonných práv ve vztahu k těmto údajům. Změny osobních údajů lze provést prostřednictvím Účtu.\n\n                Osobní údaje Kupujícího jsou plně zabezpečeny proti zneužití. Prodávající osobní údaje Kupujícího nepředává žádné další osobě, v minimálním rozsahu nezbytně nutném pro doručení je poskytne přepravci.\n\n                Jednotlivé smlouvy jsou po svém uzavření Prodávajícím archivovány po dobu nejméně 5 – ti let, nejdéle však po dobu stanovenou právním přepisem, a to pouze v elektronické formě a jsou přístupné pouze Prodávajícímu a Kupujícímu v rámci jeho Účtu. Informace o jednotlivých technických krocích vedoucích k uzavření smlouvy jsou zřejmé z těchto OP, kde jsou srozumitelně popsány.\n\n                Kupující bere na vědomí svá oprávnění dle z.č. 101/2000 Sb., tj. zejména, že poskytnutí údajů je dobrovolné, že svůj souhlas může bezplatně kdykoliv na adrese Prodávajícího písemně odvolat, že má právo přístupu ke svým osobním údajům a právo na opravu těchto údajů, blokování nesprávných údajů, jejich likvidaci, jakož i další práva vymezená uvedeným právním předpisem.\n\n                Zřízením Účtu nebo zadáním závazné objednávky při jednorázovém nákupu vyslovuje Kupující též souhlas:\n\n                se shora uvedeným zpracováním a shromažďováním svých osobních údajů v databázi Prodávajícího a\n\n                se zasíláním informací souvisejících se zbožím, díly, službami nebo podnikem Prodávajícího na elektronickou adresu Kupujícího a se zasíláním obchodních sdělení Prodávajícího na elektronickou adresu Kupujícího\n\n                s ukládáním tzv. cookies na jeho počítač, které podporují správnou funkci stránek. Zároveň tím dává souhlas k propojení jeho osobních údajů, které v souladu s obchodními podmínkami za účelem naplnění předmětu smlouvy kupní a/nebo o dílo a/nebo o zajištění služby Prodávajícímu poskytl, s informacemi obsaženými v souborech cookies, které se ukládají nebo již jsou uloženy na jeho koncovém zařízení. Kupující prohlašuje, že tento souhlas dává dobrovolně. Tento souhlas Kupující poskytuje až do doby jeho odvolání.\n\n                10. Autorská práva\n\n                Kupující prohlašuje, že je majitelem autorských práv veškerého materiálu, který předává Prodávajícímu ke zpracování. Kupující tedy plně zodpovídá za případná porušení autorských či jiných práv a za případnou způsobenou škodu.\n\n                11. Další ustanovení\n\n                Je-li předmětem plnění provedení tiskového díla či poskytnutí tiskových služeb, dle specifikací uvedených na serveru http://eshop.alfa-tisk.cz/, jsou tyto prováděny dle aktuálních Technických podmínek Prodávajícího. Technické podmínky jsou vždy uvedeny na serveru http://www.alfa-tisk.cz/jedinecny_tisk_plzen\n\n                Kupující nesmí v rámci e - shopu umisťovat či užívat materiály, které jsou v rozporu s platným právním řádem ČR, jsou v rozporu s morálními principy a základy etiky, nebo jiným způsobem omezují soukromí jiných osob. Takové materiály je Prodávající oprávněn bez náhrady odstranit.\n\n                12. Používání souborů cookies\n\n                Soubory cookies jsou malé textové soubory, které se ukládají do koncového zařízení či paměti koncových zařízení uživatelů webových stránek http://eshop.alfa-tisk.cz/ a jejich zákazníků (tito dále jen „Kupující“). Tyto soubory nutně neobsahují osobní údaje jednotlivých Kupujících či uživatelů webových stránek Prodávajícího, ale v případě, kdy Kupující takové údaje společnosti ALFA-TISK.CZ s.r.o. v souvislosti s uzavřením závazkového právního vztahu, zejména pak smlouvy kupní a/nebo o dílo a/nebo o zajištění služby, poskytne, mohou být takové osobní údaje přiřazeny k informacím uloženým v příslušných souborech cookies.\n\n                Společnost ALFA-TISK.CZ s.r.o využívá technologii souborů cookies výhradně za účelem zlepšení a zjednodušení pohybu uživatelů na jejich webových stránkách, optimalizaci těchto stránek pro jejich uživatele, dále za účelem zajištění lepších služeb pro Kupujícího a dále pro marketingové účely, vše za účelem zlepšení péče o své současné i budoucí zákazníky (Kupující) a uživatele webových stránek Prodávajícího odpovídající jejich individuálním potřebám.\n\n                Kupující i uživatelé mohou souhlas s používáním cookies odmítnout prostřednictvím individuálního nastavení ukládání souborů cookies na svém koncovém zařízení (povolení jen pro určité weby), dále prostřednictvím spuštění funkce tzv. anonymního prohlížení v prohlížeči, které jejich koncové zařízení využívá, popř. manuálním smazáním všech či jednotlivých souborů cookies, které jsou v jejich koncovém zařízení již uloženy.\n\n                Společnost ALFA-TISK.CZ s.r.o. si vyhrazuje právo zpřístupnit určitý obsah svých webových stránek jen těm Kupujícím či uživatelům, kteří poskytli souhlas s ukládáním souborů cookies do jejich koncového zařízení.\n\n                13. Závěrečná ustanovení\n\n                Právní vztahy mezi Kupujícím a Prodávajícím při nákupu v e – shopu se řídí Českým právem a těmito OP. Pokud jakékoli ustanovení těchto OP je nebo se stane neplatným či nevymahatelným, nebude toto mít vliv na platnost a vymahatelnost ostatních ustanovení těchto OP. Tyto OP Kupujícímu umožňují jejich archivaci a reprodukci.\n\n                Tyto OP nabývají účinnosti dne 3. října 2016\n\n                ALFA-TISK.CZ s.r.o.\n\n                C 33233 vedená u Krajského soudu v Plzni"
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "v-card-actions",
+                [
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "primary", flat: "flat" },
+                      on: {
+                        click: function($event) {
+                          _vm.dialog2 = false
+                        }
+                      }
+                    },
+                    [_vm._v("Souhlasím")]
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
       )
     ],
     1

@@ -6,7 +6,7 @@
                 :right="x === 'right'"
                 v-model="snackbar"
         >
-            error
+            {{snackBarMessage}}
             <v-btn flat color="pink" @click.native="snackbar = false">Zavřít</v-btn>
         </v-snackbar>
         <v-card>
@@ -26,7 +26,9 @@
             </v-card-text>
             <v-divider class="mt-1"></v-divider>
             <v-card-actions>
-                <v-btn color="primary" @click.stop="updateUser">Uložit</v-btn>
+                <v-btn color="primary" @click.stop="updateUser">
+                    Uložit &nbsp<v-progress-circular v-show="loading" indeterminate color="white"></v-progress-circular>
+                </v-btn>
             </v-card-actions>
         </v-card>
     </div>
@@ -58,6 +60,8 @@
                 snackbar: false,
                 y: 'top',
                 x: 'right',
+                snackBarMessage: '',
+                loading: false,
             }
         },
 
@@ -67,6 +71,10 @@
 
         mounted() {
           this.getUserData();
+            this.eventBus.$on('user-info-updated', () => {
+                this.getUserData();
+            });
+
         },
 
         methods: {
@@ -80,31 +88,18 @@
             },
 
             updateUser() {
-                this.isLoading = true;
-
+                this.loading = true;
                 axios.put(this.$laroute.route('users.api.update.general.info', {id: this.currentUser.id}), this.user).then((response) => {
                     this.eventBus.$emit('user-info-updated', this.user.name);
                     this.snackbar = true;
-
+                    this.snackBarMessage = 'Uloženo'
+                    this.loading = false;
                 }).catch((error) => {
-                    this.isLoading = false;
                     this.snackbar = true;
-                    console.log(error);
+                    this.snackBarMessage = 'Vyskytla se chyba pri ukládání'
+                    this.loading = false;
                 });
             },
-
-            updatePassword() {
-                this.isLoading = true;
-
-                axios.put(this.$laroute.route('users.api.update.password', {id: this.currentUser.id}), this.password).then((response) => {
-                    this.eventBus.$emit('password-updated');
-                }).catch((error) => {
-                    this.isLoading = false;
-                    Materialize.toast(error, 4000);
-
-                    console.log(error);
-                });
-            }
         }
     }
 </script>

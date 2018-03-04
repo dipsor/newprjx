@@ -10,7 +10,6 @@
             <div v-if="isUserLoggedIn">
                 <!--<v-toolbar-side-icon class="hidden-xs-and-up"></v-toolbar-side-icon>-->
                 <v-toolbar-items class="hidden-xs-and-down">
-                    <v-btn flat>Vytvořit Bakalářku</v-btn>
                     <v-btn @click="profile" flat>{{parsedUser.name}}</v-btn>
                     <v-btn @click="logout" flat>Odhlásit</v-btn>
                 </v-toolbar-items>
@@ -125,15 +124,7 @@ to vše lze objednat i přímo zde, online!
                     </v-flex>
                 </v-layout>
             </section>
-            <v-footer class="primary">
-                <v-layout row wrap align-center>
-                    <v-flex xs12>
-                        <div class="white--text ml-3 align-center">
-                            2018 © Alfatisk všechna práva vyhrazena
-                        </div>
-                    </v-flex>
-                </v-layout>
-            </v-footer>
+            <footer-component></footer-component>
 
         </v-content>
     </v-app>
