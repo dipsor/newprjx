@@ -7,10 +7,10 @@
                 v-model="snackbar"
         >
             error
-            <v-btn flat color="pink" @click.native="snackbar = false">Close</v-btn>
+            <v-btn flat color="pink" @click.native="snackbar = false">Zavřít</v-btn>
         </v-snackbar>
-        <v-form v-model="valid">
-            <v-flex>
+        <v-card>
+            <v-card-text>
                 <v-text-field
                         label="Jméno"
                         v-model="user.name"
@@ -23,11 +23,12 @@
                         :rules="emailRules"
                         required
                 ></v-text-field>
-            </v-flex>
-
-            <v-flex xs-12><v-btn color="primary" @click.stop="updateUser">Odeslat</v-btn></v-flex>
-
-        </v-form>
+            </v-card-text>
+            <v-divider class="mt-1"></v-divider>
+            <v-card-actions>
+                <v-btn color="primary" @click.stop="updateUser">Uložit</v-btn>
+            </v-card-actions>
+        </v-card>
     </div>
 </template>
 

@@ -1,6 +1,4 @@
 <?php $__env->startSection('content'); ?>
-    <?php echo e($id); ?>
-
     <users-index  :current-user="<?php echo e(Auth::user()); ?>" gopay-order-id="<?php echo e($id); ?>"></users-index>
 <?php $__env->stopSection(); ?>
 

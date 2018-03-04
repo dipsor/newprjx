@@ -1403,8 +1403,8 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(14);
-__webpack_require__(142);
-module.exports = __webpack_require__(143);
+__webpack_require__(145);
+module.exports = __webpack_require__(146);
 
 
 /***/ }),
@@ -1466,6 +1466,7 @@ Vue.component('navigations', __webpack_require__(62));
 Vue.component('tabs', __webpack_require__(67));
 Vue.component('content-card', __webpack_require__(70));
 Vue.component('breadcrumbs', __webpack_require__(73));
+Vue.component('footer-component', __webpack_require__(153));
 
 Vue.component('dashboard-index', __webpack_require__(76));
 
@@ -1489,6 +1490,7 @@ Vue.component('users-form', __webpack_require__(124));
 Vue.component('left-sidebar', __webpack_require__(129));
 Vue.component('navigation', __webpack_require__(134));
 Vue.component('users-profile', __webpack_require__(137));
+Vue.component('order-detail', __webpack_require__(142));
 
 var app = new Vue({
 
@@ -53781,12 +53783,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -53809,13 +53805,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         setMenu: function setMenu() {
-            return [{ icon: 'dashboard', text: 'Dashboard', link: this.$laroute.route('dashboard.index'), forAdmin: false }, {
+            return [{ icon: 'dashboard', text: 'Admin', link: this.$laroute.route('dashboard.index'), forAdmin: true }, {
                 icon: 'keyboard_arrow_up',
                 'icon-alt': 'keyboard_arrow_down',
-                text: 'User',
+                text: 'Uživatel',
                 model: false,
-                children: [{ text: 'Profil', link: this.$laroute.route('users.index') }, { text: 'Edit Details', link: this.$laroute.route('users.show', { id: this.currentUser.id }) }]
-            }, { icon: 'shopping_cart', text: 'Vytvorit objednavku', 'link': this.$laroute.route('thesis.index') }];
+                children: [{ text: 'Objednávky', link: this.$laroute.route('users.index') }, { text: 'Změna údajů', link: this.$laroute.route('users.show', { id: this.currentUser.id }) }]
+            }, { icon: 'shopping_cart', text: 'Vytvořit objednávku', 'link': this.$laroute.route('thesis.index') }];
         }
     }
 
@@ -54065,21 +54061,11 @@ var render = function() {
                   staticClass: "hidden-xs-only nav-link",
                   attrs: { href: _vm.$laroute.route("home") }
                 },
-                [_vm._v("Landing Page")]
+                [_vm._v("Hlavní strana")]
               )
             ],
             1
           ),
-          _vm._v(" "),
-          _c("v-text-field", {
-            staticStyle: { "max-width": "500px", "min-width": "128px" },
-            attrs: {
-              light: "",
-              solo: "",
-              "prepend-icon": "search",
-              placeholder: "Search"
-            }
-          }),
           _vm._v(" "),
           _c(
             "div",
@@ -54984,6 +54970,12 @@ var _this = this;
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -55048,6 +55040,10 @@ var _this = this;
     watch: {
         gopayOrderId: function gopayOrderId(val) {
             _this.getStatus(val);
+        },
+
+        status: function status() {
+            this.getUsersOrders();
         }
     },
 
@@ -55069,7 +55065,8 @@ var _this = this;
             if (id > 0) {
                 axios.get(this.$laroute.route('gopay.api.status', { 'id': id })).then(function (response) {
                     _this2.loading = false;
-                    _this2.status = response.data.state;
+                    _this2.status = response.data;
+                    console.log(response.data);
                 }).catch(function (error) {
                     _this2.loading = false;
                     _this2.error = error.response.data.errors;
@@ -55101,146 +55098,197 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-content",
+    "div",
     [
       _c(
-        "v-container",
-        { attrs: { "grid-list-md": "", "text-xs-center": "" } },
+        "v-content",
         [
           _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
+            "v-container",
+            { attrs: { "grid-list-md": "", "text-xs-center": "" } },
             [
               _c(
-                "v-flex",
-                { attrs: { xs12: "" } },
-                [
-                  _c("breadcrumbs", {
-                    attrs: { "breadcrumbs-items": _vm.items }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs12: "" } },
+                "v-layout",
+                { attrs: { row: "", wrap: "" } },
                 [
                   _c(
-                    "v-alert",
-                    { attrs: { type: "success", value: _vm.status == "PAID" } },
+                    "v-flex",
+                    { attrs: { xs12: "" } },
                     [
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(_vm.messages[_vm.status]) +
-                          "\n                "
-                      )
-                    ]
+                      _c("breadcrumbs", {
+                        attrs: { "breadcrumbs-items": _vm.items }
+                      })
+                    ],
+                    1
                   ),
                   _vm._v(" "),
                   _c(
-                    "v-alert",
-                    {
-                      attrs: {
-                        type: "info",
-                        value:
-                          _vm.status == "PAYMENT_METHOD_CHOSEN" ||
-                          _vm.status == "REFUNDED" ||
-                          _vm.status == "PARTIALLY_REFUNDED"
-                      }
-                    },
-                    [
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(_vm.messages[_vm.status]) +
-                          "\n                "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-alert",
-                    {
-                      attrs: {
-                        type: "error",
-                        value:
-                          _vm.status == "CANCELED" || _vm.status == "TIMEOUTED"
-                      }
-                    },
-                    [
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(_vm.messages[_vm.status]) +
-                          "\n                "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-card",
+                    "v-flex",
+                    { attrs: { xs12: "" } },
                     [
                       _c(
-                        "v-toolbar",
-                        { attrs: { color: "primary" } },
+                        "v-card",
+                        { attrs: { color: "grey lighten-3" } },
                         [
                           _c(
-                            "v-toolbar-title",
-                            { staticClass: "white--text" },
+                            "v-card-text",
                             [
-                              _vm._v(
-                                "Objednávky uživatele " +
-                                  _vm._s(_vm.currentUser.name)
+                              _c(
+                                "v-alert",
+                                {
+                                  attrs: {
+                                    type: "success",
+                                    value: _vm.status == "PAID"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                        " +
+                                      _vm._s(_vm.messages[_vm.status]) +
+                                      "\n                                    "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-alert",
+                                {
+                                  attrs: {
+                                    type: "info",
+                                    value:
+                                      _vm.status == "PAYMENT_METHOD_CHOSEN" ||
+                                      _vm.status == "REFUNDED" ||
+                                      _vm.status == "PARTIALLY_REFUNDED"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                        " +
+                                      _vm._s(_vm.messages[_vm.status]) +
+                                      "\n                                    "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-alert",
+                                {
+                                  attrs: {
+                                    type: "error",
+                                    value:
+                                      _vm.status == "CANCELED" ||
+                                      _vm.status == "TIMEOUTED"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                        " +
+                                      _vm._s(_vm.messages[_vm.status]) +
+                                      "\n                                    "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-card",
+                                [
+                                  _c(
+                                    "v-toolbar",
+                                    { attrs: { color: "purple darken-3" } },
+                                    [
+                                      _c(
+                                        "v-toolbar-title",
+                                        { staticClass: "white--text" },
+                                        [
+                                          _vm._v(
+                                            "Objednávky uživatele " +
+                                              _vm._s(_vm.currentUser.name)
+                                          )
+                                        ]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-data-table", {
+                                    staticClass: "elevation-1",
+                                    attrs: {
+                                      headers: _vm.headers,
+                                      items: _vm.items2,
+                                      "hide-actions": ""
+                                    },
+                                    scopedSlots: _vm._u([
+                                      {
+                                        key: "items",
+                                        fn: function(props) {
+                                          return [
+                                            _c(
+                                              "td",
+                                              { staticClass: "text-xs-left" },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(props.item.orderName)
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "td",
+                                              { staticClass: "text-xs-left" },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(props.item.created_at)
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "td",
+                                              { staticClass: "text-xs-left" },
+                                              [_vm._v(_vm._s(props.item.price))]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "td",
+                                              { staticClass: "text-xs-left" },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(props.item.status)
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "td",
+                                              { staticClass: "text-xs-left" },
+                                              [
+                                                _c(
+                                                  "a",
+                                                  {
+                                                    attrs: {
+                                                      href:
+                                                        "profil/order/" +
+                                                        props.item.id
+                                                    }
+                                                  },
+                                                  [_vm._v("Zobrazit")]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        }
+                                      }
+                                    ])
+                                  })
+                                ],
+                                1
                               )
-                            ]
+                            ],
+                            1
                           )
                         ],
                         1
-                      ),
-                      _vm._v(" "),
-                      _c("v-data-table", {
-                        staticClass: "elevation-1",
-                        attrs: {
-                          headers: _vm.headers,
-                          items: _vm.items2,
-                          "hide-actions": ""
-                        },
-                        scopedSlots: _vm._u([
-                          {
-                            key: "items",
-                            fn: function(props) {
-                              return [
-                                _c("td", { staticClass: "text-xs-left" }, [
-                                  _vm._v(_vm._s(props.item.orderName))
-                                ]),
-                                _vm._v(" "),
-                                _c("td", { staticClass: "text-xs-left" }, [
-                                  _vm._v(_vm._s(props.item.created_at))
-                                ]),
-                                _vm._v(" "),
-                                _c("td", { staticClass: "text-xs-left" }, [
-                                  _vm._v(_vm._s(props.item.price))
-                                ]),
-                                _vm._v(" "),
-                                _c("td", { staticClass: "text-xs-left" }, [
-                                  _vm._v(_vm._s(props.item.status))
-                                ]),
-                                _vm._v(" "),
-                                _c("td", { staticClass: "text-xs-left" }, [
-                                  _c(
-                                    "a",
-                                    {
-                                      attrs: {
-                                        href: "/orders/" + props.item.id
-                                      }
-                                    },
-                                    [_vm._v("Zobrazit")]
-                                  )
-                                ])
-                              ]
-                            }
-                          }
-                        ])
-                      })
+                      )
                     ],
                     1
                   )
@@ -55386,6 +55434,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -55414,10 +55465,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         getBreadCrumbs: function getBreadCrumbs() {
             return [{
-                text: 'Dashboard',
-                disabled: false,
-                link: this.$laroute.route('dashboard.index')
-            }, {
                 text: this.currentUser.name,
                 disabled: false,
                 link: this.$laroute.route('users.index')
@@ -55465,149 +55512,174 @@ var render = function() {
                 [
                   _c(
                     "v-card",
+                    { attrs: { color: "grey lighten-3" } },
                     [
                       _c(
-                        "v-toolbar",
-                        { attrs: { color: "blue lighten-2" } },
+                        "v-card-text",
                         [
                           _c(
-                            "v-toolbar-title",
-                            { staticClass: "white--text" },
-                            [_vm._v("Edit Users")]
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "" } },
-                        [
-                          _c(
-                            "v-tabs",
-                            {
-                              attrs: { fixed: "" },
-                              model: {
-                                value: _vm.active,
-                                callback: function($$v) {
-                                  _vm.active = $$v
-                                },
-                                expression: "active"
-                              }
-                            },
+                            "v-card",
                             [
                               _c(
-                                "v-tabs-bar",
+                                "v-toolbar",
+                                { attrs: { color: "purple darken-3" } },
                                 [
-                                  _vm._l(_vm.tabs, function(tab) {
-                                    return _c(
-                                      "v-tabs-item",
-                                      {
-                                        key: tab.id,
-                                        attrs: {
-                                          href: "#" + tab.id,
-                                          ripple: ""
-                                        }
-                                      },
-                                      [
-                                        _vm._v(
-                                          "\n                                    " +
-                                            _vm._s(tab.text) +
-                                            "\n                                "
-                                        )
-                                      ]
-                                    )
-                                  }),
-                                  _vm._v(" "),
-                                  _c("v-tabs-slider", {
-                                    attrs: { color: "primary" }
-                                  })
+                                  _c(
+                                    "v-toolbar-title",
+                                    { staticClass: "white--text" },
+                                    [_vm._v("Změnit údaje")]
+                                  )
                                 ],
-                                2
+                                1
                               ),
                               _vm._v(" "),
                               _c(
-                                "v-tabs-items",
-                                _vm._l(_vm.tabs, function(tab) {
-                                  return _c(
-                                    "v-tabs-content",
-                                    { key: tab.id, attrs: { id: tab.id } },
+                                "v-flex",
+                                { attrs: { xs12: "" } },
+                                [
+                                  _c(
+                                    "v-tabs",
+                                    {
+                                      attrs: { fixed: "" },
+                                      model: {
+                                        value: _vm.active,
+                                        callback: function($$v) {
+                                          _vm.active = $$v
+                                        },
+                                        expression: "active"
+                                      }
+                                    },
                                     [
                                       _c(
-                                        "v-card",
-                                        { attrs: { flat: "" } },
+                                        "v-tabs-bar",
                                         [
-                                          _c(
-                                            "v-container",
+                                          _vm._l(_vm.tabs, function(tab) {
+                                            return _c(
+                                              "v-tabs-item",
+                                              {
+                                                key: tab.id,
+                                                attrs: {
+                                                  href: "#" + tab.id,
+                                                  ripple: ""
+                                                }
+                                              },
+                                              [
+                                                _vm._v(
+                                                  "\n                                    " +
+                                                    _vm._s(tab.text) +
+                                                    "\n                                "
+                                                )
+                                              ]
+                                            )
+                                          }),
+                                          _vm._v(" "),
+                                          _c("v-tabs-slider", {
+                                            attrs: { color: "primary" }
+                                          })
+                                        ],
+                                        2
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-tabs-items",
+                                        _vm._l(_vm.tabs, function(tab) {
+                                          return _c(
+                                            "v-tabs-content",
                                             {
-                                              staticClass: "pa-4",
-                                              attrs: { "grid-list-sm": "" }
+                                              key: tab.id,
+                                              attrs: { id: tab.id }
                                             },
                                             [
                                               _c(
-                                                "v-layout",
-                                                {
-                                                  attrs: { row: "", wrap: "" }
-                                                },
+                                                "v-card",
+                                                { attrs: { flat: "" } },
                                                 [
                                                   _c(
-                                                    "v-flex",
-                                                    { attrs: { xs12: "" } },
+                                                    "v-container",
+                                                    {
+                                                      staticClass: "pa-4",
+                                                      attrs: {
+                                                        "grid-list-sm": ""
+                                                      }
+                                                    },
                                                     [
-                                                      tab.id == "tab1"
-                                                        ? _c(
-                                                            "div",
+                                                      _c(
+                                                        "v-layout",
+                                                        {
+                                                          attrs: {
+                                                            row: "",
+                                                            wrap: ""
+                                                          }
+                                                        },
+                                                        [
+                                                          _c(
+                                                            "v-flex",
+                                                            {
+                                                              attrs: {
+                                                                xs12: ""
+                                                              }
+                                                            },
                                                             [
-                                                              _c(
-                                                                "users-edit-generals",
-                                                                {
-                                                                  attrs: {
-                                                                    "current-user":
-                                                                      _vm.currentUser
-                                                                  }
-                                                                }
-                                                              )
-                                                            ],
-                                                            1
+                                                              tab.id == "tab1"
+                                                                ? _c(
+                                                                    "div",
+                                                                    [
+                                                                      _c(
+                                                                        "users-edit-generals",
+                                                                        {
+                                                                          attrs: {
+                                                                            "current-user":
+                                                                              _vm.currentUser
+                                                                          }
+                                                                        }
+                                                                      )
+                                                                    ],
+                                                                    1
+                                                                  )
+                                                                : _vm._e(),
+                                                              _vm._v(" "),
+                                                              tab.id == "tab2"
+                                                                ? _c(
+                                                                    "div",
+                                                                    [
+                                                                      _c(
+                                                                        "users-edit-billings",
+                                                                        {
+                                                                          attrs: {
+                                                                            "current-user":
+                                                                              _vm.currentUser
+                                                                          }
+                                                                        }
+                                                                      )
+                                                                    ],
+                                                                    1
+                                                                  )
+                                                                : _vm._e(),
+                                                              _vm._v(" "),
+                                                              tab.id == "tab3"
+                                                                ? _c(
+                                                                    "div",
+                                                                    [
+                                                                      _c(
+                                                                        "users-change-pass",
+                                                                        {
+                                                                          attrs: {
+                                                                            "current-user":
+                                                                              _vm.currentUser
+                                                                          }
+                                                                        }
+                                                                      )
+                                                                    ],
+                                                                    1
+                                                                  )
+                                                                : _vm._e()
+                                                            ]
                                                           )
-                                                        : _vm._e(),
-                                                      _vm._v(" "),
-                                                      tab.id == "tab2"
-                                                        ? _c(
-                                                            "div",
-                                                            [
-                                                              _c(
-                                                                "users-edit-billings",
-                                                                {
-                                                                  attrs: {
-                                                                    "current-user":
-                                                                      _vm.currentUser
-                                                                  }
-                                                                }
-                                                              )
-                                                            ],
-                                                            1
-                                                          )
-                                                        : _vm._e(),
-                                                      _vm._v(" "),
-                                                      tab.id == "tab3"
-                                                        ? _c(
-                                                            "div",
-                                                            [
-                                                              _c(
-                                                                "users-change-pass",
-                                                                {
-                                                                  attrs: {
-                                                                    "current-user":
-                                                                      _vm.currentUser
-                                                                  }
-                                                                }
-                                                              )
-                                                            ],
-                                                            1
-                                                          )
-                                                        : _vm._e()
-                                                    ]
+                                                        ],
+                                                        1
+                                                      )
+                                                    ],
+                                                    1
                                                   )
                                                 ],
                                                 1
@@ -55615,13 +55687,13 @@ var render = function() {
                                             ],
                                             1
                                           )
-                                        ],
-                                        1
+                                        })
                                       )
                                     ],
                                     1
                                   )
-                                })
+                                ],
+                                1
                               )
                             ],
                             1
@@ -55709,6 +55781,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -55864,26 +55937,17 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("Close")]
+            [_vm._v("Zavřít")]
           )
         ],
         1
       ),
       _vm._v(" "),
       _c(
-        "v-form",
-        {
-          model: {
-            value: _vm.valid,
-            callback: function($$v) {
-              _vm.valid = $$v
-            },
-            expression: "valid"
-          }
-        },
+        "v-card",
         [
           _c(
-            "v-flex",
+            "v-card-text",
             [
               _c("v-text-field", {
                 attrs: { label: "Jméno", rules: _vm.nameRules, required: "" },
@@ -55910,9 +55974,10 @@ var render = function() {
             1
           ),
           _vm._v(" "),
+          _c("v-divider", { staticClass: "mt-1" }),
+          _vm._v(" "),
           _c(
-            "v-flex",
-            { attrs: { "xs-12": "" } },
+            "v-card-actions",
             [
               _c(
                 "v-btn",
@@ -55925,7 +55990,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Odeslat")]
+                [_vm._v("Uložit")]
               )
             ],
             1
@@ -56001,24 +56066,6 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -56189,7 +56236,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-card",
-    { ref: "form" },
     [
       _c(
         "v-card-text",
@@ -56356,43 +56402,10 @@ var render = function() {
       _c(
         "v-card-actions",
         [
-          _c("v-btn", { attrs: { flat: "" } }, [_vm._v("Cancel")]),
-          _vm._v(" "),
-          _c("v-spacer"),
-          _vm._v(" "),
-          _c(
-            "v-slide-x-reverse-transition",
-            [
-              _vm.formHasErrors
-                ? _c(
-                    "v-tooltip",
-                    { attrs: { left: "" } },
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          staticClass: "my-0",
-                          attrs: { slot: "activator", icon: "" },
-                          on: { click: _vm.resetForm },
-                          slot: "activator"
-                        },
-                        [_c("v-icon", [_vm._v("refresh")])],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("span", [_vm._v("Refresh form")])
-                    ],
-                    1
-                  )
-                : _vm._e()
-            ],
-            1
-          ),
-          _vm._v(" "),
           _c(
             "v-btn",
             { attrs: { color: "primary" }, on: { click: _vm.updateBillings } },
-            [_vm._v("Submit")]
+            [_vm._v("Uložit")]
           )
         ],
         1
@@ -56514,25 +56527,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -56584,178 +56578,116 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-card",
-    { attrs: { color: "grey lighten-4", flat: "" } },
+    "div",
     [
       _c(
-        "v-card-text",
+        "v-card",
         [
           _c(
-            "v-container",
-            { attrs: { fluid: "" } },
+            "v-card-text",
+            [
+              _c("v-text-field", {
+                attrs: {
+                  name: "password",
+                  label: "Staré heslo",
+                  hint: "Alespoň 6 znaků",
+                  min: "6",
+                  rules: [
+                    function() {
+                      return !!_vm.password.old || "Prosím výplňte staré heslo."
+                    }
+                  ],
+                  "append-icon": _vm.e1 ? "visibility" : "visibility_off",
+                  "append-icon-cb": function() {
+                    return (_vm.e1 = !_vm.e1)
+                  },
+                  type: _vm.e1 ? "text" : "password",
+                  required: ""
+                },
+                model: {
+                  value: _vm.password.old,
+                  callback: function($$v) {
+                    _vm.$set(_vm.password, "old", $$v)
+                  },
+                  expression: "password.old"
+                }
+              }),
+              _vm._v(" "),
+              _c("v-text-field", {
+                attrs: {
+                  name: "newPassword",
+                  label: "Nové heslo",
+                  hint: "Alespoň 6 znaků",
+                  min: "6",
+                  rules: [
+                    function() {
+                      return (
+                        !!_vm.password.newPassword ||
+                        "Prosím výplňte nové heslo."
+                      )
+                    }
+                  ],
+                  "append-icon": _vm.e2 ? "visibility" : "visibility_off",
+                  "append-icon-cb": function() {
+                    return (_vm.e2 = !_vm.e2)
+                  },
+                  type: _vm.e2 ? "text" : "password",
+                  required: ""
+                },
+                model: {
+                  value: _vm.password.newPassword,
+                  callback: function($$v) {
+                    _vm.$set(_vm.password, "newPassword", $$v)
+                  },
+                  expression: "password.newPassword"
+                }
+              }),
+              _vm._v(" "),
+              _c("v-text-field", {
+                attrs: {
+                  name: "newPasswordConfirmation",
+                  label: "Nové heslo znovu",
+                  hint: "Alespoň 6 znaků",
+                  min: "6",
+                  rules: [
+                    function() {
+                      return (
+                        !!_vm.password.newPassword_confirmation ||
+                        "Prosím výplňte nové heslo."
+                      )
+                    }
+                  ],
+                  "append-icon": _vm.e3 ? "visibility" : "visibility_off",
+                  "append-icon-cb": function() {
+                    return (_vm.e3 = !_vm.e3)
+                  },
+                  type: _vm.e3 ? "text" : "password",
+                  required: ""
+                },
+                model: {
+                  value: _vm.password.newPassword_confirmation,
+                  callback: function($$v) {
+                    _vm.$set(_vm.password, "newPassword_confirmation", $$v)
+                  },
+                  expression: "password.newPassword_confirmation"
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("v-divider", { staticClass: "mt-1" }),
+          _vm._v(" "),
+          _c(
+            "v-card-actions",
             [
               _c(
-                "v-layout",
-                { attrs: { row: "" } },
-                [
-                  _c(
-                    "v-flex",
-                    { attrs: { xs4: "" } },
-                    [_c("v-subheader", [_vm._v("Staré heslo")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    { attrs: { xs8: "" } },
-                    [
-                      _c("v-text-field", {
-                        staticClass: "input-group--focused",
-                        attrs: {
-                          name: "password",
-                          label: "Staré heslo",
-                          hint: "Alespoň 6 znaků",
-                          min: "6",
-                          "append-icon": _vm.e2
-                            ? "visibility"
-                            : "visibility_off",
-                          "append-icon-cb": function() {
-                            return (_vm.e2 = !_vm.e2)
-                          },
-                          value: "wqfasds",
-                          type: _vm.e2 ? "password" : "text"
-                        },
-                        model: {
-                          value: _vm.password.old,
-                          callback: function($$v) {
-                            _vm.$set(_vm.password, "old", $$v)
-                          },
-                          expression: "password.old"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-layout",
-                { attrs: { row: "" } },
-                [
-                  _c(
-                    "v-flex",
-                    { attrs: { xs4: "" } },
-                    [_c("v-subheader", [_vm._v("Nové heslo")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    { attrs: { xs8: "" } },
-                    [
-                      _c("v-text-field", {
-                        staticClass: "input-group--focused",
-                        attrs: {
-                          name: "newPassword",
-                          label: "Nové heslo",
-                          hint: "Alespoň 6 znaků",
-                          min: "6",
-                          "append-icon": _vm.e2
-                            ? "visibility"
-                            : "visibility_off",
-                          "append-icon-cb": function() {
-                            return (_vm.e2 = !_vm.e2)
-                          },
-                          value: "wqfasds",
-                          type: _vm.e2 ? "password" : "text"
-                        },
-                        model: {
-                          value: _vm.password.newPassword,
-                          callback: function($$v) {
-                            _vm.$set(_vm.password, "newPassword", $$v)
-                          },
-                          expression: "password.newPassword"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-layout",
-                { attrs: { row: "" } },
-                [
-                  _c(
-                    "v-flex",
-                    { attrs: { xs4: "" } },
-                    [_c("v-subheader", [_vm._v("Nové heslo znovu")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    { attrs: { xs8: "" } },
-                    [
-                      _c("v-text-field", {
-                        staticClass: "input-group--focused",
-                        attrs: {
-                          name: "newPasswordConfirmation",
-                          label: "Nové heslo znovu",
-                          hint: "Alespoň 6 znaků",
-                          min: "6",
-                          "append-icon": _vm.e2
-                            ? "visibility"
-                            : "visibility_off",
-                          "append-icon-cb": function() {
-                            return (_vm.e2 = !_vm.e2)
-                          },
-                          value: "wqfasds",
-                          type: _vm.e2 ? "password" : "text"
-                        },
-                        model: {
-                          value: _vm.password.newPassword_confirmation,
-                          callback: function($$v) {
-                            _vm.$set(
-                              _vm.password,
-                              "newPassword_confirmation",
-                              $$v
-                            )
-                          },
-                          expression: "password.newPassword_confirmation"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-layout",
-                [
-                  _c(
-                    "v-flex",
-                    { attrs: { "xs-12": "" } },
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { left: "", color: "primary" },
-                          on: { click: _vm.updatePassword }
-                        },
-                        [_vm._v("Změnit Heslo")]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
+                "v-btn",
+                {
+                  attrs: { color: "primary" },
+                  on: { click: _vm.updatePassword }
+                },
+                [_vm._v("Uložit")]
               )
             ],
             1
@@ -57591,11 +57523,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             selectedData: {
                 user_id: null,
-                typZadani: { text: 'Vytisknout praci a vyrobit desky', value: 1, price: 10 },
+                typZadani: { text: 'Vytisknout práci a vyrobit desky', value: 1, price: 10 },
                 pribliznyPocetListu: { text: '25 - 40 listů', value: 3 },
                 presnyPocetStran: 0,
-                typTisku: { text: 'Jednostranny', value: 11, price: 10 },
-                barevnost: { text: 'Cernobile', value: 14, price: 1.5 },
+                typTisku: { text: 'Jednostranný', value: 11, price: 10 },
+                barevnost: { text: 'Černobile', value: 14, price: 1.5 },
                 skoly: { text: 'ZÁPADOČESKÁ UNIVERZITA V PLZNI', value: 16 },
                 jinaSkola: null,
                 fakulty: { text: 'FAKULTA APLIKOVANÝCH VĚD', value: 26 },
@@ -57623,13 +57555,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             bcId: null,
 
             formItemsData: {
-                typZadani: [{ text: 'Vytisknout praci a vyrobit desky', value: 1, price: 10 }, { text: 'Vyrobit pouze desky', value: 2, price: 20 }],
+                typZadani: [{ text: 'Vytisknout práci a vyrobit desky', value: 1, price: 10 }, { text: 'Vyrobit pouze desky', value: 2, price: 20 }],
 
                 rozsahStran: [{ text: '25 - 40 listů', value: 3 }, { text: '41 - 55 listů', value: 4 }, { text: '56 - 75 listů', value: 5 }, { text: '76 - 100 listů', value: 6 }, { text: '101 - 130 listů', value: 7 }, { text: '101 - 130 listů', value: 8 }, { text: '131 - 160 listů', value: 9 }, { text: '161 - 190 listů', value: 10 }],
 
-                typTisku: [{ text: 'Jednostranny', value: 11, price: 10 }, { text: 'Oboustranny', value: 12, price: 15 }, { text: 'Kombinovany', value: 13, price: 20 }],
+                typTisku: [{ text: 'Jednostranný', value: 11, price: 10 }, { text: 'Oboustranný', value: 12, price: 15 }, { text: 'Kombinovaný', value: 13, price: 20 }],
 
-                barevnost: [{ text: 'Cernobile', value: 14, price: 1.5 }, { text: 'Dle soubou (cernobile / barevne)', value: 15, price: 7.49 }],
+                barevnost: [{ text: 'Černobile', value: 14, price: 1.5 }, { text: 'Dle soubou (černobile / barevně)', value: 15, price: 7.49 }],
 
                 skoly: [{ text: 'ZÁPADOČESKÁ UNIVERZITA V PLZNI', value: 16 }, { text: 'UNIVERZITA JANA AMOSE KOMENSKÉHO PRAHA', value: 17 }, { text: 'JIHOČESKÁ UNIVERZITA V ČESKÝCH BUDĚJOVICÍCH', value: 18 }, { text: 'UNIVERZITA KARLOVA V PRAZE', value: 19 }, { text: 'Střední zdravotnická škola a Vyšší odborná škola zdravotnická Plzeň, Karlovarská 99, 323 17 Plzeň', value: 20 }, { text: 'Vyšší odborná škola zdravotnická, managementu a veřejnosprávních studií, s.r.o. Ledecká 35,  Plzeň', value: 21 }, { text: 'jiná ...', value: 0 }],
 
@@ -57867,7 +57799,7 @@ var render = function() {
                             { attrs: { color: "purple darken-3", dark: "" } },
                             [
                               _c("v-toolbar-title", [
-                                _vm._v("Zde vytvorte formular")
+                                _vm._v("Zde vytvořte formulář")
                               ]),
                               _vm._v(" "),
                               _c("v-spacer")
@@ -60823,7 +60755,7 @@ var render = function() {
                                 },
                                 [
                                   _c("v-toolbar-title", [
-                                    _vm._v("Shrnutí objednavky")
+                                    _vm._v("Shrnutí objednávky")
                                   ]),
                                   _vm._v(" "),
                                   _c("v-spacer")
@@ -60861,7 +60793,7 @@ var render = function() {
                                         { on: { click: function($event) {} } },
                                         [
                                           _c("v-list-tile-content", [
-                                            _vm._v("Príjmení:")
+                                            _vm._v("Příjmení:")
                                           ]),
                                           _vm._v(" "),
                                           _c(
@@ -61230,7 +61162,7 @@ var render = function() {
       _c(
         "v-btn",
         {
-          staticClass: "blue lighten-2 mt-5",
+          staticClass: "primary mt-5",
           attrs: { dark: "", large: "" },
           on: {
             click: function($event) {
@@ -61268,7 +61200,7 @@ var render = function() {
                     [
                       _c(
                         "v-toolbar",
-                        { attrs: { color: "indigo", dark: "" } },
+                        { attrs: { color: "primary", dark: "" } },
                         [
                           _c("v-toolbar-title", [
                             _c(
@@ -61372,7 +61304,7 @@ var render = function() {
                               on: { click: _vm.login }
                             },
                             [
-                              _vm._v("Prihlasit"),
+                              _vm._v("Přihlásit"),
                               _vm.animateLogin
                                 ? _c("v-progress-circular", {
                                     attrs: {
@@ -61654,86 +61586,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            title: 'Landing Page Example',
+            title: '<img src="/img/alfatisk-logo.png">',
             myDialog: false,
             parsedUser: {
                 name: null
             },
             profileUrl: null,
-            createThesis: ''
+            createThesisUrl: ''
         };
     },
 
@@ -61745,7 +61608,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     mounted: function mounted() {
         this.parsedUser = this.currentUser != '' ? JSON.parse(this.currentUser) : null;
-        this.createThesis = this.$laroute.route('thesis.index');
+        this.createThesisUrl = this.$laroute.route('thesis.index');
     },
 
 
@@ -61787,9 +61650,11 @@ var render = function() {
         "v-toolbar",
         { staticClass: "white" },
         [
-          _c("v-toolbar-title", {
-            domProps: { textContent: _vm._s(_vm.title) }
-          }),
+          _c("v-toolbar-title", [
+            _c("a", { attrs: { href: "/" } }, [
+              _c("img", { attrs: { src: "/img/alfatisk-logo.png" } })
+            ])
+          ]),
           _vm._v(" "),
           _c("v-spacer"),
           _vm._v(" "),
@@ -61802,7 +61667,7 @@ var render = function() {
                     { staticClass: "hidden-xs-and-down" },
                     [
                       _c("v-btn", { attrs: { flat: "" } }, [
-                        _vm._v("Vytvorit Bakalarku")
+                        _vm._v("Vytvořit Bakalářku")
                       ]),
                       _vm._v(" "),
                       _c(
@@ -61814,7 +61679,7 @@ var render = function() {
                       _c(
                         "v-btn",
                         { attrs: { flat: "" }, on: { click: _vm.logout } },
-                        [_vm._v("Odhlasit")]
+                        [_vm._v("Odhlásit")]
                       )
                     ],
                     1
@@ -61840,7 +61705,7 @@ var render = function() {
                             }
                           }
                         },
-                        [_vm._v("Prihlasit")]
+                        [_vm._v("Přihlásit")]
                       )
                     ],
                     1
@@ -61860,7 +61725,7 @@ var render = function() {
             [
               _c(
                 "v-parallax",
-                { attrs: { src: "/img/hero.jpeg", height: "600" } },
+                { attrs: { src: "/img/bak.jpg", height: "500" } },
                 [
                   _c(
                     "v-layout",
@@ -61873,27 +61738,19 @@ var render = function() {
                       }
                     },
                     [
-                      _c("img", {
-                        attrs: {
-                          src: "/img/vuetify.png",
-                          alt: "Vuetify.js",
-                          height: "200"
-                        }
-                      }),
-                      _vm._v(" "),
                       _c(
                         "h1",
                         {
                           staticClass:
-                            "white--text mb-2 display-1 text-xs-center"
+                            "white--text mb-2 display-3 text-xs-center"
                         },
-                        [_vm._v("Parallax Template")]
+                        [_vm._v("Tvorba Bakalářek")]
                       ),
                       _vm._v(" "),
                       _c(
                         "div",
-                        { staticClass: "subheading mb-3 text-xs-center" },
-                        [_vm._v("Powered by Vuetify")]
+                        { staticClass: "mb-3 display-1 text-xs-center" },
+                        [_vm._v("ALFA-TISK.CZ")]
                       ),
                       _vm._v(" "),
                       !_vm.isUserLoggedIn
@@ -61912,7 +61769,7 @@ var render = function() {
                               _c(
                                 "v-btn",
                                 {
-                                  staticClass: "blue lighten-2 mt-5",
+                                  staticClass: "primary",
                                   attrs: { dark: "", large: "" },
                                   on: { click: _vm.createThesis }
                                 },
@@ -61924,7 +61781,7 @@ var render = function() {
                                     1
                                   ),
                                   _vm._v(
-                                    "vytvorit Bakalarku\n                        "
+                                    "Vytvořit Bakalářku\n                            "
                                   )
                                 ]
                               )
@@ -61955,13 +61812,13 @@ var render = function() {
                     { staticClass: "my-3", attrs: { xs12: "", sm4: "" } },
                     [
                       _c("div", { staticClass: "text-xs-center" }, [
-                        _c("h2", { staticClass: "headline" }, [
-                          _vm._v("The best way to start developing")
+                        _c("h2", { staticClass: "display-1" }, [
+                          _vm._v("Vazby a tisk studentských prací")
                         ]),
                         _vm._v(" "),
                         _c("span", { staticClass: "subheading" }, [
                           _vm._v(
-                            "\n            Cras facilisis mi vitae nunc\n          "
+                            "\n                Nabízíme 2 druhy vazeb, výběr z několika barev desek,\nstříbrný nebo zlatý potisk, potisk hřbetu, kapsy na posudek a CD/DVD,\nto vše lze objednat i přímo zde, online!\n              "
                           )
                         ])
                       ])
@@ -61978,9 +61835,7 @@ var render = function() {
                         [
                           _c(
                             "v-layout",
-                            {
-                              attrs: { row: "", wrap: "", "align-center": "" }
-                            },
+                            { attrs: { row: "", wrap: "" } },
                             [
                               _c(
                                 "v-flex",
@@ -61998,7 +61853,7 @@ var render = function() {
                                             "v-icon",
                                             {
                                               staticClass:
-                                                "blue--text text--lighten-2",
+                                                "primary--text text--lighten-2",
                                               attrs: { "x-large": "" }
                                             },
                                             [_vm._v("color_lens")]
@@ -62018,16 +61873,16 @@ var render = function() {
                                             "div",
                                             {
                                               staticClass:
-                                                "headline text-xs-center"
+                                                "display-1 text-xs-center"
                                             },
-                                            [_vm._v("Material Design")]
+                                            [_vm._v("Data pouze v PDF")]
                                           )
                                         ]
                                       ),
                                       _vm._v(" "),
                                       _c("v-card-text", [
                                         _vm._v(
-                                          "\n                                        Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.\n                                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.\n                                        Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.\n                                    "
+                                          '\n                                            Data k tisku bakalářských a diplomových prací zasílejte pouze ve formátu PDF. Při tisku z jiných formátů (Word atd.)\n                                            může docházet k rozformátovaní Vašich prací*. Ve vlastním zájmu tedy dbejte na dodání dat v PDF. Bohužel jiné formáty pro tisk nemůžeme akceptovat. Pokud Vaše práce obsahuje čb i barevné kopie, připravte si seznam stránek, které budete tisknout v ČB či B. (Např. 1-30 ČB, 30-35 B)\n\n                                            *odlišné verze MS Word různě zalamují konce řádků a mají trochu jiné formátování, což často z naší zkušenosti vedlo k rozformátování celého dokumentu, přestalo sedět stránkování "Obsahu", nadpisy se přesouvaly na konce stránek apod. Bohužel z těchto důvodů nemůžeme zaručit, že zrovna váš dokument takto neutrpí a musíme od tisku Word formátů ustoupit.\n                                        '
                                         )
                                       ])
                                     ],
@@ -62053,7 +61908,7 @@ var render = function() {
                                             "v-icon",
                                             {
                                               staticClass:
-                                                "blue--text text--lighten-2",
+                                                "primary--text text--lighten-2",
                                               attrs: { "x-large": "" }
                                             },
                                             [_vm._v("flash_on")]
@@ -62071,15 +61926,22 @@ var render = function() {
                                         [
                                           _c(
                                             "div",
-                                            { staticClass: "headline" },
-                                            [_vm._v("Fast development")]
+                                            {
+                                              staticClass:
+                                                "display-1  text-xs-center"
+                                            },
+                                            [
+                                              _vm._v(
+                                                "Vazba diplomových prací Classic\n                                            "
+                                              )
+                                            ]
                                           )
                                         ]
                                       ),
                                       _vm._v(" "),
                                       _c("v-card-text", [
                                         _vm._v(
-                                          "\n                                        Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.\n                                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.\n                                        Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.\n                                    "
+                                          "\n                                            Lepená vazba ve hřbetu pomocí tavného polyuretanového lepidla, podobně jak je tomu u knih. Výrazně hezčí a profesionálnější vzhled než u verze Classic. Zároveň je možné na desky aplikovat například logo či jinou grafiku. Nevýhodou je, že nelze hřbet rozvázat, pokud je jednou slepen.\n                                        "
                                         )
                                       ])
                                     ],
@@ -62105,7 +61967,7 @@ var render = function() {
                                             "v-icon",
                                             {
                                               staticClass:
-                                                "blue--text text--lighten-2",
+                                                "primary--text text--lighten-2",
                                               attrs: { "x-large": "" }
                                             },
                                             [_vm._v("build")]
@@ -62125,261 +61987,18 @@ var render = function() {
                                             "div",
                                             {
                                               staticClass:
-                                                "headline text-xs-center"
+                                                "display-1 text-xs-center"
                                             },
-                                            [_vm._v("Completely Open Sourced")]
+                                            [_vm._v("Termovazba")]
                                           )
                                         ]
                                       ),
                                       _vm._v(" "),
                                       _c("v-card-text", [
                                         _vm._v(
-                                          "\n                                        Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.\n                                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.\n                                        Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.\n                                    "
+                                          "\n                                            Terrmovazba u nás nahrazuje kroužkovou vazbu, kdy tištěné dokumenty namístostočeného drátu jsou svázány hřbetem s tavným polyuretanovýmlepidlem. Podobně jako je tomu u vazby DeLuxe.\n\n                                            Oproti vazbě kroužkové nejenže lépe vypadá, ale především se používáním stránky časem nevytrhávají\n                                            a snadno se v ní listuje – jako např. v časopise. Považujeme ji proto za modernější a kvalitnější\n                                            náhradu starší kroužkové vazby.\n                                        "
                                         )
                                       ])
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "section",
-            [
-              _c(
-                "v-parallax",
-                { attrs: { src: "/img/section.jpg", height: "380" } },
-                [
-                  _c(
-                    "v-layout",
-                    {
-                      attrs: {
-                        column: "",
-                        "align-center": "",
-                        "justify-center": ""
-                      }
-                    },
-                    [
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "headline white--text mb-3 text-xs-center"
-                        },
-                        [_vm._v("Web development has never been easier")]
-                      ),
-                      _vm._v(" "),
-                      _c("em", [_vm._v("Kick-start your application today")]),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          staticClass: "blue lighten-2 mt-5",
-                          attrs: {
-                            dark: "",
-                            large: "",
-                            href: "/pre-made-themes"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n                        Get Started\n                    "
-                          )
-                        ]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "section",
-            [
-              _c(
-                "v-container",
-                { attrs: { "grid-list-xl": "" } },
-                [
-                  _c(
-                    "v-layout",
-                    {
-                      staticClass: "my-5",
-                      attrs: { row: "", wrap: "", "justify-center": "" }
-                    },
-                    [
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "", sm4: "" } },
-                        [
-                          _c(
-                            "v-card",
-                            { staticClass: "elevation-0 transparent" },
-                            [
-                              _c(
-                                "v-card-title",
-                                {
-                                  staticClass: "layout justify-center",
-                                  attrs: { "primary-title": "" }
-                                },
-                                [
-                                  _c("div", { staticClass: "headline" }, [
-                                    _vm._v("Company info")
-                                  ])
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("v-card-text", [
-                                _vm._v(
-                                  "\n                                Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.\n                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.\n                                Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.\n                            "
-                                )
-                              ])
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs12: "", sm4: "", "offset-sm1": "" } },
-                        [
-                          _c(
-                            "v-card",
-                            { staticClass: "elevation-0 transparent" },
-                            [
-                              _c(
-                                "v-card-title",
-                                {
-                                  staticClass: "layout justify-center",
-                                  attrs: { "primary-title": "" }
-                                },
-                                [
-                                  _c("div", { staticClass: "headline" }, [
-                                    _vm._v("Contact us")
-                                  ])
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("v-card-text", [
-                                _vm._v(
-                                  "\n                                Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.\n                            "
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "v-list",
-                                { staticClass: "transparent" },
-                                [
-                                  _c(
-                                    "v-list-tile",
-                                    [
-                                      _c(
-                                        "v-list-tile-action",
-                                        [
-                                          _c(
-                                            "v-icon",
-                                            {
-                                              staticClass:
-                                                "blue--text text--lighten-2"
-                                            },
-                                            [_vm._v("phone")]
-                                          )
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-list-tile-content",
-                                        [
-                                          _c("v-list-tile-title", [
-                                            _vm._v("777-867-5309")
-                                          ])
-                                        ],
-                                        1
-                                      )
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile",
-                                    [
-                                      _c(
-                                        "v-list-tile-action",
-                                        [
-                                          _c(
-                                            "v-icon",
-                                            {
-                                              staticClass:
-                                                "blue--text text--lighten-2"
-                                            },
-                                            [_vm._v("place")]
-                                          )
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-list-tile-content",
-                                        [
-                                          _c("v-list-tile-title", [
-                                            _vm._v("Chicago, US")
-                                          ])
-                                        ],
-                                        1
-                                      )
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile",
-                                    [
-                                      _c(
-                                        "v-list-tile-action",
-                                        [
-                                          _c(
-                                            "v-icon",
-                                            {
-                                              staticClass:
-                                                "blue--text text--lighten-2"
-                                            },
-                                            [_vm._v("email")]
-                                          )
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-list-tile-content",
-                                        [
-                                          _c("v-list-tile-title", [
-                                            _vm._v("john@vuetifyjs.com")
-                                          ])
-                                        ],
-                                        1
-                                      )
                                     ],
                                     1
                                   )
@@ -62404,7 +62023,7 @@ var render = function() {
           _vm._v(" "),
           _c(
             "v-footer",
-            { staticClass: "blue darken-2" },
+            { staticClass: "primary" },
             [
               _c(
                 "v-layout",
@@ -62413,37 +62032,12 @@ var render = function() {
                   _c("v-flex", { attrs: { xs12: "" } }, [
                     _c(
                       "div",
-                      { staticClass: "white--text ml-3" },
+                      { staticClass: "white--text ml-3 align-center" },
                       [
                         _vm._v(
-                          "\n                        Made with\n                        "
-                        ),
-                        _c("v-icon", { staticClass: "red--text" }, [
-                          _vm._v("favorite")
-                        ]),
-                        _vm._v("\n                        by "),
-                        _c(
-                          "a",
-                          {
-                            staticClass: "white--text",
-                            attrs: {
-                              href: "https://vuetifyjs.com",
-                              target: "_blank"
-                            }
-                          },
-                          [_vm._v("Vuetify")]
-                        ),
-                        _vm._v("\n                        and "),
-                        _c(
-                          "a",
-                          {
-                            staticClass: "white--text",
-                            attrs: { href: "https://github.com/vwxyzjn" }
-                          },
-                          [_vm._v("Costa Huang")]
+                          "\n                            2018 © Alfatisk všechna práva vyhrazena\n                        "
                         )
-                      ],
-                      1
+                      ]
                     )
                   ])
                 ],
@@ -64614,15 +64208,801 @@ if (false) {
 
 /***/ }),
 /* 142 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(143)
+/* template */
+var __vue_template__ = __webpack_require__(144)
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Users/OrderDetail.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-286aa55f", Component.options)
+  } else {
+    hotAPI.reload("data-v-286aa55f", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 143 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['currentUser', 'gopayOrderId'],
+    data: function data() {
+        return {
+            thesis: null,
+            loading: false,
+            errors: null,
+            embedJs: null,
+            gw_url: null,
+            order: null,
+            items: [],
+            status: null
+        };
+    },
+    mounted: function mounted() {
+        this.items = this.getBreadCrumbs();
+        this.getOrder();
+
+        if (this.status !== 'PAID') {
+            this.createPayment();
+        }
+    },
+
+    watch: {
+        order: function order(val) {
+            console.log('watcher');
+            console.log(val);
+            this.status = val.status;
+        }
+    },
+
+    methods: {
+        createPayment: function createPayment() {
+            var _this = this;
+
+            this.loading = true;
+            axios.post(this.$laroute.route('gopay.api.create.payment', { orderId: this.gopayOrderId })).then(function (response) {
+                _this.loading = false;
+                _this.gw_url = response.data.gw_url;
+            }).catch(function (error) {
+                _this.loading = false;
+                _this.errors = error.response.data.errors;
+            });
+        },
+        getOrder: function getOrder() {
+            var _this2 = this;
+
+            axios.get(this.$laroute.route('orders.api.show', { id: this.gopayOrderId })).then(function (response) {
+                _this2.loading = false;
+                _this2.order = response.data;
+            }).catch(function (error) {
+                _this2.loading = false;
+                _this2.error = error.response.data.errors;
+                console.log(error.response);
+            });
+        },
+        getBreadCrumbs: function getBreadCrumbs() {
+            return [{
+                text: this.currentUser.name,
+                disabled: false,
+                link: this.$laroute.route('users.index')
+            }, {
+                text: 'objednavka',
+                disabled: true,
+                link: this.$laroute.route('thesis.index')
+            }];
+        }
+    }
+});
+
+/***/ }),
+/* 144 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-content",
+        [
+          _c(
+            "v-container",
+            { attrs: { "grid-list-md": "", "text-xs-center": "" } },
+            [
+              _c(
+                "v-layout",
+                { attrs: { row: "", wrap: "" } },
+                [
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "" } },
+                    [
+                      _c("breadcrumbs", {
+                        attrs: { "breadcrumbs-items": _vm.items }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "" } },
+                    [
+                      _c(
+                        "v-card",
+                        { attrs: { color: "grey lighten-3" } },
+                        [
+                          _c(
+                            "v-card-text",
+                            [
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "", wrap: "" } },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    {
+                                      class:
+                                        _vm.status !== null &&
+                                        _vm.status == "PAID"
+                                          ? "xs12"
+                                          : "xs8"
+                                    },
+                                    [
+                                      _c(
+                                        "v-card",
+                                        [
+                                          _c(
+                                            "v-toolbar",
+                                            {
+                                              attrs: {
+                                                color: "purple darken-3",
+                                                dark: ""
+                                              }
+                                            },
+                                            [
+                                              _c("v-toolbar-title", [
+                                                _vm._v("Shrnutí objednávky")
+                                              ]),
+                                              _vm._v(" "),
+                                              _c("v-spacer")
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _vm.order !== null
+                                            ? _c(
+                                                "v-list",
+                                                [
+                                                  _c(
+                                                    "v-list-tile",
+                                                    {
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {}
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        [_vm._v("Objednávka:")]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        {
+                                                          staticClass:
+                                                            "align-end"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            _vm._s(
+                                                              _vm.order
+                                                                .orderName
+                                                            )
+                                                          )
+                                                        ]
+                                                      )
+                                                    ],
+                                                    1
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-tile",
+                                                    {
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {}
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        [_vm._v("Jméno:")]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        {
+                                                          staticClass:
+                                                            "align-end"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            _vm._s(
+                                                              _vm.order
+                                                                .first_name
+                                                            )
+                                                          )
+                                                        ]
+                                                      )
+                                                    ],
+                                                    1
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-tile",
+                                                    {
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {}
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        [_vm._v("Příjmení:")]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        {
+                                                          staticClass:
+                                                            "align-end"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            _vm._s(
+                                                              _vm.order
+                                                                .last_name
+                                                            )
+                                                          )
+                                                        ]
+                                                      )
+                                                    ],
+                                                    1
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-tile",
+                                                    {
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {}
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        [_vm._v("Ulice:")]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        {
+                                                          staticClass:
+                                                            "align-end"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            _vm._s(
+                                                              _vm.order.street
+                                                            )
+                                                          )
+                                                        ]
+                                                      )
+                                                    ],
+                                                    1
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-tile",
+                                                    {
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {}
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        [_vm._v("Cena:")]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        {
+                                                          staticClass:
+                                                            "align-end"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            _vm._s(
+                                                              _vm.order.price
+                                                            ) + " Kč"
+                                                          )
+                                                        ]
+                                                      )
+                                                    ],
+                                                    1
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-tile",
+                                                    {
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {}
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        [_vm._v("Status:")]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        {
+                                                          staticClass:
+                                                            "align-end"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            _vm._s(
+                                                              _vm.order.status
+                                                            )
+                                                          )
+                                                        ]
+                                                      )
+                                                    ],
+                                                    1
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            : _vm._e()
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _vm.status !== null && _vm.status !== "PAID"
+                                    ? _c(
+                                        "v-flex",
+                                        { attrs: { xs4: "" } },
+                                        [
+                                          _c(
+                                            "v-card",
+                                            [
+                                              _c(
+                                                "v-toolbar",
+                                                {
+                                                  attrs: {
+                                                    color: "purple darken-3",
+                                                    dark: ""
+                                                  }
+                                                },
+                                                [
+                                                  _c("v-toolbar-title", [
+                                                    _vm._v("Akce")
+                                                  ]),
+                                                  _vm._v(" "),
+                                                  _c("v-spacer")
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list",
+                                                [
+                                                  _c(
+                                                    "v-list-tile",
+                                                    {
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {}
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        [_vm._v("Platit:")]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "v-list-tile-content",
+                                                        {
+                                                          staticClass:
+                                                            "align-end"
+                                                        },
+                                                        [
+                                                          _c(
+                                                            "form",
+                                                            {
+                                                              attrs: {
+                                                                action:
+                                                                  _vm.gw_url,
+                                                                method: "post",
+                                                                id:
+                                                                  "gopay-payment-button"
+                                                              }
+                                                            },
+                                                            [
+                                                              _c(
+                                                                "button",
+                                                                {
+                                                                  staticClass:
+                                                                    "btn primary",
+                                                                  attrs: {
+                                                                    name: "pay",
+                                                                    type:
+                                                                      "submit"
+                                                                  }
+                                                                },
+                                                                [
+                                                                  _c(
+                                                                    "div",
+                                                                    {
+                                                                      staticClass:
+                                                                        "btn__content"
+                                                                    },
+                                                                    [
+                                                                      _vm._v(
+                                                                        "\n                                                            Zaplatit\n                                                        "
+                                                                      )
+                                                                    ]
+                                                                  )
+                                                                ]
+                                                              )
+                                                            ]
+                                                          )
+                                                        ]
+                                                      )
+                                                    ],
+                                                    1
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    : _vm._e()
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-286aa55f", module.exports)
+  }
+}
+
+/***/ }),
+/* 145 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 143 */
+/* 146 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 147 */,
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(154)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(156)
+/* template */
+var __vue_template__ = __webpack_require__(157)
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Partials/Footer.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7f6808df", Component.options)
+  } else {
+    hotAPI.reload("data-v-7f6808df", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 154 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(155);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("e50d9e22", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7f6808df\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Footer.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7f6808df\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Footer.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 155 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\nfooter.custom-footer {\n    z-index: 1;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 156 */
+/***/ (function(module, exports) {
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+/* 157 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "pt-5" },
+    [
+      _c(
+        "v-footer",
+        {
+          staticClass: "custom-footer",
+          attrs: { color: "purple darken-4", absolute: "", app: "" }
+        },
+        [_c("span", { staticClass: "white--text" }, [_vm._v("© 2017")])]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-7f6808df", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

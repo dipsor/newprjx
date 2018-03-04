@@ -56,7 +56,9 @@ class GopayController extends Controller
         if ($response->hasSucceed()) {
             $url = $response->json['gw_url'];
             $order->gopay_order_id = $response->json['id'];
-            $order->status = $response->json['state'];
+            if ($order->status !== 'PAID') {
+                $order->status = $response->json['state'];
+            }
             $order->save();
 
             return response(['gw_url' => $url, 'state' => $response->json['state']], 200);
@@ -84,11 +86,10 @@ class GopayController extends Controller
         if ($id !== null) {
             $status = GoPay::getStatus($request->get('id'))->json['state'];
             logger(['status' => $status]);
-            if ($status !== null) {
-                $order = Order::where('gopay_order_id', '=', $id)->first();
-                $order->status = $status;
-                $order->save();
-            }
+
+            $order = Order::where('gopay_order_id', '=', $id)->first();
+            $order->status = $status;
+            $order->save();
         }
 
         return response($status, 200);

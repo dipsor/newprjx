@@ -1,47 +1,53 @@
 <template>
-    <v-content>
-        <v-container grid-list-md text-xs-center>
-            <v-layout row wrap>
-                <v-flex xs12>
-                    <breadcrumbs
-                            :breadcrumbs-items="items"
-                    ></breadcrumbs>
-                </v-flex>
-                <v-flex xs12>
-                    <v-alert type="success" :value="status == 'PAID'">
-                        {{messages[status]}}
-                    </v-alert>
+    <div>
+        <v-content>
+            <v-container grid-list-md text-xs-center>
+                        <v-layout row wrap>
+                            <v-flex xs12>
+                                <breadcrumbs
+                                        :breadcrumbs-items="items"
+                                ></breadcrumbs>
+                            </v-flex>
+                            <v-flex xs12>
+                                <v-card color="grey lighten-3">
+                                    <v-card-text>
+                                        <v-alert type="success" :value="status == 'PAID'">
+                                            {{messages[status]}}
+                                        </v-alert>
 
-                    <v-alert type="info" :value="status == 'PAYMENT_METHOD_CHOSEN' || status == 'REFUNDED' || status == 'PARTIALLY_REFUNDED'">
-                        {{messages[status]}}
-                    </v-alert>
+                                        <v-alert type="info" :value="status == 'PAYMENT_METHOD_CHOSEN' || status == 'REFUNDED' || status == 'PARTIALLY_REFUNDED'">
+                                            {{messages[status]}}
+                                        </v-alert>
 
-                    <v-alert type="error" :value="status == 'CANCELED' || status == 'TIMEOUTED'">
-                        {{messages[status]}}
-                    </v-alert>
-                    <v-card>
-                        <v-toolbar color="primary">
-                            <v-toolbar-title class="white--text">Objednávky uživatele {{currentUser.name}}</v-toolbar-title>
-                        </v-toolbar>
-                        <v-data-table
-                                v-bind:headers="headers"
-                                :items="items2"
-                                hide-actions
-                                class="elevation-1"
-                        >
-                            <template slot="items" slot-scope="props">
-                                <td class="text-xs-left">{{ props.item.orderName }}</td>
-                                <td class="text-xs-left">{{ props.item.created_at }}</td>
-                                <td class="text-xs-left">{{ props.item.price }}</td>
-                                <td class="text-xs-left">{{ props.item.status }}</td>
-                                <td class="text-xs-left"><a :href="'/orders/'+props.item.id">Zobrazit</a></td>
-                            </template>
-                        </v-data-table>
-                    </v-card>
-                </v-flex>
-            </v-layout>
-        </v-container>
-    </v-content>
+                                        <v-alert type="error" :value="status == 'CANCELED' || status == 'TIMEOUTED'">
+                                            {{messages[status]}}
+                                        </v-alert>
+                                        <v-card>
+                                            <v-toolbar color="purple darken-3">
+                                                <v-toolbar-title class="white--text">Objednávky uživatele {{currentUser.name}}</v-toolbar-title>
+                                            </v-toolbar>
+                                            <v-data-table
+                                                    v-bind:headers="headers"
+                                                    :items="items2"
+                                                    hide-actions
+                                                    class="elevation-1"
+                                            >
+                                                <template slot="items" slot-scope="props">
+                                                    <td class="text-xs-left">{{ props.item.orderName }}</td>
+                                                    <td class="text-xs-left">{{ props.item.created_at }}</td>
+                                                    <td class="text-xs-left">{{ props.item.price }}</td>
+                                                    <td class="text-xs-left">{{ props.item.status }}</td>
+                                                    <td class="text-xs-left"><a :href="'profil/order/'+props.item.id">Zobrazit</a></td>
+                                                </template>
+                                            </v-data-table>
+                                        </v-card>
+                                    </v-card-text>
+                                </v-card>
+                            </v-flex>
+                        </v-layout>
+            </v-container>
+        </v-content>
+    </div>
 </template>
 
 <script>
@@ -116,6 +122,10 @@
             gopayOrderId: (val) => {
                 this.getStatus(val);
             },
+
+            status() {
+                this.getUsersOrders();
+            }
         },
 
         methods: {
@@ -138,7 +148,8 @@
                 if (id > 0) {
                     axios.get(this.$laroute.route('gopay.api.status', {'id': id})).then((response) => {
                         this.loading = false;
-                        this.status = response.data.state;
+                        this.status = response.data;
+                        console.log(response.data);
                     }).catch((error) => {
                         this.loading = false;
                         this.error = error.response.data.errors;

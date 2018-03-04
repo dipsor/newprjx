@@ -73,15 +73,9 @@
         >
             <v-toolbar-title :style="$vuetify.breakpoint.smAndUp ? 'width: 300px; min-width: 250px' : 'min-width: 72px'" class="ml-0 pl-3">
                 <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-                <a :href="$laroute.route('home')" class="hidden-xs-only nav-link">Landing Page</a>
+                <a :href="$laroute.route('home')" class="hidden-xs-only nav-link">Hlavní strana</a>
             </v-toolbar-title>
-            <v-text-field
-                    light
-                    solo
-                    prepend-icon="search"
-                    placeholder="Search"
-                    style="max-width: 500px; min-width: 128px"
-            ></v-text-field>
+
             <div class="d-flex align-center" style="margin-left: auto">
                 <v-btn icon>
                     <v-icon>apps</v-icon>
@@ -134,18 +128,18 @@
         methods: {
             setMenu() {
                 return [
-                    { icon: 'dashboard', text: 'Dashboard', link: this.$laroute.route('dashboard.index'), forAdmin: false},
+                    { icon: 'dashboard', text: 'Admin', link: this.$laroute.route('dashboard.index'), forAdmin: true},
                     {
                         icon: 'keyboard_arrow_up',
                         'icon-alt': 'keyboard_arrow_down',
-                        text: 'User',
+                        text: 'Uživatel',
                         model: false,
                         children: [
-                            { text: 'Profil', link:  this.$laroute.route('users.index')},
-                            { text: 'Edit Details', link:  this.$laroute.route('users.show', {id: this.currentUser.id})},
+                            { text: 'Objednávky', link:  this.$laroute.route('users.index')},
+                            { text: 'Změna údajů', link:  this.$laroute.route('users.show', {id: this.currentUser.id})},
                         ]
                     },
-                    { icon: 'shopping_cart', text: 'Vytvorit objednavku','link':  this.$laroute.route('thesis.index')},
+                    { icon: 'shopping_cart', text: 'Vytvořit objednávku','link':  this.$laroute.route('thesis.index')},
                 ];
             }
         }

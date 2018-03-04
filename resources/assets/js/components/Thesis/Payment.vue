@@ -6,7 +6,7 @@
                     <v-flex xs12 sm6>
                         <v-card>
                             <v-toolbar color="purple darken-3" dark>
-                                <v-toolbar-title>Shrnutí objednavky</v-toolbar-title>
+                                <v-toolbar-title>Shrnutí objednávky</v-toolbar-title>
                                 <v-spacer></v-spacer>
                             </v-toolbar>
                             <v-list v-if="order !== null">
@@ -15,7 +15,7 @@
                                     <v-list-tile-content class="align-end">{{order.first_name}}</v-list-tile-content>
                                 </v-list-tile>
                                 <v-list-tile @click="">
-                                    <v-list-tile-content>Príjmení:</v-list-tile-content>
+                                    <v-list-tile-content>Příjmení:</v-list-tile-content>
                                     <v-list-tile-content class="align-end">{{order.last_name}}</v-list-tile-content>
                                 </v-list-tile>
                                 <v-list-tile @click="">

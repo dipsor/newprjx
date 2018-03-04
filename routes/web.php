@@ -15,16 +15,15 @@ Route::get('/', 'LandingPageController@index')->name('home');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin', 'auth']], function () {
     Route::get('/', 'DashboardController@index')->name('dashboard.index');
-
     Route::group(['prefix' => 'users', 'namespace' => 'Admin\Users'], function () {
         Route::get('/', 'UsersController@index')->name('admin.users.index');
     });
 });
 
-
 Route::group(['prefix' => 'profil', 'namespace' => 'Users', 'middleware' => ['role:customer', 'auth']], function () {
     Route::get('/', 'UsersController@index')->name('users.index');
     Route::get('/{id}', 'UsersController@show')->name('users.show');
+    Route::get('/order/{orderId}', 'UsersController@showOrder')->name('users.order.show');
 });
 
 Route::group(['prefix' => 'thesis', 'namespace' => 'Thesis', 'middleware' => ['role:customer', 'auth']], function () {
@@ -32,7 +31,6 @@ Route::group(['prefix' => 'thesis', 'namespace' => 'Thesis', 'middleware' => ['r
     Route::get('/return', 'ThesisController@returnIt')->name('thesis.return');
     Route::get('/notify', 'ThesisController@notify')->name('thesis.notify');
 });
-
 
 Route::get('login/facebook', 'Auth\FacebookAuthController@redirectToProvider')->name('facebook.login');
 Route::get('login/facebook/callback', 'Auth\FacebookAuthController@handleProviderCallback')->name('facebook.login.callback');
