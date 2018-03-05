@@ -2,6 +2,7 @@
 
 namespace App\Users\Models;
 
+use App\Orders\Models\Order;
 use App\Thesis\Models\Thesis;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
@@ -63,13 +64,16 @@ class User extends Authenticatable
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function thesis()
+    public function theses()
     {
         return $this->hasMany(Thesis::class);
     }
 
-    public function setFirstNameAttribute()
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function orders()
     {
-
+        return $this->hasMany(Order::class);
     }
 }

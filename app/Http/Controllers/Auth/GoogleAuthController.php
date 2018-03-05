@@ -61,7 +61,7 @@ class GoogleAuthController extends Controller
             'google_avatar' => 'ddd',
         ]);
 
-        $user->assignRole(1);
+        $user->assignRole(2);
 
         return $user;
     }

@@ -55,25 +55,43 @@ class GopayController extends Controller
 
         if ($response->hasSucceed()) {
             $url = $response->json['gw_url'];
-            logger($response->json['state']);
+            $order->gopay_order_id = $response->json['id'];
+            if ($order->status !== 'PAID') {
+                $order->status = $response->json['state'];
+            }
+            $order->save();
+
             return response(['gw_url' => $url, 'state' => $response->json['state']], 200);
         }
-
     }
 
+    /**
+     * @param $orderId
+     * @param $userId
+     * @return string
+     */
     private function getInvoiceNumber($orderId, $userId)
     {
         return (string)$orderId . (string)$userId . str_replace('%-%','', Carbon::now()->toDateString());
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
+     */
     public function getStatus(Request $request)
     {
-        $state = '';
+        $status = '';
+        $id = $request->get('id');
+        if ($id !== null) {
+            $status = GoPay::getStatus($request->get('id'))->json['state'];
+            logger(['status' => $status]);
 
-        if ($request->get('id') !== null) {
-            $state = GoPay::getStatus($request->get('id'));
+            $order = Order::where('gopay_order_id', '=', $id)->first();
+            $order->status = $status;
+            $order->save();
         }
 
-        return response($state, 200);
+        return response($status, 200);
     }
 }

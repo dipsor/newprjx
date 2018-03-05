@@ -15,8 +15,8 @@ class Order extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
-            $table->integer('thesis_id');
+            $table->integer('user_id')->unsigned();
+            $table->integer('thesis_id')->unsigned();
             $table->string('orderName');
             $table->string('first_name');
             $table->string('last_name');
@@ -26,9 +26,15 @@ class Order extends Migration
             $table->string('postal_code');
             $table->string('country_code');
             $table->integer('price');
-            $table->integer('gopay_order_id')->nullable();
+            $table->string('status')->nullable();
+            $table->string('gopay_order_id')->nullable();
             $table->timestamps();
         });
+
+//        Schema::table('orders', function($table) {
+//            $table->foreign('user_id')->references('id')->on('users');
+//            $table->foreign('thesis_id')->references('id')->on('users');
+//        });
     }
 
     /**
@@ -38,6 +44,9 @@ class Order extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('orders', function (Blueprint $table) {
+//            $table->dropForeign(['user_id']);
+//            $table->dropForeign(['thesis_id']);
+        });
     }
 }

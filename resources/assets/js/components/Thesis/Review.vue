@@ -151,14 +151,12 @@
         },
 
         mounted() {
-            console.log(this.currentUser);
-            this.eventBus.$on('load-thesis', (payload) => {
-                this.getThesis();
-            });
+        },
 
-            this.eventBus.$on('load-bc', () => {
+        watch: {
+            thesisId(val) {
                 this.getThesis();
-            });
+            }
         },
 
         methods: {
@@ -166,9 +164,8 @@
                 this.loading = true;
                 axios.post(this.$laroute.route('orders.api.store'),this.getOrderData()).then((response) => {
                     this.loading = false;
-                    console.log(response.data.id);
                     this.eventBus.$emit('go-to-next-page', {page_id: 4, bc_id: response.data.id});
-                    this.eventBus.$emit('order-created', true);
+                    this.eventBus.$emit('order-created', response.data.id);
 
                 }).catch((error) => {
                     this.loading = false;
@@ -203,7 +200,6 @@
                     'street' : this.currentUser.street,
                     'postal_code' : this.currentUser.postal_code,
                     'country_code' : this.currentUser.country_code,
-                    'gopay_order_id' : 3452345,
                     'price' : this.thesis.price,
                 }
             }

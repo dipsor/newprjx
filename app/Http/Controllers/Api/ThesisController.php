@@ -8,7 +8,7 @@ use Illuminate\Http\JsonResponse;
 use App\Thesis\Models\Thesis;
 use App\Transformers\Thesis\ThesisTransformer;
 use Illuminate\Http\Response;
-
+use Illuminate\Support\Facades\Auth;
 
 class ThesisController extends Controller
 {
@@ -40,6 +40,7 @@ class ThesisController extends Controller
      */
     public function store(Request $request)
     {
+
         $thesis = Thesis::create([
             'user_id'               => $request->user_id,
             'typZadani'             => $request->typZadani,
