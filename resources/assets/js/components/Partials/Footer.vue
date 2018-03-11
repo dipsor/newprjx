@@ -1,11 +1,11 @@
 <template>
     <div>
         <v-footer color="#f6f6f6">
-            <v-layout row wrap align-center>
+            <v-layout row wrap align-right>
                 <v-flex xs6>
-                    <div class="white--text ml-3 align-center">
-                        <div class="footer-link ml-2" @click.stop="dialog1 = !dialog1">Dodací podmínky</div>
-                        <div class="footer-link mr-3" @click.stop="dialog2 = !dialog2">Obchodní podmínky</div>
+                    <div class="white--text ml-3 align-right ">
+                            <div class="footer-link ml-2" @click.stop="dialog1 = !dialog1">Dodací podmínky</div>
+                            <div class="footer-link " @click.stop="dialog2 = !dialog2">Obchodní podmínky</div>
                     </div>
                 </v-flex>
                 <v-flex xs6>
@@ -266,6 +266,12 @@
         color: purple;
         display:inline-block;
         line-height: inherit;
+    }
+
+    @media only screen and (max-width: 500px) {
+        .footer-center {
+            text-align: center;
+        }
     }
 
 </style>

@@ -8,8 +8,6 @@
                     ></breadcrumbs>
                 </v-flex>
                 <v-flex xs12>
-                    <v-card color="grey lighten-3">
-                        <v-card-text>
                     <v-card>
                         <v-toolbar color="purple darken-3">
                             <v-toolbar-title class="white--text">Změnit údaje</v-toolbar-title>
@@ -37,7 +35,7 @@
                                             :id="tab.id"
                                     >
                                         <v-card flat>
-                                            <v-container grid-list-sm class="pa-4">
+                                            <v-container grid-list-xs>
                                                 <v-layout row wrap>
                                                     <v-flex xs12>
                                                         <div v-if="tab.id=='tab1'">
@@ -58,14 +56,18 @@
                             </v-tabs>
                         </v-flex>
                     </v-card>
-                        </v-card-text>
-                    </v-card>
                 </v-flex>
             </v-layout>
         </v-container>
     </v-content>
 </template>
-
+<style>
+    @media only screen and (max-width: 500px) {
+        a.tabs__item {
+            font-size: 12px;
+        }
+    }
+</style>
 <script>
     export default {
         data() {
