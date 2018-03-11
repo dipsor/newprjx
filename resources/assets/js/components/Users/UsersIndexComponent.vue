@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-content>
-            <v-container grid-list-md text-xs-center>
+            <v-container grid-list-xs text-xs-center>
                         <v-layout row wrap>
                             <v-flex xs12>
                                 <breadcrumbs
@@ -9,8 +9,7 @@
                                 ></breadcrumbs>
                             </v-flex>
                             <v-flex xs12>
-                                <v-card color="grey lighten-3">
-                                    <v-card-text>
+
                                         <v-alert type="success" :value="status == 'PAID'">
                                             {{messages[status]}}
                                         </v-alert>
@@ -41,8 +40,6 @@
                                                 </template>
                                             </v-data-table>
                                         </v-card>
-                                    </v-card-text>
-                                </v-card>
                             </v-flex>
                         </v-layout>
             </v-container>

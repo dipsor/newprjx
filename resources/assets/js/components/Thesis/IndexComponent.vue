@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-content>
-            <v-container grid-list-md text-xs-center>
+            <v-container  grid-list-xs >
                 <v-layout row wrap>
                     <v-flex xs12>
                         <breadcrumbs
