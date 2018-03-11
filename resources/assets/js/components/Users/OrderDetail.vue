@@ -9,8 +9,6 @@
                         ></breadcrumbs>
                     </v-flex>
                     <v-flex xs12>
-                        <v-card color="grey lighten-3">
-                            <v-card-text>
                             <v-layout row wrap>
                                     <v-flex :class="status !== null && status == 'PAID' ? 'xs12' : 'xs8'">
                                         <v-card>
@@ -67,8 +65,6 @@
                                         </v-card>
                                     </v-flex>
                             </v-layout>
-                            </v-card-text>
-                        </v-card>
                     </v-flex>
                 </v-layout>
             </v-container>

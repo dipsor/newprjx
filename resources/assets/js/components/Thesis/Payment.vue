@@ -1,14 +1,15 @@
 <template>
     <div>
-        <v-card color="grey lighten-3">
-            <v-card-text>
-                <v-layout row v-if="order != null">
-                    <v-flex xs12 sm6>
-                        <v-card>
-                            <v-toolbar color="purple darken-3" dark>
-                                <v-toolbar-title>Shrnutí objednávky</v-toolbar-title>
-                                <v-spacer></v-spacer>
-                            </v-toolbar>
+        <v-container grid-list-xs text-xs-center>
+
+            <v-layout row wrap v-if="order != null">
+
+                <v-flex xs12 md12>
+                    <v-card >
+                        <v-toolbar color="purple darken-3" dark>
+                            <v-toolbar-title>Shrnutí objednávky</v-toolbar-title>
+                            <v-spacer></v-spacer>
+                        </v-toolbar>
                             <v-list v-if="order !== null">
                                 <v-list-tile @click="">
                                     <v-list-tile-content>Jméno:</v-list-tile-content>
@@ -23,14 +24,14 @@
                                     <v-list-tile-content class="align-end">{{order.street}}</v-list-tile-content>
                                 </v-list-tile>
                             </v-list>
-                        </v-card>
-                    </v-flex>
-                    <v-flex xs12 sm6>
-                        <v-card>
-                            <v-toolbar color="purple darken-3" dark>
-                                <v-toolbar-title>Cena</v-toolbar-title>
-                                <v-spacer></v-spacer>
-                            </v-toolbar>
+                    </v-card>
+                </v-flex>
+                <v-flex xs12 md12>
+                    <v-card >
+                        <v-toolbar color="purple darken-3" dark>
+                            <v-toolbar-title>Cena</v-toolbar-title>
+                            <v-spacer></v-spacer>
+                        </v-toolbar>
                             <v-list>
                                 <v-list-tile @click="">
                                     <v-list-tile-content>Název:</v-list-tile-content>
@@ -41,22 +42,21 @@
                                     <v-list-tile-content class="align-end">{{order.price}} Kč</v-list-tile-content>
                                 </v-list-tile>
                             </v-list>
-                        </v-card>
-                    </v-flex>
-                </v-layout>
-            </v-card-text>
-            <v-divider class="mt-5"></v-divider>
-            <v-card-actions>
-                <v-spacer></v-spacer>
-                    <form :action="gw_url" method="post" id="gopay-payment-button">
-                    <button class="btn primary" name="pay" type="submit">
-                        <div class="btn__content">
-                            Zaplatit
-                        </div>
-                    </button>
-                    </form>
-            </v-card-actions>
-        </v-card>
+                    </v-card>
+                </v-flex>
+            </v-layout>
+        </v-container>
+        <v-divider class="mt-5"></v-divider>
+        <v-card-actions>
+            <v-spacer></v-spacer>
+                <form :action="gw_url" method="post" id="gopay-payment-button">
+                <button class="btn primary" name="pay" type="submit">
+                    <div class="btn__content">
+                        Zaplatit
+                    </div>
+                </button>
+                </form>
+        </v-card-actions>
     </div>
 </template>
 <script>
