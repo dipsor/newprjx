@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div >
         <v-footer color="#f6f6f6">
             <v-layout row wrap align-right>
                 <v-flex xs6>
@@ -10,11 +10,11 @@
                 </v-flex>
                 <v-flex xs6>
                     <div class="white--text ml-3 align-center">
-                        <img :src="gopayUrl" height="30px">
-                        <img :src="visaVerifiedUrl" height="30px">
-                        <img :src="visaUrl" height="30px">
-                        <img :src="mastecardSecureUrl" height="30px">
-                        <img :src="mastecardUrl" height="40px">
+                        <img src="/img/320px-MasterCard_logo.png" height="30px">
+                        <img src="/img/mastercard-secure-code.png" height="30px">
+                        <img src="/img/visa.png" height="30px">
+                        <img src="/img/verified-by-visa.png" height="30px">
+                        <img src="/img/gopay-white.png" height="40px">
                     </div>
                 </v-flex>
             </v-layout>
