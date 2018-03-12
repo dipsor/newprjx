@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Orders\Models\Order;
+use App\Users\Models\User;
 use Carbon\Carbon;
 use GoPay\Definition\TokenScope;
 use Illuminate\Http\Request;
@@ -14,6 +15,8 @@ use GoPay\Definition\Payment\Currency;
 use GoPay\Definition\Payment\PaymentInstrument;
 use GoPay\Definition\Payment\BankSwiftCode;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\OrderPaid;
 
 class GopayController extends Controller
 {
@@ -56,6 +59,15 @@ class GopayController extends Controller
         if ($response->hasSucceed()) {
             $url = $response->json['gw_url'];
             $order->gopay_order_id = $response->json['id'];
+            logger($order->status);
+
+            if ($order->status == 'PAID') {
+                logger('inside');
+                logger($order->status);
+                $user = User::find($order->user_id);
+                Mail::to($user->email)->send(new OrderCreated($user, $order));
+            }
+
             if ($order->status !== 'PAID') {
                 $order->status = $response->json['state'];
             }
@@ -85,10 +97,19 @@ class GopayController extends Controller
         $id = $request->get('id');
         if ($id !== null) {
             $status = GoPay::getStatus($request->get('id'))->json['state'];
-            logger(['status' => $status]);
+
+
 
             $order = Order::where('gopay_order_id', '=', $id)->first();
             $order->status = $status;
+
+            if ($status == 'PAID') {
+                logger('inside');
+                logger($status);
+                $user = User::find($order->user_id);
+                Mail::to($user->email)->send(new OrderPaid($user, $order));
+            }
+
             $order->save();
         }
 
