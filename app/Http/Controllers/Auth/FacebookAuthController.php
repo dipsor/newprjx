@@ -7,13 +7,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 use App\Users\Models\User;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\AccountCreated;
 
 class FacebookAuthController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
+     * FacebookAuthController constructor.
      */
     public function __construct()
     {
@@ -55,11 +55,14 @@ class FacebookAuthController extends Controller
 
     private function registerUser($user)
     {
+        $pass = $this->generateRandomString();
+
+        //Mail::to($user->email)->send(new AccountCreated($user, $pass));
+
         $user = User::create([
             'name' => $user->name,
             'email' => $user->email,
-//            'password' => rand(1,10),
-            'password' => '123456',
+            'password' => bcrypt($pass),
             'facebook_id' => $user->id,
             'facebook_avatar' => 'ddd',
         ]);
@@ -67,5 +70,15 @@ class FacebookAuthController extends Controller
         $user->assignRole(2);
 
         return $user;
+    }
+
+    private function generateRandomString($length = 10) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
     }
 }
