@@ -9,14 +9,28 @@
             <v-spacer></v-spacer>
             <div v-if="isUserLoggedIn">
                 <!--<v-toolbar-side-icon class="hidden-xs-and-up"></v-toolbar-side-icon>-->
-                <v-toolbar-items class="hidden-xs-and-down">
+                <v-menu bottom left class="hidden-sm-and-up">
+                    <v-btn icon slot="activator" light>
+                        <v-icon>more_vert</v-icon>
+                    </v-btn>
+                    <v-list>
+                        <v-list-tile @click="profile">
+                            <v-list-tile-title>{{parsedUser.name}}</v-list-tile-title>
+                        </v-list-tile>
+                        <v-list-tile @click="logout">
+                            <v-list-tile-title>Odhlásit</v-list-tile-title>
+                        </v-list-tile>
+                    </v-list>
+                </v-menu>
+                <v-toolbar-items class="main-menu-logged-in">
                     <v-btn @click="profile" flat>{{parsedUser.name}}</v-btn>
                     <v-btn @click="logout" flat>Odhlásit</v-btn>
                 </v-toolbar-items>
             </div>
+
             <div v-else>
                 <!--<v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>-->
-                <v-toolbar-items class="hidden-xs-and-down">
+                <v-toolbar-items>
                     <v-btn @click.stop="login" flat>Přihlásit</v-btn>
                 </v-toolbar-items>
             </div>
@@ -129,6 +143,13 @@ to vše lze objednat i přímo zde, online!
         </v-content>
     </v-app>
 </template>
+<style>
+    @media only screen and (max-width: 599px) {
+        .main-menu-logged-in {
+            display:none;
+        }
+    }
+</style>
 <script>
     export default {
         data() {
@@ -140,6 +161,16 @@ to vše lze objednat i přímo zde, online!
                 },
                 profileUrl: null,
                 createThesisUrl: '',
+                loggedInItems: [
+                    { title: 'Odhlásit', action: '' },
+                    { title: '' },
+                    { title: 'Click Me' },
+                    { title: 'Click Me 2' }
+                ],
+
+                loggedOutItems: [
+
+                ],
             }
         },
 
