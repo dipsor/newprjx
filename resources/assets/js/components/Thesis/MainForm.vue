@@ -311,7 +311,7 @@
                         <v-flex xs4>
                             <v-subheader v-text="'Kapsa pro CD'"></v-subheader>
                         </v-flex>
-                        <v-flex xs1>
+                        <v-flex xs3 md2>
                             <v-switch v-bind:label="kapsaProCD == true ? 'Ano' : 'Ne'" v-model="kapsaProCD"></v-switch>
                         </v-flex>
                     </v-layout>
@@ -333,7 +333,9 @@
                             ></v-text-field>
                         </v-flex>
                         <v-flex xs4 md2>
-                            <v-switch v-bind:label="kapsaProCD == true ? 'Vpředu' : 'Vzadu'" v-model="selectedData.kapsaCdVpredu"></v-switch>
+                            <v-switch v-bind:label="selectedData.kapsaCdVpredu == true ? 'Vpředu' : 'Vzadu'" v-model="selectedData.kapsaCdVpredu"></v-switch>
+
+
                         </v-flex>
                     </v-layout>
 
@@ -341,7 +343,7 @@
                         <v-flex xs4>
                             <v-subheader v-text="'Kapsa pro posudek'"></v-subheader>
                         </v-flex>
-                        <v-flex xs2>
+                        <v-flex xs3 md2>
                             <v-switch v-bind:label="kapsaProPosudek == true ? 'Ano' : 'Ne'" v-model="kapsaProPosudek"></v-switch>
                         </v-flex>
                     </v-layout>
@@ -362,7 +364,7 @@
                             ></v-text-field>
                         </v-flex>
                         <v-flex xs4 md2>
-                            <v-switch v-bind:label="kapsaProCD == true ? 'Vpředu' : 'Vzadu'" v-model="selectedData.kapsaPosudekVpredu"></v-switch>
+                            <v-switch v-bind:label="selectedData.kapsaPosudekVpredu == true ? 'Vpředu' : 'Vzadu'" v-model="selectedData.kapsaPosudekVpredu"></v-switch>
                         </v-flex>
                     </v-layout>
 
@@ -461,8 +463,8 @@
                     barvaPisma: {text: 'ZLATÉ', value: 42},
                     pocetKapesProCD: 0,
                     pocetKapesProPosudek: 0,
-                    kapsaCdVpredu: null,
-                    kapsaPosudekVpredu: null,
+                    kapsaCdVpredu: false,
+                    kapsaPosudekVpredu: false,
                     dobaZhotoveni: {text: 'Základ - 239 Kč ( do 4 pracovních dnů )', value: 44, price: 239},
                     poznamky: null,
                 },

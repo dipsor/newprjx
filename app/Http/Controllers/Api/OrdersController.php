@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Users\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\OrderCreated;
 
 class OrdersController extends Controller
 {
@@ -56,7 +58,8 @@ class OrdersController extends Controller
             'city.required'  => 'Prosím, vyplňte město.',
             'street.required'  => 'Prosím, vyplňte ulici.',
             'postal_code.required'  => 'Prosím, vyplňte PSČ.',
-            'country_code.required'  => 'Prosím, vyplňte kód země.',]
+            'country_code.required'  => 'Prosím, vyplňte kód země.',
+            ]
         );
 
         $order = Order::create([
@@ -73,6 +76,11 @@ class OrdersController extends Controller
             'price'             => $request->price,
             'gopay_order_id'    => $request->gopay_order_id,
         ]);
+
+        $user = User::find($request->user_id);
+
+        Mail::to($user->email)->send(new OrderCreated($user, $order));
+
 
         return response($this->transformer->transform($order));
 

@@ -119,7 +119,11 @@
             </v-layout>
         </v-container>
         <v-alert v-if="errors !== null" type="error" :value="true">
-            <div v-for="error in errors">{{error}}</div>
+            <div v-for="error in errors">
+                {{error}}
+
+            </div>
+            <a :href="'/profil/'+currentUser.id">Vyplnte potrebne detaily v sekci fakturacni udaje.</a>
         </v-alert>
 
         <v-divider class="mt-5"></v-divider>
@@ -169,6 +173,8 @@
                 }).catch((error) => {
                     this.loading = false;
                     this.errors = error.response.data.errors;
+                    console.log(this.errors);
+                    console.log(this.errors);
 
                 });
             },
