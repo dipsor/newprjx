@@ -60600,6 +60600,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['currentUser', 'thesisId'],
@@ -60635,6 +60639,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).catch(function (error) {
                 _this.loading = false;
                 _this.errors = error.response.data.errors;
+                console.log(_this.errors);
+                console.log(_this.errors);
             });
         },
         getThesis: function getThesis() {
@@ -61146,9 +61152,18 @@ var render = function() {
         ? _c(
             "v-alert",
             { attrs: { type: "error", value: true } },
-            _vm._l(_vm.errors, function(error) {
-              return _c("div", [_vm._v(_vm._s(error))])
-            })
+            [
+              _vm._l(_vm.errors, function(error) {
+                return _c("div", [
+                  _vm._v("\n            " + _vm._s(error) + "\n\n        ")
+                ])
+              }),
+              _vm._v(" "),
+              _c("a", { attrs: { href: "/profil/" + _vm.currentUser.id } }, [
+                _vm._v("Vyplnte potrebne detaily v sekci fakturacni udaje.")
+              ])
+            ],
+            2
           )
         : _vm._e(),
       _vm._v(" "),

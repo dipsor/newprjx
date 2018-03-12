@@ -58,7 +58,8 @@ class OrdersController extends Controller
             'city.required'  => 'Prosím, vyplňte město.',
             'street.required'  => 'Prosím, vyplňte ulici.',
             'postal_code.required'  => 'Prosím, vyplňte PSČ.',
-            'country_code.required'  => 'Prosím, vyplňte kód země.',]
+            'country_code.required'  => 'Prosím, vyplňte kód země.',
+            ]
         );
 
         $order = Order::create([

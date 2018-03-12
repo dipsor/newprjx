@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 use App\Users\Models\User;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\AccountCreated
+use App\Mail\AccountCreated;
 
 class FacebookAuthController extends Controller
 {
