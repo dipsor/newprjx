@@ -52,13 +52,13 @@ class OrdersController extends Controller
             'country_code' => 'required',
         ],
 
-        ['first_name.required' => 'Prosím, vyplňte křestní jméno.',
-            'last_name.required'  => 'Prosím, vyplňte příjmení.',
-            'phone_number.required'  => 'Prosím, vyplňte telefonní číslo.',
-            'city.required'  => 'Prosím, vyplňte město.',
-            'street.required'  => 'Prosím, vyplňte ulici.',
-            'postal_code.required'  => 'Prosím, vyplňte PSČ.',
-            'country_code.required'  => 'Prosím, vyplňte kód země.',
+            ['first_name.required' => 'Prosím, vyplňte křestní jméno.',
+                'last_name.required'  => 'Prosím, vyplňte příjmení.',
+                'phone_number.required'  => 'Prosím, vyplňte telefonní číslo.',
+                'city.required'  => 'Prosím, vyplňte město.',
+                'street.required'  => 'Prosím, vyplňte ulici.',
+                'postal_code.required'  => 'Prosím, vyplňte PSČ.',
+                'country_code.required'  => 'Prosím, vyplňte kód země.',
             ]
         );
 

@@ -42,12 +42,14 @@ Route::group(['namespace' => 'Api', 'prefix' => '/v1'], function () {
         Route::post('/upload', 'UploadController@upload')->name('thesis.api.upload');
     });
 
+
     Route::group(['prefix' => '/order'], function() {
         Route::get('/', 'OrdersController@index')->name('orders.api.index');
         Route::post('/', 'OrdersController@store')->name('orders.api.store');
         Route::get('/{id}', 'OrdersController@show')->name('orders.api.show');
         Route::post('/paid/{id}', 'OrdersController@changePaid')->name('orders.api.paid');
 
+        Route::post('generuj-csv/{id}', 'CsvController@generateCsv')->name('admin.generate.csv');
     });
 
     Route::group(['prefix' => '/gopay'], function() {
