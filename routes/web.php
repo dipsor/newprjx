@@ -14,10 +14,16 @@ Route::impersonate();
 Route::get('/', 'LandingPageController@index')->name('home');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin', 'auth']], function () {
-    Route::get('/', 'DashboardController@index')->name('dashboard.index');
-    Route::group(['prefix' => 'users', 'namespace' => 'Admin\Users'], function () {
-        Route::get('/', 'UsersController@index')->name('admin.users.index');
+//    Route::get('/', 'DashboardController@index')->name('dashboard.index');
+//    Route::group(['prefix' => 'users', 'namespace' => 'Admin\Users'], function () {
+//        Route::get('/', 'UsersController@index')->name('admin.users.index');
+//    });
+//
+    Route::group(['prefix' => 'objednavky', 'namespace' => 'Admin\Orders'], function () {
+        Route::get('/', 'OrderController@index')->name('admin.orders.index');
+        Route::get('/{id}', 'OrderController@show')->name('admin.orders.show');
     });
+
 });
 
 Route::group(['prefix' => 'profil', 'namespace' => 'Users', 'middleware' => ['role:customer', 'auth']], function () {

@@ -52,6 +52,8 @@ Vue.component('content-card', require('./components/Partials/ContentCardComponen
 Vue.component('breadcrumbs', require('./components/Partials/BreadcrumbsComponent.vue'));
 Vue.component('footer-component', require('./components/Partials/Footer.vue'));
 
+Vue.component('admin-orders-index', require('./components/Admin/Orders/Index.vue'));
+Vue.component('admin-orders-show', require('./components/Admin/Orders/Show.vue'));
 Vue.component('dashboard-index', require('./components/Dashboard/DashboardIndexComponent.vue'));
 
 Vue.component('users-index', require('./components/Users/UsersIndexComponent.vue'));

@@ -32,4 +32,9 @@ class Order extends Model
     {
         return $this->belongsTo(Thesis::class);
     }
+
+    public function getUserNameAttribute()
+    {
+        return $this->user->name;
+    }
 }
