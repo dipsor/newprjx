@@ -185,7 +185,7 @@
 
             setAdminMenu() {
                 return [
-                    { icon: 'dashboard', text: 'Admin', link: this.$laroute.route('dashboard.index'), forAdmin: true},
+                    { icon: 'dashboard', text: 'Admin', link: this.$laroute.route('admin.orders.index'), forAdmin: true},
                 ]
             },
 
