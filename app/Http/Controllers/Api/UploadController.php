@@ -18,11 +18,13 @@ class UploadController extends Controller
             $thesisId = $request->header('thesisid');
         }
 
+        $filename = $request->file('file')->getClientOriginalName();
         $path = $request->file('file')->store('pdf');
 
         $thesis = Thesis::find($thesisId);
         $thesis->update([
-           'filePath' => $path
+           'filePath' => $path,
+            'originalFileName' => $filename
         ]);
 
         return response($path, 200);

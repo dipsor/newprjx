@@ -13,13 +13,13 @@
                                 <v-list-tile-content>Typ zadání:</v-list-tile-content>
                                 <v-list-tile-content class="align-end">{{thesis.typZadani}}</v-list-tile-content>
                             </v-list-tile>
-                            <v-divider></v-divider>
-                            <v-list-tile @click="">
+                            <v-divider v-if="thesis.rozsahStran !== undefined"></v-divider>
+                            <v-list-tile @click=""  v-if="thesis.rozsahStran !== undefined">
                                 <v-list-tile-content>Předpokládaný rozsah stran:</v-list-tile-content>
                                 <v-list-tile-content class="align-end">{{thesis.rozsahStran}}</v-list-tile-content>
                             </v-list-tile>
-                            <v-divider></v-divider>
-                            <v-list-tile @click="">
+                            <v-divider v-if="thesis.presnyPocetStran !== undefined"></v-divider>
+                            <v-list-tile @click="" v-if="thesis.presnyPocetStran !== undefined">
                                 <v-list-tile-content>Přesný počet listů:</v-list-tile-content>
                                 <v-list-tile-content class="align-end">{{thesis.presnyPocetStran}}</v-list-tile-content>
                             </v-list-tile>
@@ -38,38 +38,43 @@
                                 <v-list-tile-content>Škola:</v-list-tile-content>
                                 <v-list-tile-content class="align-end">{{thesis.skoly}}</v-list-tile-content>
                             </v-list-tile>
+                            <v-divider v-if="thesis.jinaSkola !== ''"></v-divider>
+                            <v-list-tile @click=""  v-if="thesis.jinaSkola !== ''">
+                                <v-list-tile-content>Škola:</v-list-tile-content>
+                                <v-list-tile-content class="align-end">{{thesis.jinaSkola}}</v-list-tile-content>
+                            </v-list-tile>
                             <v-divider></v-divider>
                             <v-list-tile @click="">
                                 <v-list-tile-content>Fakulta:</v-list-tile-content>
                                 <v-list-tile-content class="align-end">{{thesis.fakulty}}</v-list-tile-content>
                             </v-list-tile>
-                            <v-divider></v-divider>
-                            <v-list-tile @click="">
+                            <v-divider v-if="thesis.katedry !== undefined"></v-divider>
+                            <v-list-tile @click="" v-if="thesis.katedry !== undefined">
                                 <v-list-tile-content>Katedra:</v-list-tile-content>
-                                <v-list-tile-content class="align-end">{{thesis.typZadani}}</v-list-tile-content>
+                                <v-list-tile-content class="align-end">{{thesis.katedry}}</v-list-tile-content>
                             </v-list-tile>
-                            <v-divider></v-divider>
-                            <v-list-tile @click="">
+                            <v-divider v-if="thesis.nazev_prace !== ''"></v-divider>
+                            <v-list-tile @click="" v-if="thesis.nazev_prace !== ''">
                                 <v-list-tile-content>Název práce:</v-list-tile-content>
-                                <v-list-tile-content class="align-end">{{thesis.typZadani}}</v-list-tile-content>
+                                <v-list-tile-content class="align-end">{{thesis.nazev_prace}}</v-list-tile-content>
                             </v-list-tile>
-                            <v-divider></v-divider>
-                            <v-list-tile @click="">
+                            <v-divider v-if="thesis.spodniTextVlevo !== ''"></v-divider>
+                            <v-list-tile @click="" v-if="thesis.spodniTextVlevo !== ''">
                                 <v-list-tile-content>Spodní řádek vlevo:</v-list-tile-content>
                                 <v-list-tile-content class="align-end">{{thesis.spodniTextVlevo}}</v-list-tile-content>
                             </v-list-tile>
-                            <v-divider></v-divider>
-                            <v-list-tile @click="">
+                            <v-divider v-if="thesis.spodniTextVpravo !== ''"></v-divider>
+                            <v-list-tile @click="" v-if="thesis.spodniTextVpravo !== undefined">
                                 <v-list-tile-content>Spodní řádek vpravo:</v-list-tile-content>
                                 <v-list-tile-content class="align-end">{{thesis.spodniTextVpravo}}</v-list-tile-content>
                             </v-list-tile>
-                            <v-divider></v-divider>
-                            <v-list-tile @click="">
+                            <v-divider v-if="thesis.potiskNahore !== ''"></v-divider>
+                            <v-list-tile @click="" v-if="thesis.potiskNahore !== ''">
                                 <v-list-tile-content>Potisk hřbetu nahoře:</v-list-tile-content>
                                 <v-list-tile-content class="align-end">{{thesis.potiskNahore}}</v-list-tile-content>
                             </v-list-tile>
-                            <v-divider></v-divider>
-                            <v-list-tile @click="">
+                            <v-divider v-if="thesis.potiskDole !== ''"></v-divider>
+                            <v-list-tile @click="" v-if="thesis.potiskDole !== ''">
                                 <v-list-tile-content>Potisk hřbetu dole:</v-list-tile-content>
                                 <v-list-tile-content class="align-end">{{thesis.potiskDole}}</v-list-tile-content>
                             </v-list-tile>
@@ -132,7 +137,7 @@
                 Zpět
             </v-btn>
             <v-spacer></v-spacer>
-            <v-btn color="primary" @click="createOrder()">
+            <v-btn color="primary" @click="createOrder()" :disabled="loading">
                 Vytvořit objednávku &nbsp<v-progress-circular v-show="loading" indeterminate color="white"></v-progress-circular>
             </v-btn>
         </v-card-actions>
@@ -151,9 +156,6 @@
                 loading: false,
                 errors: null,
             }
-        },
-
-        mounted() {
         },
 
         watch: {

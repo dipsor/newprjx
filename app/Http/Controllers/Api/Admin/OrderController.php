@@ -101,6 +101,20 @@ class OrdersController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showForAdmin($id)
+    {
+        $order = Order::all()->where('gopay_order_id', '=', $id)->first();
+
+        return response($this->transformer->transform($order));
+
+    }
+
+    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
