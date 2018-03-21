@@ -77,7 +77,7 @@
                                     <v-list v-if="order !== null">
                                         <v-list-tile @click="">
                                             <v-list-tile-content>Soubor:</v-list-tile-content>
-                                            <v-list-tile-content class="align-end">{{order.thesis.typZadani}}</v-list-tile-content>
+                                            <v-list-tile-content class="align-end"><a :href="'/pdf/'+order.thesis.filePath" download>{{order.thesis.originalFileName}}</a></v-list-tile-content>
                                         </v-list-tile>
                                         <v-divider v-if="order.thesis.typZadani !== undefined"></v-divider>
                                         <v-list-tile @click="">
@@ -201,7 +201,7 @@
 </template>
 <script>
     export default {
-        props:['currentUser', 'gopayOrderId'],
+        props:['currentUser', 'gopayOrderId', 'assetUrl'],
         data () {
             return {
                 thesis: null,
@@ -221,17 +221,13 @@
         mounted() {
             this.items = this.getBreadCrumbs();
             this.getOrder();
+            console.log(this.assetUrl);
         },
         watch: {
             order(val) {
-                console.log('watcher');
-                console.log(val);
                 this.status = val.status;
                 this.breadcrumText = val.orderName;
                 this.items = this.getBreadCrumbs();
-
-                console.log(this.order.thesis.katedry);
-
             },
             fileUrl(val) {
                 this.openFile(val);
@@ -243,7 +239,6 @@
                 axios.get(this.$laroute.route('orders.api.show', {id: this.gopayOrderId})).then((response) => {
                     this.loading = false;
                     this.order = response.data;
-                    console.log(this.order);
                 }).catch((error) => {
                     this.loading = false;
                     this.error = error.response.data.errors;
@@ -271,14 +266,12 @@
                     }).catch((error) => {
                     this.loading = false;
                     this.error = error.response.data.errors;
-                    console.log(error.response);
                 });
             },
 
             openFile(val)
             {
                 window.location = this.fileUrl;
-                console.log(this.fileUrl);
             }
         }
     }

@@ -28,7 +28,8 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        $orders = Order::all();
+//        $orders = Order::all();
+        $orders = Order::orderBy('id', 'desc')->get();
 
         return response($orders, 200);
 
@@ -160,9 +161,10 @@ class OrdersController extends Controller
     public function getUsersOrders(Request $request, int $userId)
     {
         $user = User::find($userId);
+        $orders = Order::where('user_id', '=', $user->id)->orderBy('id', 'desc')->get();
 
-        if (!empty($user->orders)) {
-            return response($user->orders, 200);
+        if (!empty($orders)) {
+            return response($orders, 200);
         }
     }
 }

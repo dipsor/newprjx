@@ -56134,7 +56134,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['currentUser', 'gopayOrderId'],
+    props: ['currentUser', 'gopayOrderId', 'assetUrl'],
     data: function data() {
         return {
             thesis: null,
@@ -56153,17 +56153,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         this.items = this.getBreadCrumbs();
         this.getOrder();
+        console.log(this.assetUrl);
     },
 
     watch: {
         order: function order(val) {
-            console.log('watcher');
-            console.log(val);
             this.status = val.status;
             this.breadcrumText = val.orderName;
             this.items = this.getBreadCrumbs();
-
-            console.log(this.order.thesis.katedry);
         },
         fileUrl: function fileUrl(val) {
             this.openFile(val);
@@ -56177,7 +56174,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.get(this.$laroute.route('orders.api.show', { id: this.gopayOrderId })).then(function (response) {
                 _this.loading = false;
                 _this.order = response.data;
-                console.log(_this.order);
             }).catch(function (error) {
                 _this.loading = false;
                 _this.error = error.response.data.errors;
@@ -56201,12 +56197,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).catch(function (error) {
                 _this2.loading = false;
                 _this2.error = error.response.data.errors;
-                console.log(error.response);
             });
         },
         openFile: function openFile(val) {
             window.location = this.fileUrl;
-            console.log(this.fileUrl);
         }
     }
 });
@@ -56591,10 +56585,25 @@ var render = function() {
                                                 "v-list-tile-content",
                                                 { staticClass: "align-end" },
                                                 [
-                                                  _vm._v(
-                                                    _vm._s(
-                                                      _vm.order.thesis.typZadani
-                                                    )
+                                                  _c(
+                                                    "a",
+                                                    {
+                                                      attrs: {
+                                                        href:
+                                                          "/pdf/" +
+                                                          _vm.order.thesis
+                                                            .filePath,
+                                                        download: ""
+                                                      }
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm.order.thesis
+                                                            .originalFileName
+                                                        )
+                                                      )
+                                                    ]
                                                   )
                                                 ]
                                               )
@@ -60435,6 +60444,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.price += this.getKrouzkoveDeskyPrice();
             this.price += this.getKapsaCDPrice();
             this.price += this.getKapsaPosudekPrice();
+            this.price = Math.round(this.price * 100) / 100;
         },
         setNextStep: function setNextStep() {
             this.nextStep = 2; // go to upload

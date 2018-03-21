@@ -28,7 +28,7 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        $orders = Order::all();
+        $orders = Order::orderBy('id', 'desc')->get();
 
         return response($orders, 200);
 
