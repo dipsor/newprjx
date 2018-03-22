@@ -17,6 +17,7 @@ use GoPay\Definition\Payment\BankSwiftCode;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\OrderPaid;
+use App\Mail\OrderCreated;
 
 class GopayController extends Controller
 {

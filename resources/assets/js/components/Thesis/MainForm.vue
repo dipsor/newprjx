@@ -615,6 +615,7 @@
                 this.price += this.getKrouzkoveDeskyPrice();
                 this.price += this.getKapsaCDPrice();
                 this.price += this.getKapsaPosudekPrice();
+                this.price = Math.round(this.price * 100) / 100;
             },
 
             setNextStep() {

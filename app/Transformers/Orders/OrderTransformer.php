@@ -18,6 +18,8 @@ class OrderTransformer extends TransformerAbstract
             'id'                => (int)$order->id,
             'user_id'           => (int)$order->user_id,
             'thesis_id'         => (int)$order->thesis_id,
+            'thesis'            => $order->thesis,
+            'user'              => $order->user,
             'orderName'         => (string)$order->orderName,
             'first_name'        => (string)$order->first_name,
             'last_name'         => (string)$order->last_name,

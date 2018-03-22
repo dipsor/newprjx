@@ -198,7 +198,7 @@ to vše lze objednat i přímo zde, online!
                 this.eventBus.$emit('open-login-dialog', true );
             },
             profile () {
-                window.location.href = this.$laroute.route('users.show');
+                window.location.href = this.$laroute.route('users.show', {'id': this.parsedUser.id});
             },
 
             createThesis() {

@@ -1403,8 +1403,8 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(14);
-__webpack_require__(158);
-module.exports = __webpack_require__(159);
+__webpack_require__(160);
+module.exports = __webpack_require__(161);
 
 
 /***/ }),
@@ -1470,29 +1470,29 @@ Vue.component('footer-component', __webpack_require__(76));
 
 Vue.component('admin-orders-index', __webpack_require__(81));
 Vue.component('admin-orders-show', __webpack_require__(84));
-Vue.component('dashboard-index', __webpack_require__(85));
+Vue.component('dashboard-index', __webpack_require__(87));
 
-Vue.component('users-index', __webpack_require__(88));
-Vue.component('users-edit', __webpack_require__(91));
-Vue.component('users-edit-generals', __webpack_require__(96));
-Vue.component('users-edit-billings', __webpack_require__(99));
-Vue.component('users-change-pass', __webpack_require__(102));
+Vue.component('users-index', __webpack_require__(90));
+Vue.component('users-edit', __webpack_require__(93));
+Vue.component('users-edit-generals', __webpack_require__(98));
+Vue.component('users-edit-billings', __webpack_require__(101));
+Vue.component('users-change-pass', __webpack_require__(104));
 
-Vue.component('thesis-index', __webpack_require__(105));
-Vue.component('thesis-main-form', __webpack_require__(108));
-Vue.component('thesis-dropzone', __webpack_require__(111));
-Vue.component('thesis-review', __webpack_require__(116));
-Vue.component('thesis-payment', __webpack_require__(119));
+Vue.component('thesis-index', __webpack_require__(107));
+Vue.component('thesis-main-form', __webpack_require__(110));
+Vue.component('thesis-dropzone', __webpack_require__(113));
+Vue.component('thesis-review', __webpack_require__(118));
+Vue.component('thesis-payment', __webpack_require__(121));
 
-Vue.component('custom-dialog', __webpack_require__(122));
-Vue.component('landing-page', __webpack_require__(125));
-Vue.component('example-component', __webpack_require__(130));
-Vue.component('users-list', __webpack_require__(132));
-Vue.component('users-form', __webpack_require__(137));
-Vue.component('left-sidebar', __webpack_require__(142));
-Vue.component('navigation', __webpack_require__(147));
-Vue.component('users-profile', __webpack_require__(150));
-Vue.component('order-detail', __webpack_require__(155));
+Vue.component('custom-dialog', __webpack_require__(124));
+Vue.component('landing-page', __webpack_require__(127));
+Vue.component('example-component', __webpack_require__(132));
+Vue.component('users-list', __webpack_require__(134));
+Vue.component('users-form', __webpack_require__(139));
+Vue.component('left-sidebar', __webpack_require__(144));
+Vue.component('navigation', __webpack_require__(149));
+Vue.component('users-profile', __webpack_require__(152));
+Vue.component('order-detail', __webpack_require__(157));
 
 var app = new Vue({
 
@@ -47369,7 +47369,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;var _typeof = typeof Symbol === "function" && 
 
             absolute: false,
             rootUrl: 'http://localhost',
-            routes: [{ "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizationController@authorize" }, { "host": null, "methods": ["POST"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\ApproveAuthorizationController@approve" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\DenyAuthorizationController@deny" }, { "host": null, "methods": ["POST"], "uri": "oauth\/token", "name": null, "action": "\Laravel\Passport\Http\Controllers\AccessTokenController@issueToken" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController@forUser" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/tokens\/{token_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController@destroy" }, { "host": null, "methods": ["POST"], "uri": "oauth\/token\/refresh", "name": null, "action": "\Laravel\Passport\Http\Controllers\TransientTokenController@refresh" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/clients", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@forUser" }, { "host": null, "methods": ["POST"], "uri": "oauth\/clients", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@store" }, { "host": null, "methods": ["PUT"], "uri": "oauth\/clients\/{client_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@update" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/clients\/{client_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/scopes", "name": null, "action": "\Laravel\Passport\Http\Controllers\ScopeController@all" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/personal-access-tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@forUser" }, { "host": null, "methods": ["POST"], "uri": "oauth\/personal-access-tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@store" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/personal-access-tokens\/{token_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/users", "name": "users.api.index", "action": "AppHttpControllersApiUsersController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/users", "name": "users.api.store", "action": "AppHttpControllersApiUsersController@store" }, { "host": null, "methods": ["DELETE"], "uri": "api\/v1\/users\/{id}", "name": "users.api.destroy", "action": "AppHttpControllersApiUsersController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/users\/{id}", "name": "users.api.show", "action": "AppHttpControllersApiUsersController@show" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/{id}", "name": "users.api.update", "action": "AppHttpControllersApiUsersController@update" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/profile-update\/{id}", "name": "users.api.update.general.info", "action": "AppHttpControllersApiUsersController@updateGeneralInfo" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/user-password-update\/{id}", "name": "users.api.update.password", "action": "AppHttpControllersApiUsersController@updatePassword" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/user-billing-update\/{id}", "name": "users.api.update.billing", "action": "AppHttpControllersApiUsersController@updateBillingDetails" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/users\/{id}\/orders", "name": "users.api.orders", "action": "App\Http\Controllers\Api\OrdersController@getUsersOrders" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/roles", "name": "roles.api.index", "action": "App\Http\Controllers\Api\RolesController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/teams", "name": "teams.api.index", "action": "App\Http\Controllers\Api\TeamsController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/thesis", "name": "thesis.api.store", "action": "App\Http\Controllers\Api\ThesisController@store" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/thesis\/{id}", "name": "thesis.api.show", "action": "App\Http\Controllers\Api\ThesisController@show" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/thesis\/{id}", "name": "thesis.api.update", "action": "App\Http\Controllers\Api\ThesisController@update" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/thesis\/upload", "name": "thesis.api.upload", "action": "AppHttpControllersApiUploadController@upload" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/order", "name": "orders.api.index", "action": "App\Http\Controllers\Api\OrdersController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/order", "name": "orders.api.store", "action": "App\Http\Controllers\Api\OrdersController@store" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/order\/{id}", "name": "orders.api.show", "action": "App\Http\Controllers\Api\OrdersController@show" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/order\/paid\/{id}", "name": "orders.api.paid", "action": "App\Http\Controllers\Api\OrdersController@changePaid" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/order\/generuj-csv\/{id}", "name": "admin.generate.csv", "action": "App\Http\Controllers\Api\CsvController@generateCsv" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/gopay", "name": "gopay.api.create.payment", "action": "App\Http\Controllers\Api\GopayController@payment" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/gopay", "name": "gopay.api.status", "action": "App\Http\Controllers\Api\GopayController@getStatus" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "impersonate\/take\/{id}", "name": "impersonate", "action": "\Lab404\Impersonate\Controllers\ImpersonateController@take" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "impersonate\/leave", "name": "impersonate.leave", "action": "\Lab404\Impersonate\Controllers\ImpersonateController@leave" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "\/", "name": "home", "action": "App\Http\Controllers\LandingPageController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "admin\/objednavky", "name": "admin.orders.index", "action": "App\Http\Controllers\Admin\Orders\OrderController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "admin\/objednavky\/{id}", "name": "admin.orders.show", "action": "App\Http\Controllers\Admin\Orders\OrderController@show" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "profil", "name": "users.index", "action": "AppHttpControllersUsersUsersController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "profil\/{id}", "name": "users.show", "action": "AppHttpControllersUsersUsersController@show" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "profil\/order\/{orderId}", "name": "users.order.show", "action": "AppHttpControllersUsersUsersController@showOrder" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "thesis", "name": "thesis.index", "action": "App\Http\Controllers\Thesis\ThesisController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "thesis\/return", "name": "thesis.return", "action": "App\Http\Controllers\Thesis\ThesisController@returnIt" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "thesis\/notify", "name": "thesis.notify", "action": "App\Http\Controllers\Thesis\ThesisController@notify" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/facebook", "name": "facebook.login", "action": "App\Http\Controllers\Auth\FacebookAuthController@redirectToProvider" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/facebook\/callback", "name": "facebook.login.callback", "action": "App\Http\Controllers\Auth\FacebookAuthController@handleProviderCallback" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/google", "name": "google.login", "action": "App\Http\Controllers\Auth\GoogleAuthController@redirectToProvider" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/google\/callback", "name": "google.login.callback", "action": "App\Http\Controllers\Auth\GoogleAuthController@handleProviderCallback" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "logout", "name": "users.logout", "action": "\App\Http\Controllers\Auth\LoginController@customLogout" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login", "name": "login", "action": "App\Http\Controllers\Auth\LoginController@showLoginForm" }, { "host": null, "methods": ["POST"], "uri": "login", "name": null, "action": "App\Http\Controllers\Auth\LoginController@login" }, { "host": null, "methods": ["POST"], "uri": "logout", "name": "logout", "action": "App\Http\Controllers\Auth\LoginController@logout" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "register", "name": "register", "action": "App\Http\Controllers\Auth\RegisterController@showRegistrationForm" }, { "host": null, "methods": ["POST"], "uri": "register", "name": null, "action": "App\Http\Controllers\Auth\RegisterController@register" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "password\/reset", "name": "password.request", "action": "App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm" }, { "host": null, "methods": ["POST"], "uri": "password\/email", "name": "password.email", "action": "App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "password\/reset\/{token}", "name": "password.reset", "action": "App\Http\Controllers\Auth\ResetPasswordController@showResetForm" }, { "host": null, "methods": ["POST"], "uri": "password\/reset", "name": null, "action": "App\Http\Controllers\Auth\ResetPasswordController@reset" }],
+            routes: [{ "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizationController@authorize" }, { "host": null, "methods": ["POST"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\ApproveAuthorizationController@approve" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/authorize", "name": null, "action": "\Laravel\Passport\Http\Controllers\DenyAuthorizationController@deny" }, { "host": null, "methods": ["POST"], "uri": "oauth\/token", "name": null, "action": "\Laravel\Passport\Http\Controllers\AccessTokenController@issueToken" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController@forUser" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/tokens\/{token_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController@destroy" }, { "host": null, "methods": ["POST"], "uri": "oauth\/token\/refresh", "name": null, "action": "\Laravel\Passport\Http\Controllers\TransientTokenController@refresh" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/clients", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@forUser" }, { "host": null, "methods": ["POST"], "uri": "oauth\/clients", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@store" }, { "host": null, "methods": ["PUT"], "uri": "oauth\/clients\/{client_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@update" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/clients\/{client_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\ClientController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/scopes", "name": null, "action": "\Laravel\Passport\Http\Controllers\ScopeController@all" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "oauth\/personal-access-tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@forUser" }, { "host": null, "methods": ["POST"], "uri": "oauth\/personal-access-tokens", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@store" }, { "host": null, "methods": ["DELETE"], "uri": "oauth\/personal-access-tokens\/{token_id}", "name": null, "action": "\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/users", "name": "users.api.index", "action": "AppHttpControllersApiUsersController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/users", "name": "users.api.store", "action": "AppHttpControllersApiUsersController@store" }, { "host": null, "methods": ["DELETE"], "uri": "api\/v1\/users\/{id}", "name": "users.api.destroy", "action": "AppHttpControllersApiUsersController@destroy" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/users\/{id}", "name": "users.api.show", "action": "AppHttpControllersApiUsersController@show" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/{id}", "name": "users.api.update", "action": "AppHttpControllersApiUsersController@update" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/profile-update\/{id}", "name": "users.api.update.general.info", "action": "AppHttpControllersApiUsersController@updateGeneralInfo" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/user-password-update\/{id}", "name": "users.api.update.password", "action": "AppHttpControllersApiUsersController@updatePassword" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/users\/user-billing-update\/{id}", "name": "users.api.update.billing", "action": "AppHttpControllersApiUsersController@updateBillingDetails" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/users\/{id}\/orders", "name": "users.api.orders", "action": "App\Http\Controllers\Api\OrdersController@getUsersOrders" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/roles", "name": "roles.api.index", "action": "App\Http\Controllers\Api\RolesController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/teams", "name": "teams.api.index", "action": "App\Http\Controllers\Api\TeamsController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/thesis", "name": "thesis.api.store", "action": "App\Http\Controllers\Api\ThesisController@store" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/thesis\/{id}", "name": "thesis.api.show", "action": "App\Http\Controllers\Api\ThesisController@show" }, { "host": null, "methods": ["PUT"], "uri": "api\/v1\/thesis\/{id}", "name": "thesis.api.update", "action": "App\Http\Controllers\Api\ThesisController@update" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/thesis\/upload", "name": "thesis.api.upload", "action": "AppHttpControllersApiUploadController@upload" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/order", "name": "orders.api.index", "action": "App\Http\Controllers\Api\OrdersController@index" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/order", "name": "orders.api.store", "action": "App\Http\Controllers\Api\OrdersController@store" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/order\/{id}", "name": "orders.api.show", "action": "App\Http\Controllers\Api\OrdersController@show" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/order\/paid\/{id}", "name": "orders.api.paid", "action": "App\Http\Controllers\Api\OrdersController@changePaid" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/order\/generuj-csv\/{id}", "name": "admin.generate.csv", "action": "App\Http\Controllers\Api\CsvController@generateCsv" }, { "host": null, "methods": ["POST"], "uri": "api\/v1\/gopay", "name": "gopay.api.create.payment", "action": "App\Http\Controllers\Api\GopayController@payment" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/v1\/gopay", "name": "gopay.api.status", "action": "App\Http\Controllers\Api\GopayController@getStatus" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "impersonate\/take\/{id}", "name": "impersonate", "action": "\Lab404\Impersonate\Controllers\ImpersonateController@take" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "impersonate\/leave", "name": "impersonate.leave", "action": "\Lab404\Impersonate\Controllers\ImpersonateController@leave" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "\/", "name": "home", "action": "App\Http\Controllers\LandingPageController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "admin\/objednavky", "name": "admin.orders.index", "action": "App\Http\Controllers\Admin\Orders\OrderController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "admin\/objednavky\/{id}", "name": "admin.orders.show", "action": "App\Http\Controllers\Admin\Orders\OrderController@show" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "uzivatel", "name": "users.index", "action": "AppHttpControllersUsersUsersController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "uzivatel\/zmena-udaju\/{id}", "name": "users.show", "action": "AppHttpControllersUsersUsersController@show" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "uzivatel\/objednavka\/{orderId}", "name": "users.order.show", "action": "AppHttpControllersUsersUsersController@showOrder" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "thesis", "name": "thesis.index", "action": "App\Http\Controllers\Thesis\ThesisController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "thesis\/return", "name": "thesis.return", "action": "App\Http\Controllers\Thesis\ThesisController@returnIt" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "thesis\/notify", "name": "thesis.notify", "action": "App\Http\Controllers\Thesis\ThesisController@notify" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/facebook", "name": "facebook.login", "action": "App\Http\Controllers\Auth\FacebookAuthController@redirectToProvider" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/facebook\/callback", "name": "facebook.login.callback", "action": "App\Http\Controllers\Auth\FacebookAuthController@handleProviderCallback" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/google", "name": "google.login", "action": "App\Http\Controllers\Auth\GoogleAuthController@redirectToProvider" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login\/google\/callback", "name": "google.login.callback", "action": "App\Http\Controllers\Auth\GoogleAuthController@handleProviderCallback" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "logout", "name": "users.logout", "action": "\App\Http\Controllers\Auth\LoginController@customLogout" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login", "name": "login", "action": "App\Http\Controllers\Auth\LoginController@showLoginForm" }, { "host": null, "methods": ["POST"], "uri": "login", "name": null, "action": "App\Http\Controllers\Auth\LoginController@login" }, { "host": null, "methods": ["POST"], "uri": "logout", "name": "logout", "action": "App\Http\Controllers\Auth\LoginController@logout" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "register", "name": "register", "action": "App\Http\Controllers\Auth\RegisterController@showRegistrationForm" }, { "host": null, "methods": ["POST"], "uri": "register", "name": null, "action": "App\Http\Controllers\Auth\RegisterController@register" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "password\/reset", "name": "password.request", "action": "App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm" }, { "host": null, "methods": ["POST"], "uri": "password\/email", "name": "password.email", "action": "App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "password\/reset\/{token}", "name": "password.reset", "action": "App\Http\Controllers\Auth\ResetPasswordController@showResetForm" }, { "host": null, "methods": ["POST"], "uri": "password\/reset", "name": null, "action": "App\Http\Controllers\Auth\ResetPasswordController@reset" }],
             prefix: '',
 
             route: function route(name, parameters, _route) {
@@ -55610,6 +55610,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -55618,6 +55619,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 text: 'Dashboard',
                 disabled: false
             }],
+            totalItems: 0,
             divider: true,
             messages: {
                 'PAID': 'Objednávka byla zaplacena.',
@@ -55773,12 +55775,7 @@ var render = function() {
                               _c(
                                 "v-toolbar-title",
                                 { staticClass: "white--text" },
-                                [
-                                  _vm._v(
-                                    "Objednávky uživatele " +
-                                      _vm._s(_vm.currentUser.name)
-                                  )
-                                ]
+                                [_vm._v("Objednávky")]
                               )
                             ],
                             1
@@ -55789,7 +55786,8 @@ var render = function() {
                             attrs: {
                               headers: _vm.headers,
                               items: _vm.items2,
-                              "hide-actions": ""
+                              "hide-actions": "",
+                              "total-items": _vm.totalItems
                             },
                             scopedSlots: _vm._u([
                               {
@@ -55839,7 +55837,10 @@ var render = function() {
                                         "a",
                                         {
                                           attrs: {
-                                            href: "/objednavky/" + props.item.id
+                                            href: _vm.$laroute.route(
+                                              "admin.orders.show",
+                                              { id: props.item.id }
+                                            )
                                           }
                                         },
                                         [_vm._v("Zobrazit")]
@@ -55883,11 +55884,12 @@ if (false) {
 /* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(85)
 /* template */
-var __vue_template__ = null
+var __vue_template__ = __webpack_require__(86)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -55907,19 +55909,1477 @@ var Component = normalizeComponent(
 Component.options.__file = "resources/assets/js/components/Admin/Orders/Show.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3705f36e", Component.options)
+  } else {
+    hotAPI.reload("data-v-3705f36e", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
 module.exports = Component.exports
 
 
 /***/ }),
 /* 85 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['currentUser', 'gopayOrderId', 'assetUrl'],
+    data: function data() {
+        return {
+            thesis: null,
+            loading: false,
+            errors: null,
+            embedJs: null,
+            gw_url: null,
+            order: null,
+            user: null,
+            items: [],
+            status: null,
+            breadcrumText: '',
+            fileUrl: ''
+        };
+    },
+    mounted: function mounted() {
+        this.items = this.getBreadCrumbs();
+        this.getOrder();
+        console.log(this.assetUrl);
+    },
+
+    watch: {
+        order: function order(val) {
+            this.status = val.status;
+            this.breadcrumText = val.orderName;
+            this.items = this.getBreadCrumbs();
+        },
+        fileUrl: function fileUrl(val) {
+            this.openFile(val);
+        }
+    },
+
+    methods: {
+        getOrder: function getOrder() {
+            var _this = this;
+
+            axios.get(this.$laroute.route('orders.api.show', { id: this.gopayOrderId })).then(function (response) {
+                _this.loading = false;
+                _this.order = response.data;
+            }).catch(function (error) {
+                _this.loading = false;
+                _this.error = error.response.data.errors;
+            });
+        },
+        getBreadCrumbs: function getBreadCrumbs() {
+            return [{
+                text: this.currentUser.name,
+                disabled: false,
+                link: this.$laroute.route('users.index')
+            }, {
+                text: this.breadcrumText,
+                disabled: true
+            }];
+        },
+        generateCsv: function generateCsv(id) {
+            var _this2 = this;
+
+            axios.post(this.$laroute.route('admin.generate.csv', { id: id })).then(function (response) {
+                _this2.fileUrl = response.data;
+            }).catch(function (error) {
+                _this2.loading = false;
+                _this2.error = error.response.data.errors;
+            });
+        },
+        openFile: function openFile(val) {
+            window.location = this.fileUrl;
+        }
+    }
+});
+
+/***/ }),
+/* 86 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-content",
+        [
+          _c(
+            "v-container",
+            { attrs: { "grid-list-md": "", "text-xs-center": "" } },
+            [
+              _c(
+                "v-layout",
+                { attrs: { row: "", wrap: "" } },
+                [
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "" } },
+                    [
+                      _c("breadcrumbs", {
+                        attrs: { "breadcrumbs-items": _vm.items }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "" } },
+                    [
+                      _c(
+                        "v-layout",
+                        { attrs: { row: "", wrap: "" } },
+                        [
+                          _c(
+                            "v-flex",
+                            { attrs: { xs12: "" } },
+                            [
+                              _c(
+                                "v-card",
+                                [
+                                  _c(
+                                    "v-toolbar",
+                                    {
+                                      attrs: {
+                                        color: "purple darken-3",
+                                        dark: ""
+                                      }
+                                    },
+                                    [
+                                      _c("v-toolbar-title", [
+                                        _vm._v("Shrnutí objednávky")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("v-spacer")
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _vm.order !== null
+                                    ? _c(
+                                        "v-list",
+                                        [
+                                          _c(
+                                            "v-list-tile",
+                                            {
+                                              on: { click: function($event) {} }
+                                            },
+                                            [
+                                              _c("v-list-tile-content", [
+                                                _vm._v("Objednávka:")
+                                              ]),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-tile-content",
+                                                { staticClass: "align-end" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(_vm.order.orderName)
+                                                  )
+                                                ]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c("v-divider"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile",
+                                            {
+                                              on: { click: function($event) {} }
+                                            },
+                                            [
+                                              _c("v-list-tile-content", [
+                                                _vm._v("Jméno:")
+                                              ]),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-tile-content",
+                                                { staticClass: "align-end" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(_vm.order.first_name)
+                                                  )
+                                                ]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c("v-divider"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile",
+                                            {
+                                              on: { click: function($event) {} }
+                                            },
+                                            [
+                                              _c("v-list-tile-content", [
+                                                _vm._v("Příjmení:")
+                                              ]),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-tile-content",
+                                                { staticClass: "align-end" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(_vm.order.last_name)
+                                                  )
+                                                ]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c("v-divider"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile",
+                                            {
+                                              on: { click: function($event) {} }
+                                            },
+                                            [
+                                              _c("v-list-tile-content", [
+                                                _vm._v("Ulice:")
+                                              ]),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-tile-content",
+                                                { staticClass: "align-end" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(_vm.order.street)
+                                                  )
+                                                ]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c("v-divider"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile",
+                                            {
+                                              on: { click: function($event) {} }
+                                            },
+                                            [
+                                              _c("v-list-tile-content", [
+                                                _vm._v("Tel číslo:")
+                                              ]),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-tile-content",
+                                                { staticClass: "align-end" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      _vm.order.user
+                                                        .phone_number
+                                                    )
+                                                  )
+                                                ]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c("v-divider"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile",
+                                            {
+                                              on: { click: function($event) {} }
+                                            },
+                                            [
+                                              _c("v-list-tile-content", [
+                                                _vm._v("Email:")
+                                              ]),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-tile-content",
+                                                { staticClass: "align-end" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(_vm.order.user.email)
+                                                  )
+                                                ]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c("v-divider"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile",
+                                            {
+                                              on: { click: function($event) {} }
+                                            },
+                                            [
+                                              _c("v-list-tile-content", [
+                                                _vm._v("Cena:")
+                                              ]),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-tile-content",
+                                                { staticClass: "align-end" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(_vm.order.price) +
+                                                      " Kč"
+                                                  )
+                                                ]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c("v-divider"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile",
+                                            {
+                                              on: { click: function($event) {} }
+                                            },
+                                            [
+                                              _c("v-list-tile-content", [
+                                                _vm._v("Status:")
+                                              ]),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-tile-content",
+                                                { staticClass: "align-end" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(_vm.order.status)
+                                                  )
+                                                ]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c("v-divider"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile",
+                                            [
+                                              _c("v-list-tile-content", [
+                                                _c(
+                                                  "a",
+                                                  {
+                                                    staticClass:
+                                                      "btn primary pr-2 pl-2",
+                                                    on: {
+                                                      click: function($event) {
+                                                        _vm.generateCsv(
+                                                          _vm.order.thesis.id
+                                                        )
+                                                      }
+                                                    }
+                                                  },
+                                                  [_vm._v("Generovat Csv")]
+                                                )
+                                              ])
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c("v-divider"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile",
+                                            [
+                                              _c(
+                                                "v-list-tile-content",
+                                                {
+                                                  attrs: { "align-right": "" }
+                                                },
+                                                [
+                                                  _c(
+                                                    "v-btn",
+                                                    {
+                                                      attrs: {
+                                                        "align-right": "",
+                                                        primary: ""
+                                                      }
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "Zmenit stav objednavky"
+                                                      )
+                                                    ]
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    : _vm._e()
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-layout",
+                        { attrs: { row: "", wrap: "" } },
+                        [
+                          _c(
+                            "v-flex",
+                            { attrs: { xs12: "" } },
+                            [
+                              _c(
+                                "v-card",
+                                [
+                                  _c(
+                                    "v-toolbar",
+                                    {
+                                      attrs: {
+                                        color: "purple darken-3",
+                                        dark: ""
+                                      }
+                                    },
+                                    [
+                                      _c("v-toolbar-title", [_vm._v("Zadání")]),
+                                      _vm._v(" "),
+                                      _c("v-spacer")
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _vm.order !== null
+                                    ? _c(
+                                        "v-list",
+                                        [
+                                          _c(
+                                            "v-list-tile",
+                                            {
+                                              on: { click: function($event) {} }
+                                            },
+                                            [
+                                              _c("v-list-tile-content", [
+                                                _vm._v("Soubor:")
+                                              ]),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-tile-content",
+                                                { staticClass: "align-end" },
+                                                [
+                                                  _c(
+                                                    "a",
+                                                    {
+                                                      attrs: {
+                                                        href:
+                                                          "/pdf/" +
+                                                          _vm.order.thesis
+                                                            .filePath,
+                                                        download: ""
+                                                      }
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm.order.thesis
+                                                            .originalFileName
+                                                        )
+                                                      )
+                                                    ]
+                                                  )
+                                                ]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _vm.order.thesis.typZadani !==
+                                          undefined
+                                            ? _c("v-divider")
+                                            : _vm._e(),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile",
+                                            {
+                                              on: { click: function($event) {} }
+                                            },
+                                            [
+                                              _c("v-list-tile-content", [
+                                                _vm._v("Typ zadání:")
+                                              ]),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-tile-content",
+                                                { staticClass: "align-end" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      _vm.order.thesis.typZadani
+                                                    )
+                                                  )
+                                                ]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _vm.order.thesis.rozsahStran !==
+                                          undefined
+                                            ? _c("v-divider")
+                                            : _vm._e(),
+                                          _vm._v(" "),
+                                          _vm.order.thesis.rozsahStran !==
+                                          undefined
+                                            ? _c(
+                                                "v-list-tile",
+                                                {
+                                                  on: {
+                                                    click: function($event) {}
+                                                  }
+                                                },
+                                                [
+                                                  _c("v-list-tile-content", [
+                                                    _vm._v(
+                                                      "Předpokládaný rozsah stran:"
+                                                    )
+                                                  ]),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-tile-content",
+                                                    {
+                                                      staticClass: "align-end"
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm.order.thesis
+                                                            .rozsahStran
+                                                        )
+                                                      )
+                                                    ]
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            : _vm._e(),
+                                          _vm._v(" "),
+                                          _vm.order.thesis.presnyPocetStran !==
+                                          undefined
+                                            ? _c("v-divider")
+                                            : _vm._e(),
+                                          _vm._v(" "),
+                                          _vm.order.thesis.presnyPocetStran !==
+                                          undefined
+                                            ? _c(
+                                                "v-list-tile",
+                                                {
+                                                  on: {
+                                                    click: function($event) {}
+                                                  }
+                                                },
+                                                [
+                                                  _c("v-list-tile-content", [
+                                                    _vm._v(
+                                                      "Přesný počet listů:"
+                                                    )
+                                                  ]),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-tile-content",
+                                                    {
+                                                      staticClass: "align-end"
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm.order.thesis
+                                                            .presnyPocetStran
+                                                        )
+                                                      )
+                                                    ]
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            : _vm._e(),
+                                          _vm._v(" "),
+                                          _c("v-divider"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile",
+                                            {
+                                              on: { click: function($event) {} }
+                                            },
+                                            [
+                                              _c("v-list-tile-content", [
+                                                _vm._v("Typ tisku:")
+                                              ]),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-tile-content",
+                                                { staticClass: "align-end" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      _vm.order.thesis.typTisku
+                                                    )
+                                                  )
+                                                ]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c("v-divider"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile",
+                                            {
+                                              on: { click: function($event) {} }
+                                            },
+                                            [
+                                              _c("v-list-tile-content", [
+                                                _vm._v("Barevnost:")
+                                              ]),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-tile-content",
+                                                { staticClass: "align-end" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      _vm.order.thesis.barevnost
+                                                    )
+                                                  )
+                                                ]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c("v-divider"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile",
+                                            {
+                                              on: { click: function($event) {} }
+                                            },
+                                            [
+                                              _c("v-list-tile-content", [
+                                                _vm._v("Škola:")
+                                              ]),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-tile-content",
+                                                { staticClass: "align-end" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      _vm.order.thesis.skoly
+                                                    )
+                                                  )
+                                                ]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _vm.order.thesis.jinaSkola !== null
+                                            ? _c("v-divider")
+                                            : _vm._e(),
+                                          _vm._v(" "),
+                                          _vm.order.thesis.jinaSkola !== null
+                                            ? _c(
+                                                "v-list-tile",
+                                                {
+                                                  on: {
+                                                    click: function($event) {}
+                                                  }
+                                                },
+                                                [
+                                                  _c("v-list-tile-content", [
+                                                    _vm._v("Škola:")
+                                                  ]),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-tile-content",
+                                                    {
+                                                      staticClass: "align-end"
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm.order.thesis
+                                                            .jinaSkola
+                                                        )
+                                                      )
+                                                    ]
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            : _vm._e(),
+                                          _vm._v(" "),
+                                          _c("v-divider"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile",
+                                            {
+                                              on: { click: function($event) {} }
+                                            },
+                                            [
+                                              _c("v-list-tile-content", [
+                                                _vm._v("Fakulta:")
+                                              ]),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-tile-content",
+                                                { staticClass: "align-end" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      _vm.order.thesis.fakulty
+                                                    )
+                                                  )
+                                                ]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _vm.order.thesis.katedry !== undefined
+                                            ? _c("v-divider")
+                                            : _vm._e(),
+                                          _vm._v(" "),
+                                          _vm.order.thesis.katedry !== undefined
+                                            ? _c(
+                                                "v-list-tile",
+                                                {
+                                                  on: {
+                                                    click: function($event) {}
+                                                  }
+                                                },
+                                                [
+                                                  _c("v-list-tile-content", [
+                                                    _vm._v("Katedra:")
+                                                  ]),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-tile-content",
+                                                    {
+                                                      staticClass: "align-end"
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm.order.thesis
+                                                            .katedry
+                                                        )
+                                                      )
+                                                    ]
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            : _vm._e(),
+                                          _vm._v(" "),
+                                          _vm.order.thesis.nazev_prace !== null
+                                            ? _c("v-divider")
+                                            : _vm._e(),
+                                          _vm._v(" "),
+                                          _vm.order.thesis.nazev_prace !== null
+                                            ? _c(
+                                                "v-list-tile",
+                                                {
+                                                  on: {
+                                                    click: function($event) {}
+                                                  }
+                                                },
+                                                [
+                                                  _c("v-list-tile-content", [
+                                                    _vm._v("Název práce:")
+                                                  ]),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-tile-content",
+                                                    {
+                                                      staticClass: "align-end"
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm.order.thesis
+                                                            .nazev_prace
+                                                        )
+                                                      )
+                                                    ]
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            : _vm._e(),
+                                          _vm._v(" "),
+                                          _vm.order.thesis.spodniTextVlevo !==
+                                          null
+                                            ? _c("v-divider")
+                                            : _vm._e(),
+                                          _vm._v(" "),
+                                          _vm.order.thesis.spodniTextVlevo !==
+                                          null
+                                            ? _c(
+                                                "v-list-tile",
+                                                {
+                                                  on: {
+                                                    click: function($event) {}
+                                                  }
+                                                },
+                                                [
+                                                  _c("v-list-tile-content", [
+                                                    _vm._v(
+                                                      "Spodní řádek vlevo:"
+                                                    )
+                                                  ]),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-tile-content",
+                                                    {
+                                                      staticClass: "align-end"
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm.order.thesis
+                                                            .spodniTextVlevo
+                                                        )
+                                                      )
+                                                    ]
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            : _vm._e(),
+                                          _vm._v(" "),
+                                          _vm.order.thesis.spodniTextVpravo !==
+                                          null
+                                            ? _c("v-divider")
+                                            : _vm._e(),
+                                          _vm._v(" "),
+                                          _vm.order.thesis.spodniTextVpravo !==
+                                          null
+                                            ? _c(
+                                                "v-list-tile",
+                                                {
+                                                  on: {
+                                                    click: function($event) {}
+                                                  }
+                                                },
+                                                [
+                                                  _c("v-list-tile-content", [
+                                                    _vm._v(
+                                                      "Spodní řádek vpravo:"
+                                                    )
+                                                  ]),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-tile-content",
+                                                    {
+                                                      staticClass: "align-end"
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm.order.thesis
+                                                            .spodniTextVpravo
+                                                        )
+                                                      )
+                                                    ]
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            : _vm._e(),
+                                          _vm._v(" "),
+                                          _vm.order.thesis.potiskNahore !== null
+                                            ? _c("v-divider")
+                                            : _vm._e(),
+                                          _vm._v(" "),
+                                          _vm.order.thesis.potiskNahore !== null
+                                            ? _c(
+                                                "v-list-tile",
+                                                {
+                                                  on: {
+                                                    click: function($event) {}
+                                                  }
+                                                },
+                                                [
+                                                  _c("v-list-tile-content", [
+                                                    _vm._v(
+                                                      "Potisk hřbetu nahoře:"
+                                                    )
+                                                  ]),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-tile-content",
+                                                    {
+                                                      staticClass: "align-end"
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm.order.thesis
+                                                            .potiskNahore
+                                                        )
+                                                      )
+                                                    ]
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            : _vm._e(),
+                                          _vm._v(" "),
+                                          _vm.order.thesis.potiskDole !== null
+                                            ? _c("v-divider")
+                                            : _vm._e(),
+                                          _vm._v(" "),
+                                          _vm.order.thesis.potiskDole !== null
+                                            ? _c(
+                                                "v-list-tile",
+                                                {
+                                                  on: {
+                                                    click: function($event) {}
+                                                  }
+                                                },
+                                                [
+                                                  _c("v-list-tile-content", [
+                                                    _vm._v(
+                                                      "Potisk hřbetu dole:"
+                                                    )
+                                                  ]),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-tile-content",
+                                                    {
+                                                      staticClass: "align-end"
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm.order.thesis
+                                                            .potiskDole
+                                                        )
+                                                      )
+                                                    ]
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            : _vm._e(),
+                                          _vm._v(" "),
+                                          _c("v-divider"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile",
+                                            {
+                                              on: { click: function($event) {} }
+                                            },
+                                            [
+                                              _c("v-list-tile-content", [
+                                                _vm._v("Počet pevných desek:")
+                                              ]),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-tile-content",
+                                                { staticClass: "align-end" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      _vm.order.thesis
+                                                        .pocetPevnychDesek
+                                                    )
+                                                  )
+                                                ]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c("v-divider"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile",
+                                            {
+                                              on: { click: function($event) {} }
+                                            },
+                                            [
+                                              _c("v-list-tile-content", [
+                                                _vm._v(
+                                                  "Počet kroužkových desek:"
+                                                )
+                                              ]),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-tile-content",
+                                                { staticClass: "align-end" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      _vm.order.thesis
+                                                        .pocetKrouzkovychDesek
+                                                    )
+                                                  )
+                                                ]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c("v-divider"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile",
+                                            {
+                                              on: { click: function($event) {} }
+                                            },
+                                            [
+                                              _c("v-list-tile-content", [
+                                                _vm._v("Barva desek:")
+                                              ]),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-tile-content",
+                                                { staticClass: "align-end" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      _vm.order.thesis
+                                                        .barvaDesek
+                                                    )
+                                                  )
+                                                ]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c("v-divider"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile",
+                                            {
+                                              on: { click: function($event) {} }
+                                            },
+                                            [
+                                              _c("v-list-tile-content", [
+                                                _vm._v("Barva písma:")
+                                              ]),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-tile-content",
+                                                { staticClass: "align-end" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      _vm.order.thesis
+                                                        .barvaPisma
+                                                    )
+                                                  )
+                                                ]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c("v-divider"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile",
+                                            {
+                                              on: { click: function($event) {} }
+                                            },
+                                            [
+                                              _c("v-list-tile-content", [
+                                                _vm._v("Kapsa pro CD:")
+                                              ]),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-tile-content",
+                                                { staticClass: "align-end" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      _vm.order.thesis
+                                                        .pocetKapesProCD
+                                                    )
+                                                  )
+                                                ]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c("v-divider"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile",
+                                            {
+                                              on: { click: function($event) {} }
+                                            },
+                                            [
+                                              _c("v-list-tile-content", [
+                                                _vm._v("Kapsa pro posudek:")
+                                              ]),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-tile-content",
+                                                { staticClass: "align-end" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      _vm.order.thesis
+                                                        .pocetKapesProPosudek
+                                                    )
+                                                  )
+                                                ]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c("v-divider"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile",
+                                            {
+                                              on: { click: function($event) {} }
+                                            },
+                                            [
+                                              _c("v-list-tile-content", [
+                                                _vm._v("Doba zhotovení:")
+                                              ]),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-tile-content",
+                                                { staticClass: "align-end" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      _vm.order.thesis
+                                                        .dobaZhotoveni
+                                                    )
+                                                  )
+                                                ]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c("v-divider"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile",
+                                            {
+                                              on: { click: function($event) {} }
+                                            },
+                                            [
+                                              _c("v-list-tile-content", [
+                                                _vm._v("Poznámky k objednávce:")
+                                              ]),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-tile-content",
+                                                { staticClass: "align-end" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      _vm.order.thesis.poznamky
+                                                    )
+                                                  )
+                                                ]
+                                              )
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    : _vm._e()
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-3705f36e", module.exports)
+  }
+}
+
+/***/ }),
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(86)
+var __vue_script__ = __webpack_require__(88)
 /* template */
-var __vue_template__ = __webpack_require__(87)
+var __vue_template__ = __webpack_require__(89)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -55959,7 +57419,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 86 */
+/* 88 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -56004,7 +57464,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 87 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -56085,15 +57545,15 @@ if (false) {
 }
 
 /***/ }),
-/* 88 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(89)
+var __vue_script__ = __webpack_require__(91)
 /* template */
-var __vue_template__ = __webpack_require__(90)
+var __vue_template__ = __webpack_require__(92)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -56133,7 +57593,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 89 */
+/* 91 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -56302,7 +57762,7 @@ var _this = this;
 });
 
 /***/ }),
-/* 90 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -56348,9 +57808,9 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n                                        " +
+                            "\n                                    " +
                               _vm._s(_vm.messages[_vm.status]) +
-                              "\n                                    "
+                              "\n                                "
                           )
                         ]
                       ),
@@ -56368,9 +57828,9 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n                                        " +
+                            "\n                                    " +
                               _vm._s(_vm.messages[_vm.status]) +
-                              "\n                                    "
+                              "\n                                "
                           )
                         ]
                       ),
@@ -56387,9 +57847,9 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n                                        " +
+                            "\n                                    " +
                               _vm._s(_vm.messages[_vm.status]) +
-                              "\n                                    "
+                              "\n                                "
                           )
                         ]
                       ),
@@ -56448,8 +57908,10 @@ var render = function() {
                                         "a",
                                         {
                                           attrs: {
-                                            href:
-                                              "profil/order/" + props.item.id
+                                            href: _vm.$laroute.route(
+                                              "users.order.show",
+                                              { orderId: props.item.id }
+                                            )
                                           }
                                         },
                                         [_vm._v("Zobrazit")]
@@ -56490,19 +57952,19 @@ if (false) {
 }
 
 /***/ }),
-/* 91 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(92)
+  __webpack_require__(94)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(94)
+var __vue_script__ = __webpack_require__(96)
 /* template */
-var __vue_template__ = __webpack_require__(95)
+var __vue_template__ = __webpack_require__(97)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -56542,13 +58004,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 92 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(93);
+var content = __webpack_require__(95);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -56568,7 +58030,7 @@ if(false) {
 }
 
 /***/ }),
-/* 93 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -56582,7 +58044,7 @@ exports.push([module.i, "\n@media only screen and (max-width: 500px) {\na.tabs__
 
 
 /***/ }),
-/* 94 */
+/* 96 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -56697,7 +58159,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 95 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -56920,15 +58382,15 @@ if (false) {
 }
 
 /***/ }),
-/* 96 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(97)
+var __vue_script__ = __webpack_require__(99)
 /* template */
-var __vue_template__ = __webpack_require__(98)
+var __vue_template__ = __webpack_require__(100)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -56968,7 +58430,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 97 */
+/* 99 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -57087,7 +58549,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 98 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -57215,15 +58677,15 @@ if (false) {
 }
 
 /***/ }),
-/* 99 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(100)
+var __vue_script__ = __webpack_require__(102)
 /* template */
-var __vue_template__ = __webpack_require__(101)
+var __vue_template__ = __webpack_require__(103)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -57263,7 +58725,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 100 */
+/* 102 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -57456,7 +58918,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 101 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -57715,15 +59177,15 @@ if (false) {
 }
 
 /***/ }),
-/* 102 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(103)
+var __vue_script__ = __webpack_require__(105)
 /* template */
-var __vue_template__ = __webpack_require__(104)
+var __vue_template__ = __webpack_require__(106)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -57763,7 +59225,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 103 */
+/* 105 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -57885,7 +59347,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 104 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -58073,15 +59535,15 @@ if (false) {
 }
 
 /***/ }),
-/* 105 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(106)
+var __vue_script__ = __webpack_require__(108)
 /* template */
-var __vue_template__ = __webpack_require__(107)
+var __vue_template__ = __webpack_require__(109)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -58121,7 +59583,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 106 */
+/* 108 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -58212,7 +59674,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 107 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -58382,15 +59844,15 @@ if (false) {
 }
 
 /***/ }),
-/* 108 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(109)
+var __vue_script__ = __webpack_require__(111)
 /* template */
-var __vue_template__ = __webpack_require__(110)
+var __vue_template__ = __webpack_require__(112)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -58430,7 +59892,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 109 */
+/* 111 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -58996,6 +60458,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.price += this.getKrouzkoveDeskyPrice();
             this.price += this.getKapsaCDPrice();
             this.price += this.getKapsaPosudekPrice();
+            this.price = Math.round(this.price * 100) / 100;
         },
         setNextStep: function setNextStep() {
             this.nextStep = 2; // go to upload
@@ -59122,7 +60585,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 110 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -60544,19 +62007,19 @@ if (false) {
 }
 
 /***/ }),
-/* 111 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(112)
+  __webpack_require__(114)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(114)
+var __vue_script__ = __webpack_require__(116)
 /* template */
-var __vue_template__ = __webpack_require__(115)
+var __vue_template__ = __webpack_require__(117)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -60596,13 +62059,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 112 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(113);
+var content = __webpack_require__(115);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -60622,7 +62085,7 @@ if(false) {
 }
 
 /***/ }),
-/* 113 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -60636,7 +62099,7 @@ exports.push([module.i, "\n#dropzone {\n    min-height: 200px;\n    border: 1px 
 
 
 /***/ }),
-/* 114 */
+/* 116 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -60755,7 +62218,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 115 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -60864,15 +62327,15 @@ if (false) {
 }
 
 /***/ }),
-/* 116 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(117)
+var __vue_script__ = __webpack_require__(119)
 /* template */
-var __vue_template__ = __webpack_require__(118)
+var __vue_template__ = __webpack_require__(120)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -60912,11 +62375,16 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 117 */
+/* 119 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
 //
 //
 //
@@ -61071,7 +62539,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             errors: null
         };
     },
-    mounted: function mounted() {},
 
 
     watch: {
@@ -61130,7 +62597,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 118 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -61187,47 +62654,55 @@ var render = function() {
                                 1
                               ),
                               _vm._v(" "),
-                              _c("v-divider"),
+                              _vm.thesis.rozsahStran !== undefined
+                                ? _c("v-divider")
+                                : _vm._e(),
                               _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Předpokládaný rozsah stran:")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
-                                    [_vm._v(_vm._s(_vm.thesis.rozsahStran))]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Přesný počet listů:")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
+                              _vm.thesis.rozsahStran !== undefined
+                                ? _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
                                     [
-                                      _vm._v(
-                                        _vm._s(_vm.thesis.presnyPocetStran)
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Předpokládaný rozsah stran:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [_vm._v(_vm._s(_vm.thesis.rozsahStran))]
                                       )
-                                    ]
+                                    ],
+                                    1
                                   )
-                                ],
-                                1
-                              ),
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _vm.thesis.presnyPocetStran !== undefined
+                                ? _c("v-divider")
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _vm.thesis.presnyPocetStran !== undefined
+                                ? _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Přesný počet listů:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [
+                                          _vm._v(
+                                            _vm._s(_vm.thesis.presnyPocetStran)
+                                          )
+                                        ]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                : _vm._e(),
                               _vm._v(" "),
                               _c("v-divider"),
                               _vm._v(" "),
@@ -61284,6 +62759,29 @@ var render = function() {
                                 1
                               ),
                               _vm._v(" "),
+                              _vm.thesis.jinaSkola !== ""
+                                ? _c("v-divider")
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _vm.thesis.jinaSkola !== ""
+                                ? _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Škola:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [_vm._v(_vm._s(_vm.thesis.jinaSkola))]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                : _vm._e(),
+                              _vm._v(" "),
                               _c("v-divider"),
                               _vm._v(" "),
                               _c(
@@ -61303,123 +62801,155 @@ var render = function() {
                                 1
                               ),
                               _vm._v(" "),
-                              _c("v-divider"),
+                              _vm.thesis.katedry !== undefined
+                                ? _c("v-divider")
+                                : _vm._e(),
                               _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Katedra:")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
-                                    [_vm._v(_vm._s(_vm.thesis.typZadani))]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Název práce:")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
-                                    [_vm._v(_vm._s(_vm.thesis.typZadani))]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Spodní řádek vlevo:")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
-                                    [_vm._v(_vm._s(_vm.thesis.spodniTextVlevo))]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Spodní řádek vpravo:")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
+                              _vm.thesis.katedry !== undefined
+                                ? _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
                                     [
-                                      _vm._v(
-                                        _vm._s(_vm.thesis.spodniTextVpravo)
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Katedra:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [_vm._v(_vm._s(_vm.thesis.katedry))]
                                       )
-                                    ]
+                                    ],
+                                    1
                                   )
-                                ],
-                                1
-                              ),
+                                : _vm._e(),
                               _vm._v(" "),
-                              _c("v-divider"),
+                              _vm.thesis.nazev_prace !== ""
+                                ? _c("v-divider")
+                                : _vm._e(),
                               _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Potisk hřbetu nahoře:")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
-                                    [_vm._v(_vm._s(_vm.thesis.potiskNahore))]
+                              _vm.thesis.nazev_prace !== ""
+                                ? _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Název práce:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [_vm._v(_vm._s(_vm.thesis.nazev_prace))]
+                                      )
+                                    ],
+                                    1
                                   )
-                                ],
-                                1
-                              ),
+                                : _vm._e(),
                               _vm._v(" "),
-                              _c("v-divider"),
+                              _vm.thesis.spodniTextVlevo !== ""
+                                ? _c("v-divider")
+                                : _vm._e(),
                               _vm._v(" "),
-                              _c(
-                                "v-list-tile",
-                                { on: { click: function($event) {} } },
-                                [
-                                  _c("v-list-tile-content", [
-                                    _vm._v("Potisk hřbetu dole:")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-content",
-                                    { staticClass: "align-end" },
-                                    [_vm._v(_vm._s(_vm.thesis.potiskDole))]
+                              _vm.thesis.spodniTextVlevo !== ""
+                                ? _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Spodní řádek vlevo:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [
+                                          _vm._v(
+                                            _vm._s(_vm.thesis.spodniTextVlevo)
+                                          )
+                                        ]
+                                      )
+                                    ],
+                                    1
                                   )
-                                ],
-                                1
-                              ),
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _vm.thesis.spodniTextVpravo !== ""
+                                ? _c("v-divider")
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _vm.thesis.spodniTextVpravo !== undefined
+                                ? _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Spodní řádek vpravo:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [
+                                          _vm._v(
+                                            _vm._s(_vm.thesis.spodniTextVpravo)
+                                          )
+                                        ]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _vm.thesis.potiskNahore !== ""
+                                ? _c("v-divider")
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _vm.thesis.potiskNahore !== ""
+                                ? _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Potisk hřbetu nahoře:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [
+                                          _vm._v(
+                                            _vm._s(_vm.thesis.potiskNahore)
+                                          )
+                                        ]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _vm.thesis.potiskDole !== ""
+                                ? _c("v-divider")
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _vm.thesis.potiskDole !== ""
+                                ? _c(
+                                    "v-list-tile",
+                                    { on: { click: function($event) {} } },
+                                    [
+                                      _c("v-list-tile-content", [
+                                        _vm._v("Potisk hřbetu dole:")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list-tile-content",
+                                        { staticClass: "align-end" },
+                                        [_vm._v(_vm._s(_vm.thesis.potiskDole))]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                : _vm._e(),
                               _vm._v(" "),
                               _c("v-divider"),
                               _vm._v(" "),
@@ -61643,7 +63173,7 @@ var render = function() {
           _c(
             "v-btn",
             {
-              attrs: { color: "primary" },
+              attrs: { color: "primary", disabled: _vm.loading },
               on: {
                 click: function($event) {
                   _vm.createOrder()
@@ -61684,15 +63214,15 @@ if (false) {
 }
 
 /***/ }),
-/* 119 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(120)
+var __vue_script__ = __webpack_require__(122)
 /* template */
-var __vue_template__ = __webpack_require__(121)
+var __vue_template__ = __webpack_require__(123)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -61732,7 +63262,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 120 */
+/* 122 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -61860,7 +63390,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 121 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -62080,15 +63610,15 @@ if (false) {
 }
 
 /***/ }),
-/* 122 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(123)
+var __vue_script__ = __webpack_require__(125)
 /* template */
-var __vue_template__ = __webpack_require__(124)
+var __vue_template__ = __webpack_require__(126)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -62128,7 +63658,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 123 */
+/* 125 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -62262,7 +63792,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 124 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -62506,19 +64036,19 @@ if (false) {
 }
 
 /***/ }),
-/* 125 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(126)
+  __webpack_require__(128)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(128)
+var __vue_script__ = __webpack_require__(130)
 /* template */
-var __vue_template__ = __webpack_require__(129)
+var __vue_template__ = __webpack_require__(131)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -62558,13 +64088,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 126 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(127);
+var content = __webpack_require__(129);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -62584,7 +64114,7 @@ if(false) {
 }
 
 /***/ }),
-/* 127 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -62598,7 +64128,7 @@ exports.push([module.i, "\n@media only screen and (max-width: 599px) {\n.main-me
 
 
 /***/ }),
-/* 128 */
+/* 130 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -62798,7 +64328,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.eventBus.$emit('open-login-dialog', true);
         },
         profile: function profile() {
-            window.location.href = this.$laroute.route('users.show');
+            window.location.href = this.$laroute.route('users.show', { 'id': this.parsedUser.id });
         },
         createThesis: function createThesis() {
             window.location.href = this.$laroute.route('thesis.index');
@@ -62807,7 +64337,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 129 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -63251,7 +64781,7 @@ if (false) {
 }
 
 /***/ }),
-/* 130 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -63259,7 +64789,7 @@ var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(131)
+var __vue_template__ = __webpack_require__(133)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -63299,7 +64829,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 131 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -63345,19 +64875,19 @@ if (false) {
 }
 
 /***/ }),
-/* 132 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(133)
+  __webpack_require__(135)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(135)
+var __vue_script__ = __webpack_require__(137)
 /* template */
-var __vue_template__ = __webpack_require__(136)
+var __vue_template__ = __webpack_require__(138)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -63397,13 +64927,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 133 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(134);
+var content = __webpack_require__(136);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -63423,7 +64953,7 @@ if(false) {
 }
 
 /***/ }),
-/* 134 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -63437,7 +64967,7 @@ exports.push([module.i, "\n.content-header {\n    display: inline-block;\n}\n", 
 
 
 /***/ }),
-/* 135 */
+/* 137 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -63584,7 +65114,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 136 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -63723,19 +65253,19 @@ if (false) {
 }
 
 /***/ }),
-/* 137 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(138)
+  __webpack_require__(140)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(140)
+var __vue_script__ = __webpack_require__(142)
 /* template */
-var __vue_template__ = __webpack_require__(141)
+var __vue_template__ = __webpack_require__(143)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -63775,13 +65305,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 138 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(139);
+var content = __webpack_require__(141);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -63801,7 +65331,7 @@ if(false) {
 }
 
 /***/ }),
-/* 139 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -63815,7 +65345,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 140 */
+/* 142 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -63971,7 +65501,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 141 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -64235,19 +65765,19 @@ if (false) {
 }
 
 /***/ }),
-/* 142 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(143)
+  __webpack_require__(145)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(145)
+var __vue_script__ = __webpack_require__(147)
 /* template */
-var __vue_template__ = __webpack_require__(146)
+var __vue_template__ = __webpack_require__(148)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -64287,13 +65817,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 143 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(144);
+var content = __webpack_require__(146);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -64313,7 +65843,7 @@ if(false) {
 }
 
 /***/ }),
-/* 144 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -64327,7 +65857,7 @@ exports.push([module.i, "\n.content-header {\n    display: inline-block;\n}\n", 
 
 
 /***/ }),
-/* 145 */
+/* 147 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -64422,7 +65952,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }), _props$data$created$m);
 
 /***/ }),
-/* 146 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -64568,15 +66098,15 @@ if (false) {
 }
 
 /***/ }),
-/* 147 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(148)
+var __vue_script__ = __webpack_require__(150)
 /* template */
-var __vue_template__ = __webpack_require__(149)
+var __vue_template__ = __webpack_require__(151)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -64616,7 +66146,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 148 */
+/* 150 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -64693,7 +66223,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 149 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -64779,19 +66309,19 @@ if (false) {
 }
 
 /***/ }),
-/* 150 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(151)
+  __webpack_require__(153)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(153)
+var __vue_script__ = __webpack_require__(155)
 /* template */
-var __vue_template__ = __webpack_require__(154)
+var __vue_template__ = __webpack_require__(156)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -64831,13 +66361,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 151 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(152);
+var content = __webpack_require__(154);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -64857,7 +66387,7 @@ if(false) {
 }
 
 /***/ }),
-/* 152 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -64871,7 +66401,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 153 */
+/* 155 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65053,7 +66583,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 154 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -65394,15 +66924,15 @@ if (false) {
 }
 
 /***/ }),
-/* 155 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(156)
+var __vue_script__ = __webpack_require__(158)
 /* template */
-var __vue_template__ = __webpack_require__(157)
+var __vue_template__ = __webpack_require__(159)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -65442,7 +66972,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 156 */
+/* 158 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65594,7 +67124,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 157 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -65943,13 +67473,13 @@ if (false) {
 }
 
 /***/ }),
-/* 158 */
+/* 160 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 159 */
+/* 161 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

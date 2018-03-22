@@ -11,7 +11,7 @@ class OrderController extends Controller
         return view('admin.orders.index');
     }
 
-    public function show() {
-        return view('admin.orders.show');
+    public function show($id) {
+        return view('admin.orders.show', ['id' => $id]);
     }
 }

@@ -28,7 +28,7 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        $orders = Order::all();
+        $orders = Order::orderBy('id', 'desc')->get();
 
         return response($orders, 200);
 
@@ -95,6 +95,20 @@ class OrdersController extends Controller
     public function show($id)
     {
         $order = Order::find($id);
+
+        return response($this->transformer->transform($order));
+
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showForAdmin($id)
+    {
+        $order = Order::all()->where('gopay_order_id', '=', $id)->first();
 
         return response($this->transformer->transform($order));
 
