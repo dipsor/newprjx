@@ -18,14 +18,17 @@ class UploadController extends Controller
             $thesisId = $request->header('thesisid');
         }
 
-        $path = $request->file('file')->store('pdf');
+        $filename = str_replace(' ', '_', $request->file('file')->getClientOriginalName());
+        $hashedName = md5($filename).'.'.$request->file('file')->getClientOriginalExtension();
+        $request->file('file')->storeAs('public/pdf', $hashedName);
 
         $thesis = Thesis::find($thesisId);
         $thesis->update([
-           'filePath' => $path
+           'filePath' => $hashedName,
+            'originalFileName' => $filename,
         ]);
 
-        return response($path, 200);
+        return response($filename, 200);
 
     }
 }

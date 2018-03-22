@@ -26,10 +26,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin', 'auth']], func
 
 });
 
-Route::group(['prefix' => 'profil', 'namespace' => 'Users', 'middleware' => ['role:customer', 'auth']], function () {
+Route::group(['prefix' => 'uzivatel', 'namespace' => 'Users', 'middleware' => ['role:customer', 'auth']], function () {
     Route::get('/', 'UsersController@index')->name('users.index');
-    Route::get('/{id}', 'UsersController@show')->name('users.show');
-    Route::get('/order/{orderId}', 'UsersController@showOrder')->name('users.order.show');
+    Route::get('zmena-udaju/{id}', 'UsersController@show')->name('users.show');
+    Route::get('/objednavka/{orderId}', 'UsersController@showOrder')->name('users.order.show');
 });
 
 Route::group(['prefix' => 'thesis', 'namespace' => 'Thesis', 'middleware' => ['role:customer', 'auth']], function () {

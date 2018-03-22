@@ -10,36 +10,36 @@
                             </v-flex>
                             <v-flex xs12>
 
-                                        <v-alert type="success" :value="status == 'PAID'">
-                                            {{messages[status]}}
-                                        </v-alert>
+                                    <v-alert type="success" :value="status == 'PAID'">
+                                        {{messages[status]}}
+                                    </v-alert>
 
-                                        <v-alert type="info" :value="status == 'PAYMENT_METHOD_CHOSEN' || status == 'REFUNDED' || status == 'PARTIALLY_REFUNDED'">
-                                            {{messages[status]}}
-                                        </v-alert>
+                                    <v-alert type="info" :value="status == 'PAYMENT_METHOD_CHOSEN' || status == 'REFUNDED' || status == 'PARTIALLY_REFUNDED'">
+                                        {{messages[status]}}
+                                    </v-alert>
 
-                                        <v-alert type="error" :value="status == 'CANCELED' || status == 'TIMEOUTED'">
-                                            {{messages[status]}}
-                                        </v-alert>
-                                        <v-card>
-                                            <v-toolbar color="purple darken-3">
-                                                <v-toolbar-title class="white--text">Objednávky uživatele {{currentUser.name}}</v-toolbar-title>
-                                            </v-toolbar>
-                                            <v-data-table
-                                                    v-bind:headers="headers"
-                                                    :items="items2"
-                                                    hide-actions
-                                                    class="elevation-1"
-                                            >
-                                                <template slot="items" slot-scope="props">
-                                                    <td class="text-xs-left">{{ props.item.orderName }}</td>
-                                                    <td class="text-xs-left">{{ props.item.created_at }}</td>
-                                                    <td class="text-xs-left">{{ props.item.price }}</td>
-                                                    <td class="text-xs-left">{{ props.item.status }}</td>
-                                                    <td class="text-xs-left"><a :href="'profil/order/'+props.item.id">Zobrazit</a></td>
-                                                </template>
-                                            </v-data-table>
-                                        </v-card>
+                                    <v-alert type="error" :value="status == 'CANCELED' || status == 'TIMEOUTED'">
+                                        {{messages[status]}}
+                                    </v-alert>
+                                    <v-card>
+                                        <v-toolbar color="purple darken-3">
+                                            <v-toolbar-title class="white--text">Objednávky uživatele {{currentUser.name}}</v-toolbar-title>
+                                        </v-toolbar>
+                                        <v-data-table
+                                                v-bind:headers="headers"
+                                                :items="items2"
+                                                hide-actions
+                                                class="elevation-1"
+                                        >
+                                            <template slot="items" slot-scope="props">
+                                                <td class="text-xs-left">{{ props.item.orderName }}</td>
+                                                <td class="text-xs-left">{{ props.item.created_at }}</td>
+                                                <td class="text-xs-left">{{ props.item.price }}</td>
+                                                <td class="text-xs-left">{{ props.item.status }}</td>
+                                                <td class="text-xs-left"><a :href="$laroute.route('users.order.show', {'orderId': props.item.id})">Zobrazit</a></td>
+                                            </template>
+                                        </v-data-table>
+                                    </v-card>
                             </v-flex>
                         </v-layout>
             </v-container>

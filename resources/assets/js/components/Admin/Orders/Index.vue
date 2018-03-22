@@ -11,23 +11,24 @@
                     <v-flex xs12>
                         <v-card>
                             <v-toolbar color="purple darken-3">
-                                <v-toolbar-title class="white--text">Objednávky uživatele {{currentUser.name}}</v-toolbar-title>
+                                <v-toolbar-title class="white--text">Objednávky</v-toolbar-title>
                             </v-toolbar>
                             <v-data-table
                                     v-bind:headers="headers"
                                     :items="items2"
                                     hide-actions
                                     class="elevation-1"
+                                    :total-items="totalItems"
                             >
-                                <template slot="items" slot-scope="props">
-                                    <td class="text-xs-left">{{ props.item.orderName }}</td>
-                                    <td class="text-xs-left">{{ props.item.created_at }}</td>
-                                    <td class="text-xs-left">{{ props.item.price }}</td>
-                                    <td class="text-xs-left">{{ props.item.status }}</td>
-                                    <td class="text-xs-left">{{ props.item.first_name }} {{ props.item.last_name }}</td>
-                                    <td class="text-xs-left"><a @click="generateCsv(props.item.id)">Generovat Csv</a></td>
-                                    <td class="text-xs-left"><a :href="'/objednavky/'+props.item.id">Zobrazit</a></td>
-                                </template>
+                            <template slot="items" slot-scope="props">
+                                <td class="text-xs-left">{{ props.item.orderName }}</td>
+                                <td class="text-xs-left">{{ props.item.created_at }}</td>
+                                <td class="text-xs-left">{{ props.item.price }}</td>
+                                <td class="text-xs-left">{{ props.item.status }}</td>
+                                <td class="text-xs-left">{{ props.item.first_name }} {{ props.item.last_name }}</td>
+                                <td class="text-xs-left"><a @click="generateCsv(props.item.id)">Generovat Csv</a></td>
+                                <td class="text-xs-left"><a :href="$laroute.route('admin.orders.show', {'id': props.item.id})">Zobrazit</a></td>
+                            </template>
                             </v-data-table>
                         </v-card>
                     </v-flex>
@@ -47,6 +48,7 @@
                         disabled: false
                     }
                 ],
+                totalItems: 0,
                 divider: true,
                 messages: {
                     'PAID' : 'Objednávka byla zaplacena.',

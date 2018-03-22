@@ -11,6 +11,7 @@ class Thesis extends Model
         'user_id',
         'typZadani',
         'filePath',
+        'originalFileName',
         'price',
         'pribliznyPocetListu',
         'presnyPocetStran',

@@ -1,9 +1,5 @@
 @extends('layout')
 @section('content')
-    <!--start container-->
-    <div class="container">
-        <div class="section">
-            Orders
-        </div>
-    </div>
+    <admin-orders-show :current-user="{{Auth::user()}}" gopay-order-id="{{$id}}" asset-url="{{asset('/')}}"></admin-orders-show>
+
 @endsection()
