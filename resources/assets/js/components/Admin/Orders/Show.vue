@@ -61,6 +61,9 @@
                                         <v-divider></v-divider>
                                         <v-list-tile>
                                             <v-list-tile-content><a class="btn primary pr-2 pl-2" @click="generateCsv(order.thesis.id)">Generovat Csv</a></v-list-tile-content>
+                                        </v-list-tile>
+                                        <v-divider></v-divider>
+                                        <v-list-tile>
                                             <v-list-tile-content align-right><v-btn align-right primary>Zmenit stav objednavky</v-btn></v-list-tile-content>
                                         </v-list-tile>
                                     </v-list>

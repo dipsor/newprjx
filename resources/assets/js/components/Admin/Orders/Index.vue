@@ -18,6 +18,7 @@
                                     :items="items2"
                                     hide-actions
                                     class="elevation-1"
+                                    :total-items="totalItems"
                             >
                             <template slot="items" slot-scope="props">
                                 <td class="text-xs-left">{{ props.item.orderName }}</td>
@@ -47,6 +48,7 @@
                         disabled: false
                     }
                 ],
+                totalItems: 0,
                 divider: true,
                 messages: {
                     'PAID' : 'Objednávka byla zaplacena.',

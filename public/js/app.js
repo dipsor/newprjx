@@ -55610,6 +55610,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -55618,6 +55619,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 text: 'Dashboard',
                 disabled: false
             }],
+            totalItems: 0,
             divider: true,
             messages: {
                 'PAID': 'Objednávka byla zaplacena.',
@@ -55784,7 +55786,8 @@ var render = function() {
                             attrs: {
                               headers: _vm.headers,
                               items: _vm.items2,
-                              "hide-actions": ""
+                              "hide-actions": "",
+                              "total-items": _vm.totalItems
                             },
                             scopedSlots: _vm._u([
                               {
@@ -55931,6 +55934,9 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -56498,8 +56504,16 @@ var render = function() {
                                                   },
                                                   [_vm._v("Generovat Csv")]
                                                 )
-                                              ]),
-                                              _vm._v(" "),
+                                              ])
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c("v-divider"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-tile",
+                                            [
                                               _c(
                                                 "v-list-tile-content",
                                                 {
