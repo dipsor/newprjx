@@ -224,7 +224,6 @@
         mounted() {
             this.items = this.getBreadCrumbs();
             this.getOrder();
-            console.log(this.assetUrl);
         },
         watch: {
             order(val) {

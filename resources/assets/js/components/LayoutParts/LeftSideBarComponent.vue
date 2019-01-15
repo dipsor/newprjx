@@ -95,8 +95,6 @@
         mounted() {
             this.eventBus.$on('drawer-clicked', function(drawer) {
                 this.drawer = drawer;
-                console.log('drawer');
-                console.log(this.drawer);
             });
         }
 

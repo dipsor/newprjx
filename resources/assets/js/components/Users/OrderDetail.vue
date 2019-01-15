@@ -98,8 +98,6 @@
         },
         watch: {
             order(val) {
-                console.log('watcher');
-                console.log(val);
                 this.status = val.status;
                 this.breadcrumText = val.orderName;
                 this.items = this.getBreadCrumbs();

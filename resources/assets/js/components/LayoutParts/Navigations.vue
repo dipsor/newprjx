@@ -161,9 +161,6 @@
             this.isItAdmin();
             this.items = this.setMenu();
             this.adminItems = this.setAdminMenu();
-
-            console.log(this.currentUser.roles);
-
         },
 
         methods: {
@@ -201,7 +198,6 @@
             isItAdmin() {
                 this.isAdmin = false;
                 this.currentUser.roles.forEach( (role) => {
-                    console.log(role.name);
                     if (role.name === 'admin') {
                         this.isAdmin = true;
                     }

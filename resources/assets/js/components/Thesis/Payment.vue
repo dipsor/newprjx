@@ -104,7 +104,6 @@
                 axios.get(this.$laroute.route('orders.api.show', {id: this.orderId})).then((response) => {
                     this.loading = false;
                     this.order = response.data;
-                    console.log(this.order);
                 }).catch((error) => {
                     this.loading = false;
                     this.error = error.response.data.errors;
