@@ -184,7 +184,7 @@
             getThesis() {
                 axios.get(this.$laroute.route('thesis.api.show', {id: this.thesisId})).then((response) => {
                     this.loading = false;
-``                    this.thesis = response.data;
+                    this.thesis = response.data;
                 }).catch((error) => {
                     this.loading = false;
                     this.error = error.response.data.errors;
